@@ -4,7 +4,7 @@ import { classifyStatus, defaultRetryAfter, guidance } from "./status.ts";
 import type { HeadersInput, NormalizeOptions, Problem } from "./types.ts";
 
 const MAX_BODY = 256 * 1024;
-const TYPE_BASE = "https://errdown.dev/errors/";
+const TYPE_BASE = "https://errdown.com/errors/";
 const CF_DOCS = "https://developers.cloudflare.com/support/troubleshooting/http-status-codes/cloudflare-1xxx-errors/";
 
 export type BodyInput = string | Uint8Array | ArrayBuffer | null | undefined;

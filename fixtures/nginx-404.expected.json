@@ -1,5 +1,5 @@
 {
-  "type": "https://errdown.dev/errors/nginx_not_found",
+  "type": "https://errdown.com/errors/nginx_not_found",
   "title": "Not found",
   "status": 404,
   "detail": "The server returned HTTP 404 with an error page from nginx.",

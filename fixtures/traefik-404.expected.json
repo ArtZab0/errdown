@@ -1,5 +1,5 @@
 {
-  "type": "https://errdown.dev/errors/traefik_not_found",
+  "type": "https://errdown.com/errors/traefik_not_found",
   "title": "Not found",
   "status": 404,
   "detail": "The server returned HTTP 404 with an error page from traefik.",

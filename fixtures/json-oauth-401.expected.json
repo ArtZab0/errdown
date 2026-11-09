@@ -1,5 +1,5 @@
 {
-  "type": "https://errdown.dev/errors/auth_required",
+  "type": "https://errdown.com/errors/auth_required",
   "title": "Authentication required",
   "status": 401,
   "detail": "The server returned HTTP 401 (code: invalid_token). The server's message (untrusted, quoted): \"The access token expired\"",

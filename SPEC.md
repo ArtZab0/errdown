@@ -31,7 +31,7 @@ normalize(status: int, headers: map<string,string>, body: string|bytes) -> Probl
 
 | Member | Type | Source | Notes |
 |---|---|---|---|
-| `type` | string (URI) | RFC 9457 | Cloudflare docs URL for Cloudflare errors; `https://errdown.dev/errors/<error_name>` otherwise |
+| `type` | string (URI) | RFC 9457 | Cloudflare docs URL for Cloudflare errors; `https://errdown.com/errors/<error_name>` otherwise |
 | `title` | string | RFC 9457 | Short, human-readable |
 | `status` | int | RFC 9457 | HTTP status of the original response |
 | `detail` | string | RFC 9457 | What happened. See section 7 for safety rules |

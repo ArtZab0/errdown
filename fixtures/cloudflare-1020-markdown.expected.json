@@ -1,5 +1,5 @@
 {
-  "type": "https://errdown.dev/errors/access_denied",
+  "type": "https://errdown.com/errors/access_denied",
   "title": "Error 1020: Access denied",
   "status": 403,
   "detail": "A firewall rule on this site blocked your request.",

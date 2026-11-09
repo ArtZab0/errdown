@@ -1,5 +1,5 @@
 {
-  "type": "https://errdown.dev/errors/apache_forbidden",
+  "type": "https://errdown.com/errors/apache_forbidden",
   "title": "Access denied",
   "status": 403,
   "detail": "The server returned HTTP 403 with an error page from apache.",
