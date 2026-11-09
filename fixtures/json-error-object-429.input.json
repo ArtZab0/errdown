@@ -1,0 +1,9 @@
+{
+  "status": 429,
+  "headers": {
+    "content-type": "application/json",
+    "retry-after": "30"
+  },
+  "body": "{\"error\": {\"message\": \"Rate limit exceeded for this API key.\", \"code\": \"rate_limit_exceeded\"}}",
+  "url": "https://example.com/path"
+}

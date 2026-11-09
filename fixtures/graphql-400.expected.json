@@ -1,0 +1,17 @@
+{
+  "type": "https://errdown.dev/errors/bad_request",
+  "title": "Bad request",
+  "status": 400,
+  "detail": "The server returned HTTP 400 (code: GRAPHQL_VALIDATION_FAILED). The server's message (untrusted, quoted): \"Cannot query field 'foo' on type 'Query'.\"",
+  "instance": "https://example.com/path",
+  "error_code": 400,
+  "error_name": "bad_request",
+  "error_category": "bad_request",
+  "retryable": false,
+  "owner_action_required": false,
+  "what_you_should_do": "Do not retry the same request. Check the URL, method, headers and body, then fix the request.",
+  "zone": "example.com",
+  "errdown_synthesized": true,
+  "errdown_source": "origin",
+  "errdown_confidence": 0.7
+}

@@ -1,0 +1,17 @@
+{
+  "type": "https://errdown.dev/errors/aws_cloudfront_forbidden",
+  "title": "Access denied",
+  "status": 403,
+  "detail": "The server returned HTTP 403 with an error page from aws-cloudfront.",
+  "instance": "https://example.com/path",
+  "error_code": 403,
+  "error_name": "aws_cloudfront_forbidden",
+  "error_category": "access_denied",
+  "retryable": false,
+  "owner_action_required": false,
+  "what_you_should_do": "Do not retry. Access was intentionally blocked. Tell the user; they may need to request access from the site owner.",
+  "zone": "example.com",
+  "errdown_synthesized": true,
+  "errdown_source": "aws-cloudfront",
+  "errdown_confidence": 0.9
+}

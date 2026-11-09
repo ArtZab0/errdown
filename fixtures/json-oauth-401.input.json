@@ -1,0 +1,8 @@
+{
+  "status": 401,
+  "headers": {
+    "content-type": "application/json"
+  },
+  "body": "{\"error\": \"invalid_token\", \"error_description\": \"The access token expired\"}",
+  "url": "https://example.com/path"
+}

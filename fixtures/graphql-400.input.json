@@ -1,0 +1,8 @@
+{
+  "status": 400,
+  "headers": {
+    "content-type": "application/json"
+  },
+  "body": "{\"errors\": [{\"message\": \"Cannot query field \\\"foo\\\" on type \\\"Query\\\".\", \"extensions\": {\"code\": \"GRAPHQL_VALIDATION_FAILED\"}}]}",
+  "url": "https://example.com/path"
+}

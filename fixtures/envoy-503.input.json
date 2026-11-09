@@ -1,0 +1,9 @@
+{
+  "status": 503,
+  "headers": {
+    "server": "envoy",
+    "content-type": "text/plain"
+  },
+  "body": "upstream connect error or disconnect/reset before headers. reset reason: connection failure",
+  "url": "https://example.com/path"
+}

@@ -1,0 +1,9 @@
+{
+  "status": 503,
+  "headers": {
+    "server": "Cowboy",
+    "content-type": "text/html"
+  },
+  "body": "<!DOCTYPE html><html><head><title>Application Error</title></head><body><iframe src=\"//www.herokucdn.com/error-pages/application-error.html\"></iframe></body></html>",
+  "url": "https://example.com/path"
+}

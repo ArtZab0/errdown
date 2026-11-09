@@ -1,0 +1,17 @@
+{
+  "type": "https://errdown.dev/errors/auth_required",
+  "title": "Authentication required",
+  "status": 401,
+  "detail": "The server returned HTTP 401 (code: invalid_token). The server's message (untrusted, quoted): \"The access token expired\"",
+  "instance": "https://example.com/path",
+  "error_code": 401,
+  "error_name": "auth_required",
+  "error_category": "auth_required",
+  "retryable": false,
+  "owner_action_required": false,
+  "what_you_should_do": "Do not retry without credentials. Ask the user to authenticate or provide credentials.",
+  "zone": "example.com",
+  "errdown_synthesized": true,
+  "errdown_source": "origin",
+  "errdown_confidence": 0.7
+}

@@ -1,0 +1,10 @@
+{
+  "status": 403,
+  "headers": {
+    "content-type": "text/markdown; charset=utf-8",
+    "cf-error-type": "access_denied",
+    "cf-ray": "8f1a2b3c4d5e6f71-SJC"
+  },
+  "body": "---\nerror_code: 1020\nerror_name: access_denied\nerror_category: access_denied\nstatus: 403\nray_id: 8f1a2b3c4d5e6f71\ntimestamp: 2026-03-11T12:00:00Z\nzone: example.com\ncloudflare_error: true\nretryable: false\nowner_action_required: true\n---\n\n# Error 1020: Access denied\n\n## What Happened\n\nA firewall rule on this site blocked your request.\n\n## What You Should Do\n\nDo not retry. Contact the site owner if you believe this is a mistake.\n",
+  "url": "https://example.com/path"
+}

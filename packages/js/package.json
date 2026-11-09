@@ -1,0 +1,17 @@
+{
+  "name": "errdown",
+  "version": "0.1.0",
+  "description": "Cloudflare-compatible structured errors (RFC 9457) for every HTTP error your agent hits.",
+  "type": "module",
+  "private": true,
+  "exports": { ".": { "types": "./dist/index.d.ts", "default": "./dist/index.js" } },
+  "files": ["dist"],
+  "sideEffects": false,
+  "engines": { "node": ">=18" },
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "node --test 'test/**/*.test.ts'",
+    "typecheck": "tsc -p tsconfig.json --noEmit"
+  },
+  "devDependencies": { "typescript": "^5.9.0", "@types/node": "^24.0.0" }
+}

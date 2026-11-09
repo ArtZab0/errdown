@@ -1,0 +1,19 @@
+{
+  "type": "https://errdown.dev/errors/cloudflare_challenge",
+  "title": "Bot verification required",
+  "status": 403,
+  "detail": "The server returned HTTP 403 with a bot-verification challenge page.",
+  "instance": "https://example.com/path",
+  "error_code": 403,
+  "error_name": "cloudflare_challenge",
+  "error_category": "challenge",
+  "retryable": false,
+  "owner_action_required": false,
+  "what_you_should_do": "Stop. This site requires a human to complete a check (CAPTCHA or bot verification). Do not retry automatically and do not attempt to bypass it. Ask the user to open the page in a browser.",
+  "zone": "example.com",
+  "ray_id": "8f00000000000000-SJC",
+  "cloudflare_error": true,
+  "errdown_synthesized": true,
+  "errdown_source": "cloudflare",
+  "errdown_confidence": 0.95
+}

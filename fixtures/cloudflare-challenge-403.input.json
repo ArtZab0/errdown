@@ -1,0 +1,10 @@
+{
+  "status": 403,
+  "headers": {
+    "server": "cloudflare",
+    "cf-mitigated": "challenge",
+    "cf-ray": "8f00000000000000-SJC"
+  },
+  "body": "<!DOCTYPE html><html><head><title>Just a moment...</title></head><body><script src=\"/cdn-cgi/challenge-platform/h/b/orchestrate/chl_page/v1\"></script></body></html>",
+  "url": "https://example.com/path"
+}

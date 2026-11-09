@@ -1,0 +1,10 @@
+{
+  "status": 404,
+  "headers": {
+    "server": "Vercel",
+    "x-vercel-error": "NOT_FOUND",
+    "content-type": "text/plain"
+  },
+  "body": "The page could not be found\n\nNOT_FOUND\n",
+  "url": "https://example.com/path"
+}

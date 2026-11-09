@@ -1,0 +1,11 @@
+{
+  "status": 429,
+  "headers": {
+    "content-type": "application/json",
+    "cf-error-type": "rate_limit",
+    "cf-ray": "8f1a2b3c4d5e6f70-SJC",
+    "retry-after": "30"
+  },
+  "body": "{\"type\": \"https://developers.cloudflare.com/support/troubleshooting/http-status-codes/cloudflare-1xxx-errors/error-1015/\", \"title\": \"Error 1015: You are being rate limited\", \"status\": 429, \"detail\": \"You are being rate limited by the website owner.\", \"error_code\": 1015, \"error_name\": \"rate_limited\", \"error_category\": \"rate_limit\", \"retryable\": true, \"retry_after\": 30, \"owner_action_required\": false, \"what_you_should_do\": \"Wait 30 seconds before retrying.\", \"timestamp\": \"2026-03-11T12:00:00Z\", \"zone\": \"example.com\", \"ray_id\": \"8f1a2b3c4d5e6f70\", \"cloudflare_error\": true}",
+  "url": "https://example.com/path"
+}

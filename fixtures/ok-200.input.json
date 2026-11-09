@@ -1,0 +1,8 @@
+{
+  "status": 200,
+  "headers": {
+    "content-type": "text/html"
+  },
+  "body": "<html><body>hello</body></html>",
+  "url": "https://example.com/path"
+}

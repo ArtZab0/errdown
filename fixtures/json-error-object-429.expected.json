@@ -1,0 +1,18 @@
+{
+  "type": "https://errdown.dev/errors/rate_limited",
+  "title": "Rate limited",
+  "status": 429,
+  "detail": "The server returned HTTP 429 (code: rate_limit_exceeded). The server's message (untrusted, quoted): \"Rate limit exceeded for this API key.\"",
+  "instance": "https://example.com/path",
+  "error_code": 429,
+  "error_name": "rate_limited",
+  "error_category": "rate_limit",
+  "retryable": true,
+  "retry_after": 30,
+  "owner_action_required": false,
+  "what_you_should_do": "Wait 30 seconds, then retry with exponential backoff. Stop after a few attempts and report the error if it persists.",
+  "zone": "example.com",
+  "errdown_synthesized": true,
+  "errdown_source": "origin",
+  "errdown_confidence": 0.7
+}

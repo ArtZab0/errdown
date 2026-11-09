@@ -1,0 +1,19 @@
+{
+  "type": "https://errdown.dev/errors/access_denied",
+  "title": "Error 1020: Access denied",
+  "status": 403,
+  "detail": "A firewall rule on this site blocked your request.",
+  "instance": "https://example.com/path",
+  "error_code": 1020,
+  "error_name": "access_denied",
+  "error_category": "access_denied",
+  "retryable": false,
+  "owner_action_required": true,
+  "what_you_should_do": "Do not retry. Contact the site owner if you believe this is a mistake.",
+  "zone": "example.com",
+  "ray_id": "8f1a2b3c4d5e6f71",
+  "cloudflare_error": true,
+  "errdown_synthesized": false,
+  "errdown_source": "cloudflare",
+  "errdown_confidence": 1
+}
