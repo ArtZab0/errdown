@@ -59,7 +59,10 @@ Cloudflare adds later. Consumers that do not know them ignore them, per RFC 9457
 
 A response counts as Cloudflare-originated only if it carries a `cf-error-type` header,
 or is already a Cloudflare structured body (has `error_code` and `ray_id`), or matches a
-legacy Cloudflare HTML error page fingerprint. `cf-ray` alone is NOT sufficient: Cloudflare
+legacy Cloudflare HTML error page fingerprint, or is Cloudflare's plain-text form
+(`Server: cloudflare` and a body of exactly `error code: 1NNN`). The plain-text form is
+what Cloudflare still serves for some edge errors (e.g. 1001, 1003, 1034) even to clients
+sending an agent Accept header (observed 2026-11-09). `cf-ray` alone is NOT sufficient: Cloudflare
 also passes origin errors through with that header.
 
 ### 2.3 Timestamp

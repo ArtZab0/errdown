@@ -48,6 +48,25 @@ function tryJSON(body: string): unknown {
 const isObj = (v: unknown): v is Record<string, unknown> =>
   typeof v === "object" && v !== null && !Array.isArray(v);
 
+// Cloudflare 1xxx codes seen in plain-text responses: [category, error_name, title, owner_action_required?]
+const CF_CODES: Record<number, [string, string, string, boolean?]> = {
+  1001: ["dns", "dns_resolution_error", "DNS resolution error", true],
+  1003: ["config", "direct_ip_access_not_allowed", "Direct IP access not allowed"],
+  1006: ["access_denied", "access_denied_ip_banned", "Access denied"],
+  1007: ["access_denied", "access_denied_ip_banned", "Access denied"],
+  1008: ["access_denied", "access_denied_ip_banned", "Access denied"],
+  1009: ["access_denied", "access_denied_country", "Access denied (country or region banned)"],
+  1010: ["access_denied", "access_denied_browser_signature", "Access denied (browser signature)"],
+  1012: ["access_denied", "access_denied", "Access denied"],
+  1014: ["config", "cname_cross_user_banned", "CNAME cross-user banned", true],
+  1015: ["rate_limit", "rate_limited", "You are being rate limited"],
+  1016: ["dns", "origin_dns_error", "Origin DNS error", true],
+  1020: ["access_denied", "access_denied", "Access denied (firewall rule)"],
+  1034: ["config", "edge_ip_restricted", "Edge IP restricted"],
+  1101: ["worker", "worker_threw_exception", "Worker threw exception", true],
+  1102: ["worker", "worker_exceeded_resource_limits", "Worker exceeded resource limits", true],
+};
+
 // ---------- Cloudflare Markdown parsing ----------
 
 function parseScalar(v: string): unknown {
@@ -257,6 +276,24 @@ function run(ctx: Ctx, body: string): Problem | null {
   if (h.has("cf-error-type")) {
     return finish({ status, ...cloudflareMeta(ctx), errdown_confidence: 0.85,
       detail: `Cloudflare returned HTTP ${status} (${sanitize(h.get("cf-error-type") ?? "", 40)}).` }, ctx);
+  }
+
+  // Cloudflare's plain-text form: "error code: 1003" with Server: cloudflare.
+  const plain = /^\s*error code: (1\d{3})\s*$/.exec(body);
+  if (plain && /cloudflare/i.test(h.get("server") ?? "")) {
+    const code = Number(plain[1]);
+    const known = CF_CODES[code];
+    return finish({
+      status,
+      ...cloudflareMeta(ctx),
+      type: CF_DOCS,
+      error_code: code,
+      error_name: known?.[1] ?? `cloudflare_${code}`,
+      ...(known ? { error_category: known[0], title: `Error ${code}: ${known[2]}` } : { title: `Cloudflare error ${code}` }),
+      ...(known?.[3] !== undefined ? { owner_action_required: known[3] } : {}),
+      detail: `Cloudflare returned error ${code}${known ? ` (${known[2]})` : ""} with HTTP ${status}.`,
+      errdown_confidence: known ? 0.9 : 0.75,
+    }, ctx);
   }
 
   // 3. Known error pages.

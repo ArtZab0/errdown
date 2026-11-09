@@ -1,0 +1,14 @@
+{
+  "status": 403,
+  "headers": {
+    "content-type": "text/plain; charset=UTF-8",
+    "server": "cloudflare",
+    "cf-ray": "a580c16e5b47a482-CLE",
+    "cache-control": "private, max-age=0, no-store, no-cache, must-revalidate, post-check=0, pre-check=0",
+    "x-frame-options": "SAMEORIGIN",
+    "referrer-policy": "same-origin"
+  },
+  "body": "error code: 1034",
+  "url": "https://errdown-q8z3.workers.dev/",
+  "_provenance": "captured 2026-11-09 with Accept: text/markdown, */* (identical for application/json)"
+}
