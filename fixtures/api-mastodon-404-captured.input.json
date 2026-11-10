@@ -1,0 +1,26 @@
+{
+  "status": 404,
+  "headers": {
+    "connection": "close",
+    "content-type": "application/json; charset=utf-8",
+    "cache-control": "private, no-store",
+    "referrer-policy": "same-origin",
+    "x-ratelimit-limit": "300",
+    "x-ratelimit-reset": "2026-11-10T00:40:00.070521Z",
+    "server": "Mastodon",
+    "x-xss-protection": "0",
+    "x-content-type-options": "nosniff",
+    "x-frame-options": "DENY",
+    "x-ratelimit-remaining": "299",
+    "accept-ranges": "bytes",
+    "via": "1.1 varnish, 1.1 varnish",
+    "x-served-by": "cache-fra-eddf8230148-FRA, cache-fra-eddf8230071-FRA, cache-cmh1290038-CMH",
+    "x-cache": "MISS, MISS, MISS",
+    "x-cache-hits": "0, 0, 0",
+    "x-timer": "S1794270926.972997,VS0,VE170",
+    "vary": "Authorization, Accept, X-Requested-With, Origin, Accept-Encoding"
+  },
+  "body": "{\"error\":\"Record not found\"}",
+  "url": "https://mastodon.social/api/v1/accounts/lookup?acct=errdownnonexistentq8z3",
+  "_provenance": "captured 2026-11-09, public endpoint, GET, Accept: text/markdown, */*"
+}

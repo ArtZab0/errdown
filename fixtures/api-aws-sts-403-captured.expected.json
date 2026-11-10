@@ -1,0 +1,17 @@
+{
+  "type": "https://errdown.com/errors/forbidden",
+  "title": "Access denied",
+  "status": 403,
+  "detail": "The server returned HTTP 403 (code: MissingAuthenticationToken). The server's message (untrusted, quoted): \"Request is missing Authentication Token\"",
+  "instance": "https://sts.amazonaws.com/?Action=GetCallerIdentity&Version=2011-06-15",
+  "error_code": 403,
+  "error_name": "forbidden",
+  "error_category": "access_denied",
+  "zone": "sts.amazonaws.com",
+  "retryable": false,
+  "owner_action_required": false,
+  "what_you_should_do": "Do not retry. Access was intentionally blocked. Tell the user; they may need to request access from the site owner.",
+  "errdown_synthesized": true,
+  "errdown_source": "aws",
+  "errdown_confidence": 0.7
+}

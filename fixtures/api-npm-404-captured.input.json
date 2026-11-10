@@ -1,0 +1,13 @@
+{
+  "status": 404,
+  "headers": {
+    "content-type": "application/json",
+    "connection": "close",
+    "access-control-allow-origin": "*",
+    "cache-control": "public, max-age=300",
+    "server": "cloudflare"
+  },
+  "body": "{\"error\":\"Not found\"}",
+  "url": "https://registry.npmjs.org/errdown-nonexistent-q8z3-pkg",
+  "_provenance": "captured 2026-11-09, public endpoint, GET, Accept: text/markdown, */*"
+}

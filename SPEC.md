@@ -19,6 +19,7 @@ normalize(status: int, headers: map<string,string>, body: string|bytes) -> Probl
 ```
 
 - Returns `null` when `status` is below 400 and the body is not a recognized challenge page.
+  Statuses 600–999 are nonstandard but treated as errors (e.g. LinkedIn's 999 bot block).
 - MUST NOT throw on any input. Malformed input yields a fallback Problem (section 6).
 - MUST NOT perform I/O, network or model calls. MUST be deterministic, except `timestamp`
   (section 2.3), which implementations MUST allow the caller to inject.
@@ -128,13 +129,20 @@ Implementations apply these stages in order and return the first match.
    `errdown_synthesized: false`; never overwrite present values. Confidence 1.0.
 2. **Challenge detection.** Known CAPTCHA/bot-check pages (any status, including 200).
    Category `challenge`, `retryable: false`. Confidence 0.9.
-3. **Fingerprints.** Known server/platform error pages. Confidence 0.8–0.95.
-4. **JSON error shapes.** `{error}`, `{error: {message, code}}`, `{message, code}`,
-   OAuth `{error, error_description}`, GraphQL `{errors: [...]}`. Category from status;
-   detail from the message (section 7). Confidence 0.7.
-5. **Status fallback.** Section 3.1.
+3. **Body fingerprints.** Known server/platform error pages recognized by their body.
+   Confidence 0.6–0.95.
+4. **JSON and XML error shapes.** JSON: `{error}`, `{error: {message, code}}`,
+   `{message, code}`, OAuth `{error, error_description}`, GraphQL `{errors: [...]}`,
+   `{errors: "<string>"}`; top-level keys match case-insensitively. XML: `<Error>` or
+   `<ErrorResponse>` with `<Code>`/`<Message>` (S3, GCS, AWS query APIs, Azure).
+   Category from status; detail from the message (section 7). Confidence 0.7.
+   `errdown_source` comes from a header-only fingerprint if one matches, else `origin`.
+5. **Header-only fingerprints** (e.g. `Server: awselb`). These run after stage 4 so an
+   application's own message is never replaced by a generic platform label.
+6. **Status fallback.** Section 3.1. Confidence 0.5; 0.3 for statuses 600–999.
 
-After any stage, **headers** fill `retry_after`: `Retry-After` (delta-seconds or
+After any stage, for **retryable** errors only, **headers** fill `retry_after` (non-retryable
+errors never carry it: APIs such as GitHub send rate-limit reset headers on every 401): `Retry-After` (delta-seconds or
 HTTP-date, clamped to 0–86400), else `RateLimit-Reset` / `X-RateLimit-Reset`
 (delta-seconds, or epoch seconds if larger than 10^9). If retryable and none found:
 default `retry_after` 5 for 5xx/408, 60 for 429.

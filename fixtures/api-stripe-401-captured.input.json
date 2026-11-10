@@ -1,0 +1,21 @@
+{
+  "status": 401,
+  "headers": {
+    "server": "nginx",
+    "content-type": "application/json",
+    "connection": "close",
+    "access-control-allow-credentials": "true",
+    "access-control-allow-methods": "GET, HEAD, PUT, PATCH, POST, DELETE",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Request-Id, Stripe-Manage-Version, Stripe-Should-Retry, X-Stripe-External-Auth-Required, X-Stripe-Privileged-Session-Required",
+    "access-control-max-age": "300",
+    "cache-control": "no-cache, no-store",
+    "vary": "Origin",
+    "www-authenticate": "Basic realm=\"Stripe\"",
+    "x-robots-tag": "none",
+    "x-wc": "383"
+  },
+  "body": "{\n  \"error\": {\n    \"message\": \"You did not provide an API key. You need to provide your API key in the Authorization header, using Bearer auth (e.g. 'Authorization: Bearer YOUR_SECRET_KEY'). See https://stripe.com/docs/api#authentication for details, or we can help at https://support.stripe.com/.\",\n    \"type\": \"invalid_request_error\"\n  }\n}\n",
+  "url": "https://api.stripe.com/v1/charges",
+  "_provenance": "captured 2026-11-09, public endpoint, GET, Accept: text/markdown, */*"
+}

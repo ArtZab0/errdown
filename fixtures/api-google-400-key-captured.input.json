@@ -1,0 +1,17 @@
+{
+  "status": 400,
+  "headers": {
+    "vary": "Origin,Accept-Encoding",
+    "content-type": "application/json; charset=UTF-8",
+    "server": "scaffolding on HTTPServer2",
+    "x-xss-protection": "0",
+    "x-frame-options": "SAMEORIGIN",
+    "x-content-type-options": "nosniff",
+    "accept-ranges": "none",
+    "transfer-encoding": "chunked",
+    "connection": "close"
+  },
+  "body": "{\n  \"error\": {\n    \"code\": 400,\n    \"message\": \"API key not valid. Please pass a valid API key.\",\n    \"errors\": [\n      {\n        \"message\": \"API key not valid. Please pass a valid API key.\",\n        \"domain\": \"global\",\n        \"reason\": \"badRequest\"\n      }\n    ],\n    \"status\": \"INVALID_ARGUMENT\",\n    \"details\": [\n      {\n        \"@type\": \"type.googleapis.com/google.rpc.ErrorInfo\",\n        \"reason\": \"API_KEY_INVALID\",\n        \"domain\": \"googleapis.com\",\n        \"metadata\": {\n          \"service\": \"youtube.googleapis.com\"\n        }\n      },\n      {\n        \"@type\": \"type.googleapis.com/google.rpc.LocalizedMessage\",\n        \"locale\": \"en-US\",\n        \"message\": \"API key not valid. Please pass a valid API key.\"\n      }\n    ]\n  }\n}\n",
+  "url": "https://www.googleapis.com/youtube/v3/videos?part=id&id=x&key=invalid",
+  "_provenance": "captured 2026-11-09, public endpoint, GET, Accept: text/markdown, */*"
+}

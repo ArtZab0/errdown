@@ -1,0 +1,23 @@
+{
+  "status": 401,
+  "headers": {
+    "content-type": "application/json",
+    "connection": "close",
+    "x-twilio-error-code": "20003",
+    "twilio-request-id": "RQ72da9e6f698bbd6c3e17fd483cd54d22",
+    "twilio-request-duration": "0.007",
+    "x-home-region": "us1",
+    "x-api-domain": "api.twilio.com",
+    "www-authenticate": "Basic realm=\"Twilio API\"",
+    "x-cache": "Error from cloudfront",
+    "via": "1.1 c301e3282bb25465478fc967a2ceb152.cloudfront.net (CloudFront)",
+    "x-amz-cf-pop": "CMH68-P3",
+    "x-amz-cf-id": "qrNzpisN-qmZx1zn4A-NEdtSs1ptl9E5Ssu2idRwtgq8m-gQEqyIvw==",
+    "x-powered-by": "AT-5000",
+    "x-shenanigans": "none",
+    "vary": "Origin"
+  },
+  "body": "{\"code\":20003,\"message\":\"Authentication Error - No credentials provided\",\"more_info\":\"https://www.twilio.com/docs/errors/20003\",\"status\":401}",
+  "url": "https://api.twilio.com/2010-04-01/Accounts.json",
+  "_provenance": "captured 2026-11-09, public endpoint, GET, Accept: text/markdown, */*"
+}

@@ -1,0 +1,15 @@
+{
+  "status": 401,
+  "headers": {
+    "access-control-allow-credentials": "true",
+    "access-control-allow-origin": "*",
+    "cache-control": "no-store",
+    "content-type": "application/json",
+    "www-authenticate": "Basic realm=\"MG API\"",
+    "x-xss-protection": "1; mode=block",
+    "connection": "close"
+  },
+  "body": "{\"Error\":\"unauthorized\"}",
+  "url": "https://api.mailgun.net/v3/domains",
+  "_provenance": "captured 2026-11-09, public endpoint, GET, Accept: text/markdown, */*"
+}

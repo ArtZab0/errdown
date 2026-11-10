@@ -1,0 +1,29 @@
+{
+  "status": 404,
+  "headers": {
+    "accept-ranges": "bytes",
+    "access-control-allow-origin": "*",
+    "cache-control": "public, max-age=0, s-maxage=300",
+    "content-disposition": "inline",
+    "content-type": "text/markdown; charset=utf-8",
+    "cross-origin-opener-policy": "restrict-properties",
+    "feature-policy": "fullscreen 'self'; camera 'none'",
+    "referrer-policy": "origin-when-cross-origin",
+    "server": "Vercel",
+    "vary": "rsc, next-router-state-tree, next-router-prefetch, next-router-segment-prefetch",
+    "x-content-type-options": "nosniff",
+    "x-dns-prefetch-control": "on",
+    "x-download-options": "noopen",
+    "x-frame-options": "DENY",
+    "x-matched-path": "/api/agent-not-found",
+    "x-nextjs-rewritten-path": "/api/agent-not-found",
+    "x-nextjs-rewritten-query": "teamSlug=errdown-nonexistent-q8z3-page",
+    "x-vercel-cache": "HIT",
+    "x-vercel-id": "cle1::zbsnf-1794270928911-5b48e923e34d",
+    "x-xss-protection": "0",
+    "connection": "close"
+  },
+  "body": "# Page not found\n\nThe requested Vercel resource does not exist or is not publicly accessible.\n\n- [Vercel agent index](https://vercel.com/llms.txt)\n- [Vercel documentation index](https://vercel.com/docs/sitemap.md)\n- [Vercel REST API](https://vercel.com/docs/rest-api.md)\n",
+  "url": "https://vercel.com/errdown-nonexistent-q8z3-page",
+  "_provenance": "captured 2026-11-09, public endpoint, GET, Accept: text/markdown, */*"
+}

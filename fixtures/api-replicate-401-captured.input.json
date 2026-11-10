@@ -1,0 +1,17 @@
+{
+  "status": 401,
+  "headers": {
+    "content-type": "application/problem+json",
+    "connection": "close",
+    "cf-cache-status": "DYNAMIC",
+    "x-xss-protection": "1; mode=block",
+    "expect-ct": "max-age=86400, enforce",
+    "referrer-policy": "same-origin",
+    "x-content-type-options": "nosniff",
+    "x-frame-options": "SAMEORIGIN",
+    "server": "cloudflare"
+  },
+  "body": "{\"title\":\"Unauthenticated\",\"detail\":\"You did not pass an authentication token\",\"status\":401}\n",
+  "url": "https://api.replicate.com/v1/account",
+  "_provenance": "captured 2026-11-09, public endpoint, GET, Accept: text/markdown, */*"
+}

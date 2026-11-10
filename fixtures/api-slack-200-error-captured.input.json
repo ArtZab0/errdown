@@ -1,0 +1,32 @@
+{
+  "status": 200,
+  "headers": {
+    "server": "Apache",
+    "vary": "Accept-Encoding",
+    "x-slack-req-id": "d7d4ef351978162a887f1d4f680538c5",
+    "x-content-type-options": "nosniff",
+    "x-xss-protection": "0",
+    "x-robots-tag": "noindex,nofollow",
+    "pragma": "no-cache",
+    "cache-control": "private, no-cache, no-store, must-revalidate",
+    "content-type": "application/json; charset=utf-8",
+    "x-slack-failure": "not_authed",
+    "access-control-expose-headers": "x-slack-req-id, retry-after",
+    "access-control-allow-headers": "slack-route, x-slack-version-ts, x-b3-traceid, x-b3-spanid, x-b3-parentspanid, x-b3-sampled, x-b3-flags, x-background",
+    "referrer-policy": "no-referrer",
+    "x-slack-unique-id": "22a0b6cb-f236-46dd-acdd-2f18eeb61b2f",
+    "access-control-allow-origin": "*",
+    "via": "1.1 slack-prod.tinyspeck.com, ingress-www-iad-external-prod-02c47006962bad961,ingress-edge-cmh-prod-0d26972a6834f8d17",
+    "x-envoy-upstream-service-time": "17",
+    "x-backend": "api_normal",
+    "x-server": "slack-www-hhvm-api-iad-exrkvxd98uks",
+    "x-slack-shared-secret-outcome": "no-match",
+    "x-edge-backend": "envoy-www",
+    "timing-allow-origin": "*",
+    "x-slack-edge-shared-secret-outcome": "no-match",
+    "connection": "close"
+  },
+  "body": "{\"ok\":false,\"error\":\"not_authed\"}",
+  "url": "https://slack.com/api/auth.test",
+  "_provenance": "captured 2026-11-09, public endpoint, GET, Accept: text/markdown, */*"
+}

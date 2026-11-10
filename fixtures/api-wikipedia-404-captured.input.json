@@ -1,0 +1,28 @@
+{
+  "status": 404,
+  "headers": {
+    "x-content-security-policy": "default-src 'none'; frame-ancestors 'none'",
+    "x-webkit-csp": "default-src 'none'; frame-ancestors 'none'",
+    "cache-control": "s-maxage=600",
+    "content-type": "application/json; charset=utf-8",
+    "server": "production-tls",
+    "access-control-allow-origin": "*",
+    "access-control-allow-methods": "GET,HEAD",
+    "access-control-allow-headers": "accept, content-type, content-length, cache-control, accept-language, api-user-agent, if-match, if-modified-since, if-none-match, dnt, accept-encoding",
+    "access-control-expose-headers": "etag",
+    "x-content-type-options": "nosniff",
+    "x-frame-options": "SAMEORIGIN",
+    "referrer-policy": "origin-when-cross-origin",
+    "x-xss-protection": "1; mode=block",
+    "vary": "Accept-Encoding",
+    "x-cache": "cp1106 miss, cp1106 miss",
+    "x-cache-status": "miss",
+    "x-client-ip": "24.209.59.228",
+    "x-analytics": "",
+    "server-timing": "cache;desc=\"miss\", host;desc=\"cp1106\",co_id;desc=\"3571510760\"",
+    "connection": "close"
+  },
+  "body": "{\"status\":404,\"type\":\"Internal error\"}",
+  "url": "https://en.wikipedia.org/api/rest_v1/page/summary/Errdown_nonexistent_q8z3",
+  "_provenance": "captured 2026-11-09, public endpoint, GET, Accept: text/markdown, */*"
+}

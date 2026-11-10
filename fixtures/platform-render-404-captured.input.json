@@ -1,0 +1,14 @@
+{
+  "status": 404,
+  "headers": {
+    "content-type": "text/plain; charset=utf-8",
+    "connection": "close",
+    "x-content-type-options": "nosniff",
+    "x-render-routing": "no-server",
+    "cf-cache-status": "DYNAMIC",
+    "server": "cloudflare"
+  },
+  "body": "Not Found\n",
+  "url": "https://errdown-nonexistent-q8z3.onrender.com/",
+  "_provenance": "captured 2026-11-09, public endpoint, GET, Accept: text/markdown, */*"
+}

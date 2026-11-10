@@ -1,0 +1,15 @@
+{
+  "status": 401,
+  "headers": {
+    "content-type": "application/json",
+    "connection": "close",
+    "server": "nginx",
+    "cache-control": "no-store",
+    "referrer-policy": "strict-origin-when-cross-origin",
+    "x-content-type-options": "nosniff",
+    "x-envoy-upstream-service-time": "53"
+  },
+  "body": "{\"errors\":[{\"field\":null,\"message\":\"authorization required\"}]}",
+  "url": "https://api.sendgrid.com/v3/user/profile",
+  "_provenance": "captured 2026-11-09, public endpoint, GET, Accept: text/markdown, */*"
+}

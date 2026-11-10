@@ -1,0 +1,10 @@
+{
+  "status": 404,
+  "headers": {
+    "content-type": "text/html; charset=UTF-8",
+    "connection": "close"
+  },
+  "body": "\n<html><head>\n<meta http-equiv=\"content-type\" content=\"text/html;charset=utf-8\">\n<title>404 Page not found</title>\n</head>\n<body text=#000000 bgcolor=#ffffff>\n<h1>Error: Page not found</h1>\n<h2>The requested URL was not found on this server.</h2>\n<h2></h2>\n</body></html>\n",
+  "url": "https://errdown-nonexistent-q8z3-uc.a.run.app/",
+  "_provenance": "captured 2026-11-09, public endpoint, GET, Accept: text/markdown, */*"
+}

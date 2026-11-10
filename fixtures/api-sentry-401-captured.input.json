@@ -1,0 +1,29 @@
+{
+  "status": 401,
+  "headers": {
+    "server": "nginx",
+    "content-type": "application/json",
+    "www-authenticate": "Bearer realm=\"api\"",
+    "allow": "GET, POST, HEAD, OPTIONS",
+    "access-control-allow-methods": "GET, POST, HEAD, OPTIONS",
+    "access-control-allow-headers": "X-Sentry-Auth, X-Requested-With, Origin, Accept, Content-Type, Authentication, Authorization, Content-Encoding, sentry-trace, baggage, X-CSRFToken",
+    "access-control-expose-headers": "X-Sentry-Error, X-Sentry-Direct-Hit, X-Hits, X-Max-Hits, Endpoint, Retry-After, Link",
+    "access-control-allow-origin": "*",
+    "x-sentry-rate-limit-remaining": "39",
+    "x-sentry-rate-limit-limit": "40",
+    "x-sentry-rate-limit-reset": "1794270925",
+    "x-sentry-rate-limit-concurrentremaining": "24",
+    "x-sentry-rate-limit-concurrentlimit": "25",
+    "vary": "Accept-Language, Cookie",
+    "content-language": "en",
+    "x-frame-options": "deny",
+    "x-content-type-options": "nosniff",
+    "x-xss-protection": "1; mode=block",
+    "cross-origin-opener-policy-report-only": "same-origin; report-to=\"coop-endpoint\"",
+    "via": "1.1 google",
+    "connection": "close"
+  },
+  "body": "{\"detail\":\"Authentication credentials were not provided.\"}",
+  "url": "https://sentry.io/api/0/organizations/",
+  "_provenance": "captured 2026-11-09, public endpoint, GET, Accept: text/markdown, */*"
+}

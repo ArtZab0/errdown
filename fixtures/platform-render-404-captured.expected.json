@@ -1,0 +1,17 @@
+{
+  "type": "https://errdown.com/errors/render_no_server",
+  "title": "No service at this address",
+  "status": 404,
+  "detail": "There is no Render service at this address.",
+  "instance": "https://errdown-nonexistent-q8z3.onrender.com/",
+  "error_code": 404,
+  "error_name": "render_no_server",
+  "error_category": "not_found",
+  "zone": "errdown-nonexistent-q8z3.onrender.com",
+  "retryable": false,
+  "owner_action_required": false,
+  "what_you_should_do": "Do not retry. Check the URL for mistakes, or search for the resource elsewhere.",
+  "errdown_synthesized": true,
+  "errdown_source": "render",
+  "errdown_confidence": 0.9
+}

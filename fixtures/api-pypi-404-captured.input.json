@@ -1,0 +1,27 @@
+{
+  "status": 404,
+  "headers": {
+    "connection": "close",
+    "referrer-policy": "origin-when-cross-origin",
+    "content-type": "application/json",
+    "access-control-allow-headers": "Content-Type, If-Match, If-Modified-Since, If-None-Match, If-Unmodified-Since",
+    "access-control-expose-headers": "X-PyPI-Last-Serial",
+    "access-control-allow-origin": "*",
+    "access-control-max-age": "86400",
+    "access-control-allow-methods": "GET",
+    "server": "gunicorn",
+    "accept-ranges": "bytes",
+    "x-served-by": "cache-iad-kcgs7200092-IAD, cache-iad-kcgs7200092-IAD, cache-chi-kmdw8640095-CHI",
+    "x-cache": "MISS, MISS, MISS",
+    "x-cache-hits": "0, 0, 0",
+    "x-timer": "S1794270923.512507,VS0,VE94",
+    "vary": "Accept-Encoding",
+    "x-frame-options": "deny",
+    "x-xss-protection": "1; mode=block",
+    "x-content-type-options": "nosniff",
+    "x-permitted-cross-domain-policies": "none"
+  },
+  "body": "{\"message\": \"Not Found\"}",
+  "url": "https://pypi.org/pypi/errdown-nonexistent-q8z3-pkg/json",
+  "_provenance": "captured 2026-11-09, public endpoint, GET, Accept: text/markdown, */*"
+}

@@ -19,7 +19,8 @@ for (const f of readdirSync(dir).filter((f) => /captured\.input\.json$/.test(f))
   const inp = JSON.parse(readFileSync(join(dir, f), "utf8"));
   const ct: string = inp.headers["content-type"] ?? "";
   if (!ct.includes("markdown") && !ct.includes("json")) continue;
-  if (inp.headers.server !== "cloudflare") continue;
+  // Only genuine Cloudflare structured bodies (they always carry ray_id and error_code).
+  if (!/\bray_id\b/.test(inp.body) || !/\berror_code\b/.test(inp.body)) continue;
   test(`parity ${f.replace(".input.json", "")}`, () => {
     const p = strip(normalize(inp.status, inp.headers, inp.body, { url: inp.url })!);
     const out = ct.includes("markdown") ? toMarkdown(p) : toJSON(p);

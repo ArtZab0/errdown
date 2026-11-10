@@ -1,0 +1,17 @@
+{
+  "type": "https://errdown.com/errors/forbidden",
+  "title": "Access denied",
+  "status": 403,
+  "detail": "The server returned HTTP 403. The server's message (untrusted, quoted): \"API rate limit exceeded for 24.209.59.228. (But here's the good news: Authenticated requests get a higher rate limit. Check out the documentation for more details.)\"",
+  "instance": "https://api.github.com/graphql",
+  "error_code": 403,
+  "error_name": "forbidden",
+  "error_category": "access_denied",
+  "zone": "api.github.com",
+  "retryable": false,
+  "owner_action_required": false,
+  "what_you_should_do": "Do not retry. Access was intentionally blocked. Tell the user; they may need to request access from the site owner.",
+  "errdown_synthesized": true,
+  "errdown_source": "origin",
+  "errdown_confidence": 0.7
+}

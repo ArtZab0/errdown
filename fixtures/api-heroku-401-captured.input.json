@@ -1,0 +1,18 @@
+{
+  "status": 401,
+  "headers": {
+    "content-type": "application/json",
+    "connection": "close",
+    "cache-control": "private, no-cache",
+    "request-id": "1c451df7-2c45-48d4-8386-36e1cb79c3d7,58d66aac-5259-ec30-aa43-499903f5cc56,0358a577-7345-5d89-9cac-3edca29ebd4f,2afb6d72-013b-35ba-baa3-7bebd711d200",
+    "vary": "Authorization,Accept-Encoding",
+    "via": "1.1 spaces-router (0ec3aaa24c5a), 1.1 spaces-router (0ec3aaa24c5a), 1.1 d24eea03a85cd432dfd20c2623f3951e.cloudfront.net (CloudFront)",
+    "x-content-type-options": "nosniff",
+    "x-cache": "Error from cloudfront",
+    "x-amz-cf-pop": "CMH51-P1",
+    "x-amz-cf-id": "WR--t4urUgsQn_-NizX4lteccEhJMnaD_v-JWcEgkM9cumu8ImO3cA=="
+  },
+  "body": "{\"id\":\"unauthorized\",\"message\":\"There were no credentials in your `Authorization` header. Try `Authorization: Bearer <OAuth access token>` or `Authorization: Basic <base64-encoded email + \\\":\\\" + password>`.\"}",
+  "url": "https://api.heroku.com/account",
+  "_provenance": "captured 2026-11-09, public endpoint, GET, Accept: text/markdown, */*"
+}

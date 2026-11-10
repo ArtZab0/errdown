@@ -1,0 +1,12 @@
+{
+  "status": 404,
+  "headers": {
+    "content-type": "application/xml",
+    "server": "AmazonS3",
+    "transfer-encoding": "chunked",
+    "connection": "close"
+  },
+  "body": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<Error><Code>NoSuchBucket</Code><Message>The specified bucket does not exist</Message><BucketName>errdown-nonexistent-q8z3</BucketName><RequestId>10420BNKQDHT5RR6</RequestId><HostId>grvlPnsGcDZRRfqkvhRUgAoqbtUjFLvH/fpruRJ8bVT3vMGIyjpellKEewRSlbSqbBEDMtQkrFa7/MYXZISVhr3vcHSYEVHk</HostId></Error>",
+  "url": "https://errdown-nonexistent-q8z3.s3.amazonaws.com/x",
+  "_provenance": "captured 2026-11-09, public endpoint, GET, Accept: text/markdown, */*"
+}

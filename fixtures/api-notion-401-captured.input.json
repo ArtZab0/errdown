@@ -1,0 +1,23 @@
+{
+  "status": 401,
+  "headers": {
+    "content-type": "application/json; charset=utf-8",
+    "connection": "close",
+    "cf-cache-status": "DYNAMIC",
+    "cache-control": "no-store",
+    "server": "cloudflare",
+    "x-xss-protection": "0",
+    "vary": "Origin, Accept-Encoding",
+    "cdn-cache-control": "no-store",
+    "referrer-policy": "strict-origin-when-cross-origin",
+    "x-content-type-options": "nosniff",
+    "x-dns-prefetch-control": "off",
+    "x-download-options": "noopen",
+    "x-frame-options": "SAMEORIGIN",
+    "x-notion-request-id": "9e3a6aa2-3d32-4f8b-b8e5-9e93a864fe24",
+    "x-permitted-cross-domain-policies": "none"
+  },
+  "body": "{\"object\":\"error\",\"status\":401,\"code\":\"unauthorized\",\"message\":\"Authorization header must use the format \\\"Bearer <token>\\\".\",\"request_id\":\"9e3a6aa2-3d32-4f8b-b8e5-9e93a864fe24\"}",
+  "url": "https://api.notion.com/v1/users",
+  "_provenance": "captured 2026-11-09, public endpoint, GET, Accept: text/markdown, */*"
+}

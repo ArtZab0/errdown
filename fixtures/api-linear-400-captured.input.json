@@ -1,0 +1,15 @@
+{
+  "status": 401,
+  "headers": {
+    "content-type": "application/json; charset=utf-8",
+    "connection": "close",
+    "cf-cache-status": "DYNAMIC",
+    "cache-control": "private, no-cache, no-store, must-revalidate",
+    "server": "cloudflare",
+    "vary": "Accept-Encoding",
+    "via": "1.1 google"
+  },
+  "body": "{\"errors\":[{\"message\":\"Authentication required, not authenticated\",\"extensions\":{\"type\":\"authentication error\",\"code\":\"AUTHENTICATION_ERROR\",\"statusCode\":401,\"userError\":true,\"userPresentableMessage\":\"You need to authenticate to access this operation.\",\"meta\":{},\"http\":{\"status\":401}}}]}\n",
+  "url": "https://api.linear.app/graphql",
+  "_provenance": "captured 2026-11-09, public endpoint, POST, Accept: text/markdown, */*"
+}

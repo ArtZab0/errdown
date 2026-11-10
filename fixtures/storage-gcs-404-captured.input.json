@@ -1,0 +1,13 @@
+{
+  "status": 404,
+  "headers": {
+    "content-type": "application/xml; charset=UTF-8",
+    "x-guploader-uploadid": "AFy3sg2PSm7epC-ovwbLKC93wL7zIRcPDZC-aldeuU58ce5HyJyPuB5GGOo50WzlsCRZssvG",
+    "cache-control": "private, max-age=0",
+    "server": "UploadServer",
+    "connection": "close"
+  },
+  "body": "<?xml version='1.0' encoding='UTF-8'?><Error><Code>NoSuchBucket</Code><Message>The specified bucket does not exist.</Message></Error>",
+  "url": "https://storage.googleapis.com/errdown-nonexistent-q8z3/x",
+  "_provenance": "captured 2026-11-09, public endpoint, GET, Accept: text/markdown, */*"
+}

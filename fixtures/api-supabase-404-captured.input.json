@@ -1,0 +1,16 @@
+{
+  "status": 401,
+  "headers": {
+    "content-type": "application/json; charset=utf-8",
+    "connection": "close",
+    "cf-cache-status": "DYNAMIC",
+    "server": "cloudflare",
+    "vary": "Origin",
+    "access-control-allow-credentials": "true",
+    "access-control-expose-headers": "x-connection-encrypted,x-forwarded-for,user-agent,CF-Connecting-IP,Retry-After,X-RateLimit-Limit,X-RateLimit-Remaining,X-RateLimit-Reset,X-Supabase-Maintenance-Scheduled",
+    "x-powered-by": "Express"
+  },
+  "body": "{\"message\":\"No access token provided\"}",
+  "url": "https://api.supabase.com/v1/projects",
+  "_provenance": "captured 2026-11-09, public endpoint, GET, Accept: text/markdown, */*"
+}

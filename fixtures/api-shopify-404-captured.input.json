@@ -1,0 +1,23 @@
+{
+  "status": 404,
+  "headers": {
+    "content-type": "application/json; charset=utf-8",
+    "transfer-encoding": "chunked",
+    "connection": "close",
+    "vary": "Accept-Encoding",
+    "referrer-policy": "origin-when-cross-origin",
+    "x-frame-options": "DENY",
+    "cf-cache-status": "DYNAMIC",
+    "server-timing": "processing;dur=5, verdict_flag_enabled;desc=\"count=9\";dur=0.535, _y;desc=\"d4078a71-d89d-4f79-9d59-5f566928a59c\", _s;desc=\"d2278dfa-7722-4308-b566-8b5287a87860\", _ye;desc=\"1825828520\", _se;desc=\"1794272720\"",
+    "server": "cloudflare",
+    "x-content-type-options": "nosniff",
+    "x-xss-protection": "1; mode=block",
+    "x-download-options": "noopen",
+    "x-permitted-cross-domain-policies": "none",
+    "reporting-endpoints": "shopify-csp=\"/csp-report?source%5Baction%5D=show&source%5Bapp%5D=Shopify&source%5Bcontroller%5D=admin%2Fshops&source%5Bsection%5D=admin_api&source%5Buuid%5D=edb59727-ef5b-4de1-af99-ca55b5252dc9-1794270920\"",
+    "x-dc": "gcp-us-central1,gcp-us-central1,gcp-us-central1"
+  },
+  "body": "{\"errors\":\"Not Found\"}",
+  "url": "https://errdown-nonexistent-q8z3.myshopify.com/admin/api/2024-01/shop.json",
+  "_provenance": "captured 2026-11-09, public endpoint, GET, Accept: text/markdown, */*"
+}

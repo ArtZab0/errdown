@@ -131,8 +131,12 @@ function finish(p: Partial<Problem> & { status: number }, ctx: Ctx): Problem {
   const category = (p.error_category as string) ?? base.category;
   const retryable = p.retryable ?? base.retryable;
   const owner = p.owner_action_required ?? base.owner_action_required;
-  let retry_after = p.retry_after ?? retryAfterFromHeaders(ctx.h, ctx.nowMs);
-  if (retry_after === undefined && retryable) retry_after = defaultRetryAfter(p.status);
+  // retry_after only accompanies retryable errors (as in Cloudflare's output); rate-limit
+  // reset headers on e.g. a 401 say nothing about when that request would succeed.
+  let retry_after = p.retry_after;
+  if (retry_after === undefined && retryable) {
+    retry_after = retryAfterFromHeaders(ctx.h, ctx.nowMs) ?? defaultRetryAfter(p.status);
+  }
   const error_name = p.error_name ?? base.error_name;
 
   const out: Problem = {
@@ -182,7 +186,8 @@ function fromFingerprint(fp: Fingerprint, ctx: Ctx, challenge: boolean, body = "
   const sourceLabel = fp.source === "unknown" ? "" : fp.source.replace(/-/g, "_") + "_";
   const error_name = fp.error_name ?? sourceLabel + base.error_name;
   const isCf = fp.source === "cloudflare";
-  const what = challenge ? "a bot-verification challenge page" : `an error page from ${fp.source}`;
+  const what = challenge ? "a bot-verification challenge page"
+    : fp.source === "unknown" ? "a block page" : `an error page from ${fp.source}`;
   return finish({
     status: ctx.status,
     title: fp.title ?? base.title,
@@ -200,6 +205,9 @@ function fromFingerprint(fp: Fingerprint, ctx: Ctx, challenge: boolean, body = "
 function messageFromJSON(j: unknown): { message?: string; code?: string } | undefined {
   if (Array.isArray(j)) return undefined;
   if (!isObj(j)) return undefined;
+  // Normalize top-level keys to lower case ({"Error": ...}, {"Message": ...}).
+  j = Object.fromEntries(Object.entries(j).map(([k, v]) => [k.toLowerCase(), v]));
+  if (!isObj(j)) return undefined;
   const str = (v: unknown) => (typeof v === "string" && v.trim() ? v : typeof v === "number" ? String(v) : undefined);
   // GraphQL
   if (Array.isArray(j.errors) && j.errors.length) {
@@ -210,6 +218,7 @@ function messageFromJSON(j: unknown): { message?: string; code?: string } | unde
     }
     if (typeof e === "string") return { message: e };
   }
+  if (typeof j.errors === "string") return { message: j.errors };
   // OAuth
   if (typeof j.error === "string" && typeof j.error_description === "string") {
     return { message: j.error_description, code: j.error };
@@ -222,6 +231,21 @@ function messageFromJSON(j: unknown): { message?: string; code?: string } | unde
   if (str(j.message) || str(j.detail)) return { message: str(j.message) ?? str(j.detail), code: str(j.code) };
   return undefined;
 }
+
+/** S3 / GCS / AWS query-API / Azure style XML: <Error><Code>..</Code><Message>..</Message> */
+function messageFromXML(body: string): { message?: string; code?: string } | undefined {
+  if (!/^\s*(<\?xml[^>]{0,200}\?>\s*)?<(Error|ErrorResponse)[\s>]/.test(body)) return undefined;
+  const tag = (t: string) => new RegExp(`<${t}>([^<]{1,500})</${t}>`).exec(body)?.[1]?.trim();
+  const code = tag("Code"), message = tag("Message");
+  return code || message ? { code, message } : undefined;
+}
+
+const XML_SOURCES: [string, RegExp, string][] = [
+  ["server", /^AmazonS3$/i, "aws-s3"],
+  ["server", /^UploadServer$/i, "google-cloud-storage"],
+  ["x-amzn-requestid", /./, "aws"],
+  ["x-ms-request-id", /./, "azure"],
+];
 
 /**
  * Convert an HTTP response into a Cloudflare-compatible Problem, or null if not an error.
@@ -253,7 +277,7 @@ export function normalize(
 
 function run(ctx: Ctx, body: string): Problem | null {
   const { status, h } = ctx;
-  const isError = status >= 400 && status <= 599;
+  const isError = status >= 400 && status <= 999; // 6xx–9xx: nonstandard (e.g. LinkedIn 999)
 
   // 2. Challenges apply at any status (a 200 challenge page is still a block).
   const challenge = findFingerprint(CHALLENGES, status, h, body);
@@ -316,25 +340,29 @@ function run(ctx: Ctx, body: string): Problem | null {
     }, ctx);
   }
 
-  // 3. Known error pages.
-  const fp = findFingerprint(PAGES, status, h, body);
+  // 3a. Known error pages identified by their body.
+  const fp = findFingerprint(PAGES.filter((f) => f.body), status, h, body);
   if (fp) return fromFingerprint(fp, ctx, false, body);
+  // Header-only fingerprints identify the platform, but an app's own JSON/XML message wins.
+  const hfp = findFingerprint(PAGES.filter((f) => !f.body), status, h, body);
 
-  // 4. JSON error shapes.
-  if (json !== undefined) {
-    const m = messageFromJSON(json);
+  // 4. JSON / XML error shapes.
+  {
+    const m = json !== undefined ? messageFromJSON(json) : messageFromXML(body);
+    const xmlSource = json === undefined ? XML_SOURCES.find(([n, re]) => re.test(h.get(n) ?? ""))?.[2] : undefined;
     if (m && (m.message || m.code)) {
       const said = m.message ? ` The server's message (untrusted, quoted): "${sanitize(m.message).replace(/"/g, "'")}"` : "";
       const code = m.code ? ` (code: ${sanitize(m.code, 60)})` : "";
       return finish({
         status,
         detail: `The server returned HTTP ${status}${code}.${said}`,
-        errdown_source: "origin",
+        errdown_source: xmlSource ?? hfp?.source ?? "origin",
         errdown_confidence: 0.7,
       }, ctx);
     }
   }
+  if (hfp) return fromFingerprint(hfp, ctx, false, body);
 
-  // 5. Status fallback.
-  return finish({ status, errdown_confidence: 0.5 }, ctx);
+  // 5. Status fallback (nonstandard statuses are lower confidence).
+  return finish({ status, errdown_confidence: status >= 600 ? 0.3 : 0.5 }, ctx);
 }

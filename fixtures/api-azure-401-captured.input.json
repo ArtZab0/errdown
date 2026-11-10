@@ -1,0 +1,20 @@
+{
+  "status": 401,
+  "headers": {
+    "cache-control": "no-cache",
+    "pragma": "no-cache",
+    "content-type": "application/json; charset=utf-8",
+    "www-authenticate": "Bearer authorization_uri=\"https://login.windows.net/\", error=\"invalid_token\", error_description=\"The authentication failed because of missing 'Authorization' header.\"",
+    "x-ms-failure-cause": "gateway",
+    "x-ms-request-id": "24df958d-3f4a-409b-ac11-3763c576a756",
+    "x-ms-correlation-request-id": "24df958d-3f4a-409b-ac11-3763c576a756",
+    "x-ms-routing-request-id": "NORTHCENTRALUS:20261110T003526Z:24df958d-3f4a-409b-ac11-3763c576a756",
+    "x-content-type-options": "nosniff",
+    "x-cache": "CONFIG_NOCACHE",
+    "x-msedge-ref": "Ref A: ADFA383F508B46B0A6DCD745F365B27D Ref B: CHI261140509052 Ref C: 2026-11-10T00:35:26Z",
+    "connection": "close"
+  },
+  "body": "{\"error\":{\"code\":\"AuthenticationFailed\",\"message\":\"Authentication failed. The 'Authorization' header is missing.\"}}",
+  "url": "https://management.azure.com/subscriptions?api-version=2020-01-01",
+  "_provenance": "captured 2026-11-09, public endpoint, GET, Accept: text/markdown, */*"
+}

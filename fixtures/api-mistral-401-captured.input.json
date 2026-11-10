@@ -1,0 +1,18 @@
+{
+  "status": 401,
+  "headers": {
+    "content-type": "application/json",
+    "transfer-encoding": "chunked",
+    "connection": "close",
+    "mistral-correlation-id": "01a1c2e1-984b-7961-b257-41748d84b60b",
+    "x-kong-request-id": "01a1c2e1-984b-7961-b257-41748d84b60b",
+    "access-control-allow-origin": "*",
+    "x-kong-response-latency": "8",
+    "cf-cache-status": "DYNAMIC",
+    "x-content-type-options": "nosniff",
+    "server": "cloudflare"
+  },
+  "body": "{\"detail\":\"Invalid API Key\"}\n",
+  "url": "https://api.mistral.ai/v1/models",
+  "_provenance": "captured 2026-11-09, public endpoint, GET, Accept: text/markdown, */*"
+}

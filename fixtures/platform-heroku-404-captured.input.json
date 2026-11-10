@@ -1,0 +1,13 @@
+{
+  "status": 404,
+  "headers": {
+    "cache-control": "no-cache, no-store",
+    "content-type": "text/html; charset=utf-8",
+    "server": "Heroku",
+    "via": "1.1 heroku-router",
+    "connection": "close"
+  },
+  "body": "<!DOCTYPE html>\n<html>\n  <head>\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n    <meta charset=\"utf-8\">\n    <title>No such app</title>\n    <style media=\"screen\">\n      html,body,iframe {\n        margin: 0;\n        padding: 0;\n      }\n\n      html,body {\n        height: 100%;\n        overflow: hidden;\n      }\n\n      iframe {\n        width: 100%;\n        height: 100%;\n        border: 0;\n      }\n    </style>\n  </head>\n  <body>\n    <iframe src=\"https://www.herokucdn.com/error-pages/no-such-app.html\"></iframe>\n  </body>\n</html>",
+  "url": "https://errdown-nonexistent-q8z3.herokuapp.com/",
+  "_provenance": "captured 2026-11-09, public endpoint, GET, Accept: text/markdown, */*"
+}

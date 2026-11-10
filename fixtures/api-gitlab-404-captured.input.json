@@ -1,0 +1,25 @@
+{
+  "status": 404,
+  "headers": {
+    "content-type": "application/json",
+    "connection": "close",
+    "cf-cache-status": "BYPASS",
+    "cache-control": "no-store, private, max-age=0",
+    "server": "cloudflare",
+    "vary": "Origin",
+    "gitlab-lb": "haproxy-main-31-lb-gprd",
+    "gitlab-sv": "api-gke-us-east1-b",
+    "ratelimit-limit": "500",
+    "ratelimit-name": "throttle_unauthenticated_api",
+    "ratelimit-observed": "2",
+    "ratelimit-remaining": "498",
+    "ratelimit-reset": "1794270960",
+    "referrer-policy": "strict-origin-when-cross-origin",
+    "x-content-type-options": "nosniff",
+    "x-frame-options": "SAMEORIGIN",
+    "x-gitlab-meta": "{\"correlation_id\":\"a580f9ffbd06cf7f-CMH\",\"version\":\"1\"}"
+  },
+  "body": "{\"message\":\"404 Project Not Found\"}",
+  "url": "https://gitlab.com/api/v4/projects/999999999999",
+  "_provenance": "captured 2026-11-09, public endpoint, GET, Accept: text/markdown, */*"
+}

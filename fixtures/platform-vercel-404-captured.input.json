@@ -1,0 +1,14 @@
+{
+  "status": 404,
+  "headers": {
+    "cache-control": "public, max-age=0, must-revalidate",
+    "content-type": "text/plain; charset=utf-8",
+    "server": "Vercel",
+    "x-vercel-error": "DEPLOYMENT_NOT_FOUND",
+    "x-vercel-id": "cle1::fnzmc-1794270928785-2caff122902b",
+    "connection": "close"
+  },
+  "body": "The deployment could not be found on Vercel.\n\nDEPLOYMENT_NOT_FOUND\n\ncle1::fnzmc-1794270928785-2caff122902b\n",
+  "url": "https://errdown-nonexistent-q8z3.vercel.app/",
+  "_provenance": "captured 2026-11-09, public endpoint, GET, Accept: text/markdown, */*"
+}

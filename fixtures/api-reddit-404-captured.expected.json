@@ -1,0 +1,17 @@
+{
+  "type": "https://errdown.com/errors/network_security_block",
+  "title": "Blocked by network security",
+  "status": 403,
+  "detail": "The server returned HTTP 403 with a block page.",
+  "instance": "https://www.reddit.com/r/errdownnonexistentq8z3/about.json",
+  "error_code": 403,
+  "error_name": "network_security_block",
+  "error_category": "access_denied",
+  "zone": "www.reddit.com",
+  "retryable": false,
+  "owner_action_required": false,
+  "what_you_should_do": "Do not retry. Access was intentionally blocked. Tell the user; they may need to request access from the site owner.",
+  "errdown_synthesized": true,
+  "errdown_source": "unknown",
+  "errdown_confidence": 0.85
+}

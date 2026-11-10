@@ -1,0 +1,18 @@
+{
+  "status": 403,
+  "headers": {
+    "vary": "Origin,Accept-Encoding",
+    "content-type": "application/json; charset=UTF-8",
+    "server": "scaffolding on HTTPServer2",
+    "x-xss-protection": "0",
+    "x-frame-options": "SAMEORIGIN",
+    "x-content-type-options": "nosniff",
+    "server-timing": "gfet4t7; dur=14",
+    "accept-ranges": "none",
+    "connection": "close",
+    "transfer-encoding": "chunked"
+  },
+  "body": "{\n  \"error\": {\n    \"code\": 403,\n    \"message\": \"Method doesn't allow unregistered callers (callers without established identity). Please use API Key or other form of API consumer identity to call this API.\",\n    \"status\": \"PERMISSION_DENIED\"\n  }\n}\n",
+  "url": "https://generativelanguage.googleapis.com/v1beta/models",
+  "_provenance": "captured 2026-11-09, public endpoint, GET, Accept: text/markdown, */*"
+}

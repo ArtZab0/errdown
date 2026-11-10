@@ -1,0 +1,15 @@
+{
+  "status": 401,
+  "headers": {
+    "content-type": "application/json",
+    "connection": "close",
+    "x-gateway": "Edge-Gateway",
+    "x-response-from": "Edge-Gateway",
+    "do-upstream-service-time": "79",
+    "cf-cache-status": "DYNAMIC",
+    "server": "cloudflare"
+  },
+  "body": "{\"id\": \"Unauthorized\", \"message\": \"Unable to authenticate you\" }",
+  "url": "https://api.digitalocean.com/v2/account",
+  "_provenance": "captured 2026-11-09, public endpoint, GET, Accept: text/markdown, */*"
+}

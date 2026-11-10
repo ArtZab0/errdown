@@ -59,6 +59,21 @@ export const CHALLENGES: Fingerprint[] = [
     error_name: "perimeterx_challenge", title: "Bot verification required",
   },
   {
+    id: "indeed_bot_detection", source: "unknown", confidence: 0.85,
+    body: [/from=bot-detection/i],
+    error_name: "bot_detection_redirect", title: "Bot verification required",
+  },
+  {
+    id: "linkedin_999", source: "linkedin", confidence: 0.85,
+    status: [999], header: { name: "x-li-fabric", pattern: /./ },
+    error_name: "linkedin_bot_block", title: "Blocked as automated traffic",
+  },
+  {
+    id: "network_security_block", source: "unknown", confidence: 0.85,
+    status: [403], body: [/blocked by network security/i],
+    category: "access_denied", error_name: "network_security_block", title: "Blocked by network security",
+  },
+  {
     id: "akamai_bot", source: "akamai", confidence: 0.8,
     status: [403], body: [/<title>Access Denied<\/title>/i, /Reference #\d+\.[0-9a-f]+/i],
     category: "access_denied", error_name: "akamai_access_denied", title: "Access denied",
@@ -145,12 +160,28 @@ export const PAGES: Fingerprint[] = [
     id: "vercel", source: "vercel", confidence: 0.85,
     header: { name: "x-vercel-error", pattern: /./ },
   },
+  {
+    id: "vercel_hosted", source: "vercel", confidence: 0.6,
+    header: { name: "x-vercel-id", pattern: /./ },
+  },
+  // GitHub Pages
+  {
+    id: "github_pages", source: "github-pages", confidence: 0.85,
+    status: [404], header: { name: "server", pattern: /^GitHub\.com$/i },
+    body: [/GitHub Pages|There isn't a GitHub Pages site here|Site not found/i],
+  },
   // Netlify
   {
     id: "netlify", source: "netlify", confidence: 0.8,
     header: { name: "server", pattern: /^Netlify/i },
   },
   // Heroku
+  {
+    id: "heroku_no_such_app", source: "heroku", confidence: 0.95,
+    body: [/<title>No such app<\/title>/i],
+    category: "not_found", error_name: "heroku_no_such_app", title: "No such app",
+    retryable: false, detail: "There is no Heroku app at this address.",
+  },
   {
     id: "heroku_app_error", source: "heroku", confidence: 0.9,
     body: [/herokucdn\.com\/error-pages|Application error/i, /heroku/i],
@@ -159,10 +190,24 @@ export const PAGES: Fingerprint[] = [
   },
   // Render
   {
+    id: "render_no_server", source: "render", confidence: 0.9,
+    header: { name: "x-render-routing", pattern: /no-server/i },
+    category: "not_found", error_name: "render_no_server", title: "No service at this address",
+    detail: "There is no Render service at this address.",
+  },
+  {
     id: "render", source: "render", confidence: 0.75,
     header: { name: "x-render-origin-server", pattern: /./ },
   },
-  // Google Front End
+  // Google Front End (App Engine / Cloud Run default 404, google.com 404)
+  {
+    id: "gfe_default", source: "google-frontend", confidence: 0.8,
+    body: [/<h1>Error: (Page )?Not Found<\/h1>/i, /The requested URL was not found on this server/i],
+  },
+  {
+    id: "google_404", source: "google-frontend", confidence: 0.8,
+    body: [/<title>Error 404 \(Not Found\)!!1<\/title>/],
+  },
   {
     id: "gfe", source: "google-frontend", confidence: 0.8,
     header: { name: "server", pattern: /^(Google Frontend|GFE|gws)/i },

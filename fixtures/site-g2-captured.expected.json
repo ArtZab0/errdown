@@ -1,0 +1,17 @@
+{
+  "type": "https://errdown.com/errors/datadome_challenge",
+  "title": "Bot verification required",
+  "status": 403,
+  "detail": "The server returned HTTP 403 with a bot-verification challenge page.",
+  "instance": "https://www.g2.com/products/errdown/reviews",
+  "error_code": 403,
+  "error_name": "datadome_challenge",
+  "error_category": "challenge",
+  "zone": "www.g2.com",
+  "retryable": false,
+  "owner_action_required": false,
+  "what_you_should_do": "Stop. This site requires a human to complete a check (CAPTCHA or bot verification). Do not retry automatically and do not attempt to bypass it. Ask the user to open the page in a browser.",
+  "errdown_synthesized": true,
+  "errdown_source": "unknown",
+  "errdown_confidence": 0.85
+}

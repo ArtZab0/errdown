@@ -1,0 +1,17 @@
+{
+  "type": "https://errdown.com/errors/forbidden",
+  "title": "Access denied",
+  "status": 403,
+  "detail": "The server returned HTTP 403 (code: 403). The server's message (untrusted, quoted): \"Method doesn't allow unregistered callers (callers without established identity). Please use API Key or other form of API consumer identity to call this API.\"",
+  "instance": "https://www.googleapis.com/drive/v3/files",
+  "error_code": 403,
+  "error_name": "forbidden",
+  "error_category": "access_denied",
+  "zone": "www.googleapis.com",
+  "retryable": false,
+  "owner_action_required": false,
+  "what_you_should_do": "Do not retry. Access was intentionally blocked. Tell the user; they may need to request access from the site owner.",
+  "errdown_synthesized": true,
+  "errdown_source": "origin",
+  "errdown_confidence": 0.7
+}

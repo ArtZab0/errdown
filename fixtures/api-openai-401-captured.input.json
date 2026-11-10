@@ -1,0 +1,18 @@
+{
+  "status": 401,
+  "headers": {
+    "content-type": "application/json",
+    "connection": "close",
+    "cf-cache-status": "DYNAMIC",
+    "server": "cloudflare",
+    "www-authenticate": "Bearer realm=\"OpenAI API\"",
+    "x-content-type-options": "nosniff",
+    "access-control-expose-headers": "CF-Ray",
+    "openai-processing-ms": "2",
+    "openai-version": "2020-10-01",
+    "x-openai-proxy-wasm": "v0.1"
+  },
+  "body": "{\n  \"error\": {\n    \"message\": \"Missing bearer authentication in header\",\n    \"type\": \"invalid_request_error\",\n    \"param\": null,\n    \"code\": null\n  }\n}",
+  "url": "https://api.openai.com/v1/models",
+  "_provenance": "captured 2026-11-09, public endpoint, GET, Accept: text/markdown, */*"
+}

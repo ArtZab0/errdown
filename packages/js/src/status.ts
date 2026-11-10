@@ -42,6 +42,7 @@ const TABLE: Record<number, Classification> = {
 export function classifyStatus(status: number): Classification {
   const hit = TABLE[status];
   if (hit) return { ...hit };
+  if (status >= 600) return c("bad_request", "nonstandard_status", "Nonstandard error status");
   if (status >= 500) return c("server_error", "server_error", "Server error", true);
   return c("bad_request", "client_error", "Client error");
 }

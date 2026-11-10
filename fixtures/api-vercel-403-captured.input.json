@@ -1,0 +1,17 @@
+{
+  "status": 403,
+  "headers": {
+    "access-control-allow-headers": "Authorization, Accept, Content-Type, DPoP",
+    "access-control-allow-methods": "OPTIONS, GET, POST, PUT, PATCH, DELETE",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "WWW-Authenticate, DPoP-Nonce",
+    "cache-control": "private, max-age=0",
+    "content-type": "application/json; charset=utf-8",
+    "server": "Vercel",
+    "x-vercel-id": "cle1:cle1:sfo1::cm4qd-1794270923114-7e2184227bf1",
+    "connection": "close"
+  },
+  "body": "{\"error\":{\"code\":\"forbidden\",\"message\":\"The request is missing an authentication token\",\"missingToken\":true}}",
+  "url": "https://api.vercel.com/v2/user",
+  "_provenance": "captured 2026-11-09, public endpoint, GET, Accept: text/markdown, */*"
+}

@@ -1,0 +1,17 @@
+{
+  "type": "https://errdown.com/errors/aws_apigateway_forbidden",
+  "title": "Access denied",
+  "status": 403,
+  "detail": "The server returned HTTP 403 with an error page from aws-apigateway.",
+  "instance": "https://abcdefghijklmnopqrstuvwxyz123456.lambda-url.us-east-1.on.aws/",
+  "error_code": 403,
+  "error_name": "aws_apigateway_forbidden",
+  "error_category": "access_denied",
+  "zone": "abcdefghijklmnopqrstuvwxyz123456.lambda-url.us-east-1.on.aws",
+  "retryable": false,
+  "owner_action_required": false,
+  "what_you_should_do": "Do not retry. Access was intentionally blocked. Tell the user; they may need to request access from the site owner.",
+  "errdown_synthesized": true,
+  "errdown_source": "aws-apigateway",
+  "errdown_confidence": 0.85
+}

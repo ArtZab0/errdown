@@ -1,0 +1,24 @@
+{
+  "status": 403,
+  "headers": {
+    "server": "Varnish",
+    "x-content-type-options": "nosniff",
+    "x-frame-options": "deny",
+    "x-xss-protection": "1; mode=block",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "ETag, Link, Location, Retry-After, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, X-RateLimit-Used, X-RateLimit-Resource, X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval, X-GitHub-Media-Type, Deprecation, Sunset",
+    "content-type": "application/json; charset=utf-8",
+    "referrer-policy": "origin-when-cross-origin, strict-origin-when-cross-origin",
+    "x-github-media-type": "github.v3; format=json",
+    "x-ratelimit-limit": "0",
+    "x-ratelimit-remaining": "0",
+    "x-ratelimit-used": "0",
+    "x-ratelimit-resource": "graphql",
+    "x-ratelimit-reset": "1794274519",
+    "x-github-edge-region": "iad",
+    "connection": "close"
+  },
+  "body": "{\"message\":\"API rate limit exceeded for 24.209.59.228. (But here's the good news: Authenticated requests get a higher rate limit. Check out the documentation for more details.)\",\"documentation_url\":\"https://docs.github.com/rest/overview/resources-in-the-rest-api#rate-limiting\"}\n",
+  "url": "https://api.github.com/graphql",
+  "_provenance": "captured 2026-11-09, public endpoint, POST, Accept: text/markdown, */*"
+}

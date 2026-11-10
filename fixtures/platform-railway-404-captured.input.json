@@ -1,0 +1,16 @@
+{
+  "status": 404,
+  "headers": {
+    "cache-control": "public, max-age=5",
+    "content-type": "application/json",
+    "server": "railway-hikari",
+    "x-railway-fallback": "true",
+    "x-railway-request-id": "LjKmrGgrSYmgAlcpezItjw",
+    "x-hikari-trace": "ord1.x8wt",
+    "x-railway-edge": "ord1",
+    "connection": "close"
+  },
+  "body": "{\"status\":\"error\",\"code\":404,\"message\":\"Application not found\",\"request_id\":\"LjKmrGgrSYmgAlcpezItjw\"}",
+  "url": "https://errdown-nonexistent-q8z3.up.railway.app/",
+  "_provenance": "captured 2026-11-09, public endpoint, GET, Accept: text/markdown, */*"
+}

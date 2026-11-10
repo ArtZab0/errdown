@@ -1,0 +1,16 @@
+{
+  "status": 401,
+  "headers": {
+    "content-type": "application/json",
+    "connection": "close",
+    "cache-control": "private, max-age=0, no-store, no-cache, must-revalidate",
+    "server": "cloudflare",
+    "vary": "Origin",
+    "x-groq-region": "dls",
+    "via": "1.1 google",
+    "cf-cache-status": "DYNAMIC"
+  },
+  "body": "{\"error\":{\"message\":\"Invalid API Key\",\"type\":\"invalid_request_error\",\"code\":\"invalid_api_key\"}}\n",
+  "url": "https://api.groq.com/openai/v1/models",
+  "_provenance": "captured 2026-11-09, public endpoint, GET, Accept: text/markdown, */*"
+}

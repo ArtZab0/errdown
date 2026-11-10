@@ -1,0 +1,27 @@
+{
+  "status": 404,
+  "headers": {
+    "content-type": "text/html;charset=UTF-8",
+    "transfer-encoding": "chunked",
+    "connection": "close",
+    "server": "Server",
+    "accept-ch": "ect,rtt,downlink,device-memory,sec-ch-device-memory,viewport-width,sec-ch-viewport-width,dpr,sec-ch-dpr,sec-ch-ua-full-version-list,viewport-height,sec-ch-viewport-height",
+    "accept-ch-lifetime": "86400",
+    "cache-control": "no-cache",
+    "pragma": "no-cache",
+    "x-content-type-options": "nosniff",
+    "x-xss-protection": "1;",
+    "content-security-policy-report-only": "default-src 'self' blob: https: data: mediastream: 'unsafe-eval' 'unsafe-inline';report-uri https://metrics.media-amazon.com/",
+    "vary": "User-Agent,Accept-Encoding",
+    "x-amz-rid": "8Q4XGF6D4NCA9M17310B",
+    "x-frame-options": "SAMEORIGIN",
+    "edge-cache-control": "no-store,no-cache,stale-if-error=0,stale-while-revalidate=0",
+    "x-cache": "Error from cloudfront",
+    "via": "1.1 26ba804cbae0bbdf298f43f10bb64ed4.cloudfront.net (CloudFront)",
+    "x-amz-cf-pop": "CMH68-P7",
+    "x-amz-cf-id": "3xLyKpJWnxjVLf741ZgGqjhfwnfKG3kN7qK9EzfQe-66f7jcpeUvmw=="
+  },
+  "body": "<!doctype html>\n<html>\n  <head>\n    <meta charset=\"utf-8\">\n    <meta http-equiv=\"x-ua-compatible\" content=\"ie=edge\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1, shrink-to-fit=no\">\n    <title>\n      Page Not Found\n    </title>\n    <style>\n      html,body{padding:0;margin:0}img{border:0}#a{background:#232f3e;padding:11px 11px 11px 192px}#b{position:absolute;left:22px;top:12px}#c{position:relative;max-width:800px;padding:0 40px 0 0}#e,#f{height:35px;border:0;font-size:1em}#e{width:100%;margin:0;padding:0 10px;border-radius:4px 0 0 4px}#f{cursor:pointer;background:#febd69;font-weight:bold;border-radius:0 4px 4px 0;-webkit-appearance:none;position:absolute;top:0;right:0;padding:0 12px}@media(max-width:500px){#a{padding:55px 10px 10px}#b{left:6px}}#g{text-align:center;margin:30px 0}#g img{max-width:90%}#d{display:none}#d[src]{display:inline}\n    </style>\n  </head>\n  <body>\n    <!--\n    To discuss automated access to Amazon data please contact api-services-support@amazon.com.\n\nFor information about migrating to our APIs refer to our Marketplace APIs at https://developer.amazonservices.com/ref=rm_5_sv, or our Product Advertising API at https://affiliate-program.amazon.com/gp/advertising/api/detail/main.html/ref=rm_5_ac for advertising use cases.\n    -->\n  <a href=\"/\">\n    <img id=\"b\" src=\"https://images-na.ssl-images-amazon.com/images/G/01/error/logo._TTD_.png\" alt=\"Amazon\"/>\n  </a>\n  <form id=\"a\" accept-charset=\"utf-8\" action=\"/s\" method=\"GET\" role=\"search\">\n    <div id=\"c\">\n      <input id=\"e\" name=\"field-keywords\" placeholder=\"Search\">\n      <input id=\"f\" type=\"submit\" value=\"Go\">\n    </div>\n  </form>\n    <div id=\"g\">\n      <div>\n        <a href=\"/\">\n          <img src=\"https://images-na.ssl-images-amazon.com/images/G/01/error/en_US/title._TTD_.png\"\n               alt=\"Sorry! We couldn't find that page. Try searching or go to Amazon's home page.\"/>\n        </a>\n      </div>\n      <a href=\"/dogsofamazon\" target=\"_blank\" rel=\"noopener noreferrer\">\n        <img id=\"d\" alt=\"Dogs of Amazon\">\n      </a>\n      <script>\n        document.getElementById(\"d\").src=\"https://images-na.ssl-images-amazon.com/images/G/01/error/en_US/\" + (Math.floor(Math.random() *200) + 1) + \"._TTD_.jpg\";\n      </script>\n    </div>\n  </body>\n</html>\n<!-- 806ac919 --><!-- sp:error_pages -->",
+  "url": "https://www.amazon.com/errdown-nonexistent-q8z3",
+  "_provenance": "captured 2026-11-09, public endpoint, GET, Accept: text/markdown, */*"
+}

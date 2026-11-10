@@ -1,0 +1,20 @@
+{
+  "status": 403,
+  "headers": {
+    "content-type": "application/json",
+    "transfer-encoding": "chunked",
+    "connection": "close",
+    "cf-cache-status": "DYNAMIC",
+    "cache-control": "no-store, no-cache, must-revalidate, post-check=0, pre-check=0",
+    "server": "cloudflare",
+    "cf-auditlog-id": "01a1c2e1-88ac-77b6-acb0-7740664d566f",
+    "vary": "Accept-Encoding",
+    "pragma": "no-cache",
+    "x-content-type-options": "nosniff",
+    "x-frame-options": "SAMEORIGIN",
+    "api-version": "2026-10-01.epoch"
+  },
+  "body": "{\"success\":false,\"errors\":[{\"code\":9106,\"message\":\"Missing X-Auth-Email header\"},{\"code\":9107,\"message\":\"Missing X-Auth-Key header\"}],\"messages\":[],\"result\":null}",
+  "url": "https://api.cloudflare.com/client/v4/user",
+  "_provenance": "captured 2026-11-09, public endpoint, GET, Accept: text/markdown, */*"
+}

@@ -1,0 +1,20 @@
+{
+  "status": 999,
+  "headers": {
+    "content-type": "text/html",
+    "connection": "close",
+    "x-content-type-options": "nosniff",
+    "x-frame-options": "sameorigin",
+    "x-li-fabric": "prod-lor1",
+    "pragma": "no-cache",
+    "cache-control": "no-cache, no-store, no-transform",
+    "x-li-pop": "cf-prod-lor1-x",
+    "x-li-proto": "http/1.1",
+    "x-li-uuid": "AAZf4UH3fDKrzV9yiPZSFw==",
+    "cf-cache-status": "DYNAMIC",
+    "server": "cloudflare"
+  },
+  "body": "<html><head>\n<script type=\"text/javascript\">\nwindow.onload = function() {\n  // Parse the tracking code from cookies.\n  var trk = \"bf\";\n  var trkInfo = \"bf\";\n  var cookies = document.cookie.split(\"; \");\n  for (var i = 0; i < cookies.length; ++i) {\n    if ((cookies[i].indexOf(\"trkCode=\") == 0) && (cookies[i].length > 8)) {\n      trk = cookies[i].substring(8);\n    }\n    else if ((cookies[i].indexOf(\"trkInfo=\") == 0) && (cookies[i].length > 8)) {\n      trkInfo = cookies[i].substring(8);\n    }\n  }\n\n  if (window.location.protocol == \"http:\") {\n    // If \"sl\" cookie is set, redirect to https.\n    for (var i = 0; i < cookies.length; ++i) {\n      if ((cookies[i].indexOf(\"sl=\") == 0) && (cookies[i].length > 3)) {\n        window.location.href = \"https:\" + window.location.href.substring(window.location.protocol.length);\n        return;\n      }\n    }\n  }\n\n  // Get the new domain. For international domains such as\n  // fr.linkedin.com, we convert it to www.linkedin.com\n  // treat .cn similar to .com here\n  var domain = location.host;\n  if (domain != \"www.linkedin.com\" && domain != \"www.linkedin.cn\") {\n    var subdomainIndex = location.host.indexOf(\".linkedin\");\n    if (subdomainIndex != -1) {\n      domain = \"www\" + location.host.substring(subdomainIndex);\n    }\n  }\n\n  window.location.href = \"https://\" + domain + \"/authwall?trk=\" + trk + \"&trkInfo=\" + trkInfo +\n      \"&original_referer=\" + document.referrer.substr(0, 200) +\n      \"&sessionRedirect=\" + encodeURIComponent(window.location.href);\n}\n</script>\n</head></html>\n",
+  "url": "https://www.linkedin.com/in/errdown-nonexistent-q8z3",
+  "_provenance": "captured 2026-11-09, public endpoint, GET, Accept: text/markdown, */*"
+}

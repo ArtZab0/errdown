@@ -1,0 +1,17 @@
+{
+  "status": 403,
+  "headers": {
+    "content-type": "application/json; charset=UTF-8",
+    "server": "ESF",
+    "x-xss-protection": "0",
+    "x-frame-options": "SAMEORIGIN",
+    "x-content-type-options": "nosniff",
+    "accept-ranges": "none",
+    "vary": "Accept-Encoding",
+    "connection": "close",
+    "transfer-encoding": "chunked"
+  },
+  "body": "{\n  \"error\": {\n    \"code\": 403,\n    \"message\": \"Method doesn't allow unregistered callers (callers without established identity). Please use API Key or other form of API consumer identity to call this API.\",\n    \"errors\": [\n      {\n        \"message\": \"Method doesn't allow unregistered callers (callers without established identity). Please use API Key or other form of API consumer identity to call this API.\",\n        \"domain\": \"global\",\n        \"reason\": \"forbidden\"\n      }\n    ],\n    \"status\": \"PERMISSION_DENIED\"\n  }\n}\n",
+  "url": "https://www.googleapis.com/drive/v3/files",
+  "_provenance": "captured 2026-11-09, public endpoint, GET, Accept: text/markdown, */*"
+}

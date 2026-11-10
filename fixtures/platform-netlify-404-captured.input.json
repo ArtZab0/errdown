@@ -1,0 +1,13 @@
+{
+  "status": 404,
+  "headers": {
+    "cache-control": "private, max-age=0",
+    "content-type": "text/plain; charset=utf-8",
+    "server": "Netlify",
+    "x-nf-request-id": "01M71E387F773HXZMFCGZKFBAH",
+    "connection": "close"
+  },
+  "body": "Not Found - Request ID: 01M71E387F773HXZMFCGZKFBAH\n\nBuild and deploy your own site for free: https://netlify.new/?utm_campaign=loops&utm_content=site-not-found-text&utm_medium=owned&utm_source=default-page\n",
+  "url": "https://errdown-nonexistent-q8z3.netlify.app/",
+  "_provenance": "captured 2026-11-09, public endpoint, GET, Accept: text/markdown, */*"
+}

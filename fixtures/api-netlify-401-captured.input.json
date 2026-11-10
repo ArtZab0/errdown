@@ -1,0 +1,16 @@
+{
+  "status": 401,
+  "headers": {
+    "content-type": "application/json; charset=utf-8",
+    "connection": "close",
+    "cache-control": "no-cache",
+    "timing-allow-origin": "https://app.netlify.com, https://www.netlify.com",
+    "vary": "Origin",
+    "x-content-type-options": "nosniff",
+    "x-frame-options": "ALLOWALL",
+    "x-nf-srv-version": "93821a7"
+  },
+  "body": "{\"code\":401,\"message\":\"Access Denied\"}",
+  "url": "https://api.netlify.com/api/v1/user",
+  "_provenance": "captured 2026-11-09, public endpoint, GET, Accept: text/markdown, */*"
+}

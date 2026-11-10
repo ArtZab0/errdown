@@ -1,0 +1,17 @@
+{
+  "type": "https://errdown.com/errors/google_frontend_not_found",
+  "title": "Not found",
+  "status": 404,
+  "detail": "The server returned HTTP 404 with an error page from google-frontend.",
+  "instance": "https://errdown-nonexistent-q8z3-uc.a.run.app/",
+  "error_code": 404,
+  "error_name": "google_frontend_not_found",
+  "error_category": "not_found",
+  "zone": "errdown-nonexistent-q8z3-uc.a.run.app",
+  "retryable": false,
+  "owner_action_required": false,
+  "what_you_should_do": "Do not retry. Check the URL for mistakes, or search for the resource elsewhere.",
+  "errdown_synthesized": true,
+  "errdown_source": "google-frontend",
+  "errdown_confidence": 0.8
+}

@@ -1,0 +1,16 @@
+{
+  "status": 401,
+  "headers": {
+    "content-type": "application/json",
+    "connection": "close",
+    "server": "cloudflare",
+    "x-discord-features": "user-profile",
+    "via": "1.1 google",
+    "cf-cache-status": "BYPASS",
+    "x-content-type-options": "nosniff",
+    "reporting-endpoints": "csp-sentry=\"https://o64374.ingest.sentry.io/api/5441894/security/?sentry_key=8fbbce30bf5244ec9429546beef21870&sentry_environment=stable\""
+  },
+  "body": "{\"message\": \"401: Unauthorized\", \"code\": 0}",
+  "url": "https://discord.com/api/v10/users/@me",
+  "_provenance": "captured 2026-11-09, public endpoint, GET, Accept: text/markdown, */*"
+}

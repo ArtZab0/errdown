@@ -1,0 +1,25 @@
+{
+  "status": 401,
+  "headers": {
+    "content-type": "application/json; charset=utf-8",
+    "connection": "close",
+    "x-powered-by": "huggingface-moon",
+    "ratelimit": "\"api\";r=9999;t=62",
+    "ratelimit-policy": "\"fixed window\";\"api\";q=10000;w=300",
+    "cross-origin-opener-policy": "same-origin",
+    "referrer-policy": "strict-origin-when-cross-origin",
+    "access-control-max-age": "86400",
+    "access-control-allow-origin": "https://huggingface.co",
+    "vary": "Origin",
+    "access-control-expose-headers": "X-Repo-Commit,X-HF-Warning,X-Request-Id,X-Error-Code,X-Error-Message,X-Total-Count,ETag,Link,Accept-Ranges,Content-Range,X-Linked-Size,X-Linked-ETag,X-Xet-Hash,RateLimit,RateLimit-Policy",
+    "x-error-message": "Invalid username or password.",
+    "www-authenticate": "Bearer realm=\"Authentication required\", charset=\"UTF-8\"",
+    "x-cache": "Error from cloudfront",
+    "via": "1.1 d24eea03a85cd432dfd20c2623f3951e.cloudfront.net (CloudFront)",
+    "x-amz-cf-pop": "CMH51-P1",
+    "x-amz-cf-id": "b-2SkG5R7BuKVogMT8r-2hVa5RN9x_VJPfJg-YrCQ0es8H2xlgZSJg=="
+  },
+  "body": "{\"error\":\"Invalid username or password.\"}",
+  "url": "https://huggingface.co/api/whoami-v2",
+  "_provenance": "captured 2026-11-09, public endpoint, GET, Accept: text/markdown, */*"
+}

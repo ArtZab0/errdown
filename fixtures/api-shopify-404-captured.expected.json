@@ -1,0 +1,17 @@
+{
+  "type": "https://errdown.com/errors/not_found",
+  "title": "Not found",
+  "status": 404,
+  "detail": "The server returned HTTP 404. The server's message (untrusted, quoted): \"Not Found\"",
+  "instance": "https://errdown-nonexistent-q8z3.myshopify.com/admin/api/2024-01/shop.json",
+  "error_code": 404,
+  "error_name": "not_found",
+  "error_category": "not_found",
+  "zone": "errdown-nonexistent-q8z3.myshopify.com",
+  "retryable": false,
+  "owner_action_required": false,
+  "what_you_should_do": "Do not retry. Check the URL for mistakes, or search for the resource elsewhere.",
+  "errdown_synthesized": true,
+  "errdown_source": "origin",
+  "errdown_confidence": 0.7
+}

@@ -1,0 +1,19 @@
+{
+  "status": 401,
+  "headers": {
+    "content-type": "application/json",
+    "transfer-encoding": "chunked",
+    "connection": "close",
+    "x-should-retry": "false",
+    "request-id": "req_011CgtJw4DFTBxRCNyP3TQRf",
+    "traceresponse": "00-21f602c33557c2bafab7c931e299a480-f9188dcb373cdfc0-01",
+    "vary": "Accept-Encoding",
+    "server": "cloudflare",
+    "server-timing": "x-originResponse;dur=24",
+    "cf-cache-status": "DYNAMIC",
+    "x-robots-tag": "none"
+  },
+  "body": "{\"type\":\"error\",\"error\":{\"type\":\"authentication_error\",\"message\":\"x-api-key header is required\"},\"request_id\":\"req_011CgtJw4DFTBxRCNyP3TQRf\"}",
+  "url": "https://api.anthropic.com/v1/messages",
+  "_provenance": "captured 2026-11-09, public endpoint, POST, Accept: text/markdown, */*"
+}

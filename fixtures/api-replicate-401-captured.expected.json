@@ -1,0 +1,17 @@
+{
+  "type": "https://errdown.com/errors/auth_required",
+  "title": "Unauthenticated",
+  "status": 401,
+  "detail": "You did not pass an authentication token",
+  "instance": "https://api.replicate.com/v1/account",
+  "error_code": 401,
+  "error_name": "auth_required",
+  "error_category": "auth_required",
+  "zone": "api.replicate.com",
+  "retryable": false,
+  "owner_action_required": false,
+  "what_you_should_do": "Do not retry without credentials. Ask the user to authenticate or provide credentials.",
+  "errdown_synthesized": false,
+  "errdown_source": "origin",
+  "errdown_confidence": 1
+}
