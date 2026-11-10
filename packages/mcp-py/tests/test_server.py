@@ -45,7 +45,6 @@ class Tests(unittest.TestCase):
         u = f"{self.base}/nginx502?attempts"
         self.assertIn("attempt 1 of 3", self.run_(u)["text"]); self.assertIn("attempt 2 of 3", self.run_(u)["text"])
         self.assertIn("Failed 3 times in a row", self.run_(u)["text"])
-        self.assertIn("retry after 5s", self.run_(f"{self.base}/nginx502", format="full")["text"])
 
     def test_retry_after(self):
         self.assertEqual(self.run_(f"{self.base}/limited")["problem"]["retry_after"], 7)

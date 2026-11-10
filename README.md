@@ -4,6 +4,20 @@ Cloudflare-compatible structured errors (RFC 9457) for every error your agent hi
 
 Status: alpha. Not affiliated with Cloudflare.
 
+## Why
+
+On an HTTP error, agents usually get either a bare "status code 404" or the whole error page.
+errdown gives them one line (~20 tokens) saying what failed and whether to retry:
+
+```
+Error: HTTP 503 upstream_unavailable (nginx). Retryable: wait 5s, then retry (max 3 tries); if it keeps failing, tell the user.
+Error: HTTP 403 challenge (cloudflare). Needs a human (CAPTCHA/bot check); do not retry or bypass.
+```
+
+Across 228 real captured errors: median 22 tokens, 98% fewer than the error page converted to
+Markdown (GitHub's 404 page alone is ~50k tokens converted). See `docs/benchmark-tokens.md`.
+An agent benchmark is in progress (`lab/bench`).
+
 ## Layout
 
 - `SPEC.md` — the contract (draft 0.1)

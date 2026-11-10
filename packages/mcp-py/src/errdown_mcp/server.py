@@ -13,7 +13,7 @@ from markdownify import markdownify
 from mcp.server.mcpserver import MCPServer
 from mcp_types import CallToolResult, TextContent
 
-from errdown import agent_accept_header, decide, normalize, to_compact, to_markdown
+from errdown import agent_accept_header, normalize, to_compact
 
 _NOISE = re.compile(r"<(script|style|noscript|iframe|svg|template)\b[^>]*>.*?</\1\s*>", re.S | re.I)
 UA = "errdown-mcp/0.1 (+https://github.com/ArtZab0/errdown)"
@@ -75,22 +75,17 @@ def note_attempt(url: str, failed: bool, retryable: bool) -> int:
     return n
 
 
-def problem_text(p: Dict[str, Any], fmt: str = "compact", attempt: int = 0) -> str:
-    if fmt == "compact":
-        line = to_compact(p)
-        if not p.get("retryable") or attempt == 0:
-            return line
-        if attempt >= MAX_ATTEMPTS:
-            return re.sub(r"Retryable: .*$", f"Failed {attempt} times in a row; stop retrying and report the error to the user.", line)
-        return line.replace("(max 3 tries)", f"(attempt {attempt} of {MAX_ATTEMPTS})")
-    d = decide(p)
-    hint = (f"retry after {d['after_seconds']}s" if d["action"] == "retry"
-            else f"escalate ({d['reason']})" if d["action"] == "escalate" else f"fail ({d['reason']})")
-    return f"{to_markdown(p)}\n<!-- errdown decide(): {hint} -->\n"
-
+def problem_text(p: Dict[str, Any], attempt: int = 0) -> str:
+    """The one-line error the agent sees, with the attempt counter for repeated retryable failures."""
+    line = to_compact(p)
+    if not p.get("retryable") or attempt == 0:
+        return line
+    if attempt >= MAX_ATTEMPTS:
+        return re.sub(r"Retryable: .*$", f"Failed {attempt} times in a row; stop retrying and report the error to the user.", line)
+    return line.replace("(max 3 tries)", f"(attempt {attempt} of {MAX_ATTEMPTS})")
 
 async def fetch_impl(url: str, max_length: int = 20000, start_index: int = 0, raw: bool = False,
-                     client: Optional[httpx.AsyncClient] = None, format: str = "compact") -> Dict[str, Any]:
+                     client: Optional[httpx.AsyncClient] = None) -> Dict[str, Any]:
     own = client is None
     buf = bytearray()
     try:
@@ -107,7 +102,7 @@ async def fetch_impl(url: str, max_length: int = 20000, start_index: int = 0, ra
             status, headers = res.status_code, res.headers
     except Exception as exc:  # no HTTP response
         p = network_problem(exc, url)
-        return {"isError": True, "text": problem_text(p, format, note_attempt(url, True, p["retryable"])), "problem": p}
+        return {"isError": True, "text": problem_text(p, note_attempt(url, True, p["retryable"])), "problem": p}
     finally:
         if own and client is not None:
             try:
@@ -117,7 +112,7 @@ async def fetch_impl(url: str, max_length: int = 20000, start_index: int = 0, ra
     body = bytes(buf[:MAX_BYTES])
     problem = normalize(status, headers, body, url=final_url)
     if problem:
-        return {"isError": True, "text": problem_text(problem, format, note_attempt(url, True, problem["retryable"])), "problem": problem}
+        return {"isError": True, "text": problem_text(problem, note_attempt(url, True, problem["retryable"])), "problem": problem}
     note_attempt(url, False, False)
     text = body.decode(headers.encoding or "utf-8", errors="replace") if hasattr(headers, "encoding") else body.decode("utf-8", "replace")
     if not raw and "html" in headers.get("content-type", ""):
@@ -139,11 +134,9 @@ async def fetch_impl(url: str, max_length: int = 20000, start_index: int = 0, ra
     "Fetch a URL and return its content as Markdown. If the request fails (HTTP error, bot challenge, "
     "DNS/TLS/connection failure), returns a one-line structured error: HTTP status, category, and whether "
     "to retry (e.g. 'HTTP 503 upstream_unavailable (nginx). Retryable: wait 5s, then retry (max 3 tries).'). "
-    "Follow it: retry only when it says retryable; never try to bypass a challenge. "
-    "Pass format='full' for Cloudflare's full structured error format."))
-async def fetch(url: str, max_length: int = 20000, start_index: int = 0, raw: bool = False,
-                format: str = "compact") -> CallToolResult:
-    r = await fetch_impl(url, max_length, start_index, raw, format=format)
+    "Follow it: retry only when it says retryable; never try to bypass a challenge."))
+async def fetch(url: str, max_length: int = 20000, start_index: int = 0, raw: bool = False) -> CallToolResult:
+    r = await fetch_impl(url, max_length, start_index, raw)
     return CallToolResult(content=[TextContent(type="text", text=r["text"])], is_error=r["isError"])
 
 

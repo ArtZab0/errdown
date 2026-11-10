@@ -1,14 +1,12 @@
 // Core of the errdown-mcp `fetch` tool, separated from the MCP transport so it can be tested.
 import TurndownService from "turndown";
-import { agentAcceptHeader, decide, normalize, toCompact, toMarkdown, type Problem } from "errdown";
+import { agentAcceptHeader, normalize, toCompact, type Problem } from "errdown";
 
 export interface FetchArgs {
   url: string;
   max_length?: number;
   start_index?: number;
   raw?: boolean;
-  /** "compact" (default): one line, ~20 tokens. "full": Cloudflare-format Markdown. */
-  format?: "compact" | "full";
 }
 
 export interface FetchResult {
@@ -69,17 +67,13 @@ export function noteAttempt(url: string, failed: boolean, retryable: boolean): n
   return n;
 }
 
-function problemText(p: Problem, format: "compact" | "full" = "compact", attempt = 0): string {
-  if (format === "compact") {
-    const line = toCompact(p);
-    if (!p.retryable || attempt === 0) return line;
-    return attempt >= MAX_ATTEMPTS
-      ? line.replace(/Retryable: .*$/, `Failed ${attempt} times in a row; stop retrying and report the error to the user.`)
-      : line.replace("(max 3 tries)", `(attempt ${attempt} of ${MAX_ATTEMPTS})`);
-  }
-  const d = decide(p);
-  const hint = d.action === "retry" ? `retry after ${d.after_seconds}s` : d.action === "escalate" ? `escalate (${d.reason})` : `fail (${d.reason})`;
-  return `${toMarkdown(p)}\n<!-- errdown decide(): ${hint} -->\n`;
+/** The one-line error the agent sees, with the attempt counter for repeated retryable failures. */
+function problemText(p: Problem, attempt = 0): string {
+  const line = toCompact(p);
+  if (!p.retryable || attempt === 0) return line;
+  return attempt >= MAX_ATTEMPTS
+    ? line.replace(/Retryable: .*$/, `Failed ${attempt} times in a row; stop retrying and report the error to the user.`)
+    : line.replace("(max 3 tries)", `(attempt ${attempt} of ${MAX_ATTEMPTS})`);
 }
 
 async function readCapped(res: Response): Promise<string> {
@@ -101,7 +95,7 @@ async function readCapped(res: Response): Promise<string> {
 }
 
 export async function fetchTool(args: FetchArgs, fetchImpl: typeof fetch = fetch): Promise<FetchResult> {
-  const { url, max_length = 20_000, start_index = 0, raw = false, format = "compact" } = args;
+  const { url, max_length = 20_000, start_index = 0, raw = false } = args;
   let res: Response;
   try {
     const u = new URL(url);
@@ -113,13 +107,13 @@ export async function fetchTool(args: FetchArgs, fetchImpl: typeof fetch = fetch
     });
   } catch (err) {
     const p = networkProblem(err instanceof TypeError && /Invalid URL/i.test(String(err.message)) ? { code: "ERR_INVALID_URL" } : err, url);
-    return { isError: true, text: problemText(p, format, noteAttempt(url, true, p.retryable)), problem: p };
+    return { isError: true, text: problemText(p, noteAttempt(url, true, p.retryable)), problem: p };
   }
   let body = "";
   try { body = await readCapped(res); } catch { /* treat as empty */ }
 
   const problem = normalize(res.status, res.headers, body, { url: res.url || url });
-  if (problem) return { isError: true, text: problemText(problem, format, noteAttempt(url, true, problem.retryable)), problem };
+  if (problem) return { isError: true, text: problemText(problem, noteAttempt(url, true, problem.retryable)), problem };
   noteAttempt(url, false, false);
 
   const ctype = res.headers.get("content-type") ?? "";

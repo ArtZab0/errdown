@@ -38,9 +38,6 @@ test("nginx 502 -> structured, retryable", async () => {
   assert.equal(r.isError, true);
   assert.equal(r.problem?.error_name, "nginx_bad_gateway");
   assert.equal(r.text, "Error: HTTP 502 upstream_unavailable (nginx). Retryable: wait 5s, then retry (attempt 1 of 3); if it keeps failing, tell the user.");
-  const full = await fetchTool({ url: `${base}/nginx502`, format: "full" });
-  assert.match(full.text, /^---\nerror_code: 502/);
-  assert.match(full.text, /decide\(\): retry after 5s/);
 });
 
 test("repeated retryable failures count attempts, then say stop", async () => {
