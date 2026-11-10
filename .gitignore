@@ -9,3 +9,6 @@ coverage/
 lab/cf-worker/captures/
 lab/cf-zone/captures/
 packages/py/dist/
+packages/mcp-py/.venv/
+packages/mcp-py/dist/
+packages/mcp-js/dist/

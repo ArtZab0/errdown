@@ -10,6 +10,7 @@ Status: alpha. Not affiliated with Cloudflare.
 - `fixtures/` — language-neutral conformance cases
 - `packages/js` — TypeScript reference implementation (`npm test`, `npm run build`)
 - `packages/py` — Python implementation, byte-identical output (`python tests/test_conformance.py`)
+- `packages/mcp-js`, `packages/mcp-py` — errdown-mcp: an MCP `fetch` tool returning the contract on failure (`npx errdown-mcp@alpha` / `uvx --prerelease allow errdown-mcp`)
 - `lab/` — capture labs (Docker servers, Cloudflare zone, public endpoints)
 - `docs/` — benchmarks
 

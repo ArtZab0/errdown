@@ -1,0 +1,5 @@
+{
+  "name": "errdown-monorepo",
+  "private": true,
+  "workspaces": ["packages/js", "packages/mcp-js"]
+}

@@ -3,30 +3,29 @@ on: [push, pull_request]
 jobs:
   js:
     runs-on: ubuntu-latest
-    defaults: { run: { working-directory: packages/js } }
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with: { node-version: 24 }
       - run: npm ci
-      - run: npx tsc --noEmit -p .
-      - run: npm test
-      - run: npm run build
+      - run: npm run typecheck -w errdown && npm test -w errdown && npm run build -w errdown
+      - run: npm run typecheck -w errdown-mcp && npm run build -w errdown-mcp && npm test -w errdown-mcp
   py:
     runs-on: ubuntu-latest
     strategy:
       matrix: { python: ["3.10", "3.13"] }
-    defaults: { run: { working-directory: packages/py } }
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with: { python-version: "${{ matrix.python }}" }
-      - run: python tests/test_conformance.py
+      - run: python packages/py/tests/test_conformance.py
+      - run: pip install -e packages/py -e packages/mcp-py && python packages/mcp-py/tests/test_server.py
   fixtures-in-sync:
-    # expected/rendered files must be regenerated whenever the TS reference changes
+    # expected/rendered fixtures and the error reference must be regenerated when the TS reference changes
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with: { node-version: 24 }
-      - run: cd packages/js && npm ci && node scripts/gen-expected.ts && node scripts/gen-docs.ts && git diff --exit-code ../../fixtures ../../docs
+      - run: npm ci
+      - run: cd packages/js && node scripts/gen-expected.ts && node scripts/gen-docs.ts && git diff --exit-code ../../fixtures ../../docs

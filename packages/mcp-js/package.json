@@ -1,0 +1,54 @@
+{
+  "name": "errdown-mcp",
+  "version": "0.1.0-alpha.1",
+  "description": "MCP server with a fetch tool that returns page content on success and a Cloudflare-compatible structured error (errdown) on failure.",
+  "type": "module",
+  "bin": {
+    "errdown-mcp": "dist/index.js"
+  },
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE",
+    "NOTICE"
+  ],
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ArtZab0/errdown.git",
+    "directory": "packages/mcp-js"
+  },
+  "homepage": "https://artzab0.github.io/errdown",
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "fetch",
+    "errors",
+    "rfc9457",
+    "ai-agents"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "scripts": {
+    "build": "tsc -p tsconfig.json && chmod +x dist/index.js",
+    "test": "node --test 'test/**/*.test.ts'",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "prepublishOnly": "npm run typecheck && npm test && npm run build"
+  },
+  "publishConfig": {
+    "tag": "alpha",
+    "access": "public"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.32.2",
+    "errdown": "^0.1.0-alpha.1",
+    "turndown": "^7.2.5",
+    "zod": "^3.25.76"
+  },
+  "devDependencies": {
+    "@types/node": "^24.19.2",
+    "@types/turndown": "^5.0.6",
+    "typescript": "5.9"
+  }
+}
