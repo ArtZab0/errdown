@@ -980,6 +980,727 @@
   "retryable": true,
   "split": "dev"
  },
+ "holdout-api-airtable-captured": {
+  "actual_status": 401,
+  "category": "auth_required",
+  "intended_status": 401,
+  "labeler": "scenario:holdout-predeclared",
+  "needs_blind_review": false,
+  "retryable": false,
+  "split": "holdout"
+ },
+ "holdout-api-algolia-captured": {
+  "actual_status": 403,
+  "category": "auth_required",
+  "intended_status": 401,
+  "labeler": "scenario:holdout-predeclared",
+  "needs_blind_review": false,
+  "retryable": false,
+  "split": "holdout"
+ },
+ "holdout-api-arxiv-404-captured": {
+  "actual_status": 404,
+  "category": "not_found",
+  "intended_status": 404,
+  "labeler": "scenario:holdout-predeclared",
+  "needs_blind_review": false,
+  "retryable": false,
+  "split": "holdout"
+ },
+ "holdout-api-asana-captured": {
+  "actual_status": 401,
+  "category": "auth_required",
+  "intended_status": 401,
+  "labeler": "scenario:holdout-predeclared",
+  "needs_blind_review": false,
+  "retryable": false,
+  "split": "holdout"
+ },
+ "holdout-api-bitbucket-captured": {
+  "actual_status": 401,
+  "category": "auth_required",
+  "intended_status": 401,
+  "labeler": "scenario:holdout-predeclared",
+  "needs_blind_review": false,
+  "retryable": false,
+  "split": "holdout"
+ },
+ "holdout-api-bitly-captured": {
+  "actual_status": 401,
+  "category": "auth_required",
+  "intended_status": 401,
+  "labeler": "scenario:holdout-predeclared",
+  "needs_blind_review": false,
+  "retryable": false,
+  "split": "holdout"
+ },
+ "holdout-api-box-captured": {
+  "actual_status": 401,
+  "category": "auth_required",
+  "intended_status": 401,
+  "labeler": "scenario:holdout-predeclared",
+  "needs_blind_review": false,
+  "retryable": false,
+  "split": "holdout"
+ },
+ "holdout-api-circleci-captured": {
+  "actual_status": 401,
+  "category": "auth_required",
+  "intended_status": 401,
+  "labeler": "scenario:holdout-predeclared",
+  "needs_blind_review": false,
+  "retryable": false,
+  "split": "holdout"
+ },
+ "holdout-api-clickup-captured": {
+  "actual_status": 400,
+  "blind_note": "Body says Authorization header required; supplying a token fixes it.",
+  "category": "auth_required",
+  "intended_status": 401,
+  "labeler": "blind-subagent:high",
+  "needs_blind_review": true,
+  "retryable": false,
+  "split": "holdout"
+ },
+ "holdout-api-cohere-captured": {
+  "actual_status": 401,
+  "category": "auth_required",
+  "intended_status": 401,
+  "labeler": "scenario:holdout-predeclared",
+  "needs_blind_review": false,
+  "retryable": false,
+  "split": "holdout"
+ },
+ "holdout-api-coinbase-captured": {
+  "actual_status": 401,
+  "category": "auth_required",
+  "intended_status": 401,
+  "labeler": "scenario:holdout-predeclared",
+  "needs_blind_review": false,
+  "retryable": false,
+  "split": "holdout"
+ },
+ "holdout-api-contentful-captured": {
+  "actual_status": 401,
+  "category": "auth_required",
+  "intended_status": 401,
+  "labeler": "scenario:holdout-predeclared",
+  "needs_blind_review": false,
+  "retryable": false,
+  "split": "holdout"
+ },
+ "holdout-api-crates-404-captured": {
+  "actual_status": 404,
+  "category": "not_found",
+  "intended_status": 404,
+  "labeler": "scenario:holdout-predeclared",
+  "needs_blind_review": false,
+  "retryable": false,
+  "split": "holdout"
+ },
+ "holdout-api-deepseek-captured": {
+  "actual_status": 401,
+  "category": "auth_required",
+  "intended_status": 401,
+  "labeler": "scenario:holdout-predeclared",
+  "needs_blind_review": false,
+  "retryable": false,
+  "split": "holdout"
+ },
+ "holdout-api-dockerhub-tags-404-captured": {
+  "actual_status": 404,
+  "category": "not_found",
+  "intended_status": 404,
+  "labeler": "scenario:holdout-predeclared",
+  "needs_blind_review": false,
+  "retryable": false,
+  "split": "holdout"
+ },
+ "holdout-api-dropbox-captured": {
+  "actual_status": 400,
+  "blind_note": "Invalid/missing authorization value; needs an access token.",
+  "category": "auth_required",
+  "intended_status": 401,
+  "labeler": "blind-subagent:high",
+  "needs_blind_review": true,
+  "retryable": false,
+  "split": "holdout"
+ },
+ "holdout-api-dropbox-content-captured": {
+  "actual_status": 400,
+  "blind_note": "Invalid authorization value on anonymous request; token needed.",
+  "category": "auth_required",
+  "intended_status": 401,
+  "labeler": "blind-subagent:high",
+  "needs_blind_review": true,
+  "retryable": false,
+  "split": "holdout"
+ },
+ "holdout-api-elevenlabs-captured": {
+  "actual_status": 401,
+  "category": "auth_required",
+  "intended_status": 401,
+  "labeler": "scenario:holdout-predeclared",
+  "needs_blind_review": false,
+  "retryable": false,
+  "split": "holdout"
+ },
+ "holdout-api-fastly-captured": {
+  "actual_status": 401,
+  "category": "auth_required",
+  "intended_status": 401,
+  "labeler": "scenario:holdout-predeclared",
+  "needs_blind_review": false,
+  "retryable": false,
+  "split": "holdout"
+ },
+ "holdout-api-figma-captured": {
+  "actual_status": 401,
+  "category": "auth_required",
+  "intended_status": 401,
+  "labeler": "scenario:holdout-predeclared",
+  "needs_blind_review": false,
+  "retryable": false,
+  "split": "holdout"
+ },
+ "holdout-api-ghraw-404-captured": {
+  "actual_status": 404,
+  "category": "not_found",
+  "intended_status": 404,
+  "labeler": "scenario:holdout-predeclared",
+  "needs_blind_review": false,
+  "retryable": false,
+  "split": "holdout"
+ },
+ "holdout-api-gist-404-captured": {
+  "actual_status": 404,
+  "category": "not_found",
+  "intended_status": 404,
+  "labeler": "scenario:holdout-predeclared",
+  "needs_blind_review": false,
+  "retryable": false,
+  "split": "holdout"
+ },
+ "holdout-api-github-422-captured": {
+  "actual_status": 422,
+  "blind_note": "Missing or invalid 'text' attribute in JSON body.",
+  "category": "bad_request",
+  "intended_status": 400,
+  "labeler": "blind-subagent:high",
+  "needs_blind_review": true,
+  "retryable": false,
+  "split": "holdout"
+ },
+ "holdout-api-gopkg-404-captured": {
+  "actual_status": 404,
+  "category": "not_found",
+  "intended_status": 404,
+  "labeler": "scenario:holdout-predeclared",
+  "needs_blind_review": false,
+  "retryable": false,
+  "split": "holdout"
+ },
+ "holdout-api-hex-404-captured": {
+  "actual_status": 404,
+  "category": "not_found",
+  "intended_status": 404,
+  "labeler": "scenario:holdout-predeclared",
+  "needs_blind_review": false,
+  "retryable": false,
+  "split": "holdout"
+ },
+ "holdout-api-hf-model-404-captured": {
+  "actual_status": 401,
+  "blind_note": "HF returns 401 to hide nonexistent repos; the model does not exist so auth would not help.",
+  "category": "not_found",
+  "intended_status": 404,
+  "labeler": "blind-subagent:medium",
+  "needs_blind_review": true,
+  "retryable": false,
+  "split": "holdout"
+ },
+ "holdout-api-httpbin-status-400-captured": {
+  "actual_status": 400,
+  "category": "bad_request",
+  "intended_status": 400,
+  "labeler": "scenario:holdout-predeclared",
+  "needs_blind_review": false,
+  "retryable": false,
+  "split": "holdout"
+ },
+ "holdout-api-httpbin-status-429-captured": {
+  "actual_status": 429,
+  "category": "rate_limit",
+  "intended_status": 429,
+  "labeler": "scenario:holdout-predeclared",
+  "needs_blind_review": false,
+  "retryable": true,
+  "split": "holdout"
+ },
+ "holdout-api-httpbin-status-500-captured": {
+  "actual_status": 500,
+  "category": "server_error",
+  "intended_status": 500,
+  "labeler": "scenario:holdout-predeclared",
+  "needs_blind_review": false,
+  "retryable": true,
+  "split": "holdout"
+ },
+ "holdout-api-httpbin-status-503-captured": {
+  "actual_status": 503,
+  "category": "upstream_unavailable",
+  "intended_status": 503,
+  "labeler": "scenario:holdout-predeclared",
+  "needs_blind_review": false,
+  "retryable": true,
+  "split": "holdout"
+ },
+ "holdout-api-hubspot-captured": {
+  "actual_status": 401,
+  "category": "auth_required",
+  "intended_status": 401,
+  "labeler": "scenario:holdout-predeclared",
+  "needs_blind_review": false,
+  "retryable": false,
+  "split": "holdout"
+ },
+ "holdout-api-intercom-captured": {
+  "actual_status": 401,
+  "category": "auth_required",
+  "intended_status": 401,
+  "labeler": "scenario:holdout-predeclared",
+  "needs_blind_review": false,
+  "retryable": false,
+  "split": "holdout"
+ },
+ "holdout-api-jsdelivr-404-captured": {
+  "actual_status": 404,
+  "category": "not_found",
+  "intended_status": 404,
+  "labeler": "scenario:holdout-predeclared",
+  "needs_blind_review": false,
+  "retryable": false,
+  "split": "holdout"
+ },
+ "holdout-api-jsonplaceholder-404-captured": {
+  "actual_status": 404,
+  "category": "not_found",
+  "intended_status": 404,
+  "labeler": "scenario:holdout-predeclared",
+  "needs_blind_review": false,
+  "retryable": false,
+  "split": "holdout"
+ },
+ "holdout-api-monday-captured": {
+  "actual_status": 401,
+  "category": "auth_required",
+  "intended_status": 401,
+  "labeler": "scenario:holdout-predeclared",
+  "needs_blind_review": false,
+  "retryable": false,
+  "split": "holdout"
+ },
+ "holdout-api-netlify-sites-captured": {
+  "actual_status": 401,
+  "category": "auth_required",
+  "intended_status": 401,
+  "labeler": "scenario:holdout-predeclared",
+  "needs_blind_review": false,
+  "retryable": false,
+  "split": "holdout"
+ },
+ "holdout-api-nuget-404-captured": {
+  "actual_status": 404,
+  "category": "not_found",
+  "intended_status": 404,
+  "labeler": "scenario:holdout-predeclared",
+  "needs_blind_review": false,
+  "retryable": false,
+  "split": "holdout"
+ },
+ "holdout-api-openlibrary-404-captured": {
+  "actual_status": 404,
+  "category": "not_found",
+  "intended_status": 404,
+  "labeler": "scenario:holdout-predeclared",
+  "needs_blind_review": false,
+  "retryable": false,
+  "split": "holdout"
+ },
+ "holdout-api-openrouter-captured": {
+  "actual_status": 401,
+  "category": "auth_required",
+  "intended_status": 401,
+  "labeler": "scenario:holdout-predeclared",
+  "needs_blind_review": false,
+  "retryable": false,
+  "split": "holdout"
+ },
+ "holdout-api-packagist-404-captured": {
+  "actual_status": 404,
+  "category": "not_found",
+  "intended_status": 404,
+  "labeler": "scenario:holdout-predeclared",
+  "needs_blind_review": false,
+  "retryable": false,
+  "split": "holdout"
+ },
+ "holdout-api-pagerduty-captured": {
+  "actual_status": 401,
+  "category": "auth_required",
+  "intended_status": 401,
+  "labeler": "scenario:holdout-predeclared",
+  "needs_blind_review": false,
+  "retryable": false,
+  "split": "holdout"
+ },
+ "holdout-api-paypal-captured": {
+  "actual_status": 401,
+  "category": "auth_required",
+  "intended_status": 401,
+  "labeler": "scenario:holdout-predeclared",
+  "needs_blind_review": false,
+  "retryable": false,
+  "split": "holdout"
+ },
+ "holdout-api-perplexity-captured": {
+  "actual_status": 401,
+  "category": "auth_required",
+  "intended_status": 401,
+  "labeler": "scenario:holdout-predeclared",
+  "needs_blind_review": false,
+  "retryable": false,
+  "split": "holdout"
+ },
+ "holdout-api-pinecone-captured": {
+  "actual_status": 401,
+  "category": "auth_required",
+  "intended_status": 401,
+  "labeler": "scenario:holdout-predeclared",
+  "needs_blind_review": false,
+  "retryable": false,
+  "split": "holdout"
+ },
+ "holdout-api-pokeapi-404-captured": {
+  "actual_status": 404,
+  "category": "not_found",
+  "intended_status": 404,
+  "labeler": "scenario:holdout-predeclared",
+  "needs_blind_review": false,
+  "retryable": false,
+  "split": "holdout"
+ },
+ "holdout-api-rubygems-404-captured": {
+  "actual_status": 404,
+  "category": "not_found",
+  "intended_status": 404,
+  "labeler": "scenario:holdout-predeclared",
+  "needs_blind_review": false,
+  "retryable": false,
+  "split": "holdout"
+ },
+ "holdout-api-square-captured": {
+  "actual_status": 401,
+  "category": "auth_required",
+  "intended_status": 401,
+  "labeler": "scenario:holdout-predeclared",
+  "needs_blind_review": false,
+  "retryable": false,
+  "split": "holdout"
+ },
+ "holdout-api-swapi-404-captured": {
+  "actual_status": 404,
+  "category": "not_found",
+  "intended_status": 404,
+  "labeler": "scenario:holdout-predeclared",
+  "needs_blind_review": false,
+  "retryable": false,
+  "split": "holdout"
+ },
+ "holdout-api-together-captured": {
+  "actual_status": 401,
+  "category": "auth_required",
+  "intended_status": 401,
+  "labeler": "scenario:holdout-predeclared",
+  "needs_blind_review": false,
+  "retryable": false,
+  "split": "holdout"
+ },
+ "holdout-api-trello-captured": {
+  "actual_status": 400,
+  "blind_note": "Anonymous request without key gets 'invalid token'; providing key/token fixes it.",
+  "category": "auth_required",
+  "intended_status": 401,
+  "labeler": "blind-subagent:high",
+  "needs_blind_review": true,
+  "retryable": false,
+  "split": "holdout"
+ },
+ "holdout-api-unpkg-404-captured": {
+  "actual_status": 404,
+  "category": "not_found",
+  "intended_status": 404,
+  "labeler": "scenario:holdout-predeclared",
+  "needs_blind_review": false,
+  "retryable": false,
+  "split": "holdout"
+ },
+ "holdout-api-zoom-captured": {
+  "actual_status": 401,
+  "category": "auth_required",
+  "intended_status": 401,
+  "labeler": "scenario:holdout-predeclared",
+  "needs_blind_review": false,
+  "retryable": false,
+  "split": "holdout"
+ },
+ "holdout-site-apple-404-captured": {
+  "actual_status": 404,
+  "category": "not_found",
+  "intended_status": 404,
+  "labeler": "scenario:holdout-predeclared",
+  "needs_blind_review": false,
+  "retryable": false,
+  "split": "holdout"
+ },
+ "holdout-site-azurestatic-404-captured": {
+  "actual_status": 404,
+  "category": "not_found",
+  "intended_status": 404,
+  "labeler": "scenario:holdout-predeclared",
+  "needs_blind_review": false,
+  "retryable": false,
+  "split": "holdout"
+ },
+ "holdout-site-bbc-404-captured": {
+  "actual_status": 404,
+  "category": "not_found",
+  "intended_status": 404,
+  "labeler": "scenario:holdout-predeclared",
+  "needs_blind_review": false,
+  "retryable": false,
+  "split": "holdout"
+ },
+ "holdout-site-blogspot-404-captured": {
+  "actual_status": 404,
+  "category": "not_found",
+  "intended_status": 404,
+  "labeler": "scenario:holdout-predeclared",
+  "needs_blind_review": false,
+  "retryable": false,
+  "split": "holdout"
+ },
+ "holdout-site-docs-python-404-captured": {
+  "actual_status": 404,
+  "category": "not_found",
+  "intended_status": 404,
+  "labeler": "scenario:holdout-predeclared",
+  "needs_blind_review": false,
+  "retryable": false,
+  "split": "holdout"
+ },
+ "holdout-site-framer-404-captured": {
+  "actual_status": 404,
+  "category": "not_found",
+  "intended_status": 404,
+  "labeler": "scenario:holdout-predeclared",
+  "needs_blind_review": false,
+  "retryable": false,
+  "split": "holdout"
+ },
+ "holdout-site-gitlab-pages-404-captured": {
+  "actual_status": 403,
+  "blind_note": "Cloudflare managed challenge (cf-mitigated: challenge, 'Just a moment...').",
+  "category": "challenge",
+  "intended_status": 404,
+  "labeler": "blind-subagent:high",
+  "needs_blind_review": true,
+  "retryable": false,
+  "split": "holdout"
+ },
+ "holdout-site-glitch-404-captured": {
+  "actual_status": 410,
+  "blind_note": "410 Gone: Glitch project hosting discontinued, content permanently unavailable.",
+  "category": "not_found",
+  "intended_status": 404,
+  "labeler": "blind-subagent:medium",
+  "needs_blind_review": true,
+  "retryable": false,
+  "split": "holdout"
+ },
+ "holdout-site-hf-space-404-captured": {
+  "actual_status": 401,
+  "blind_note": "401 status but page is HF 404 for a nonexistent space.",
+  "category": "not_found",
+  "intended_status": 404,
+  "labeler": "blind-subagent:high",
+  "needs_blind_review": true,
+  "retryable": false,
+  "split": "holdout"
+ },
+ "holdout-site-hn-404-captured": {
+  "actual_status": 404,
+  "category": "not_found",
+  "intended_status": 404,
+  "labeler": "scenario:holdout-predeclared",
+  "needs_blind_review": false,
+  "retryable": false,
+  "split": "holdout"
+ },
+ "holdout-site-koyeb-404-captured": {
+  "actual_status": 404,
+  "category": "not_found",
+  "intended_status": 404,
+  "labeler": "scenario:holdout-predeclared",
+  "needs_blind_review": false,
+  "retryable": false,
+  "split": "holdout"
+ },
+ "holdout-site-microsoft-404-captured": {
+  "actual_status": 404,
+  "category": "not_found",
+  "intended_status": 404,
+  "labeler": "scenario:holdout-predeclared",
+  "needs_blind_review": false,
+  "retryable": false,
+  "split": "holdout"
+ },
+ "holdout-site-mozilla-404-captured": {
+  "actual_status": 404,
+  "category": "not_found",
+  "intended_status": 404,
+  "labeler": "scenario:holdout-predeclared",
+  "needs_blind_review": false,
+  "retryable": false,
+  "split": "holdout"
+ },
+ "holdout-site-neocities-404-captured": {
+  "actual_status": 404,
+  "category": "not_found",
+  "intended_status": 404,
+  "labeler": "scenario:holdout-predeclared",
+  "needs_blind_review": false,
+  "retryable": false,
+  "split": "holdout"
+ },
+ "holdout-site-ngrok-404-captured": {
+  "actual_status": 404,
+  "category": "not_found",
+  "intended_status": 404,
+  "labeler": "scenario:holdout-predeclared",
+  "needs_blind_review": false,
+  "retryable": false,
+  "split": "holdout"
+ },
+ "holdout-site-python-404-captured": {
+  "actual_status": 404,
+  "category": "not_found",
+  "intended_status": 404,
+  "labeler": "scenario:holdout-predeclared",
+  "needs_blind_review": false,
+  "retryable": false,
+  "split": "holdout"
+ },
+ "holdout-site-readthedocs-404-captured": {
+  "actual_status": 404,
+  "category": "not_found",
+  "intended_status": 404,
+  "labeler": "scenario:holdout-predeclared",
+  "needs_blind_review": false,
+  "retryable": false,
+  "split": "holdout"
+ },
+ "holdout-site-replit-404-captured": {
+  "actual_status": 404,
+  "category": "not_found",
+  "intended_status": 404,
+  "labeler": "scenario:holdout-predeclared",
+  "needs_blind_review": false,
+  "retryable": false,
+  "split": "holdout"
+ },
+ "holdout-site-s3-website-404-captured": {
+  "actual_status": 404,
+  "category": "not_found",
+  "intended_status": 404,
+  "labeler": "scenario:holdout-predeclared",
+  "needs_blind_review": false,
+  "retryable": false,
+  "split": "holdout"
+ },
+ "holdout-site-shopify-store-404-captured": {
+  "actual_status": 404,
+  "category": "not_found",
+  "intended_status": 404,
+  "labeler": "scenario:holdout-predeclared",
+  "needs_blind_review": false,
+  "retryable": false,
+  "split": "holdout"
+ },
+ "holdout-site-squarespace-404-captured": {
+  "actual_status": 404,
+  "category": "not_found",
+  "intended_status": 404,
+  "labeler": "scenario:holdout-predeclared",
+  "needs_blind_review": false,
+  "retryable": false,
+  "split": "holdout"
+ },
+ "holdout-site-substack-404-captured": {
+  "actual_status": 404,
+  "category": "not_found",
+  "intended_status": 404,
+  "labeler": "scenario:holdout-predeclared",
+  "needs_blind_review": false,
+  "retryable": false,
+  "split": "holdout"
+ },
+ "holdout-site-surge-404-captured": {
+  "actual_status": 404,
+  "category": "not_found",
+  "intended_status": 404,
+  "labeler": "scenario:holdout-predeclared",
+  "needs_blind_review": false,
+  "retryable": false,
+  "split": "holdout"
+ },
+ "holdout-site-theguardian-404-captured": {
+  "actual_status": 404,
+  "category": "not_found",
+  "intended_status": 404,
+  "labeler": "scenario:holdout-predeclared",
+  "needs_blind_review": false,
+  "retryable": false,
+  "split": "holdout"
+ },
+ "holdout-site-webflow-404-captured": {
+  "actual_status": 404,
+  "category": "not_found",
+  "intended_status": 404,
+  "labeler": "scenario:holdout-predeclared",
+  "needs_blind_review": false,
+  "retryable": false,
+  "split": "holdout"
+ },
+ "holdout-site-wix-404-captured": {
+  "actual_status": 404,
+  "category": "not_found",
+  "intended_status": 404,
+  "labeler": "scenario:holdout-predeclared",
+  "needs_blind_review": false,
+  "retryable": false,
+  "split": "holdout"
+ },
+ "holdout-site-wordpress-404-captured": {
+  "actual_status": 403,
+  "blind_note": "Hashcash 'Checking your browser' JS bot-verification interstitial.",
+  "category": "challenge",
+  "intended_status": 404,
+  "labeler": "blind-subagent:high",
+  "needs_blind_review": true,
+  "retryable": false,
+  "split": "holdout"
+ },
  "html-generic-418": {
   "actual_status": 418,
   "category": "bad_request",

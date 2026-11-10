@@ -96,6 +96,8 @@ def main():
             spec, how = DOCKER[m.group(2)], "docker-scenario"
         else:
             spec, how = public(base), "public-probe"
+        if name.startswith("holdout-"):
+            continue  # labelled by lab/holdout/capture.py
         if spec is None:
             print("NO SCENARIO:", name, file=sys.stderr); continue
         intended, cat, retry = spec
@@ -103,6 +105,9 @@ def main():
                         "intended_status": intended, "actual_status": actual,
                         "needs_blind_review": intended != actual}
     old = json.loads((FIX / "labels.json").read_text()) if (FIX / "labels.json").exists() else {}
+    for n, l in old.items():  # holdout labels are owned by lab/holdout/capture.py: never rebuild them here
+        if l.get("split") == "holdout":
+            labels[n] = l
     for n, l in old.items():  # keep holdout split and any blind labels already assigned
         if n in labels and l.get("split") == "holdout":
             labels[n]["split"] = "holdout"
