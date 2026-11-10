@@ -1,6 +1,6 @@
 {
   "name": "errdown",
-  "version": "0.1.0-alpha.0",
+  "version": "0.1.0-alpha.1",
   "description": "Cloudflare-compatible structured errors (RFC 9457) for every HTTP error your agent hits.",
   "type": "module",
   "exports": {
