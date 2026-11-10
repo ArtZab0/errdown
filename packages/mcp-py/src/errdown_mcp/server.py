@@ -3,6 +3,7 @@ errdown's Cloudflare-compatible structured error so the agent knows whether to r
 from __future__ import annotations
 
 import re
+import time
 from datetime import datetime, timezone
 from typing import Any, Dict, Optional
 from urllib.parse import urlsplit
@@ -58,9 +59,30 @@ def network_problem(exc: BaseException, url: str) -> Dict[str, Any]:
     return p
 
 
-def problem_text(p: Dict[str, Any], fmt: str = "compact") -> str:
+MAX_ATTEMPTS = 3
+_attempts: Dict[str, tuple] = {}
+
+
+def note_attempt(url: str, failed: bool, retryable: bool) -> int:
+    """Consecutive retryable failures per URL in this process (reset on success or after 10 min)."""
+    now = time.monotonic()
+    if not failed or not retryable:
+        _attempts.pop(url, None)
+        return 0
+    n, t = _attempts.get(url, (0, 0.0))
+    n = n + 1 if now - t < 600 else 1
+    _attempts[url] = (n, now)
+    return n
+
+
+def problem_text(p: Dict[str, Any], fmt: str = "compact", attempt: int = 0) -> str:
     if fmt == "compact":
-        return to_compact(p)
+        line = to_compact(p)
+        if not p.get("retryable") or attempt == 0:
+            return line
+        if attempt >= MAX_ATTEMPTS:
+            return re.sub(r"Retryable: .*$", f"Failed {attempt} times in a row; stop retrying and report the error to the user.", line)
+        return line.replace("(max 3 tries)", f"(attempt {attempt} of {MAX_ATTEMPTS})")
     d = decide(p)
     hint = (f"retry after {d['after_seconds']}s" if d["action"] == "retry"
             else f"escalate ({d['reason']})" if d["action"] == "escalate" else f"fail ({d['reason']})")
@@ -85,7 +107,7 @@ async def fetch_impl(url: str, max_length: int = 20000, start_index: int = 0, ra
             status, headers = res.status_code, res.headers
     except Exception as exc:  # no HTTP response
         p = network_problem(exc, url)
-        return {"isError": True, "text": problem_text(p, format), "problem": p}
+        return {"isError": True, "text": problem_text(p, format, note_attempt(url, True, p["retryable"])), "problem": p}
     finally:
         if own and client is not None:
             try:
@@ -95,7 +117,8 @@ async def fetch_impl(url: str, max_length: int = 20000, start_index: int = 0, ra
     body = bytes(buf[:MAX_BYTES])
     problem = normalize(status, headers, body, url=final_url)
     if problem:
-        return {"isError": True, "text": problem_text(problem, format), "problem": problem}
+        return {"isError": True, "text": problem_text(problem, format, note_attempt(url, True, problem["retryable"])), "problem": problem}
+    note_attempt(url, False, False)
     text = body.decode(headers.encoding or "utf-8", errors="replace") if hasattr(headers, "encoding") else body.decode("utf-8", "replace")
     if not raw and "html" in headers.get("content-type", ""):
         try:

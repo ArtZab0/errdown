@@ -56,8 +56,27 @@ export function networkProblem(err: unknown, url: string, now = new Date()): Pro
   return p;
 }
 
-function problemText(p: Problem, format: "compact" | "full" = "compact"): string {
-  if (format === "compact") return toCompact(p);
+// Per-URL count of consecutive retryable failures in this server process, so a repeated error
+// tells the agent where it is ("attempt 2 of 3") and when to stop. Reset on success or after 10 min.
+export const MAX_ATTEMPTS = 3;
+const attempts = new Map<string, { n: number; t: number }>();
+export function noteAttempt(url: string, failed: boolean, retryable: boolean): number {
+  const now = Date.now();
+  const cur = attempts.get(url);
+  if (!failed || !retryable) { attempts.delete(url); return 0; }
+  const n = cur && now - cur.t < 600_000 ? cur.n + 1 : 1;
+  attempts.set(url, { n, t: now });
+  return n;
+}
+
+function problemText(p: Problem, format: "compact" | "full" = "compact", attempt = 0): string {
+  if (format === "compact") {
+    const line = toCompact(p);
+    if (!p.retryable || attempt === 0) return line;
+    return attempt >= MAX_ATTEMPTS
+      ? line.replace(/Retryable: .*$/, `Failed ${attempt} times in a row; stop retrying and report the error to the user.`)
+      : line.replace("(max 3 tries)", `(attempt ${attempt} of ${MAX_ATTEMPTS})`);
+  }
   const d = decide(p);
   const hint = d.action === "retry" ? `retry after ${d.after_seconds}s` : d.action === "escalate" ? `escalate (${d.reason})` : `fail (${d.reason})`;
   return `${toMarkdown(p)}\n<!-- errdown decide(): ${hint} -->\n`;
@@ -94,13 +113,14 @@ export async function fetchTool(args: FetchArgs, fetchImpl: typeof fetch = fetch
     });
   } catch (err) {
     const p = networkProblem(err instanceof TypeError && /Invalid URL/i.test(String(err.message)) ? { code: "ERR_INVALID_URL" } : err, url);
-    return { isError: true, text: problemText(p, format), problem: p };
+    return { isError: true, text: problemText(p, format, noteAttempt(url, true, p.retryable)), problem: p };
   }
   let body = "";
   try { body = await readCapped(res); } catch { /* treat as empty */ }
 
   const problem = normalize(res.status, res.headers, body, { url: res.url || url });
-  if (problem) return { isError: true, text: problemText(problem, format), problem };
+  if (problem) return { isError: true, text: problemText(problem, format, noteAttempt(url, true, problem.retryable)), problem };
+  noteAttempt(url, false, false);
 
   const ctype = res.headers.get("content-type") ?? "";
   let content = body;

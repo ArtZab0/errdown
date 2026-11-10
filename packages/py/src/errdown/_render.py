@@ -61,7 +61,7 @@ def _compact_advice(p: Dict[str, Any]) -> str:
         return "Site owner must fix; do not retry."
     if p.get("retryable"):
         ra = p.get("retry_after")
-        return f"Retryable: wait {js_str(5 if ra is None else ra)}s, then retry (max 3 tries)."
+        return f"Retryable: wait {js_str(5 if ra is None else ra)}s, then retry (max 3 tries); if it keeps failing, tell the user."
     return {
         "auth_required": "Not retryable: needs credentials; ask the user.",
         "access_denied": "Not retryable: access blocked.",
@@ -84,4 +84,4 @@ def to_compact(p: Dict[str, Any]) -> str:
     m = _SAID.search(str(p.get("detail")))
     said = m.group(1) if m else None
     msg = f' Server said: "{said[:79] + chr(0x2026) if len(said) > 80 else said}".' if said else ""
-    return f"{status}{code} {p.get('error_category')}{src}.{msg} {_compact_advice(p)}"
+    return f"Error: {status}{code} {p.get('error_category')}{src}.{msg} {_compact_advice(p)}"

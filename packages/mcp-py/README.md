@@ -7,9 +7,9 @@ failure (HTTP error, bot challenge, DNS / TLS / connection failure) it returns *
 agent can act on, instead of an HTML dump:
 
 ```
-HTTP 502 upstream_unavailable (nginx). Retryable: wait 5s, then retry (max 3 tries).
-HTTP 401 auth_required. Server said: "Requires authentication". Not retryable: needs credentials; ask the user.
-HTTP 403 challenge (cloudflare). Needs a human (CAPTCHA/bot check); do not retry or bypass.
+Error: HTTP 502 upstream_unavailable (nginx). Retryable: wait 5s, then retry (max 3 tries); if it keeps failing, tell the user.
+Error: HTTP 401 auth_required. Server said: "Requires authentication". Not retryable: needs credentials; ask the user.
+Error: HTTP 403 challenge (cloudflare). Needs a human (CAPTCHA/bot check); do not retry or bypass.
 ```
 
 About 20 tokens per error (median, 228 real captured errors): 98.5% fewer than the error page

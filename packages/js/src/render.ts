@@ -46,7 +46,7 @@ function compactAdvice(p: Problem): string {
   const cat = String(p.error_category);
   if (cat === "challenge") return "Needs a human (CAPTCHA/bot check); do not retry or bypass.";
   if (p.owner_action_required) return "Site owner must fix; do not retry.";
-  if (p.retryable) return `Retryable: wait ${p.retry_after ?? 5}s, then retry (max 3 tries).`;
+  if (p.retryable) return `Retryable: wait ${p.retry_after ?? 5}s, then retry (max 3 tries); if it keeps failing, tell the user.`;
   switch (cat) {
     case "auth_required": return "Not retryable: needs credentials; ask the user.";
     case "access_denied": return "Not retryable: access blocked.";
@@ -59,7 +59,9 @@ function compactAdvice(p: Problem): string {
 
 /**
  * One-line form for token-constrained agents (~20-40 tokens), e.g.
- *   HTTP 503 upstream_unavailable (nginx). Retryable: wait 5s, then retry (max 3 tries).
+ *   Error: HTTP 503 upstream_unavailable (nginx). Retryable: wait 5s, then retry (max 3 tries); if it keeps failing, tell the user.
+ * The "Error:" prefix and the closing instruction measurably stop small models (gpt-oss-20b) from
+ * returning an empty reply after a repeated retryable error.
  * Includes the server's own message (sanitized, max 80 chars) when the body had one.
  */
 export function toCompact(p: Problem): string {
@@ -68,5 +70,5 @@ export function toCompact(p: Problem): string {
   const src = p.errdown_source && !["unknown", "origin", "network"].includes(String(p.errdown_source)) ? ` (${p.errdown_source})` : "";
   const said = /message \(untrusted, quoted\): "([^"]*)"/.exec(String(p.detail))?.[1];
   const msg = said ? ` Server said: "${said.length > 80 ? said.slice(0, 79) + "…" : said}".` : "";
-  return `${status}${code} ${p.error_category}${src}.${msg} ${compactAdvice(p)}`;
+  return `Error: ${status}${code} ${p.error_category}${src}.${msg} ${compactAdvice(p)}`;
 }
