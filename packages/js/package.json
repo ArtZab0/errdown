@@ -1,9 +1,8 @@
 {
   "name": "errdown",
-  "version": "0.1.0",
+  "version": "0.1.0-alpha.0",
   "description": "Cloudflare-compatible structured errors (RFC 9457) for every HTTP error your agent hits.",
   "type": "module",
-  "private": true,
   "exports": {
     ".": {
       "types": "./dist/index.d.ts",
@@ -11,7 +10,8 @@
     }
   },
   "files": [
-    "dist"
+    "dist",
+    "README.md"
   ],
   "sideEffects": false,
   "engines": {
@@ -20,7 +20,8 @@
   "scripts": {
     "build": "tsc -p tsconfig.json",
     "test": "node --test 'test/**/*.test.ts'",
-    "typecheck": "tsc -p tsconfig.json --noEmit"
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "prepublishOnly": "npm run typecheck && npm test && npm run build"
   },
   "devDependencies": {
     "@types/node": "^24.0.0",
@@ -28,5 +29,26 @@
     "js-tiktoken": "^1.0.21",
     "turndown": "^7.2.5",
     "typescript": "^5.9.0"
+  },
+  "license": "UNLICENSED",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ArtZab0/errdown.git",
+    "directory": "packages/js"
+  },
+  "homepage": "https://errdown.com",
+  "keywords": [
+    "rfc9457",
+    "problem-details",
+    "errors",
+    "ai-agents",
+    "llm",
+    "mcp",
+    "cloudflare",
+    "http"
+  ],
+  "publishConfig": {
+    "tag": "alpha",
+    "access": "public"
   }
 }
