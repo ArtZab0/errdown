@@ -1,0 +1,18 @@
+{
+  "status": 401,
+  "headers": {
+    "connection": "close",
+    "server": "elb",
+    "vary": "origin, access-control-request-method, access-control-request-headers",
+    "access-control-allow-credentials": "true",
+    "x-ds-trace-id": "d163390418b4a9cc272f1d015dd26784",
+    "x-content-type-options": "nosniff",
+    "x-cache": "Error from cloudfront",
+    "via": "1.1 73d950088eb80144c19eb610e296d014.cloudfront.net (CloudFront)",
+    "x-amz-cf-pop": "CMH68-P3",
+    "x-amz-cf-id": "ThKmy4QqouySIS7OMGqNzxK3B1JkB2tjWALPPNHPM5uWhJjye9Eyjw=="
+  },
+  "body": "Authentication Fails (governor)",
+  "url": "https://api.deepseek.com/models",
+  "_provenance": "captured 2026-11-09, holdout batch, GET, scenario: no key"
+}

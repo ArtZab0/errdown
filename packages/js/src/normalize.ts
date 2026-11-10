@@ -244,6 +244,18 @@ function messageFromXML(body: string): { message?: string; code?: string } | und
   return code || message ? { code, message } : undefined;
 }
 
+// SPEC §5 stage 4: on 400/403, an explicit message about credentials or rate limits decides the category.
+const MSG_AUTH = /missing[ -]?authenticat|authentication (token|required|failed)|unauthenticated|unregistered callers|api[ _-]?key (is )?(not valid|invalid|missing|required)|(missing|invalid|no) (api[ _-]?key|access token|auth token|bearer token|credentials|authorization header)|missing x-auth|not authenticated|login required/i;
+const MSG_RATE = /rate[ -]?limit(ed)? exceeded|too many requests|quota exceeded|api rate limit/i;
+function categoryFromMessage(status: number, m: { message?: string; code?: string }): Partial<Problem> {
+  if (status !== 400 && status !== 403) return {};
+  const text = `${m.code ?? ""} ${m.message ?? ""}`.slice(0, 1000);
+  if (MSG_RATE.test(text)) return { error_category: "rate_limit", error_name: "rate_limited", title: "Rate limited", retryable: true };
+  if (MSG_AUTH.test(text) || /^(MissingAuthenticationToken|UNAUTHENTICATED|InvalidClientTokenId)\b/.test(m.code ?? ""))
+    return { error_category: "auth_required", error_name: "auth_required", title: "Authentication required", retryable: false };
+  return {};
+}
+
 const XML_SOURCES: [string, RegExp, string][] = [
   ["server", /^AmazonS3$/i, "aws-s3"],
   ["server", /^UploadServer$/i, "google-cloud-storage"],
@@ -369,6 +381,7 @@ function run(ctx: Ctx, fullBody: string): Problem | null {
       return finish({
         status,
         detail: `The server returned HTTP ${status}${code}.${said}`,
+        ...categoryFromMessage(status, m),
         errdown_source: xmlSource ?? hfp?.source ?? "origin",
         errdown_confidence: 0.7,
       }, ctx);

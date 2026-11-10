@@ -1,0 +1,25 @@
+{
+  "status": 404,
+  "headers": {
+    "content-type": "application/json; charset=utf-8",
+    "connection": "close",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "X-PokeAPI-Hash,X-PokeAPI-Deploy-Date",
+    "cache-control": "public, max-age=432000, s-maxage=432000",
+    "function-execution-id": "apofqep0u9ie",
+    "server": "cloudflare",
+    "x-cloud-trace-context": "b243e7f57a3bd846c65242c782ceb02e",
+    "x-powered-by": "Express",
+    "accept-ranges": "bytes",
+    "x-served-by": "cache-chi-klot8100120-CHI",
+    "x-cache": "MISS",
+    "x-cache-hits": "0",
+    "x-timer": "S1794273254.704449,VS0,VE1279",
+    "vary": "Accept-Encoding, x-fh-requested-host, accept-encoding",
+    "cf-cache-status": "MISS",
+    "cf-ray": "a58132fb5b333488-CMH"
+  },
+  "body": "{\"status\":404,\"message\":\"Not Found\"}",
+  "url": "https://pokeapi.co/api/v2/pokemon/errdownq8z3",
+  "_provenance": "captured 2026-11-09, holdout batch, GET, scenario: missing record"
+}

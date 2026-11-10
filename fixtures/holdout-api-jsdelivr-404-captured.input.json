@@ -1,0 +1,23 @@
+{
+  "status": 404,
+  "headers": {
+    "content-type": "text/plain; charset=utf-8",
+    "transfer-encoding": "chunked",
+    "connection": "close",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "*",
+    "timing-allow-origin": "*",
+    "cache-control": "public, max-age=600, s-maxage=600",
+    "cross-origin-resource-policy": "cross-origin",
+    "x-content-type-options": "nosniff",
+    "x-served-by": "cache-fra-etou8220199-FRA, cache-mia-kfll1870076-MIA",
+    "x-cache": "MISS, MISS",
+    "vary": "Accept-Encoding",
+    "cf-cache-status": "MISS",
+    "server": "cloudflare",
+    "cf-ray": "a58132ef7a9921ca-CMH"
+  },
+  "body": "Failed to fetch version info for errdown-nonexistent-q8z3.",
+  "url": "https://cdn.jsdelivr.net/npm/errdown-nonexistent-q8z3@1.0.0/index.js",
+  "_provenance": "captured 2026-11-09, holdout batch, GET, scenario: missing package"
+}

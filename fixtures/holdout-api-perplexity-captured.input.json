@@ -1,0 +1,15 @@
+{
+  "status": 401,
+  "headers": {
+    "content-type": "application/json",
+    "transfer-encoding": "chunked",
+    "connection": "close",
+    "server": "cloudflare",
+    "access-control-allow-origin": "*",
+    "cf-cache-status": "DYNAMIC",
+    "cf-ray": "a58132bb9cf19a2d-CLE"
+  },
+  "body": "{\"error\":{\"message\":\"Invalid API key provided. Ensure your API key is correct and active.\",\"type\":\"invalid_api_key\",\"code\":401}}\n",
+  "url": "https://api.perplexity.ai/chat/completions",
+  "_provenance": "captured 2026-11-09, holdout batch, POST, scenario: no key"
+}

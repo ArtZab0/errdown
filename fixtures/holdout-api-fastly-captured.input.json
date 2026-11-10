@@ -1,0 +1,19 @@
+{
+  "status": 401,
+  "headers": {
+    "connection": "close",
+    "retry-after": "0",
+    "content-type": "application/json",
+    "accept-ranges": "bytes",
+    "via": "1.1 varnish",
+    "x-served-by": "cache-cmh1290090-CMH",
+    "x-cache": "MISS",
+    "x-cache-hits": "0",
+    "cache-control": "no-store",
+    "pragma": "no-cache",
+    "server": "fastly Varnish"
+  },
+  "body": "{\"msg\":\"Provided credentials are missing or invalid\"}",
+  "url": "https://api.fastly.com/current_user",
+  "_provenance": "captured 2026-11-09, holdout batch, GET, scenario: no token"
+}

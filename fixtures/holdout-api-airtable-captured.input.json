@@ -1,0 +1,18 @@
+{
+  "status": 401,
+  "headers": {
+    "content-type": "application/json; charset=utf-8",
+    "connection": "close",
+    "server": "Tengine",
+    "access-control-allow-origin": "*",
+    "access-control-allow-methods": "DELETE,GET,OPTIONS,PATCH,POST,PUT",
+    "access-control-allow-headers": "authorization,content-length,content-type,user-agent,x-airtable-application-id,x-airtable-user-agent,x-api-version,x-requested-with",
+    "x-frame-options": "DENY",
+    "x-content-type-options": "nosniff",
+    "airtable-datacenter-regions": "us-east-1",
+    "vary": "Accept-Encoding"
+  },
+  "body": "{\"error\":{\"type\":\"AUTHENTICATION_REQUIRED\",\"message\":\"Authentication required\"}}",
+  "url": "https://api.airtable.com/v0/meta/whoami",
+  "_provenance": "captured 2026-11-09, holdout batch, GET, scenario: no token"
+}

@@ -1,0 +1,18 @@
+{
+  "status": 404,
+  "headers": {
+    "connection": "close",
+    "server": "Varnish",
+    "retry-after": "0",
+    "content-type": "text/html",
+    "accept-ranges": "bytes",
+    "via": "1.1 varnish",
+    "x-served-by": "cache-cmh1290117-CMH",
+    "x-cache": "MISS",
+    "x-cache-hits": "0",
+    "x-timer": "S1794273251.235500,VS0,VE35"
+  },
+  "body": "<!DOCTYPE html>\n<html>\n  <head>\n    <meta charset=\"UTF-8\">\n    <title>404</title>\n  </head>\n  <body>\n    404\n  </body>\n</html>",
+  "url": "https://export.arxiv.org/abs/9999.99999",
+  "_provenance": "captured 2026-11-09, holdout batch, GET, scenario: missing paper"
+}

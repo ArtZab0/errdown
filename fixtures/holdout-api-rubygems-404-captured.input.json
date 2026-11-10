@@ -1,0 +1,26 @@
+{
+  "status": 404,
+  "headers": {
+    "connection": "close",
+    "content-type": "text/plain; charset=utf-8",
+    "x-frame-options": "SAMEORIGIN",
+    "x-xss-protection": "0",
+    "x-content-type-options": "nosniff",
+    "x-permitted-cross-domain-policies": "none",
+    "referrer-policy": "strict-origin-when-cross-origin",
+    "cross-origin-opener-policy": "same-origin",
+    "cache-control": "no-cache",
+    "x-backend": "F_Rails 35.165.230.16:443",
+    "accept-ranges": "bytes",
+    "via": "1.1 varnish",
+    "x-served-by": "cache-cmh1290042-CMH",
+    "x-cache": "MISS",
+    "x-cache-hits": "0",
+    "x-timer": "S1794273248.357202,VS0,VE79",
+    "vary": "Accept-Encoding",
+    "server": "RubyGems.org"
+  },
+  "body": "This rubygem could not be found.",
+  "url": "https://rubygems.org/api/v1/gems/errdown-nonexistent-q8z3.json",
+  "_provenance": "captured 2026-11-09, holdout batch, GET, scenario: missing gem"
+}

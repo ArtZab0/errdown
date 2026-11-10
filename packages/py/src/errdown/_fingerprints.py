@@ -63,7 +63,7 @@ PAGES: List[Dict[str, Any]] = [
     _fp("envoy_timeout", "envoy", 0.9, body=[r"^upstream request timeout\s*\Z"],
         category="upstream_unavailable", error_name="envoy_upstream_timeout",
         title="Upstream timeout", retryable=True),
-    _fp("envoy_empty", "envoy", 0.75, header=("server", r"^envoy\Z", I), body=[r"^\s*\Z"]),
+    _fp("envoy_empty", "envoy", 0.75, header=("server", r"^envoy\Z", I), body=[r"^[\s\ufeff]*\Z"]),
     _fp("traefik_404", "traefik", 0.8, body=[r"^404 page not found\s*\Z"]),
     _fp("traefik", "traefik", 0.65,
         body=[r"^(Bad Gateway|Gateway Timeout|Service Unavailable|Too Many Requests|Request Entity Too Large)\s*\Z"]),

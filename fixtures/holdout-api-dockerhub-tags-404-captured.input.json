@@ -1,0 +1,19 @@
+{
+  "status": 404,
+  "headers": {
+    "content-type": "application/json",
+    "connection": "close",
+    "x-ratelimit-limit": "3000, 3000;w=60",
+    "x-ratelimit-reset": "47",
+    "x-ratelimit-remaining": "2999",
+    "x-ratelimit-ip": "24.209.59.228",
+    "x-trace-id": "1885b42187a6f42f584590a217cae7b1",
+    "x-trace-sampled": "false",
+    "x-frame-options": "deny",
+    "x-content-type-options": "nosniff",
+    "x-xss-protection": "1; mode=block"
+  },
+  "body": "{\"message\":\"object not found\",\"errinfo\":{}}",
+  "url": "https://registry.hub.docker.com/v2/repositories/library/errdownq8z3/tags",
+  "_provenance": "captured 2026-11-09, holdout batch, GET, scenario: missing image"
+}

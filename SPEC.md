@@ -140,7 +140,10 @@ Implementations apply these stages in order and return the first match.
    `{message, code}`, OAuth `{error, error_description}`, GraphQL `{errors: [...]}`,
    `{errors: "<string>"}`; top-level keys match case-insensitively. XML: `<Error>` or
    `<ErrorResponse>` with `<Code>`/`<Message>` (S3, GCS, AWS query APIs, Azure).
-   Category from status; detail from the message (section 7). Confidence 0.7.
+   Category from status, except: on 400/403, a message or code that explicitly says
+   credentials are missing/invalid gives `auth_required`, and one that says a rate limit
+   or quota was exceeded gives `rate_limit` (retryable). Detail from the message
+   (section 7). Confidence 0.7.
    `errdown_source` comes from a header-only fingerprint if one matches, else `origin`.
 5. **Header-only fingerprints** (e.g. `Server: awselb`). These run after stage 4 so an
    application's own message is never replaced by a generic platform label.

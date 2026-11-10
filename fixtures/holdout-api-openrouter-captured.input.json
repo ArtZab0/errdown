@@ -1,0 +1,19 @@
+{
+  "status": 401,
+  "headers": {
+    "content-type": "application/json",
+    "transfer-encoding": "chunked",
+    "connection": "close",
+    "access-control-allow-origin": "*",
+    "cache-control": "private, no-store",
+    "access-control-expose-headers": "X-Generation-Id,x-openrouter-error-origin,x-openrouter-error-tool,X-Provider-Name,request-id,cf-ray",
+    "x-openrouter-error-origin": "client",
+    "referrer-policy": "no-referrer, strict-origin-when-cross-origin",
+    "x-content-type-options": "nosniff",
+    "server": "cloudflare",
+    "cf-ray": "a58132b68e420291-CLE"
+  },
+  "body": "{\"error\":{\"message\":\"No cookie auth credentials found\",\"code\":401}}",
+  "url": "https://openrouter.ai/api/v1/auth/key",
+  "_provenance": "captured 2026-11-09, holdout batch, GET, scenario: no key"
+}

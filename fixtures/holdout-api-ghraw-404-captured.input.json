@@ -1,0 +1,25 @@
+{
+  "status": 404,
+  "headers": {
+    "connection": "close",
+    "x-content-type-options": "nosniff",
+    "x-frame-options": "deny",
+    "x-xss-protection": "1; mode=block",
+    "content-type": "text/plain; charset=utf-8",
+    "x-github-edge-region": "iad",
+    "accept-ranges": "bytes",
+    "via": "1.1 varnish",
+    "x-served-by": "cache-cmh1290096-CMH",
+    "x-cache": "MISS",
+    "x-cache-hits": "0",
+    "x-timer": "S1794273253.603902,VS0,VE40",
+    "vary": "Authorization,Accept-Encoding",
+    "access-control-allow-origin": "*",
+    "cross-origin-resource-policy": "cross-origin",
+    "x-fastly-request-id": "c150cb6b7e49219e89f2371e46d83170e91f1eb9",
+    "source-age": "0"
+  },
+  "body": "404: Not Found",
+  "url": "https://raw.githubusercontent.com/errdown-nonexistent-q8z3/none/main/README.md",
+  "_provenance": "captured 2026-11-09, holdout batch, GET, scenario: missing file"
+}

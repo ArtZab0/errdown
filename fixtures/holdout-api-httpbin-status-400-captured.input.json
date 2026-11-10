@@ -1,0 +1,14 @@
+{
+  "status": 400,
+  "headers": {
+    "access-control-allow-credentials": "true",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Retry-After, RateLimit, RateLimit-Policy",
+    "content-type": "text/html; charset=utf-8",
+    "x-content-type-options": "nosniff",
+    "connection": "close"
+  },
+  "body": "",
+  "url": "https://httpbin.org/status/400",
+  "_provenance": "captured 2026-11-09, holdout batch, GET, scenario: synthetic 400"
+}

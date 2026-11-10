@@ -1,0 +1,19 @@
+{
+  "status": 401,
+  "headers": {
+    "content-type": "application/json;charset=UTF-8",
+    "connection": "close",
+    "server": "cloudflare",
+    "x-zm-trackingid": "v=2.0;clid=aw1;rid=WEB_d030793c58af02a11d871313d4166bb2",
+    "vary": "Access-Control-Request-Headers",
+    "x-content-type-options": "nosniff",
+    "cache-control": "no-cache, no-store, must-revalidate, no-transform",
+    "pragma": "no-cache",
+    "x-zm-zoneid": "VA",
+    "cf-cache-status": "DYNAMIC",
+    "cf-ray": "a58132af7fe8a8fe-CMH"
+  },
+  "body": "{\"code\":124,\"message\":\"Invalid access token.\"}",
+  "url": "https://api.zoom.us/v2/users/me",
+  "_provenance": "captured 2026-11-09, holdout batch, GET, scenario: no token"
+}

@@ -1,0 +1,16 @@
+{
+  "status": 404,
+  "headers": {
+    "content-type": "application/json; charset=utf-8",
+    "cache-control": "max-age=0, private, must-revalidate",
+    "x-ratelimit-limit": "100",
+    "x-ratelimit-remaining": "99",
+    "x-ratelimit-reset": "1794273300",
+    "vary": "accept-encoding",
+    "via": "1.1 google",
+    "connection": "close"
+  },
+  "body": "{\"message\":\"Page not found\",\"status\":404}",
+  "url": "https://hex.pm/api/packages/errdown_nonexistent_q8z3",
+  "_provenance": "captured 2026-11-09, holdout batch, GET, scenario: missing package"
+}

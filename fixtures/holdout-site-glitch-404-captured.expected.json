@@ -1,0 +1,17 @@
+{
+  "type": "https://artzab0.github.io/errdown/errors/gone",
+  "title": "Gone",
+  "status": 410,
+  "detail": "The server returned HTTP 410.",
+  "instance": "https://errdown-nonexistent-q8z3.glitch.me/",
+  "error_code": 410,
+  "error_name": "gone",
+  "error_category": "not_found",
+  "zone": "errdown-nonexistent-q8z3.glitch.me",
+  "retryable": false,
+  "owner_action_required": false,
+  "what_you_should_do": "Do not retry. Check the URL for mistakes, or search for the resource elsewhere.",
+  "errdown_synthesized": true,
+  "errdown_source": "unknown",
+  "errdown_confidence": 0.5
+}

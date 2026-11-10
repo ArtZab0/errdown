@@ -1,0 +1,19 @@
+{
+  "status": 404,
+  "headers": {
+    "content-type": "application/xml",
+    "connection": "close",
+    "x-ms-request-id": "204878c5-f01e-005b-3bb0-7084cc000000",
+    "x-ms-version": "2009-09-19",
+    "access-control-expose-headers": "x-ms-request-id,Server,x-ms-version,Content-Length,Date,Transfer-Encoding",
+    "access-control-allow-origin": "*",
+    "x-azure-ref": "20261110T011409Z-1865fbc4477w82d6hC1DTTmnk000000003hg000000002bzx",
+    "x-fd-int-roxy-purgeid": "0",
+    "x-cache": "TCP_MISS",
+    "x-content-type-options": "nosniff",
+    "cache-control": "max-age=0, no-cache"
+  },
+  "body": "\ufeff<?xml version=\"1.0\" encoding=\"utf-8\"?><Error><Code>BlobNotFound</Code><Message>The specified blob does not exist.\nRequestId:204878c5-f01e-005b-3bb0-7084cc000000\nTime:2026-11-10T01:14:09.3127906Z</Message></Error>",
+  "url": "https://api.nuget.org/v3-flatcontainer/errdown-nonexistent-q8z3/index.json",
+  "_provenance": "captured 2026-11-09, holdout batch, GET, scenario: missing package"
+}

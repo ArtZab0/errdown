@@ -1,0 +1,25 @@
+{
+  "status": 401,
+  "headers": {
+    "content-type": "application/json; charset=UTF-8",
+    "connection": "close",
+    "x-frame-options": "DENY",
+    "x-xss-protection": "1; mode=block",
+    "x-content-type-options": "nosniff",
+    "x-asana-api-version": "1.1",
+    "asana-change": "name=goal_sals_api;info=https://forum.asana.com/t/new-change-goal-access-levels-admin-editor-and-viewer/1089758",
+    "x-envoy-upstream-service-time": "2",
+    "server": "istio-envoy",
+    "x-asana-cell": "prod-us1-asana-cell11",
+    "x-cache": "Error from cloudfront",
+    "via": "1.1 968e3dd072785e29c85397064f43e86e.cloudfront.net (CloudFront)",
+    "x-amz-cf-pop": "CMH68-P7",
+    "x-amz-cf-id": "0jR_xGtS2gaL4of9Uq1Bih-i4zNOmfXviNKbrphfl6Nm_SsfMQkK0g==",
+    "referrer-policy": "strict-origin-when-cross-origin",
+    "x-robots-tag": "none",
+    "x-ua-compatible": "IE=edge,chrome=1"
+  },
+  "body": "{\"errors\":[{\"message\":\"Not Authorized\",\"help\":\"For more information on API status codes and how to handle them, read the docs on errors: https://developers.asana.com/docs/errors\"}]}",
+  "url": "https://app.asana.com/api/1.0/users/me",
+  "_provenance": "captured 2026-11-09, holdout batch, GET, scenario: no token"
+}

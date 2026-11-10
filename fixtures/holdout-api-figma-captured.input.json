@@ -1,0 +1,22 @@
+{
+  "status": 401,
+  "headers": {
+    "content-type": "application/json; charset=utf-8",
+    "connection": "close",
+    "server-timing": "proxy;dur=3",
+    "x-figma-rest-api-request-id": "942680cc-a4d7-466e-a679-61b55aacd58c",
+    "access-control-allow-origin": "*",
+    "access-control-allow-headers": "Content-Type, X-Figma-Token, Authorization",
+    "access-control-expose-headers": "Retry-After, X-Figma-Plan-Tier, X-Figma-Rate-Limit-Type, X-Figma-Upgrade-Link",
+    "cache-control": "no-cache, no-store",
+    "x-content-type-options": "nosniff",
+    "vary": "X-Figma-Token,Authorization,Accept-Encoding",
+    "x-cache": "Error from cloudfront",
+    "via": "1.1 0eae140cb47e1df2572b33198dae08ca.cloudfront.net (CloudFront)",
+    "x-amz-cf-pop": "CMH68-P4",
+    "x-amz-cf-id": "TOEt2ACLvy81FMwhqeqyuCoKsJjSUtpuMzVWp0EOo30ZnNBIg1277w=="
+  },
+  "body": "{\"status\":401,\"err\":\"Missing credentials\"}",
+  "url": "https://api.figma.com/v1/me",
+  "_provenance": "captured 2026-11-09, holdout batch, GET, scenario: no token"
+}

@@ -1,0 +1,14 @@
+{
+  "status": 401,
+  "headers": {
+    "content-type": "application/json",
+    "x-pinecone-api-version": "2024-04",
+    "x-cloud-trace-context": "f63b365cdcb9a8e70b098382ddacc824",
+    "server": "Google Frontend",
+    "via": "1.1 google",
+    "connection": "close"
+  },
+  "body": "{\"error\":{\"code\":\"UNAUTHENTICATED\",\"message\":\"Missing api-key header\"},\"status\":401}",
+  "url": "https://api.pinecone.io/indexes",
+  "_provenance": "captured 2026-11-09, holdout batch, GET, scenario: no key"
+}

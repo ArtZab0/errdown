@@ -1,0 +1,17 @@
+{
+  "type": "https://artzab0.github.io/errdown/errors/bad_request",
+  "title": "Bad request",
+  "status": 400,
+  "detail": "The server returned HTTP 400.",
+  "instance": "https://api.clickup.com/api/v2/user",
+  "error_code": 400,
+  "error_name": "bad_request",
+  "error_category": "bad_request",
+  "zone": "api.clickup.com",
+  "retryable": false,
+  "owner_action_required": false,
+  "what_you_should_do": "Do not retry the same request. Check the URL, method, headers and body, then fix the request.",
+  "errdown_synthesized": true,
+  "errdown_source": "unknown",
+  "errdown_confidence": 0.5
+}

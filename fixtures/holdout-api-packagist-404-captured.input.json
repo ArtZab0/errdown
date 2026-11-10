@@ -1,0 +1,27 @@
+{
+  "status": 404,
+  "headers": {
+    "content-type": "text/html",
+    "transfer-encoding": "chunked",
+    "connection": "close",
+    "vary": "Accept-Encoding",
+    "server": "BunnyCDN-IL1-1236",
+    "cdn-pullzone": "3363232",
+    "cdn-requestcountrycode": "US",
+    "cache-control": "public, max-age=900",
+    "cdn-storagebalancer": "WA-626",
+    "cdn-storageserver": "DE-1142",
+    "cdn-proxyver": "1.72",
+    "cdn-requestpullsuccess": "True",
+    "cdn-requestpullcode": "404",
+    "cdn-cachedat": "11/10/2026 01:14:09",
+    "cdn-edgestorageid": "1236",
+    "cdn-requestid": "44aa37070cce8635738975c438645026",
+    "cdn-cache": "MISS",
+    "cdn-status": "404",
+    "cdn-requesttime": "0"
+  },
+  "body": "\"404 not found, no packages here\"\n\n",
+  "url": "https://repo.packagist.org/p2/errdown/nonexistent-q8z3.json",
+  "_provenance": "captured 2026-11-09, holdout batch, GET, scenario: missing package"
+}

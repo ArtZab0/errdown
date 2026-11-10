@@ -1,0 +1,12 @@
+{
+ "holdout-api-clickup-captured": {"category": "auth_required", "retryable": false, "confidence": "high", "note": "Body says Authorization header required; supplying a token fixes it."},
+ "holdout-api-dropbox-captured": {"category": "auth_required", "retryable": false, "confidence": "high", "note": "Invalid/missing authorization value; needs an access token."},
+ "holdout-api-dropbox-content-captured": {"category": "auth_required", "retryable": false, "confidence": "high", "note": "Invalid authorization value on anonymous request; token needed."},
+ "holdout-api-github-422-captured": {"category": "bad_request", "retryable": false, "confidence": "high", "note": "Missing or invalid 'text' attribute in JSON body."},
+ "holdout-api-hf-model-404-captured": {"category": "not_found", "retryable": false, "confidence": "medium", "note": "HF returns 401 to hide nonexistent repos; the model does not exist so auth would not help."},
+ "holdout-api-trello-captured": {"category": "auth_required", "retryable": false, "confidence": "high", "note": "Anonymous request without key gets 'invalid token'; providing key/token fixes it."},
+ "holdout-site-gitlab-pages-404-captured": {"category": "challenge", "retryable": false, "confidence": "high", "note": "Cloudflare managed challenge (cf-mitigated: challenge, 'Just a moment...')."},
+ "holdout-site-glitch-404-captured": {"category": "not_found", "retryable": false, "confidence": "medium", "note": "410 Gone: Glitch project hosting discontinued, content permanently unavailable."},
+ "holdout-site-hf-space-404-captured": {"category": "not_found", "retryable": false, "confidence": "high", "note": "401 status but page is HF 404 for a nonexistent space."},
+ "holdout-site-wordpress-404-captured": {"category": "challenge", "retryable": false, "confidence": "high", "note": "Hashcash 'Checking your browser' JS bot-verification interstitial."}
+}

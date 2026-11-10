@@ -1,0 +1,10 @@
+{
+  "status": 401,
+  "headers": {
+    "server": "nginx",
+    "connection": "close"
+  },
+  "body": "",
+  "url": "https://api.pagerduty.com/users",
+  "_provenance": "captured 2026-11-09, holdout batch, GET, scenario: no token"
+}

@@ -1,0 +1,17 @@
+{
+  "status": 400,
+  "headers": {
+    "x-content-type-options": "nosniff",
+    "cache-control": "no-cache",
+    "content-type": "application/json",
+    "server": "envoy",
+    "x-robots-tag": "noindex, nofollow, noimageindex",
+    "vary": "Accept-Encoding",
+    "x-dropbox-response-origin": "far_remote",
+    "x-dropbox-request-id": "971bcb6b40504f15bc9c37c16af26fdf",
+    "connection": "close"
+  },
+  "body": "{\"error\":{\".tag\":\"other\"},\"error_summary\":\"other/...\",\"user_message\":{\"locale\":\"en\",\"text\":\"Error in call to API function \\\"files/download\\\": Invalid authorization value in HTTP header/URL parameter\"}}",
+  "url": "https://content.dropboxapi.com/2/files/download",
+  "_provenance": "captured 2026-11-09, holdout batch, POST, scenario: no token"
+}

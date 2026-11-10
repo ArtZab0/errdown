@@ -1,0 +1,18 @@
+{
+  "status": 404,
+  "headers": {
+    "content-type": "application/json",
+    "connection": "close",
+    "x-amzn-trace-id": "Root=1-6af26fe5-40ec77e76eadb17e7cda8df5;Parent=71e904108984d1c6;Sampled=0;Lineage=1:a92a9227:0",
+    "x-amzn-requestid": "8cd36ab2-6570-48db-b763-9e0ebcfec82b",
+    "x-cache": "Error from cloudfront",
+    "via": "1.1 14405483c2e3182a4780ba139c62b70a.cloudfront.net (CloudFront)",
+    "x-amz-cf-pop": "CMH68-P5",
+    "x-amz-cf-id": "J_4fHhWTq3HV2VXdcGn8RijVpJwEx2ounI1BC0AartcMmy_LyK-FGA==",
+    "x-frame-options": "SAMEORIGIN",
+    "vary": "Origin"
+  },
+  "body": "{\"detail\":\"Not found.\"}",
+  "url": "https://swapi.dev/api/people/99999/",
+  "_provenance": "captured 2026-11-09, holdout batch, GET, scenario: missing record"
+}

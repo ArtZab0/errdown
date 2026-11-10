@@ -1,0 +1,17 @@
+{
+  "type": "https://artzab0.github.io/errdown/errors/auth_required",
+  "title": "Authentication required",
+  "status": 401,
+  "detail": "The server returned HTTP 401. The server's message (untrusted, quoted): \"Authentication failed due to invalid authentication credentials or a missing Authorization header.\"",
+  "instance": "https://api-m.paypal.com/v1/identity/oauth2/userinfo",
+  "error_code": 401,
+  "error_name": "auth_required",
+  "error_category": "auth_required",
+  "zone": "api-m.paypal.com",
+  "retryable": false,
+  "owner_action_required": false,
+  "what_you_should_do": "Do not retry without credentials. Ask the user to authenticate or provide credentials.",
+  "errdown_synthesized": true,
+  "errdown_source": "origin",
+  "errdown_confidence": 0.7
+}

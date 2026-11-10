@@ -1,0 +1,19 @@
+{
+  "status": 404,
+  "headers": {
+    "connection": "close",
+    "access-control-allow-origin": "*",
+    "content-type": "application/json",
+    "reporting-endpoints": "heroku-nel=\"https://nel.heroku.com/reports?s=5E7X9dUsbCEEpYV54xHZHPBwQ55y%2BM%2B6uVxTrX%2F5oNE%3D&sid=af571f24-03ee-46d1-9f90-ab9030c2c74c&ts=1794273248\"",
+    "server": "Heroku",
+    "via": "1.1 heroku-router, 1.1 varnish",
+    "accept-ranges": "bytes",
+    "x-served-by": "cache-cmh1290130-CMH",
+    "x-cache": "MISS",
+    "x-cache-hits": "0",
+    "vary": "accept-encoding"
+  },
+  "body": "{\"errors\":[{\"detail\":\"crate `errdown-nonexistent-q8z3` does not exist\"}]}",
+  "url": "https://crates.io/api/v1/crates/errdown-nonexistent-q8z3",
+  "_provenance": "captured 2026-11-09, holdout batch, GET, scenario: missing crate"
+}

@@ -1,0 +1,31 @@
+{
+  "status": 400,
+  "headers": {
+    "content-type": "application/json; charset=utf-8",
+    "connection": "close",
+    "x-xss-protection": "0",
+    "cache-control": "no-store",
+    "content-language": "en-US",
+    "expect-ct": "max-age=0",
+    "pragma": "no-cache",
+    "server": "nginx",
+    "vary": "Origin",
+    "x-content-type-options": "nosniff",
+    "x-datadog-trace-id": "163590775461973604",
+    "x-dns-prefetch-control": "off",
+    "x-download-options": "noopen",
+    "x-krakend": "Version undefined",
+    "x-krakend-completed": "false",
+    "x-permitted-cross-domain-policies": "none",
+    "x-ratelimit-limit": "100",
+    "x-ratelimit-remaining": "99",
+    "x-ratelimit-reset": "1794273305",
+    "x-cache": "Error from cloudfront",
+    "via": "1.1 2385507f5b61fa8340ed5eafca1e99d0.cloudfront.net (CloudFront)",
+    "x-amz-cf-pop": "CMH68-P2",
+    "x-amz-cf-id": "qUECf7zT_Vtnapm2WcyQ5UW4ys8vUdGliRd6msvybdxhYUCqevEMJg=="
+  },
+  "body": "{\"err\":\"Authorization header required\",\"ECODE\":\"OAUTH_017\"}",
+  "url": "https://api.clickup.com/api/v2/user",
+  "_provenance": "captured 2026-11-09, holdout batch, GET, scenario: no token"
+}

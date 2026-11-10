@@ -1,0 +1,19 @@
+{
+  "type": "https://artzab0.github.io/errdown/errors/cloudflare_challenge",
+  "title": "Bot verification required",
+  "status": 403,
+  "detail": "The server returned HTTP 403 with a bot-verification challenge page.",
+  "instance": "https://errdown-nonexistent-q8z3.gitlab.io/",
+  "error_code": 403,
+  "error_name": "cloudflare_challenge",
+  "error_category": "challenge",
+  "ray_id": "a58133430830cd27",
+  "zone": "errdown-nonexistent-q8z3.gitlab.io",
+  "cloudflare_error": true,
+  "retryable": false,
+  "owner_action_required": false,
+  "what_you_should_do": "Stop. This site requires a human to complete a check (CAPTCHA or bot verification). Do not retry automatically and do not attempt to bypass it. Ask the user to open the page in a browser.",
+  "errdown_synthesized": true,
+  "errdown_source": "cloudflare",
+  "errdown_confidence": 0.95
+}

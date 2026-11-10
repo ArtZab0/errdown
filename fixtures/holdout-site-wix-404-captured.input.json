@@ -1,0 +1,21 @@
+{
+  "status": 404,
+  "headers": {
+    "content-type": "text/html; charset=utf-8",
+    "transfer-encoding": "chunked",
+    "connection": "close",
+    "cf-ray": "a58133804b9e4628-CMH",
+    "cf-cache-status": "MISS",
+    "cache-control": "public,max-age=0,must-revalidate",
+    "server": "cloudflare",
+    "x-wix-request-id": "1794273274.957204351021494",
+    "vary": "Accept-Encoding",
+    "server-timing": "cache;desc=miss, varnish;desc=miss_miss, dc;desc=cloudflare_virginia-phy",
+    "x-content-type-options": "nosniff",
+    "x-seen-by": "bQAXdg/f3pWGCb3VI6q72A==,bQAXdg/f3pWGCb3VI6q72A==,jKB0KR2wTEE1MYSdxvKSbciHE4dbw+wewoJ5nvKoyjE=,pmHZlB45NPy7b1VBAukQrewfbs+7qUVAqsIx00yI78k=,Ua1iSBCTq7qSXjmRCGE1N9psfqiVdVWE35KwMN9K6s8JwyriD1m+7FfNjZi06TPiEpzrUii78VdYxnNKzUeyUYhIydfYCelFDfkrvUteY3hV7zgyRCmvQqggCQVKsC9R,2d58ifebGbosy5xc+FRalor+oIDRwHmNoWBxXAer723hb6zocFXDwXxp4FTevkz0qdB/muy8W4xVdZyKL0M+VK89dZf/PixpAxtKcOCcI2w=,2UNV7KOq4oGjA5+PKsX47O46TMzs8fDlsGfnVzqK07gFVd1lR1L8/yRoc88kq/ej,2UNV7KOq4oGjA5+PKsX47KEA/q0qujTnFdLk61L10h4FVd1lR1L8/yRoc88kq/ej,/B3VgDtICCNDWQOEWfZmMq83MoEZbxXgUXvSFE7wnt4=,Po/4ONwwXgFxuAJgEod+x7uG1RBEOJgYvZNcvFXZSXUj6r0AZAMucqm4C7kwBEyaaYHYKhTCtm/IfsuKx8hZ+A==",
+    "x-served-by": "CMH"
+  },
+  "body": "\n  <!DOCTYPE html>\n<!--\n    \n\n            \n\n  \n  \n      \n-->\n<html>\n<head>\n    <meta charset=\"utf-8\">\n    <meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n    <meta name=\"robots\" content=\"noindex\">\n    <title>404 Error: Page Not Found | Wix.com</title>\n\n          <link rel=\"icon\" sizes=\"192x192\" href=\"https://www.wix.com/favicon.ico\" type=\"image/x-icon\"/>\n      <link rel=\"shortcut icon\" href=\"https://www.wix.com/favicon.ico\" type=\"image/x-icon\"/>\n      <link rel=\"apple-touch-icon\" href=\"https://www.wix.com/favicon.ico\" type=\"image/x-icon\"/>\n    \n    <script src=\"https://static.parastorage.com/unpkg-semver/fedops-logger@5/fedops-logger.bundle.min.js\"></script>\n    <script>fedopsLogger.reportAppLoadStarted(\"classic-error-pages-statics\");</script>\n    <script src=\"https://static.parastorage.com/unpkg-semver/header-footer-provider/app.bundle.min.js\"></script>\n    <script crossorigin src=\"https://static.parastorage.com/unpkg/react@18.2.0/umd/react.production.min.js\"></script>\n    <script crossorigin src=\"https://static.parastorage.com/unpkg/react-dom@18.2.0/umd/react-dom.production.min.js\"></script>\n\n    <link rel=\"stylesheet\" href=\"//static.parastorage.com/services/classic-error-pages-statics/1.98.0/app.min.css\">\n\n    <link rel=\"preload\" as=\"font\" href=\"https://static.parastorage.com/unpkg/@wix/wix-fonts@1.14.0/media/WixMadeforTextVF_W_Wght.8022447a.woff2\" crossorigin>\n    <link rel=\"preload\" as=\"font\" href=\"https://static.parastorage.com/unpkg/@wix/wix-fonts@1.14.0/media/WixMadeforDisplayVF_W_Wght.ab35e4df.woff2\" crossorigin>\n    <link rel=\"stylesheet\" href=\"https://static.parastorage.com/unpkg/@wix/wix-fonts@1.14.0/madefor.min.css\">\n    <link rel=\"stylesheet\" href=\"https://static.parastorage.com/unpkg/@wix/wix-fonts@1.14.0/madeforDisplay.min.css\">\n\n</head>\n<body>\n<div id=\"root\"></div>\n<script>\n    window.__LOCALE__ = 'en';\n    window.__ERROR_DATA__ = {\n        staticsUrl: '//static.parastorage.com/services/classic-error-pages-statics/1.98.0/',\n        baseDomain: 'wix.com',\n        errorCode: '404',\n        exceptionName: '',\n        serverErrorCode: '404',\n        data: {},\n        brand: 'wix',\n        requestId: '1794273274.957204351021494'\n    };\n</script>\n<script src=\"//static.parastorage.com/services/classic-error-pages-statics/1.98.0/app.bundle.min.js\"></script>\n</body>\n</html>\n",
+  "url": "https://errdownnonexistentq8z3.wixsite.com/site",
+  "_provenance": "captured 2026-11-09, holdout batch, GET, scenario: missing site"
+}

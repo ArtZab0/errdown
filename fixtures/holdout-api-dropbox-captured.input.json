@@ -1,0 +1,16 @@
+{
+  "status": 400,
+  "headers": {
+    "x-content-type-options": "nosniff",
+    "cache-control": "no-cache",
+    "content-type": "text/plain; charset=utf-8",
+    "x-dropbox-request-url": "/2/users/get_current_account",
+    "server": "envoy",
+    "x-dropbox-response-origin": "remote",
+    "x-dropbox-request-id": "ea512c7365354647ae1087e76af26fd9",
+    "connection": "close"
+  },
+  "body": "Error in call to API function \"users/get_current_account\": Invalid authorization value in HTTP header/URL parameter",
+  "url": "https://api.dropboxapi.com/2/users/get_current_account",
+  "_provenance": "captured 2026-11-09, holdout batch, POST, scenario: no token"
+}

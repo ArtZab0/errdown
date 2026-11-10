@@ -1,0 +1,19 @@
+{
+  "status": 403,
+  "headers": {
+    "server": "nginx",
+    "content-type": "application/json; charset=UTF-8",
+    "connection": "close",
+    "accept-encoding": "deflate, gzip",
+    "cache-control": "no-store",
+    "correlation-id": "alSaas-21TXW-BFkelvsRJvl",
+    "access-control-expose-headers": "Correlation-ID",
+    "access-control-allow-origin": "*",
+    "timing-allow-origin": "*",
+    "x-content-type-options": "nosniff",
+    "content-disposition": "inline; filename=a.txt"
+  },
+  "body": "{\"message\":\"Invalid Application-ID or API key\",\"status\":403}",
+  "url": "https://latency-dsn.algolia.net/1/indexes",
+  "_provenance": "captured 2026-11-09, holdout batch, GET, scenario: no key"
+}

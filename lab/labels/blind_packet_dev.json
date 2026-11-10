@@ -1,0 +1,327 @@
+[
+ {
+  "id": "apache-431-400-captured",
+  "request": "GET /missing with a 64 KB request header",
+  "status": 400,
+  "headers": {
+   "server": "Apache/2.4.69 (Unix)",
+   "content-type": "text/html; charset=iso-8859-1"
+  },
+  "body_excerpt": "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.01//EN\" \"http://www.w3.org/TR/html4/strict.dtd\"> <html><head> <title>400 Bad Request</title> </head><body> <h1>Bad Request</h1> <p>Your browser sent a request that this server could not understand.<br /> Size of a request header field exceeds server limit.</p> </body></html>",
+  "body_length": 318
+ },
+ {
+  "id": "apache-502-503-captured",
+  "request": "request proxied to an upstream whose port is closed",
+  "status": 503,
+  "headers": {
+   "server": "Apache/2.4.69 (Unix)",
+   "content-type": "text/html; charset=iso-8859-1"
+  },
+  "body_excerpt": "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.01//EN\" \"http://www.w3.org/TR/html4/strict.dtd\"> <html><head> <title>503 Service Unavailable</title> </head><body> <h1>Service Unavailable</h1> <p>The server is temporarily unable to service your request due to maintenance downtime or capacity problems. Please try again later.</p> </body></html>",
+  "body_length": 339
+ },
+ {
+  "id": "apache-504-502-captured",
+  "request": "request proxied to an upstream that hangs 30 s (proxy timeout 2 s)",
+  "status": 502,
+  "headers": {
+   "server": "Apache/2.4.69 (Unix)",
+   "content-type": "text/html; charset=iso-8859-1"
+  },
+  "body_excerpt": "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.01//EN\" \"http://www.w3.org/TR/html4/strict.dtd\"> <html><head> <title>502 Proxy Error</title> </head><body> <h1>Proxy Error</h1> <p>The proxy server received an invalid response from an upstream server.<br /> The proxy server could not handle the request<p>Reason: <strong>Error reading from remote server</strong></p></p> </body></html>",
+  "body_length": 381
+ },
+ {
+  "id": "api-aws-sts-403-captured",
+  "request": "Unauthenticated/anonymous GET https://sts.amazonaws.com/?Action=GetCallerIdentity&Version=2011-06-15 (no credentials sent)",
+  "status": 403,
+  "headers": {
+   "content-type": "text/xml"
+  },
+  "body_excerpt": "<ErrorResponse xmlns=\"https://sts.amazonaws.com/doc/2011-06-15/\"> <Error> <Type>Sender</Type> <Code>MissingAuthenticationToken</Code> <Message>Request is missing Authentication Token</Message> </Error> <RequestId>f68a41f8-9f7a-4290-9016-3eef7390b279</RequestId> </ErrorResponse>",
+  "body_length": 297
+ },
+ {
+  "id": "api-cloudflare-400-captured",
+  "request": "Unauthenticated/anonymous GET https://api.cloudflare.com/client/v4/user (no credentials sent)",
+  "status": 403,
+  "headers": {
+   "content-type": "application/json",
+   "server": "cloudflare"
+  },
+  "body_excerpt": "{\"success\":false,\"errors\":[{\"code\":9106,\"message\":\"Missing X-Auth-Email header\"},{\"code\":9107,\"message\":\"Missing X-Auth-Key header\"}],\"messages\":[],\"result\":null}",
+  "body_length": 162
+ },
+ {
+  "id": "api-gemini-403-captured",
+  "request": "Unauthenticated/anonymous GET https://generativelanguage.googleapis.com/v1beta/models (no credentials sent)",
+  "status": 403,
+  "headers": {
+   "content-type": "application/json; charset=UTF-8",
+   "server": "scaffolding on HTTPServer2"
+  },
+  "body_excerpt": "{ \"error\": { \"code\": 403, \"message\": \"Method doesn't allow unregistered callers (callers without established identity). Please use API Key or other form of API consumer identity to call this API.\", \"status\": \"PERMISSION_DENIED\" } }",
+  "body_length": 248
+ },
+ {
+  "id": "api-github-graphql-401-captured",
+  "request": "Unauthenticated/anonymous POST https://api.github.com/graphql (no credentials sent)",
+  "status": 403,
+  "headers": {
+   "server": "Varnish",
+   "content-type": "application/json; charset=utf-8"
+  },
+  "body_excerpt": "{\"message\":\"API rate limit exceeded for 24.209.59.228. (But here's the good news: Authenticated requests get a higher rate limit. Check out the documentation for more details.)\",\"documentation_url\":\"https://docs.github.com/rest/overview/resources-in-the-rest-api#rate-limiting\"}",
+  "body_length": 279
+ },
+ {
+  "id": "api-google-400-key-captured",
+  "request": "Unauthenticated/anonymous GET https://www.googleapis.com/youtube/v3/videos?part=id&id=x&key=invalid (no credentials sent)",
+  "status": 400,
+  "headers": {
+   "content-type": "application/json; charset=UTF-8",
+   "server": "scaffolding on HTTPServer2"
+  },
+  "body_excerpt": "{ \"error\": { \"code\": 400, \"message\": \"API key not valid. Please pass a valid API key.\", \"errors\": [ { \"message\": \"API key not valid. Please pass a valid API key.\", \"domain\": \"global\", \"reason\": \"badRequest\" } ], \"status\": \"INVALID_ARGUMENT\", \"details\": [ { \"@type\": \"type.googleapis.com/google.rpc.ErrorInfo\", \"reason\": \"API_KEY_INVALID\", \"domain\": \"googleapis.com\", \"metadata\": { \"service\": \"youtube.googleapis.com\" } }, { \"@type\": \"type.googleapis.com/google.rpc.LocalizedMessage\", \"locale\": \"en-US\", \"message\": \"API key not valid. Please pass a valid API key.\" } ] } }",
+  "body_length": 738
+ },
+ {
+  "id": "api-google-401-captured",
+  "request": "Unauthenticated/anonymous GET https://www.googleapis.com/drive/v3/files (no credentials sent)",
+  "status": 403,
+  "headers": {
+   "content-type": "application/json; charset=UTF-8",
+   "server": "ESF"
+  },
+  "body_excerpt": "{ \"error\": { \"code\": 403, \"message\": \"Method doesn't allow unregistered callers (callers without established identity). Please use API Key or other form of API consumer identity to call this API.\", \"errors\": [ { \"message\": \"Method doesn't allow unregistered callers (callers without established identity). Please use API Key or other form of API consumer identity to call this API.\", \"domain\": \"global\", \"reason\": \"forbidden\" } ], \"status\": \"PERMISSION_DENIED\" } }",
+  "body_length": 525
+ },
+ {
+  "id": "api-reddit-404-captured",
+  "request": "Unauthenticated/anonymous GET https://www.reddit.com/r/errdownnonexistentq8z3/about.json (resource does not exist)",
+  "status": 403,
+  "headers": {
+   "retry-after": "0",
+   "content-type": "text/html",
+   "server": "snooserv"
+  },
+  "body_excerpt": "<body class=theme-beta><div><style>.theme-light,:root{--rem360:22.5rem;--rem320:20rem;--rem192:12rem;--rem144:9rem;--rem128:8rem;--rem96:6rem;--rem90:5.625rem;--rem88:5.5rem;--rem64:4rem;--rem56:3.5rem;--rem48:3rem;--rem40:2.5rem;--rem36:2.25rem;--rem32:2rem;--rem28:1.75rem;--rem26:1.625rem;--rem24:1.5rem;--rem22:1.375rem;--rem20:1.25rem;--rem18:1.125rem;--rem16:1rem;--rem15:0.9375rem;--rem14:0.875rem;--rem12:0.75rem;--rem10:0.625rem;--rem8:0.5rem;--rem6:0.375rem;--rem4:0.25rem;--rem2:0.125rem;--rem1:0.0625rem;--spacer-4xs:0.125rem;--spacer-2xs:0.25rem;--spacer-xs:0.5rem;--spacer-sm:0.75rem;--spacer-md:1rem;--spacer-lg:1.5rem;--spacer-xl:2rem;--spacer-2xl:3rem;--spacer-a-px:0px;--spacer-button-lg-px:var(--spacer-lg);--spacer-button-md-px:var(--spacer-lg);--spacer-button-sm-px:var(--spacer-md);--spacer-input-padding-left:0px;--spacer-input-padding-top:0px;--spacer-label-default:0px;--spacer-switch-input-active-pl:0px;--size-2xs:0.25rem;--size-xs:0.5rem;--size-sm:0.75rem;--size-md:1rem;--size-lg:1.5rem;--size-xl:2rem;--size-2xl:3rem;--size-3xl:4rem;--size-4xl:6rem;--size-5xl:8rem;--size-button-lg-h:3.375rem;--size-button-md-h:2.75rem;--size-button-sm-h:2.125rem;--size-button-xs-h:1.3 \u2026[truncated]",
+  "body_length": 189906
+ },
+ {
+  "id": "api-vercel-403-captured",
+  "request": "Unauthenticated/anonymous GET https://api.vercel.com/v2/user (no credentials sent)",
+  "status": 403,
+  "headers": {
+   "content-type": "application/json; charset=utf-8",
+   "server": "Vercel"
+  },
+  "body_excerpt": "{\"error\":{\"code\":\"forbidden\",\"message\":\"The request is missing an authentication token\",\"missingToken\":true}}",
+  "body_length": 109
+ },
+ {
+  "id": "caddy-414-400-captured",
+  "request": "GET with a 20,000-character URL path",
+  "status": 400,
+  "headers": {
+   "server": "Caddy"
+  },
+  "body_excerpt": "",
+  "body_length": 0
+ },
+ {
+  "id": "cloudflare-zone-bad-origin-cert-captured",
+  "request": "GET to a Cloudflare-proxied hostname whose origin is an unrelated IP (93.184.215.14) with strict TLS enabled",
+  "status": 522,
+  "headers": {
+   "content-type": "text/plain; charset=UTF-8",
+   "server": "cloudflare"
+  },
+  "body_excerpt": "error code: 522",
+  "body_length": 16
+ },
+ {
+  "id": "envoy-501-400-captured",
+  "request": "request with unknown HTTP method FOO",
+  "status": 400,
+  "headers": {
+   "content-type": "text/plain",
+   "server": "envoy"
+  },
+  "body_excerpt": "Bad Request",
+  "body_length": 11
+ },
+ {
+  "id": "envoy-502-503-captured",
+  "request": "request proxied to an upstream whose port is closed",
+  "status": 503,
+  "headers": {
+   "content-type": "text/plain",
+   "server": "envoy"
+  },
+  "body_excerpt": "upstream connect error or disconnect/reset before headers. reset reason: remote connection failure, transport failure reason: delayed connect error: Connection refused",
+  "body_length": 167
+ },
+ {
+  "id": "express-405-404-captured",
+  "request": "DELETE /missing (route only defined for GET, or not at all)",
+  "status": 404,
+  "headers": {
+   "x-powered-by": "Express",
+   "content-type": "text/html; charset=utf-8"
+  },
+  "body_excerpt": "<!DOCTYPE html> <html lang=\"en\"> <head> <meta charset=\"utf-8\"> <title>Error</title> </head> <body> <pre>Cannot DELETE /missing</pre> </body> </html>",
+  "body_length": 149
+ },
+ {
+  "id": "express-414-431-captured",
+  "request": "GET with a 20,000-character URL path",
+  "status": 431,
+  "headers": {},
+  "body_excerpt": "",
+  "body_length": 0
+ },
+ {
+  "id": "express-501-400-captured",
+  "request": "request with unknown HTTP method FOO",
+  "status": 400,
+  "headers": {},
+  "body_excerpt": "",
+  "body_length": 0
+ },
+ {
+  "id": "jetty-405-404-captured",
+  "request": "DELETE /missing (route only defined for GET, or not at all)",
+  "status": 404,
+  "headers": {
+   "server": "Jetty(12.0.25)"
+  },
+  "body_excerpt": "",
+  "body_length": 0
+ },
+ {
+  "id": "nginx-431-400-captured",
+  "request": "GET /missing with a 64 KB request header",
+  "status": 400,
+  "headers": {
+   "server": "nginx/1.27.5",
+   "content-type": "text/html"
+  },
+  "body_excerpt": "<html> <head><title>400 Request Header Or Cookie Too Large</title></head> <body> <center><h1>400 Bad Request</h1></center> <center>Request Header Or Cookie Too Large</center> <hr><center>nginx/1.27.5</center> </body> </html>",
+  "body_length": 233
+ },
+ {
+  "id": "platform-lambda-url-403-captured",
+  "request": "Unauthenticated/anonymous GET https://abcdefghijklmnopqrstuvwxyz123456.lambda-url.us-east-1.on.aws/ (resource does not exist)",
+  "status": 403,
+  "headers": {
+   "content-type": "application/json",
+   "x-amzn-errortype": "AccessDeniedException"
+  },
+  "body_excerpt": "{\"Message\":null}",
+  "body_length": 16
+ },
+ {
+  "id": "site-g2-captured",
+  "request": "Unauthenticated/anonymous GET https://www.g2.com/products/errdown/reviews (resource does not exist)",
+  "status": 403,
+  "headers": {
+   "content-type": "text/html;charset=utf-8",
+   "server": "cloudflare"
+  },
+  "body_excerpt": "<html lang=\"en\"><head><title>g2.com</title><style>#cmsg{animation: A 1.5s;}@keyframes A{0%{opacity:0;}99%{opacity:0;}100%{opacity:1;}}</style></head><body style=\"margin:0\"><p id=\"cmsg\">Please enable JS and disable any ad blocker</p><script data-cfasync=\"false\">var dd={'rt':'i','cid':'AHrlqAAAAAMAX5G-d0J3S-8AGNE75A==','hsh':'229542D5C186C7F5A5BB092FBDD92B','b':1396754,'s':48636,'e':'eabe6a06715d4831c470a1c39d38728481c78638d0850646a179357e8bb1e7e9311a9add19c71bb5ff18c08930125c42','qp':'','host':'geo.captcha-delivery.com','cookie':'HdbRW~GDGA9QUKGX9zM6KnS3Xj2k99lrmlo8D7bmffgsTlhnBd2ZI2MMIig6hCKyNcwsIvuUqKZsgr48t7hwFow~0xAWAy02vfCCkOQ5Oi_sQihQbw7wUes9JKn22KvU'}</script><script data-cfasync=\"false\" src=\"https://ct.captcha-delivery.com/i.js\"></script><script>(function(){function c(){var b=a.contentDocument||(a.contentWindow&&a.contentWindow.document);if(b){var d=b.createElement('script');d.innerHTML=\"window.__CF$cv$params={r:'a580fa85c97dc424',t:'MTc5NDI3MDk0MQ=='};var l=window.parent.location,o;try{o=new URL(l.origin).origin}catch(e){try{o=new URL(new URL(l.href).origin).origin}catch(e){o=''}}var u='/cdn-cgi/challenge-platform/scripts/jsd/main.js?ray=a580fa85c97dc424',a=document.createE \u2026[truncated]",
+  "body_length": 1883
+ },
+ {
+  "id": "site-glassdoor-captured",
+  "request": "Unauthenticated/anonymous GET https://www.glassdoor.com/Reviews/errdown-reviews-SRCH_KE0,7.htm (resource does not exist)",
+  "status": 403,
+  "headers": {
+   "content-type": "text/html; charset=UTF-8",
+   "cf-mitigated": "challenge",
+   "server": "cloudflare"
+  },
+  "body_excerpt": "<!doctype html><html lang=\"en\"><head><title>Security | Glassdoor</title><meta http-equiv=\"content-type\" content=\"text/html;charset=utf-8\"><meta name=\"viewport\" content=\"width=device-width,initial-scale=1\"><meta name=\"theme-color\" content=\"#0caa41\"><meta name=\"robots\" content=\"noindex, nofollow\"><link rel=\"icon\" href=\"https://www.glassdoor.com/favicon.ico\" sizes=\"any\"><style type=\"text/css\">body,html{background:#fff;font-family:Helvetica Neue,HelveticaNeue,Helvetica,Arial,sans-serif;font-size:16px;margin:0;padding:0}div,p{color:#20262e}.header{-webkit-box-shadow:inset 0 -1px 0 0 #dee0e3;box-shadow:inset 0 -1px 0 0 #dee0e3}.header .center{height:45px}.header .center:before{content:\"\";height:100%;margin-right:-.25em;display:inline-block;vertical-align:middle}.center{margin:0 auto;width:800px}.article-container{display:flex;justify-content:center;margin-top:32px}.article,.center{box-sizing:border-box}.article{background-color:#fff}.col-article{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;max-width:480px}.text-article{text-align:center;font-size:14px;padding-top:15px}.cferror_details{font-size:13px;list-style:none;background:#f6f7f8;border-radius \u2026[truncated]",
+  "body_length": 11764
+ },
+ {
+  "id": "site-indeed-captured",
+  "request": "Unauthenticated/anonymous GET https://www.indeed.com/viewjob?jk=0 (resource does not exist)",
+  "status": 401,
+  "headers": {
+   "content-type": "text/html",
+   "server": "cloudflare"
+  },
+  "body_excerpt": "<!DOCTYPE html> <html> <head> <title>Authenticating...</title> <style>html{visibility: hidden; background:#fff;}</style> <script> (function() { var targetBase = \"https://www.indeed.com/account/login?branding=login-required&from=bot-detection-anonymous&continue=\"; function go(rayId) { var finalUrl = targetBase + encodeURIComponent(window.location.href); if (rayId) finalUrl += \"&rayid=\" + encodeURIComponent(rayId); window.location.replace(finalUrl); } fetch(window.location.href, { method: 'HEAD', cache: 'no-store' }) .then(res => go(res.headers.get('cf-ray'))) .catch(() => go('')); })(); </script> </head> <body>Redirecting to login...<script>(function(){function c(){var b=a.contentDocument||(a.contentWindow&&a.contentWindow.document);if(b){var d=b.createElement('script');d.innerHTML=\"window.__CF$cv$params={r:'a580fa86aa6122ce',t:'MTc5NDI3MDk0MQ=='};var l=window.parent.location,o;try{o=new URL(l.origin).origin}catch(e){try{o=new URL(new URL(l.href).origin).origin}catch(e){o=''}}var u='/cdn-cgi/challenge-platform/scripts/jsd/main.js?ray=a580fa86aa6122ce',a=document.createElement('script');a.src=o?new URL(u,o).href:u;document.getElementsByTagName('head')[0].appendChild(a);\";b.getElement \u2026[truncated]",
+  "body_length": 1851
+ },
+ {
+  "id": "site-linkedin-captured",
+  "request": "Unauthenticated/anonymous GET https://www.linkedin.com/in/errdown-nonexistent-q8z3 (resource does not exist)",
+  "status": 999,
+  "headers": {
+   "content-type": "text/html",
+   "x-li-fabric": "prod-lor1",
+   "server": "cloudflare"
+  },
+  "body_excerpt": "<html><head> <script type=\"text/javascript\"> window.onload = function() { // Parse the tracking code from cookies. var trk = \"bf\"; var trkInfo = \"bf\"; var cookies = document.cookie.split(\"; \"); for (var i = 0; i < cookies.length; ++i) { if ((cookies[i].indexOf(\"trkCode=\") == 0) && (cookies[i].length > 8)) { trk = cookies[i].substring(8); } else if ((cookies[i].indexOf(\"trkInfo=\") == 0) && (cookies[i].length > 8)) { trkInfo = cookies[i].substring(8); } } if (window.location.protocol == \"http:\") { // If \"sl\" cookie is set, redirect to https. for (var i = 0; i < cookies.length; ++i) { if ((cookies[i].indexOf(\"sl=\") == 0) && (cookies[i].length > 3)) { window.location.href = \"https:\" + window.location.href.substring(window.location.protocol.length); return; } } } // Get the new domain. For international domains such as // fr.linkedin.com, we convert it to www.linkedin.com // treat .cn similar to .com here var domain = location.host; if (domain != \"www.linkedin.com\" && domain != \"www.linkedin.cn\") { var subdomainIndex = location.host.indexOf(\".linkedin\"); if (subdomainIndex != -1) { domain = \"www\" + location.host.substring(subdomainIndex); } } window.location.href = \"https://\" + domain + \u2026[truncated]",
+  "body_length": 1530
+ },
+ {
+  "id": "site-medium-404-captured",
+  "request": "Unauthenticated/anonymous GET https://medium.com/@errdownnonexistentq8z3/none (resource does not exist)",
+  "status": 403,
+  "headers": {
+   "content-type": "text/html; charset=UTF-8",
+   "cf-mitigated": "challenge",
+   "server": "cloudflare"
+  },
+  "body_excerpt": "<!DOCTYPE html><html lang=\"en-US\"><head><title>Just a moment...</title><meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\"><meta http-equiv=\"X-UA-Compatible\" content=\"IE=Edge\"><meta name=\"robots\" content=\"noindex,nofollow\"><meta name=\"viewport\" content=\"width=device-width,initial-scale=1\"><meta http-equiv=\"content-security-policy\" content=\"default-src &#39;none&#39;; script-src &#39;nonce-L4OJJ9X7evnGc6EszIz5XF&#39; &#39;unsafe-eval&#39; https://challenges.cloudflare.com; script-src-attr &#39;none&#39;; style-src &#39;unsafe-inline&#39;; img-src &#39;self&#39; https://challenges.cloudflare.com; connect-src &#39;self&#39; https://challenges.cloudflare.com; frame-src &#39;self&#39; https://challenges.cloudflare.com blob:; child-src &#39;self&#39; https://challenges.cloudflare.com blob:; worker-src blob:; form-action http: https:; base-uri &#39;self&#39;\"><style>*{box-sizing:border-box;margin:0;padding:0}html{line-height:1.15;-webkit-text-size-adjust:100%;color:#313131;font-family:system-ui,-apple-system,BlinkMacSystemFont,\"Segoe UI\",Roboto,\"Helvetica Neue\",Arial,\"Noto Sans\",sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\",\"Segoe UI Symbol\",\"Noto Color Emoji\"}body{displa \u2026[truncated]",
+  "body_length": 5601
+ },
+ {
+  "id": "site-npmjs-404-captured",
+  "request": "Unauthenticated/anonymous GET https://www.npmjs.com/package/errdown-nonexistent-q8z3-pkg (resource does not exist)",
+  "status": 403,
+  "headers": {
+   "content-type": "text/html; charset=UTF-8",
+   "cf-mitigated": "challenge",
+   "server": "cloudflare"
+  },
+  "body_excerpt": "<!DOCTYPE html><html lang=\"en-US\"><head><title>Just a moment...</title><meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\"><meta http-equiv=\"X-UA-Compatible\" content=\"IE=Edge\"><meta name=\"robots\" content=\"noindex,nofollow\"><meta name=\"viewport\" content=\"width=device-width,initial-scale=1\"><meta http-equiv=\"content-security-policy\" content=\"default-src &#39;none&#39;; script-src &#39;nonce-NbcVbhJoOPXvI97v2Bsv5b&#39; &#39;unsafe-eval&#39; https://challenges.cloudflare.com; script-src-attr &#39;none&#39;; style-src &#39;unsafe-inline&#39;; img-src &#39;self&#39; https://challenges.cloudflare.com; connect-src &#39;self&#39; https://challenges.cloudflare.com; frame-src &#39;self&#39; https://challenges.cloudflare.com blob:; child-src &#39;self&#39; https://challenges.cloudflare.com blob:; worker-src blob:; form-action http: https:; base-uri &#39;self&#39;\"><style>*{box-sizing:border-box;margin:0;padding:0}html{line-height:1.15;-webkit-text-size-adjust:100%;color:#313131;font-family:system-ui,-apple-system,BlinkMacSystemFont,\"Segoe UI\",Roboto,\"Helvetica Neue\",Arial,\"Noto Sans\",sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\",\"Segoe UI Symbol\",\"Noto Color Emoji\"}body{displa \u2026[truncated]",
+  "body_length": 5714
+ },
+ {
+  "id": "site-stackoverflow-404-captured",
+  "request": "Unauthenticated/anonymous GET https://stackoverflow.com/questions/0/errdown-nonexistent (resource does not exist)",
+  "status": 403,
+  "headers": {
+   "content-type": "text/html; charset=UTF-8",
+   "cf-mitigated": "challenge",
+   "server": "cloudflare"
+  },
+  "body_excerpt": "<!DOCTYPE html><html lang=\"en-US\"><head><title>Just a moment...</title><meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\"><meta http-equiv=\"X-UA-Compatible\" content=\"IE=Edge\"><meta name=\"robots\" content=\"noindex,nofollow\"><meta name=\"viewport\" content=\"width=device-width,initial-scale=1\"><meta http-equiv=\"content-security-policy\" content=\"default-src &#39;none&#39;; script-src &#39;nonce-TVCeFA8ifR6GtugxwcSrzu&#39; &#39;unsafe-eval&#39; https://challenges.cloudflare.com; script-src-attr &#39;none&#39;; style-src &#39;unsafe-inline&#39;; img-src &#39;self&#39; https://challenges.cloudflare.com; connect-src &#39;self&#39; https://challenges.cloudflare.com; frame-src &#39;self&#39; https://challenges.cloudflare.com blob:; child-src &#39;self&#39; https://challenges.cloudflare.com blob:; worker-src blob:; form-action http: https:; base-uri &#39;self&#39;\"><style>*{box-sizing:border-box;margin:0;padding:0}html{line-height:1.15;-webkit-text-size-adjust:100%;color:#313131;font-family:system-ui,-apple-system,BlinkMacSystemFont,\"Segoe UI\",Roboto,\"Helvetica Neue\",Arial,\"Noto Sans\",sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\",\"Segoe UI Symbol\",\"Noto Color Emoji\"}body{displa \u2026[truncated]",
+  "body_length": 5639
+ },
+ {
+  "id": "tomcat-414-400-captured",
+  "request": "GET with a 20,000-character URL path",
+  "status": 400,
+  "headers": {
+   "content-type": "text/html;charset=utf-8"
+  },
+  "body_excerpt": "<!doctype html><html lang=\"en\"><head><title>HTTP Status 400 \u2013 Bad Request</title><style type=\"text/css\">body {font-family:Tahoma,Arial,sans-serif;} h1, h2, h3, b {color:white;background-color:#525D76;} h1 {font-size:22px;} h2 {font-size:16px;} h3 {font-size:14px;} p {font-size:12px;} a {color:black;} .line {height:1px;background-color:#525D76;border:none;}</style></head><body><h1>HTTP Status 400 \u2013 Bad Request</h1><hr class=\"line\" /><p><b>Type</b> Exception Report</p><p><b>Message</b> Request header is too large</p><p><b>Description</b> The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing).</p><p><b>Exception</b></p><pre>java.lang.IllegalArgumentException: Request header is too large org.apache.coyote.http11.Http11InputBuffer.fill(Http11InputBuffer.java:773) org.apache.coyote.http11.Http11InputBuffer.parseRequestLine(Http11InputBuffer.java:445) org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:281) org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:71) org.apache.coyote.AbstractProtocol$Conne \u2026[truncated]",
+  "body_length": 1896
+ },
+ {
+  "id": "tomcat-431-400-captured",
+  "request": "GET /missing with a 64 KB request header",
+  "status": 400,
+  "headers": {
+   "content-type": "text/html;charset=utf-8"
+  },
+  "body_excerpt": "<!doctype html><html lang=\"en\"><head><title>HTTP Status 400 \u2013 Bad Request</title><style type=\"text/css\">body {font-family:Tahoma,Arial,sans-serif;} h1, h2, h3, b {color:white;background-color:#525D76;} h1 {font-size:22px;} h2 {font-size:16px;} h3 {font-size:14px;} p {font-size:12px;} a {color:black;} .line {height:1px;background-color:#525D76;border:none;}</style></head><body><h1>HTTP Status 400 \u2013 Bad Request</h1><hr class=\"line\" /><p><b>Type</b> Exception Report</p><p><b>Message</b> Request header is too large</p><p><b>Description</b> The server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing).</p><p><b>Exception</b></p><pre>java.lang.IllegalArgumentException: Request header is too large org.apache.coyote.http11.Http11InputBuffer.fill(Http11InputBuffer.java:773) org.apache.coyote.http11.Http11InputBuffer.parseHeader(Http11InputBuffer.java:967) org.apache.coyote.http11.Http11InputBuffer.parseHeaders(Http11InputBuffer.java:596) org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:304) org.apache.coyote.AbstractProcessorLight.p \u2026[truncated]",
+  "body_length": 1976
+ }
+]

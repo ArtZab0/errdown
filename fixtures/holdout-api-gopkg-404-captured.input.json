@@ -1,0 +1,19 @@
+{
+  "status": 404,
+  "headers": {
+    "access-control-allow-headers": "Range",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Content-Range, Content-Length",
+    "cache-control": "public, max-age=60",
+    "content-security-policy-report-only": "script-src 'none'; form-action 'none'; frame-src 'none'; report-uri https://csp.withgoogle.com/csp/goa-fa2dfb7c_2",
+    "content-type": "text/plain; charset=UTF-8",
+    "cross-origin-opener-policy": "same-origin",
+    "x-content-type-options": "nosniff",
+    "x-frame-options": "SAMEORIGIN",
+    "x-xss-protection": "0",
+    "connection": "close"
+  },
+  "body": "not found: module github.com/errdown-nonexistent-q8z3/x: git ls-remote -q --end-of-options https://github.com/errdown-nonexistent-q8z3/x in /tmp/gopath/pkg/mod/cache/vcs/7ed13907fda6f52a63133080a501a2a945f3c8a4bb43203085e70fb68833147d: exit status 128:\n\tfatal: could not read Username for 'https://github.com': terminal prompts disabled\nConfirm the import path was entered correctly.\nIf this is a private repository, see https://go.dev/doc/faq#git_https for additional information.",
+  "url": "https://proxy.golang.org/github.com/errdown-nonexistent-q8z3/x/@v/list",
+  "_provenance": "captured 2026-11-09, holdout batch, GET, scenario: missing module"
+}

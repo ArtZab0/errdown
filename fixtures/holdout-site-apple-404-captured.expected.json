@@ -1,0 +1,17 @@
+{
+  "type": "https://artzab0.github.io/errdown/errors/not_found",
+  "title": "Not found",
+  "status": 404,
+  "detail": "The server returned HTTP 404.",
+  "instance": "https://www.apple.com/errdown-nonexistent-q8z3",
+  "error_code": 404,
+  "error_name": "not_found",
+  "error_category": "not_found",
+  "zone": "www.apple.com",
+  "retryable": false,
+  "owner_action_required": false,
+  "what_you_should_do": "Do not retry. Check the URL for mistakes, or search for the resource elsewhere.",
+  "errdown_synthesized": true,
+  "errdown_source": "unknown",
+  "errdown_confidence": 0.5
+}

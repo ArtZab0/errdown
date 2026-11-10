@@ -1,0 +1,18 @@
+{
+  "status": 404,
+  "headers": {
+    "content-type": "text/html; charset=UTF-8",
+    "cache-control": "private, max-age=0",
+    "x-content-type-options": "nosniff",
+    "x-frame-options": "SAMEORIGIN",
+    "x-xss-protection": "1; mode=block",
+    "server": "GSE",
+    "accept-ranges": "none",
+    "vary": "Accept-Encoding",
+    "connection": "close",
+    "transfer-encoding": "chunked"
+  },
+  "body": "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.01//EN\" \"http://www.w3.org/TR/html4/strict.dtd\"><html dir=\"ltr\"><head><title>Blog not found</title>\n<link href=\"https://www.blogger.com/static/v1/v-css/3896558673-new_ui_static_pages.css\" rel=\"stylesheet\" type=\"text/css\">\n<link href=\"//fonts.googleapis.com/css?family=Open+Sans:300\" rel=\"stylesheet\" type=\"text/css\">\n<link href=\"//www.google.com/css/maia.css\" rel=\"stylesheet\" type=\"text/css\">\n<link href=\"https://www.blogger.com/static/v1/v-css/2223071481-static_pages.css\" rel=\"stylesheet\" type=\"text/css\">\n<style type=\"text/css\">\n    @font-face{font-family:'Material Icons Extended';font-style:normal;font-weight:400;src:url(//fonts.gstatic.com/s/materialiconsextended/v154/kJEjBvgX7BgnkSrUwT8UnLVc38YydejYY-oE_LvM.ttf)format('truetype');}\n  </style>\n<style type=\"text/css\">\n        #goog-wm-sb {\n          margin: .4em 0 0 1em;\n        }\n      </style></head>\n<body class=\"lang_en rb\"><div id=\"header-outer\"><div id=\"header\"><a id=\"logo\" href=\"https://www.blogger.com\" title=\"Blogger home\"><img src=\"https://resources.blogblog.com/img/blogger-logo-small.png\" alt=\"Blogger\"></a></div></div>\n<div id=\"maia-main\" role=\"main\"><h1>Blog not found</h1>\n<div id=\"contents\"><p>Sorry, the blog you were looking for does not exist. However, the name  errdown-nonexistent-q8z3  is available to register!</p>\n<a class=\"maia-button maia-button-primary\" href=\"https://www.blogger.com/create-blog.g?defaultSubdomain=errdown-nonexistent-q8z3\">Register  errdown-nonexistent-q8z3 </a></div></div>\n<div id=\"maia-signature\"></div>\n<div class=\"maia-footer\" id=\"maia-footer\"><div id=\"maia-footer-local\"><div class=\"maia-aux\"><div class=\"maia-cols\"><div class=\"maia-col-2\"><h5>Help</h5>\n<ul class=\"footer-links\"><li><a href=\"https://www.blogger.com/go/helpcenter\">Help Center</a></li>\n<li><a href=\"https://www.blogger.com/go/discuss\">Help Forum</a></li>\n<li><a href=\"https://www.blogger.com/go/tutorials\">Video Tutorials</a></li></ul></div>\n<div class=\"maia-col-2\"><h5>Community</h5>\n<ul class=\"footer-links\"><li><a href=\"https://www.blogger.com/go/buzz\">Blogger Buzz</a></li></ul></div>\n<div class=\"maia-col-2\"><h5>Developers</h5>\n<ul class=\"footer-links\"><li><a href=\"https://www.blogger.com/go/devapi\">Blogger API</a></li>\n<li><a href=\"https://www.blogger.com/go/devforum\">Developer Forum</a></li></ul></div></div></div></div>\n<div id=\"maia-footer-global\"><div class=\"maia-aux\"><div id=\"copyright\">Copyright &copy; 1999 &ndash; 2026 Google</div>\n<ul><li><a href=\"https://www.blogger.com/go/terms\">Terms of Service</a></li>\n<li><a href=\"https://www.blogger.com/go/privacy\">Privacy</a></li>\n<li><a href=\"https://www.blogger.com/go/contentpolicy\">Content Policy</a></li>\n</ul></div></div></div></body></html>",
+  "url": "https://errdown-nonexistent-q8z3.blogspot.com/",
+  "_provenance": "captured 2026-11-09, holdout batch, GET, scenario: missing site"
+}

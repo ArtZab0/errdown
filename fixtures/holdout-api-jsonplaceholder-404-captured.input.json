@@ -1,0 +1,22 @@
+{
+  "status": 404,
+  "headers": {
+    "content-type": "application/json; charset=utf-8",
+    "connection": "close",
+    "access-control-allow-credentials": "true",
+    "cache-control": "max-age=43200",
+    "pragma": "no-cache",
+    "vary": "Origin, Accept-Encoding",
+    "x-content-type-options": "nosniff",
+    "x-powered-by": "Express",
+    "x-ratelimit-limit": "3600000",
+    "x-ratelimit-remaining": "3599999",
+    "x-ratelimit-reset": "1794264080",
+    "cf-cache-status": "HIT",
+    "server": "cloudflare",
+    "cf-ray": "a5813324fea7f41a-CMH"
+  },
+  "body": "{}",
+  "url": "https://jsonplaceholder.typicode.com/posts/999999",
+  "_provenance": "captured 2026-11-09, holdout batch, GET, scenario: missing record"
+}

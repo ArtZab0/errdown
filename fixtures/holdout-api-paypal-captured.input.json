@@ -1,0 +1,24 @@
+{
+  "status": 401,
+  "headers": {
+    "connection": "close",
+    "accept-ranges": "bytes",
+    "cache-control": "max-age=0, no-cache, no-store, must-revalidate",
+    "edge": "pop_sid2=CMH,server_hostname_sid2=cache-cmh1290047",
+    "paypal-debug-id": "53ae9b821408e",
+    "access-control-expose-headers": "Server-Timing",
+    "via": "1.1 varnish, 1.1 varnish, 1.1 varnish",
+    "edge-control": "max-age=0",
+    "server-timing": "traceparent;desc=\"00-000000000000000000053ae9b821408e-31770a516a1d33d8-01\"",
+    "content-type": "application/json",
+    "x-processed-by": "sid1, sid2-edge, sid2-shield, sid2-shield, sid2-edge",
+    "x-served-by": "cache-iad-kcgs7200117-IAD, cache-cmh1290047-CMH, cache-cmh1290047-CMH, cache-cmh1290071-CMH",
+    "x-cache": "MISS, MISS, MISS, MISS",
+    "x-cache-hits": "0, 0, 0, 0",
+    "x-timer": "S1794273246.562112,VS0,VE170",
+    "vary": "Accept-Encoding"
+  },
+  "body": "{\"name\":\"AUTHENTICATION_FAILURE\",\"message\":\"Authentication failed due to invalid authentication credentials or a missing Authorization header.\",\"links\":[{\"href\":\"https://developer.paypal.com/docs/api/overview/#error\",\"rel\":\"information_link\"}]}",
+  "url": "https://api-m.paypal.com/v1/identity/oauth2/userinfo",
+  "_provenance": "captured 2026-11-09, holdout batch, GET, scenario: no token"
+}

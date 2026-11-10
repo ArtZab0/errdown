@@ -1,0 +1,20 @@
+{
+  "status": 401,
+  "headers": {
+    "content-type": "application/json; charset=utf-8",
+    "connection": "close",
+    "x-request-queueing": "0",
+    "www-authenticate": "Basic realm=\"intercom.io\"",
+    "vary": "Accept, X-Requested-With",
+    "cache-control": "no-cache",
+    "x-intercom-version": "125bf64c00a110853ba2563835a19fbad69f5598",
+    "x-frame-options": "SAMEORIGIN",
+    "x-content-type-options": "nosniff",
+    "x-xss-protection": "1; mode=block",
+    "referrer-policy": "strict-origin-when-cross-origin",
+    "server": "nginx"
+  },
+  "body": "{\"type\":\"error.list\",\"request_id\":\"0027v9hbrbtc80tgajc0\",\"errors\":[{\"code\":\"missing_authorization\",\"message\":\"No authorization was provided\"}]}",
+  "url": "https://api.intercom.io/me",
+  "_provenance": "captured 2026-11-09, holdout batch, GET, scenario: no token"
+}

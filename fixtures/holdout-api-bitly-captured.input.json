@@ -1,0 +1,16 @@
+{
+  "status": 401,
+  "headers": {
+    "server": "nginx",
+    "content-type": "application/json",
+    "www-authenticate": "Bearer as_uri=\"https://api-ssl.bitly.com/.well-known/oauth-protected-resource\", error=\"invalid_token\"",
+    "x-xss-protection": "1; mode=blockFilter",
+    "x-content-type-options": "nosniff",
+    "x-frame-options": "DENY",
+    "via": "1.1 google",
+    "connection": "close"
+  },
+  "body": "{\"message\":\"UNAUTHORIZED\"}",
+  "url": "https://api-ssl.bitly.com/v4/user",
+  "_provenance": "captured 2026-11-09, holdout batch, GET, scenario: no token"
+}

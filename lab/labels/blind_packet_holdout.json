@@ -1,0 +1,115 @@
+[
+ {
+  "id": "holdout-api-clickup-captured",
+  "request": "Anonymous GET/POST https://api.clickup.com/api/v2/user (no token)",
+  "status": 400,
+  "headers": {
+   "content-type": "application/json; charset=utf-8",
+   "server": "nginx"
+  },
+  "body_excerpt": "{\"err\":\"Authorization header required\",\"ECODE\":\"OAUTH_017\"}",
+  "body_length": 59
+ },
+ {
+  "id": "holdout-api-dropbox-captured",
+  "request": "Anonymous GET/POST https://api.dropboxapi.com/2/users/get_current_account (no token)",
+  "status": 400,
+  "headers": {
+   "content-type": "text/plain; charset=utf-8",
+   "server": "envoy"
+  },
+  "body_excerpt": "Error in call to API function \"users/get_current_account\": Invalid authorization value in HTTP header/URL parameter",
+  "body_length": 115
+ },
+ {
+  "id": "holdout-api-dropbox-content-captured",
+  "request": "Anonymous GET/POST https://content.dropboxapi.com/2/files/download (no token)",
+  "status": 400,
+  "headers": {
+   "content-type": "application/json",
+   "server": "envoy"
+  },
+  "body_excerpt": "{\"error\":{\".tag\":\"other\"},\"error_summary\":\"other/...\",\"user_message\":{\"locale\":\"en\",\"text\":\"Error in call to API function \\\"files/download\\\": Invalid authorization value in HTTP header/URL parameter\"}}",
+  "body_length": 201
+ },
+ {
+  "id": "holdout-api-github-422-captured",
+  "request": "Anonymous GET/POST https://api.github.com/markdown (invalid body type)",
+  "status": 422,
+  "headers": {
+   "content-type": "application/json; charset=utf-8",
+   "server": "github.com"
+  },
+  "body_excerpt": "{\"message\":\"Missing or invalid 'text' attribute in JSON request\",\"documentation_url\":\"https://docs.github.com/rest/markdown/markdown#render-a-markdown-document\",\"status\":\"422\"}",
+  "body_length": 176
+ },
+ {
+  "id": "holdout-api-hf-model-404-captured",
+  "request": "Anonymous GET/POST https://huggingface.co/api/models/errdown-nonexistent-q8z3/none (missing model)",
+  "status": 401,
+  "headers": {
+   "content-type": "application/json; charset=utf-8",
+   "x-powered-by": "huggingface-moon",
+   "www-authenticate": "Bearer realm=\"Authentication required\", charset=\"UTF-8\""
+  },
+  "body_excerpt": "{\"error\":\"Invalid username or password.\"}",
+  "body_length": 41
+ },
+ {
+  "id": "holdout-api-trello-captured",
+  "request": "Anonymous GET/POST https://api.trello.com/1/members/me (no key)",
+  "status": 400,
+  "headers": {
+   "content-type": "text/plain; charset=utf-8",
+   "server": "AtlassianEdge"
+  },
+  "body_excerpt": "invalid token",
+  "body_length": 13
+ },
+ {
+  "id": "holdout-site-gitlab-pages-404-captured",
+  "request": "Anonymous GET/POST https://errdown-nonexistent-q8z3.gitlab.io/ (missing site)",
+  "status": 403,
+  "headers": {
+   "content-type": "text/html; charset=UTF-8",
+   "cf-mitigated": "challenge",
+   "server": "cloudflare"
+  },
+  "body_excerpt": "<!DOCTYPE html><html lang=\"en-US\"><head><title>Just a moment...</title><meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\"><meta http-equiv=\"X-UA-Compatible\" content=\"IE=Edge\"><meta name=\"robots\" content=\"noindex,nofollow\"><meta name=\"viewport\" content=\"width=device-width,initial-scale=1\"><meta http-equiv=\"content-security-policy\" content=\"default-src &#39;none&#39;; script-src &#39;nonce-RnHJr2rMAPHBfRDGqqZ9Yy&#39; &#39;unsafe-eval&#39; https://challenges.cloudflare.com; script-src-attr &#39;none&#39;; style-src &#39;unsafe-inline&#39;; img-src &#39;self&#39; https://challenges.cloudflare.com; connect-src &#39;self&#39; https://challenges.cloudflare.com; frame-src &#39;self&#39; https://challenges.cloudflare.com blob:; child-src &#39;self&#39; https://challenges.cloudflare.com blob:; worker-src blob:; form-action http: https:; base-uri &#39;self&#39;\"><style>*{box-sizing:border-box;margin:0;padding:0}html{line-height:1.15;-webkit-text-size-adjust:100%;color:#313131;font-family:system-ui,-apple-system,BlinkMacSystemFont,\"Segoe UI\",Roboto,\"Helvetica Neue\",Arial,\"Noto Sans\",sans-serif,\"Apple Color Emoji\",\"Segoe UI Emoji\",\"Segoe UI Symbol\",\"Noto Color Emoji\"}body{display:flex;flex-direction:column;height:100vh;min-height:100vh}.main-content{margin:8rem auto;padding-left:1.5rem;max-width:60rem}@media (width <= 720px){.main-content{margin-top:4rem}}#challenge-error-text{background-image:url(\"data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zd \u2026[truncated]",
+  "body_length": 5556
+ },
+ {
+  "id": "holdout-site-glitch-404-captured",
+  "request": "Anonymous GET/POST https://errdown-nonexistent-q8z3.glitch.me/ (missing site)",
+  "status": 410,
+  "headers": {
+   "server": "Varnish",
+   "retry-after": "0",
+   "content-type": "text/html"
+  },
+  "body_excerpt": "<!DOCTYPE html> <html lang=\"en\"> <head> <meta charset=\"utf-8\"> <title>Well, you found a glitch.</title> <meta name=\"viewport\" content=\"initial-scale=1, width=device-width\"> <style> * { box-sizing: border-box; } html, body { margin: 0; padding: 0; font-family: Sans-serif; font-size: 16px; line-height: 160%; width: 100%; height: 100%; } .container { width: 100%; height: 100%; display: flex; padding: 100px; } .info { max-width: 370px; z-index: 1; position: relative; } h1 { margin: 0; font-size: 40px; line-height: 130%; font-weight: bold; } a { color: #000; } .decorative-image { position: absolute; right: 80px; bottom: 80px; width: 50vw; max-width: 1000px; } @media(max-width: 620px) { .container { padding: 40px; } .decorative-image { right: 20px; bottom: 20px; width: 80vw; } } </style> </head> <body> <div class=\"container\"> <div class=\"info\"> <h1>Well, you found a glitch.</h1> <p> Glitch project hosting is no longer available. Find more information on <a href=\"https://blog.glitch.com/post/changes-are-coming-to-glitch/\">the Glitch blog</a>. </p> </div> <img src=\"data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAACBAAAATfCAIAAAA+owEBAAAACXBIWXMAACxKAAAsSgF3enRNAAAgAElEQVR4nOzdD3Cc9Zkn+J/BNrJkx5KRZCQ8EpYnMRJjwljemRCwYQ88A1NwMRDPbN3GhL0r/uzuFfFSNZvNLLlzKmxSu1WTgdzWFpCr2wRn9/aGP0kOdvAM5jYIPGF2JIbgsYTDuE0rRoolxy3HtqTIdnz1ujVSd6sly7a61X8+n1K5pFZbevv3Nqb7/f6e51lw9uzZAAAAAAAAlLfLyn0BAAAAAAAAgQEAAAAAAJS9IDAAAAAAAACCwAAAAAAAAAgCAwAAAAAAIAgMAAAAAACAIDAAAAAAAACCwAAAAAAAAAgCAwAAAAAAIAgMAAAAAACAIDAA \u2026[truncated]",
+  "body_length": 228794
+ },
+ {
+  "id": "holdout-site-hf-space-404-captured",
+  "request": "Anonymous GET/POST https://huggingface.co/spaces/errdown-nonexistent-q8z3/none (missing space)",
+  "status": 401,
+  "headers": {
+   "content-type": "text/html; charset=utf-8",
+   "x-powered-by": "huggingface-moon"
+  },
+  "body_excerpt": "<!doctype html> <html class=\"\"> <head> <meta charset=\"utf-8\" /> <meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0, user-scalable=no\" /> <meta name=\"description\" content=\"We\u2019re on a journey to advance and democratize artificial intelligence through open source and open science.\" /> <meta property=\"fb:app_id\" content=\"1321688464574422\" /> <meta name=\"twitter:card\" content=\"summary_large_image\" /> <meta name=\"twitter:site\" content=\"@huggingface\" /> <meta name=\"twitter:image\" content=\"https://huggingface.co/front/thumbnails/v2-2.png\" /> <meta property=\"og:title\" content=\"404 \u2013 Hugging Face\" /> <meta property=\"og:description\" content=\"We\u2019re on a journey to advance and democratize artificial intelligence through open source and open science.\" /> <meta property=\"og:type\" content=\"website\" /> <meta property=\"og:url\" content=\"https://huggingface.co/spaces/errdown-nonexistent-q8z3/none\" /> <meta property=\"og:image\" content=\"https://huggingface.co/front/thumbnails/v2-2.png\" /> <link rel=\"preload\" href=\"/front/assets/fonts/source-sans-pro-latin-400-normal.woff2\" as=\"font\" type=\"font/woff2\" crossorigin /> <link rel=\"preload\" href=\"/front/assets/fonts/source-sans-pro-latin-600-normal.woff2\" as=\"font\" type=\"font/woff2\" crossorigin /> <link rel=\"preload\" href=\"/front/assets/fonts/source-sans-pro-latin-700-normal.woff2\" as=\"font\" type=\"font/woff2\" crossorigin /> <link rel=\"stylesheet\" href=\"/front/build/kube-025dd5d/style.css\" /> <link rel=\"preload\" href=\"/front/build/kube- \u2026[truncated]",
+  "body_length": 52725
+ },
+ {
+  "id": "holdout-site-wordpress-404-captured",
+  "request": "Anonymous GET/POST https://errdown-nonexistent-q8z3.wordpress.com/ (missing site)",
+  "status": 403,
+  "headers": {
+   "server": "nginx",
+   "content-type": "text/html"
+  },
+  "body_excerpt": "<!DOCTYPE html><title>Checking your browser...</title><noscript><p>Javascript required</p></noscript><meta content=\"width=device-width\"name=viewport><link href=\"data:;base64,=\"rel=icon><script src=\"/__challenge/probes.js?v=c3301fdb5ac5\"></script><script>window.HASHCASH_CONFIG={prefix:\"0000\",minTime:1500,headline:\"Checking your browser\"};</script><script src=\"/__challenge/challenge.js?v=edc496c64ce2\"></script><style>*{font-family:Helvetica Neue,HelveticaNeue,Helvetica,Arial,sans-serif;color:#111516;margin:0;padding:0;user-select:none;box-sizing:border-box}body{min-height:100vh;min-height:100dvh;padding:8px}#main,body{display:flex;flex-direction:column;align-items:center}#main{flex:1;justify-content:center}h1{font-weight:500;padding-bottom:16px;text-align:center}#active{display:none;position:relative;margin-bottom:calc(48px + 1em + 8ex)}#body{text-align:center}input[type=checkbox]{margin-right:10px}div.check-wrap{position:absolute;white-space:nowrap;background-color:#f7f8fe;border-radius:4px;padding:24px;left:50%;line-height:1em;transform:translateX(-50%)}.spinner{border:3px solid #3f58e0;border-top-color:transparent;border-right-color:transparent;border-radius:50%;animation:rotate .6s linear infinite;aspect-ratio:1}.small{border-width:2px;display:inline-block;vertical-align:bottom;width:1em;margin-right:16px}.big{margin:32px;height:40px;width:40px}#brand{white-space:nowrap;font-weight:700;margin:40px;margin-top:10px}svg{vertical-align:bottom;display:inline-block;fill:#3F58E0;h \u2026[truncated]",
+  "body_length": 1762
+ }
+]

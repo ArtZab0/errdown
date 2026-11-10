@@ -1,0 +1,23 @@
+{
+  "status": 401,
+  "headers": {
+    "content-type": "application/json",
+    "connection": "close",
+    "cf-ray": "a58132ca9ff3e9de-CMH",
+    "cf-cache-status": "DYNAMIC",
+    "server": "cloudflare",
+    "vary": "Origin, Accept-Encoding",
+    "x-content-type-options": "nosniff",
+    "x-download-options": "noopen",
+    "x-envoy-decorator-operation": "/v2/locations",
+    "x-frame-options": "SAMEORIGIN",
+    "x-permitted-cross-domain-policies": "none",
+    "x-sq-dc": "aws",
+    "x-sq-envoy-safe-auth-decision": "UNAUTHORIZED",
+    "x-sq-region": "us-east-1",
+    "x-xss-protection": "1; mode=block"
+  },
+  "body": "{\n  \"errors\": [\n    {\n      \"category\": \"AUTHENTICATION_ERROR\",\n      \"code\": \"UNAUTHORIZED\",\n      \"detail\": \"This request could not be authorized.\"\n    }\n  ]\n}",
+  "url": "https://connect.squareup.com/v2/locations",
+  "_provenance": "captured 2026-11-09, holdout batch, GET, scenario: no token"
+}

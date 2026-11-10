@@ -1,0 +1,13 @@
+{
+  "status": 401,
+  "headers": {
+    "www-authenticate": "Bearer realm=\"Service\", error=\"invalid_request\", error_description=\"The access token was not found.\"",
+    "box-request-id": "02134b7829e6adf4f4252cbed70a16a32",
+    "x-envoy-upstream-service-time": "1",
+    "via": "1.1 google",
+    "connection": "close"
+  },
+  "body": "",
+  "url": "https://api.box.com/2.0/users/me",
+  "_provenance": "captured 2026-11-09, holdout batch, GET, scenario: no token"
+}

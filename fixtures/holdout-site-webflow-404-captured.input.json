@@ -1,0 +1,18 @@
+{
+  "status": 404,
+  "headers": {
+    "content-type": "text/html; charset=utf-8",
+    "transfer-encoding": "chunked",
+    "connection": "close",
+    "cf-ray": "a5813381b8f360d7-CLE",
+    "cf-cache-status": "MISS",
+    "cache-control": "public, max-age=432000",
+    "x-wf-region": "us-east-1",
+    "server": "cloudflare",
+    "vary": "accept-encoding",
+    "surrogate-key": "errdown-nonexistent-q8z3.webflow.io 404req"
+  },
+  "body": "<!DOCTYPE html>\n<html lang=\"en\">\n\n<head>\n    <meta charset=\"utf-8\">\n    <title>404 - Page not found</title>\n    <meta content=\"The page you are looking for doesn&#x27;t exist or has been moved.\" name=\"description\">\n    <meta content=\"width=device-width, initial-scale=1\" name=\"viewport\">\n\n    <link href=\"https://app-assets.website-files.com/css/webflow-https-errors.webflow.css\" rel=\"stylesheet\" type=\"text/css\">\n\n    <link href=\"https://app-assets.website-files.com/static/favicon_designer.88fce7c7f8.png\" rel=\"shortcut icon\" type=\"image/x-icon\">\n</head>\n\n<body>\n<div class=\"utility-wrapper\">\n    <div class=\"utility-container\">\n        <div class=\"text-mono\">404</div>\n        <div class=\"utility-content\">\n            <h1>Page not found<br></h1>\n            <p>The page you are looking for doesn&#x27;t exist or has been moved.</p>\n        </div>\n        <div></div>\n    </div>\n</div>\n</body>\n\n</html>\n",
+  "url": "https://errdown-nonexistent-q8z3.webflow.io/",
+  "_provenance": "captured 2026-11-09, holdout batch, GET, scenario: missing site"
+}

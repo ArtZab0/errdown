@@ -1,0 +1,18 @@
+{
+  "type": "https://artzab0.github.io/errdown/errors/service_unavailable",
+  "title": "Service unavailable",
+  "status": 503,
+  "detail": "The server returned HTTP 503.",
+  "instance": "https://httpbin.org/status/503",
+  "error_code": 503,
+  "error_name": "service_unavailable",
+  "error_category": "upstream_unavailable",
+  "zone": "httpbin.org",
+  "retryable": true,
+  "retry_after": 5,
+  "owner_action_required": false,
+  "what_you_should_do": "Wait 5 seconds, then retry with exponential backoff. Stop after a few attempts and report the error if it persists.",
+  "errdown_synthesized": true,
+  "errdown_source": "unknown",
+  "errdown_confidence": 0.5
+}

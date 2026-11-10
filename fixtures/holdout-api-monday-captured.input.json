@@ -1,0 +1,20 @@
+{
+  "status": 401,
+  "headers": {
+    "content-type": "application/json; charset=utf-8",
+    "transfer-encoding": "chunked",
+    "connection": "close",
+    "content-security-policy-report-only": "frame-ancestors https://*.monday.com; script-src 'self'; worker-src 'self'; connect-src 'self'; report-uri https://o916138.ingest.us.sentry.io/api/4507803872198656/security/?sentry_key=8e1fb7e952d4abfd146752c94791f51a&sentry_environment=production;",
+    "vary": "Origin, Accept-Encoding",
+    "x-monday-auth": "true",
+    "x-monday-region": "undefined",
+    "x-powered-by": "Express",
+    "x-monday-rgn": "use1",
+    "server": "cloudflare",
+    "cf-cache-status": "DYNAMIC",
+    "cf-ray": "a58132c57bd8c526-CMH"
+  },
+  "body": "{\"errors\":[{\"message\":\"Not authenticated\",\"extensions\":{\"code\":\"NOT_AUTHENTICATED\"}}]}",
+  "url": "https://api.monday.com/v2",
+  "_provenance": "captured 2026-11-09, holdout batch, POST, scenario: no token, GraphQL"
+}

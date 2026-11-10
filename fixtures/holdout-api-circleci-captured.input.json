@@ -1,0 +1,21 @@
+{
+  "status": 401,
+  "headers": {
+    "content-type": "text/plain;charset=utf-8",
+    "connection": "close",
+    "x-xss-protection": "1; mode=block",
+    "x-route": "/api/v2/me",
+    "x-frame-options": "DENY",
+    "vary": "Origin",
+    "access-control-allow-credentials": "true",
+    "feature-policy": "autoplay 'none'; camera 'none'",
+    "x-content-type-options": "nosniff",
+    "x-cache": "Error from cloudfront",
+    "via": "1.1 c9defa66f23588b2bfe3b619bdfa981c.cloudfront.net (CloudFront)",
+    "x-amz-cf-pop": "CMH68-P5",
+    "x-amz-cf-id": "zwcCMTAUzkzJKQSP9Qa-ybdmfW69MLg6hNWxCmnw-4JBjd3KB2oveQ=="
+  },
+  "body": "{\n  \"message\" : \"You must log in first.\"\n}",
+  "url": "https://circleci.com/api/v2/me",
+  "_provenance": "captured 2026-11-09, holdout batch, GET, scenario: no token"
+}

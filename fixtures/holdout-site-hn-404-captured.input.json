@@ -1,0 +1,13 @@
+{
+  "status": 404,
+  "headers": {
+    "server": "nginx",
+    "content-type": "text/plain; charset=utf-8",
+    "transfer-encoding": "chunked",
+    "connection": "close",
+    "vary": "Accept-Encoding"
+  },
+  "body": "Unknown.",
+  "url": "https://news.ycombinator.com/errdown-nonexistent-q8z3",
+  "_provenance": "captured 2026-11-09, holdout batch, GET, scenario: missing page"
+}

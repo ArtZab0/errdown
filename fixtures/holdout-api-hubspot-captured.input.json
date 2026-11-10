@@ -1,0 +1,18 @@
+{
+  "status": 401,
+  "headers": {
+    "content-type": "application/json;charset=utf-8",
+    "connection": "close",
+    "cf-ray": "a58132bf2a097929-CMH",
+    "cf-cache-status": "DYNAMIC",
+    "server": "cloudflare",
+    "vary": "origin",
+    "access-control-allow-credentials": "false",
+    "server-timing": "hcid;desc=\"01a1c304-f391-7597-9fe0-9b5f6407d584\", cfr;desc=\"a58132bf3de3cdd8-CMH\"",
+    "x-hubspot-auth-failure": "401 Unauthorized",
+    "x-hubspot-correlation-id": "01a1c304-f391-7597-9fe0-9b5f6407d584"
+  },
+  "body": "{\"status\":\"error\",\"message\":\"Authentication credentials not found. This API supports OAuth 2.0 authentication and you can find more details at https://developers.hubspot.com/docs/methods/auth/oauth-overview\",\"correlationId\":\"01a1c304-f391-7597-9fe0-9b5f6407d584\",\"category\":\"INVALID_AUTHENTICATION\"}",
+  "url": "https://api.hubapi.com/crm/v3/objects/contacts",
+  "_provenance": "captured 2026-11-09, holdout batch, GET, scenario: no token"
+}

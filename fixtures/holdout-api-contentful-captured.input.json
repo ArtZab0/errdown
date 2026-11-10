@@ -1,0 +1,20 @@
+{
+  "status": 401,
+  "headers": {
+    "connection": "close",
+    "access-control-allow-headers": "Accept,Accept-Language,Authorization,Cache-Control,Cf-Context,Cf-Trace,Content-Length,Content-Range,Content-Type,Destination,Dnt,Expires,If-Match,If-Modified-Since,If-None-Match,Keep-Alive,Last-Modified,Origin,Pragma,Range,User-Agent,X-Contentful-Ai-Actions-Platform,X-Contentful-Async-Ai-Action,X-Contentful-Comment-Body-Format,X-Contentful-Content-Type,X-Contentful-Enable-Alpha-Feature,X-Contentful-Extensions-Sourcemap,X-Contentful-Graphql-Access-Token,X-Contentful-Include-Invocation-Metadata,X-Contentful-Marketplace,X-Contentful-Organization,X-Contentful-Parent-Entity-Reference,X-Contentful-Parent-Id,X-Contentful-Personal-Intercept,X-Contentful-Skip-Transformation,X-Contentful-Skip-Ui-Draft-Validation,X-Contentful-Source-Environment,X-Contentful-Tag-Visibility,X-Contentful-Team,X-Contentful-Ui-Content-Auto-Save,X-Contentful-User-Agent,X-Contentful-User-Id,X-Contentful-Validate-Only,X-Contentful-Version,X-Http-Method-Override,X-Mx-Reqtoken,X-Requested-With",
+    "access-control-allow-methods": "DELETE,GET,HEAD,OPTIONS,PATCH,POST,PUT",
+    "access-control-allow-origin": "*",
+    "access-control-expose-headers": "Etag,Retry-After,X-Contentful-Ai-Actions-Ratelimit-Reset,X-Contentful-Request-Id,X-Contentful-Usage-Limit,X-Contentful-Usage-Remaining,X-Contentful-Usage-Reset,X-Thread-Id",
+    "access-control-max-age": "1728000",
+    "server": "Contentful",
+    "x-content-type-options": "nosniff",
+    "content-type": "application/vnd.contentful.management.v1+json",
+    "x-contentful-request-id": "b37b008c-d79b-4ee5-8d9a-39d21ced95ab",
+    "server-timing": "total;dur=1",
+    "x-served-by": "cache-chi-klot8100036-CHI"
+  },
+  "body": "{\"message\":\"An access token is required. Please send one through the HTTP Authorization header or as the query parameter \\\"access_token\\\".\",\"requestId\":\"b37b008c-d79b-4ee5-8d9a-39d21ced95ab\",\"sys\":{\"id\":\"AccessTokenInvalid\",\"type\":\"Error\"}}",
+  "url": "https://api.contentful.com/users/me",
+  "_provenance": "captured 2026-11-09, holdout batch, GET, scenario: no token"
+}

@@ -74,7 +74,7 @@ def _host_of(url: Optional[str]) -> Optional[str]:
 
 
 _CTRL = re.compile("[\u0000-\u001f\u007f-\u009f  ]+")
-_WS = re.compile(r"\s+")
+_WS = re.compile(r"[\s\ufeff]+")  # JS \s includes U+FEFF
 
 
 def sanitize(text: str, max_len: int = 200) -> str:
@@ -338,7 +338,25 @@ def _message_from_json(j: Any) -> Optional[Dict[str, Optional[str]]]:
     return None
 
 
-_XML_HEAD = re.compile(r"^\s*(<\?xml[^>]{0,200}\?>\s*)?<(Error|ErrorResponse)[\s>]")
+_MSG_AUTH = re.compile(r"missing[ -]?authenticat|authentication (token|required|failed)|unauthenticated|unregistered callers|api[ _-]?key (is )?(not valid|invalid|missing|required)|(missing|invalid|no) (api[ _-]?key|access token|auth token|bearer token|credentials|authorization header)|missing x-auth|not authenticated|login required", re.I)
+_MSG_RATE = re.compile(r"rate[ -]?limit(ed)? exceeded|too many requests|quota exceeded|api rate limit", re.I)
+_AUTH_CODES = re.compile(r"^(MissingAuthenticationToken|UNAUTHENTICATED|InvalidClientTokenId)\b")
+
+
+def _category_from_message(status: int, m: Dict[str, Optional[str]]) -> Dict[str, Any]:
+    """SPEC §5 stage 4: on 400/403, an explicit message about credentials or rate limits decides."""
+    if status not in (400, 403):
+        return {}
+    text = f"{m.get('code') or ''} {m.get('message') or ''}"[:1000]
+    if _MSG_RATE.search(text):
+        return {"error_category": "rate_limit", "error_name": "rate_limited", "title": "Rate limited", "retryable": True}
+    if _MSG_AUTH.search(text) or _AUTH_CODES.search(m.get("code") or ""):
+        return {"error_category": "auth_required", "error_name": "auth_required", "title": "Authentication required",
+                "retryable": False}
+    return {}
+
+
+_XML_HEAD = re.compile(r"^[\s\ufeff]*(<\?xml[^>]{0,200}\?>[\s\ufeff]*)?<(Error|ErrorResponse)[\s\ufeff>]")
 
 
 def _message_from_xml(body: str) -> Optional[Dict[str, Optional[str]]]:
@@ -359,7 +377,7 @@ _XML_SOURCES = [
     ("x-amzn-requestid", re.compile(r"."), "aws"),
     ("x-ms-request-id", re.compile(r"."), "azure"),
 ]
-_PLAIN_CF = re.compile(r"^\s*error code: (1[0-9]{3}|5[0-9]{2})\s*\Z")
+_PLAIN_CF = re.compile(r"^[\s\ufeff]*error code: (1[0-9]{3}|5[0-9]{2})[\s\ufeff]*\Z")
 
 
 def normalize(status: int, headers: Any = None, body: Any = None, *, url: Optional[str] = None,
@@ -471,7 +489,7 @@ def _run(ctx: _Ctx, full_body: str) -> Optional[Problem]:
         code_s = f" (code: {sanitize(m['code'], 60)})" if m.get("code") else ""
         return _finish({"status": status, "detail": f"The server returned HTTP {status}{code_s}.{said}",
                         "errdown_source": xml_source or (hfp["source"] if hfp else "origin"),
-                        "errdown_confidence": 0.7}, ctx)
+                        "errdown_confidence": 0.7, **_category_from_message(status, m)}, ctx)
     if hfp:
         return _from_fp(hfp, ctx, False, body)
 
