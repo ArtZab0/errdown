@@ -2,7 +2,7 @@
 
 Cloudflare-compatible structured errors (RFC 9457) for every error your agent hits.
 
-Status: pre-alpha, private.
+Status: alpha. Not affiliated with Cloudflare.
 
 ## Layout
 
@@ -24,3 +24,9 @@ if (problem) {
   decide(problem);                    // { action: "retry", after_seconds: 5 } | escalate | fail
 }
 ```
+
+## License
+
+Code: [Apache-2.0](LICENSE). Spec (`SPEC.md`) and project-authored fixtures: [CC0 1.0](fixtures/CC0-1.0.txt).
+Captured third-party responses in `fixtures/*-captured.input.json` remain their owners' property;
+see [fixtures/LICENSE.md](fixtures/LICENSE.md).

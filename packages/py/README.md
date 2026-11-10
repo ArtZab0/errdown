@@ -1,6 +1,6 @@
 # errdown
 
-> **Pre-release (alpha).** API and output may change. Not yet licensed for reuse.
+> **Pre-release (alpha).** API and output may change.
 
 Cloudflare-compatible structured errors (RFC 9457 Problem Details) for every HTTP error your
 agent hits: nginx, AWS, Vercel, framework defaults, JSON/XML API errors, bot challenges.
@@ -19,3 +19,5 @@ if res.is_error:
 ```
 
 Spec and conformance fixtures: https://github.com/ArtZab0/errdown
+
+License: Apache-2.0. Spec and fixtures: CC0 (captured third-party responses excepted).

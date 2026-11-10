@@ -10,6 +10,8 @@ Python packages are reference implementations.
 errdown is independent and not affiliated with Cloudflare. It follows Cloudflare's
 published format: https://developers.cloudflare.com/fundamentals/reference/error-responses/
 
+This specification is dedicated to the public domain under CC0 1.0.
+
 The key words MUST, SHOULD and MAY are used as in RFC 2119.
 
 ## 1. Interface
