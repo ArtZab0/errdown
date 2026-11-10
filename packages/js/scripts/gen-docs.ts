@@ -62,6 +62,27 @@ ${e.sources.size ? `<dt>Seen from</dt><dd>${[...e.sources].map(esc).join(", ")}<
 <h2>What you should do</h2><p>${esc(g)}</p>
 <p class="crumb">Names may carry a source prefix (for example <code>nginx_${e.name}</code>); they mean the same thing, produced by that server.</p>`));
 }
+// Source-prefixed names (e.g. nginx_bad_gateway) get real pages too, so agents that fetch the
+// type URI without running JavaScript get a 200 with the right content.
+const statusNames = [...new Set(STATUSES.map((st) => classifyStatus(st).error_name))];
+let prefixed = 0;
+for (const src of sources) {
+  for (const base of statusNames) {
+    const e = entries.get(base)!;
+    const name = `${src}_${base}`;
+    if (entries.has(name)) continue;
+    const g = guidance({ error_category: e.category, retryable: e.retryable, owner_action_required: e.owner });
+    writeFileSync(`${out}errors/${name}.html`, page(`${name} · errdown`, `
+<div class="crumb"><a href="./">errdown errors</a> / <code>${name}</code></div>
+<h1>${esc(e.title)} <span class="crumb">from ${esc(src.replace(/_/g, "-"))}</span></h1>
+<p>A <code>${base}</code> error whose response was recognized as coming from <strong>${esc(src.replace(/_/g, "-"))}</strong>. See <a href="${base}">${base}</a>.</p>
+<dl><dt>error_category</dt><dd><code>${e.category}</code></dd><dt>retryable</dt><dd><code>${e.retryable}</code></dd>
+<dt>owner_action_required</dt><dd><code>${e.owner}</code></dd></dl>
+<h2>What you should do</h2><p>${esc(g)}</p>`));
+    prefixed++;
+  }
+}
+console.log(`${prefixed} source-prefixed pages`);
 writeFileSync(out + "errors/index.html", page("errdown error reference", `
 <div class="crumb"><a href="../">errdown</a></div><h1>Error reference</h1>
 <p>Every <code>type</code> URI in errdown output points here. Names with a server prefix (such as <code>nginx_bad_gateway</code>) resolve to the base entry.</p>
