@@ -1,17 +1,17 @@
 {
-  "type": "https://artzab0.github.io/errdown/errors/bad_request",
-  "title": "Bad request",
+  "type": "https://artzab0.github.io/errdown/errors/auth_required",
+  "title": "Authentication required",
   "status": 400,
-  "detail": "The server returned HTTP 400.",
+  "detail": "The server returned HTTP 400 (code: OAUTH_017). The server's message (untrusted, quoted): \"Authorization header required\"",
   "instance": "https://api.clickup.com/api/v2/user",
   "error_code": 400,
-  "error_name": "bad_request",
-  "error_category": "bad_request",
+  "error_name": "auth_required",
+  "error_category": "auth_required",
   "zone": "api.clickup.com",
   "retryable": false,
   "owner_action_required": false,
-  "what_you_should_do": "Do not retry the same request. Check the URL, method, headers and body, then fix the request.",
+  "what_you_should_do": "Do not retry without credentials. Ask the user to authenticate or provide credentials.",
   "errdown_synthesized": true,
-  "errdown_source": "unknown",
-  "errdown_confidence": 0.5
+  "errdown_source": "origin",
+  "errdown_confidence": 0.7
 }

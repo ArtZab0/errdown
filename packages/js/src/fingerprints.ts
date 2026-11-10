@@ -59,6 +59,11 @@ export const CHALLENGES: Fingerprint[] = [
     error_name: "perimeterx_challenge", title: "Bot verification required",
   },
   {
+    id: "browser_check_interstitial", source: "unknown", confidence: 0.85,
+    body: [/<title>Checking your browser|HASHCASH_CONFIG/i],
+    error_name: "browser_check", title: "Bot verification required",
+  },
+  {
     id: "indeed_bot_detection", source: "unknown", confidence: 0.85,
     body: [/from=bot-detection/i],
     error_name: "bot_detection_redirect", title: "Bot verification required",

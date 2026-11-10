@@ -33,6 +33,8 @@ CHALLENGES: List[Dict[str, Any]] = [
         error_name="datadome_challenge", title="Bot verification required"),
     _fp("perimeterx", "unknown", 0.85, body=[(r"px-captcha|perimeterx|_pxCaptcha", I)],
         error_name="perimeterx_challenge", title="Bot verification required"),
+    _fp("browser_check_interstitial", "unknown", 0.85, body=[(r"<title>Checking your browser|HASHCASH_CONFIG", I)],
+        error_name="browser_check", title="Bot verification required"),
     _fp("indeed_bot_detection", "unknown", 0.85, body=[(r"from=bot-detection", I)],
         error_name="bot_detection_redirect", title="Bot verification required"),
     _fp("linkedin_999", "linkedin", 0.85, status=[999], header=("x-li-fabric", r"."),

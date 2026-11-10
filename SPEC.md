@@ -142,7 +142,8 @@ Implementations apply these stages in order and return the first match.
    `<ErrorResponse>` with `<Code>`/`<Message>` (S3, GCS, AWS query APIs, Azure).
    Category from status, except: on 400/403, a message or code that explicitly says
    credentials are missing/invalid gives `auth_required`, and one that says a rate limit
-   or quota was exceeded gives `rate_limit` (retryable). Detail from the message
+   or quota was exceeded gives `rate_limit` (retryable). The same rule applies to short
+   (<300 chars) non-HTML plain-text bodies, which are never quoted. Detail from the message
    (section 7). Confidence 0.7.
    `errdown_source` comes from a header-only fingerprint if one matches, else `origin`.
 5. **Header-only fingerprints** (e.g. `Server: awselb`). These run after stage 4 so an

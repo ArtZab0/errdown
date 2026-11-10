@@ -229,9 +229,13 @@ function messageFromJSON(j: unknown): { message?: string; code?: string } | unde
   }
   // {error: {message, code}}
   if (isObj(j.error)) {
-    return { message: str(j.error.message) ?? str(j.error.detail), code: str(j.error.code) ?? str(j.error.type) };
+    const m = { message: str(j.error.message) ?? str(j.error.detail), code: str(j.error.code) ?? str(j.error.type) };
+    if (m.message || m.code) return m; // else fall through (e.g. Dropbox {"error": {".tag": ...}})
   }
   if (typeof j.error === "string") return { message: str(j.message) ?? j.error, code: str(j.code) };
+  // Dropbox: {error_summary, user_message: {text}}; ClickUp: {err, ECODE}
+  if (isObj(j.user_message) && str(j.user_message.text)) return { message: str(j.user_message.text), code: str(j.error_summary) };
+  if (str(j.err)) return { message: str(j.err), code: str(j.ecode) ?? str(j.code) };
   if (str(j.message) || str(j.detail)) return { message: str(j.message) ?? str(j.detail), code: str(j.code) };
   return undefined;
 }
@@ -245,7 +249,7 @@ function messageFromXML(body: string): { message?: string; code?: string } | und
 }
 
 // SPEC §5 stage 4: on 400/403, an explicit message about credentials or rate limits decides the category.
-const MSG_AUTH = /missing[ -]?authenticat|authentication (token|required|failed)|unauthenticated|unregistered callers|api[ _-]?key (is )?(not valid|invalid|missing|required)|(missing|invalid|no) (api[ _-]?key|access token|auth token|bearer token|credentials|authorization header)|missing x-auth|not authenticated|login required/i;
+const MSG_AUTH = /missing[ -]?authenticat|authentication (token|required|failed)|unauthenticated|unregistered callers|api[ _-]?key (is )?(not valid|invalid|missing|required)|(missing|invalid|no) (api[ _-]?key|access token|auth token|bearer token|token|credentials|authorization)|invalid [a-z-]+ or api[ _-]?key|authorization (header )?(is )?required|missing x-auth|not authenticated|login required/i;
 const MSG_RATE = /rate[ -]?limit(ed)? exceeded|too many requests|quota exceeded|api rate limit/i;
 function categoryFromMessage(status: number, m: { message?: string; code?: string }): Partial<Problem> {
   if (status !== 400 && status !== 403) return {};
@@ -386,6 +390,12 @@ function run(ctx: Ctx, fullBody: string): Problem | null {
         errdown_confidence: 0.7,
       }, ctx);
     }
+  }
+  // Short plain-text 400/403 bodies may still say why (never quoted into detail; SPEC §7).
+  const msgCat = json === undefined && fullBody.length < 300 && !/</.test(fullBody)
+    ? categoryFromMessage(status, { message: fullBody }) : {};
+  if (msgCat.error_category) {
+    return finish({ status, ...msgCat, errdown_source: hfp?.source ?? "origin", errdown_confidence: 0.6 }, ctx);
   }
   if (hfp) return fromFingerprint(hfp, ctx, false, body);
 

@@ -329,16 +329,23 @@ def _message_from_json(j: Any) -> Optional[Dict[str, Optional[str]]]:
     if isinstance(err, str) and isinstance(j.get("error_description"), str):
         return {"message": j["error_description"], "code": err}
     if isinstance(err, dict):
-        return {"message": _first(_str(err.get("message")), _str(err.get("detail"))),
-                "code": _first(_str(err.get("code")), _str(err.get("type")))}
+        em = {"message": _first(_str(err.get("message")), _str(err.get("detail"))),
+              "code": _first(_str(err.get("code")), _str(err.get("type")))}
+        if em["message"] or em["code"]:
+            return em  # else fall through (e.g. Dropbox {"error": {".tag": ...}})
     if isinstance(err, str):
         return {"message": _first(_str(j.get("message")), err), "code": _str(j.get("code"))}
+    um = j.get("user_message")
+    if isinstance(um, dict) and _str(um.get("text")):
+        return {"message": _str(um.get("text")), "code": _str(j.get("error_summary"))}
+    if _str(j.get("err")):
+        return {"message": _str(j.get("err")), "code": _first(_str(j.get("ecode")), _str(j.get("code")))}
     if _str(j.get("message")) or _str(detail):
         return {"message": _first(_str(j.get("message")), _str(detail)), "code": _str(j.get("code"))}
     return None
 
 
-_MSG_AUTH = re.compile(r"missing[ -]?authenticat|authentication (token|required|failed)|unauthenticated|unregistered callers|api[ _-]?key (is )?(not valid|invalid|missing|required)|(missing|invalid|no) (api[ _-]?key|access token|auth token|bearer token|credentials|authorization header)|missing x-auth|not authenticated|login required", re.I)
+_MSG_AUTH = re.compile(r"missing[ -]?authenticat|authentication (token|required|failed)|unauthenticated|unregistered callers|api[ _-]?key (is )?(not valid|invalid|missing|required)|(missing|invalid|no) (api[ _-]?key|access token|auth token|bearer token|token|credentials|authorization)|invalid [a-z-]+ or api[ _-]?key|authorization (header )?(is )?required|missing x-auth|not authenticated|login required", re.I)
 _MSG_RATE = re.compile(r"rate[ -]?limit(ed)? exceeded|too many requests|quota exceeded|api rate limit", re.I)
 _AUTH_CODES = re.compile(r"^(MissingAuthenticationToken|UNAUTHENTICATED|InvalidClientTokenId)\b")
 
@@ -490,6 +497,11 @@ def _run(ctx: _Ctx, full_body: str) -> Optional[Problem]:
         return _finish({"status": status, "detail": f"The server returned HTTP {status}{code_s}.{said}",
                         "errdown_source": xml_source or (hfp["source"] if hfp else "origin"),
                         "errdown_confidence": 0.7, **_category_from_message(status, m)}, ctx)
+    if j is _MISSING and len(full_body) < 300 and "<" not in full_body:
+        mc = _category_from_message(status, {"message": full_body, "code": None})
+        if mc.get("error_category"):
+            return _finish({"status": status, **mc, "errdown_source": hfp["source"] if hfp else "origin",
+                            "errdown_confidence": 0.6}, ctx)
     if hfp:
         return _from_fp(hfp, ctx, False, body)
 

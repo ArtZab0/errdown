@@ -1,17 +1,17 @@
 {
-  "type": "https://artzab0.github.io/errdown/errors/forbidden",
-  "title": "Access denied",
+  "type": "https://artzab0.github.io/errdown/errors/browser_check",
+  "title": "Bot verification required",
   "status": 403,
-  "detail": "The server returned HTTP 403.",
+  "detail": "The server returned HTTP 403 with a bot-verification challenge page.",
   "instance": "https://errdown-nonexistent-q8z3.wordpress.com/",
   "error_code": 403,
-  "error_name": "forbidden",
-  "error_category": "access_denied",
+  "error_name": "browser_check",
+  "error_category": "challenge",
   "zone": "errdown-nonexistent-q8z3.wordpress.com",
   "retryable": false,
   "owner_action_required": false,
-  "what_you_should_do": "Do not retry. Access was intentionally blocked. Tell the user; they may need to request access from the site owner.",
+  "what_you_should_do": "Stop. This site requires a human to complete a check (CAPTCHA or bot verification). Do not retry automatically and do not attempt to bypass it. Ask the user to open the page in a browser.",
   "errdown_synthesized": true,
   "errdown_source": "unknown",
-  "errdown_confidence": 0.5
+  "errdown_confidence": 0.85
 }

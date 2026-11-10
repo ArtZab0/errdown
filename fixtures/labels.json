@@ -987,7 +987,8 @@
   "labeler": "scenario:holdout-predeclared",
   "needs_blind_review": false,
   "retryable": false,
-  "split": "holdout"
+  "split": "dev",
+  "was_holdout": "holdout-1"
  },
  "holdout-api-algolia-captured": {
   "actual_status": 403,
@@ -996,7 +997,8 @@
   "labeler": "scenario:holdout-predeclared",
   "needs_blind_review": false,
   "retryable": false,
-  "split": "holdout"
+  "split": "dev",
+  "was_holdout": "holdout-1"
  },
  "holdout-api-arxiv-404-captured": {
   "actual_status": 404,
@@ -1005,7 +1007,8 @@
   "labeler": "scenario:holdout-predeclared",
   "needs_blind_review": false,
   "retryable": false,
-  "split": "holdout"
+  "split": "dev",
+  "was_holdout": "holdout-1"
  },
  "holdout-api-asana-captured": {
   "actual_status": 401,
@@ -1014,7 +1017,8 @@
   "labeler": "scenario:holdout-predeclared",
   "needs_blind_review": false,
   "retryable": false,
-  "split": "holdout"
+  "split": "dev",
+  "was_holdout": "holdout-1"
  },
  "holdout-api-bitbucket-captured": {
   "actual_status": 401,
@@ -1023,7 +1027,8 @@
   "labeler": "scenario:holdout-predeclared",
   "needs_blind_review": false,
   "retryable": false,
-  "split": "holdout"
+  "split": "dev",
+  "was_holdout": "holdout-1"
  },
  "holdout-api-bitly-captured": {
   "actual_status": 401,
@@ -1032,7 +1037,8 @@
   "labeler": "scenario:holdout-predeclared",
   "needs_blind_review": false,
   "retryable": false,
-  "split": "holdout"
+  "split": "dev",
+  "was_holdout": "holdout-1"
  },
  "holdout-api-box-captured": {
   "actual_status": 401,
@@ -1041,7 +1047,8 @@
   "labeler": "scenario:holdout-predeclared",
   "needs_blind_review": false,
   "retryable": false,
-  "split": "holdout"
+  "split": "dev",
+  "was_holdout": "holdout-1"
  },
  "holdout-api-circleci-captured": {
   "actual_status": 401,
@@ -1050,7 +1057,8 @@
   "labeler": "scenario:holdout-predeclared",
   "needs_blind_review": false,
   "retryable": false,
-  "split": "holdout"
+  "split": "dev",
+  "was_holdout": "holdout-1"
  },
  "holdout-api-clickup-captured": {
   "actual_status": 400,
@@ -1060,7 +1068,8 @@
   "labeler": "blind-subagent:high",
   "needs_blind_review": true,
   "retryable": false,
-  "split": "holdout"
+  "split": "dev",
+  "was_holdout": "holdout-1"
  },
  "holdout-api-cohere-captured": {
   "actual_status": 401,
@@ -1069,7 +1078,8 @@
   "labeler": "scenario:holdout-predeclared",
   "needs_blind_review": false,
   "retryable": false,
-  "split": "holdout"
+  "split": "dev",
+  "was_holdout": "holdout-1"
  },
  "holdout-api-coinbase-captured": {
   "actual_status": 401,
@@ -1078,7 +1088,8 @@
   "labeler": "scenario:holdout-predeclared",
   "needs_blind_review": false,
   "retryable": false,
-  "split": "holdout"
+  "split": "dev",
+  "was_holdout": "holdout-1"
  },
  "holdout-api-contentful-captured": {
   "actual_status": 401,
@@ -1087,7 +1098,8 @@
   "labeler": "scenario:holdout-predeclared",
   "needs_blind_review": false,
   "retryable": false,
-  "split": "holdout"
+  "split": "dev",
+  "was_holdout": "holdout-1"
  },
  "holdout-api-crates-404-captured": {
   "actual_status": 404,
@@ -1096,7 +1108,8 @@
   "labeler": "scenario:holdout-predeclared",
   "needs_blind_review": false,
   "retryable": false,
-  "split": "holdout"
+  "split": "dev",
+  "was_holdout": "holdout-1"
  },
  "holdout-api-deepseek-captured": {
   "actual_status": 401,
@@ -1105,7 +1118,8 @@
   "labeler": "scenario:holdout-predeclared",
   "needs_blind_review": false,
   "retryable": false,
-  "split": "holdout"
+  "split": "dev",
+  "was_holdout": "holdout-1"
  },
  "holdout-api-dockerhub-tags-404-captured": {
   "actual_status": 404,
@@ -1114,7 +1128,8 @@
   "labeler": "scenario:holdout-predeclared",
   "needs_blind_review": false,
   "retryable": false,
-  "split": "holdout"
+  "split": "dev",
+  "was_holdout": "holdout-1"
  },
  "holdout-api-dropbox-captured": {
   "actual_status": 400,
@@ -1124,7 +1139,8 @@
   "labeler": "blind-subagent:high",
   "needs_blind_review": true,
   "retryable": false,
-  "split": "holdout"
+  "split": "dev",
+  "was_holdout": "holdout-1"
  },
  "holdout-api-dropbox-content-captured": {
   "actual_status": 400,
@@ -1134,7 +1150,8 @@
   "labeler": "blind-subagent:high",
   "needs_blind_review": true,
   "retryable": false,
-  "split": "holdout"
+  "split": "dev",
+  "was_holdout": "holdout-1"
  },
  "holdout-api-elevenlabs-captured": {
   "actual_status": 401,
@@ -1143,7 +1160,8 @@
   "labeler": "scenario:holdout-predeclared",
   "needs_blind_review": false,
   "retryable": false,
-  "split": "holdout"
+  "split": "dev",
+  "was_holdout": "holdout-1"
  },
  "holdout-api-fastly-captured": {
   "actual_status": 401,
@@ -1152,7 +1170,8 @@
   "labeler": "scenario:holdout-predeclared",
   "needs_blind_review": false,
   "retryable": false,
-  "split": "holdout"
+  "split": "dev",
+  "was_holdout": "holdout-1"
  },
  "holdout-api-figma-captured": {
   "actual_status": 401,
@@ -1161,7 +1180,8 @@
   "labeler": "scenario:holdout-predeclared",
   "needs_blind_review": false,
   "retryable": false,
-  "split": "holdout"
+  "split": "dev",
+  "was_holdout": "holdout-1"
  },
  "holdout-api-ghraw-404-captured": {
   "actual_status": 404,
@@ -1170,7 +1190,8 @@
   "labeler": "scenario:holdout-predeclared",
   "needs_blind_review": false,
   "retryable": false,
-  "split": "holdout"
+  "split": "dev",
+  "was_holdout": "holdout-1"
  },
  "holdout-api-gist-404-captured": {
   "actual_status": 404,
@@ -1179,7 +1200,8 @@
   "labeler": "scenario:holdout-predeclared",
   "needs_blind_review": false,
   "retryable": false,
-  "split": "holdout"
+  "split": "dev",
+  "was_holdout": "holdout-1"
  },
  "holdout-api-github-422-captured": {
   "actual_status": 422,
@@ -1189,7 +1211,8 @@
   "labeler": "blind-subagent:high",
   "needs_blind_review": true,
   "retryable": false,
-  "split": "holdout"
+  "split": "dev",
+  "was_holdout": "holdout-1"
  },
  "holdout-api-gopkg-404-captured": {
   "actual_status": 404,
@@ -1198,7 +1221,8 @@
   "labeler": "scenario:holdout-predeclared",
   "needs_blind_review": false,
   "retryable": false,
-  "split": "holdout"
+  "split": "dev",
+  "was_holdout": "holdout-1"
  },
  "holdout-api-hex-404-captured": {
   "actual_status": 404,
@@ -1207,7 +1231,8 @@
   "labeler": "scenario:holdout-predeclared",
   "needs_blind_review": false,
   "retryable": false,
-  "split": "holdout"
+  "split": "dev",
+  "was_holdout": "holdout-1"
  },
  "holdout-api-hf-model-404-captured": {
   "actual_status": 401,
@@ -1217,7 +1242,8 @@
   "labeler": "blind-subagent:medium",
   "needs_blind_review": true,
   "retryable": false,
-  "split": "holdout"
+  "split": "dev",
+  "was_holdout": "holdout-1"
  },
  "holdout-api-httpbin-status-400-captured": {
   "actual_status": 400,
@@ -1226,7 +1252,8 @@
   "labeler": "scenario:holdout-predeclared",
   "needs_blind_review": false,
   "retryable": false,
-  "split": "holdout"
+  "split": "dev",
+  "was_holdout": "holdout-1"
  },
  "holdout-api-httpbin-status-429-captured": {
   "actual_status": 429,
@@ -1235,7 +1262,8 @@
   "labeler": "scenario:holdout-predeclared",
   "needs_blind_review": false,
   "retryable": true,
-  "split": "holdout"
+  "split": "dev",
+  "was_holdout": "holdout-1"
  },
  "holdout-api-httpbin-status-500-captured": {
   "actual_status": 500,
@@ -1244,7 +1272,8 @@
   "labeler": "scenario:holdout-predeclared",
   "needs_blind_review": false,
   "retryable": true,
-  "split": "holdout"
+  "split": "dev",
+  "was_holdout": "holdout-1"
  },
  "holdout-api-httpbin-status-503-captured": {
   "actual_status": 503,
@@ -1253,7 +1282,8 @@
   "labeler": "scenario:holdout-predeclared",
   "needs_blind_review": false,
   "retryable": true,
-  "split": "holdout"
+  "split": "dev",
+  "was_holdout": "holdout-1"
  },
  "holdout-api-hubspot-captured": {
   "actual_status": 401,
@@ -1262,7 +1292,8 @@
   "labeler": "scenario:holdout-predeclared",
   "needs_blind_review": false,
   "retryable": false,
-  "split": "holdout"
+  "split": "dev",
+  "was_holdout": "holdout-1"
  },
  "holdout-api-intercom-captured": {
   "actual_status": 401,
@@ -1271,7 +1302,8 @@
   "labeler": "scenario:holdout-predeclared",
   "needs_blind_review": false,
   "retryable": false,
-  "split": "holdout"
+  "split": "dev",
+  "was_holdout": "holdout-1"
  },
  "holdout-api-jsdelivr-404-captured": {
   "actual_status": 404,
@@ -1280,7 +1312,8 @@
   "labeler": "scenario:holdout-predeclared",
   "needs_blind_review": false,
   "retryable": false,
-  "split": "holdout"
+  "split": "dev",
+  "was_holdout": "holdout-1"
  },
  "holdout-api-jsonplaceholder-404-captured": {
   "actual_status": 404,
@@ -1289,7 +1322,8 @@
   "labeler": "scenario:holdout-predeclared",
   "needs_blind_review": false,
   "retryable": false,
-  "split": "holdout"
+  "split": "dev",
+  "was_holdout": "holdout-1"
  },
  "holdout-api-monday-captured": {
   "actual_status": 401,
@@ -1298,7 +1332,8 @@
   "labeler": "scenario:holdout-predeclared",
   "needs_blind_review": false,
   "retryable": false,
-  "split": "holdout"
+  "split": "dev",
+  "was_holdout": "holdout-1"
  },
  "holdout-api-netlify-sites-captured": {
   "actual_status": 401,
@@ -1307,7 +1342,8 @@
   "labeler": "scenario:holdout-predeclared",
   "needs_blind_review": false,
   "retryable": false,
-  "split": "holdout"
+  "split": "dev",
+  "was_holdout": "holdout-1"
  },
  "holdout-api-nuget-404-captured": {
   "actual_status": 404,
@@ -1316,7 +1352,8 @@
   "labeler": "scenario:holdout-predeclared",
   "needs_blind_review": false,
   "retryable": false,
-  "split": "holdout"
+  "split": "dev",
+  "was_holdout": "holdout-1"
  },
  "holdout-api-openlibrary-404-captured": {
   "actual_status": 404,
@@ -1325,7 +1362,8 @@
   "labeler": "scenario:holdout-predeclared",
   "needs_blind_review": false,
   "retryable": false,
-  "split": "holdout"
+  "split": "dev",
+  "was_holdout": "holdout-1"
  },
  "holdout-api-openrouter-captured": {
   "actual_status": 401,
@@ -1334,7 +1372,8 @@
   "labeler": "scenario:holdout-predeclared",
   "needs_blind_review": false,
   "retryable": false,
-  "split": "holdout"
+  "split": "dev",
+  "was_holdout": "holdout-1"
  },
  "holdout-api-packagist-404-captured": {
   "actual_status": 404,
@@ -1343,7 +1382,8 @@
   "labeler": "scenario:holdout-predeclared",
   "needs_blind_review": false,
   "retryable": false,
-  "split": "holdout"
+  "split": "dev",
+  "was_holdout": "holdout-1"
  },
  "holdout-api-pagerduty-captured": {
   "actual_status": 401,
@@ -1352,7 +1392,8 @@
   "labeler": "scenario:holdout-predeclared",
   "needs_blind_review": false,
   "retryable": false,
-  "split": "holdout"
+  "split": "dev",
+  "was_holdout": "holdout-1"
  },
  "holdout-api-paypal-captured": {
   "actual_status": 401,
@@ -1361,7 +1402,8 @@
   "labeler": "scenario:holdout-predeclared",
   "needs_blind_review": false,
   "retryable": false,
-  "split": "holdout"
+  "split": "dev",
+  "was_holdout": "holdout-1"
  },
  "holdout-api-perplexity-captured": {
   "actual_status": 401,
@@ -1370,7 +1412,8 @@
   "labeler": "scenario:holdout-predeclared",
   "needs_blind_review": false,
   "retryable": false,
-  "split": "holdout"
+  "split": "dev",
+  "was_holdout": "holdout-1"
  },
  "holdout-api-pinecone-captured": {
   "actual_status": 401,
@@ -1379,7 +1422,8 @@
   "labeler": "scenario:holdout-predeclared",
   "needs_blind_review": false,
   "retryable": false,
-  "split": "holdout"
+  "split": "dev",
+  "was_holdout": "holdout-1"
  },
  "holdout-api-pokeapi-404-captured": {
   "actual_status": 404,
@@ -1388,7 +1432,8 @@
   "labeler": "scenario:holdout-predeclared",
   "needs_blind_review": false,
   "retryable": false,
-  "split": "holdout"
+  "split": "dev",
+  "was_holdout": "holdout-1"
  },
  "holdout-api-rubygems-404-captured": {
   "actual_status": 404,
@@ -1397,7 +1442,8 @@
   "labeler": "scenario:holdout-predeclared",
   "needs_blind_review": false,
   "retryable": false,
-  "split": "holdout"
+  "split": "dev",
+  "was_holdout": "holdout-1"
  },
  "holdout-api-square-captured": {
   "actual_status": 401,
@@ -1406,7 +1452,8 @@
   "labeler": "scenario:holdout-predeclared",
   "needs_blind_review": false,
   "retryable": false,
-  "split": "holdout"
+  "split": "dev",
+  "was_holdout": "holdout-1"
  },
  "holdout-api-swapi-404-captured": {
   "actual_status": 404,
@@ -1415,7 +1462,8 @@
   "labeler": "scenario:holdout-predeclared",
   "needs_blind_review": false,
   "retryable": false,
-  "split": "holdout"
+  "split": "dev",
+  "was_holdout": "holdout-1"
  },
  "holdout-api-together-captured": {
   "actual_status": 401,
@@ -1424,7 +1472,8 @@
   "labeler": "scenario:holdout-predeclared",
   "needs_blind_review": false,
   "retryable": false,
-  "split": "holdout"
+  "split": "dev",
+  "was_holdout": "holdout-1"
  },
  "holdout-api-trello-captured": {
   "actual_status": 400,
@@ -1434,7 +1483,8 @@
   "labeler": "blind-subagent:high",
   "needs_blind_review": true,
   "retryable": false,
-  "split": "holdout"
+  "split": "dev",
+  "was_holdout": "holdout-1"
  },
  "holdout-api-unpkg-404-captured": {
   "actual_status": 404,
@@ -1443,7 +1493,8 @@
   "labeler": "scenario:holdout-predeclared",
   "needs_blind_review": false,
   "retryable": false,
-  "split": "holdout"
+  "split": "dev",
+  "was_holdout": "holdout-1"
  },
  "holdout-api-zoom-captured": {
   "actual_status": 401,
@@ -1452,7 +1503,8 @@
   "labeler": "scenario:holdout-predeclared",
   "needs_blind_review": false,
   "retryable": false,
-  "split": "holdout"
+  "split": "dev",
+  "was_holdout": "holdout-1"
  },
  "holdout-site-apple-404-captured": {
   "actual_status": 404,
@@ -1461,7 +1513,8 @@
   "labeler": "scenario:holdout-predeclared",
   "needs_blind_review": false,
   "retryable": false,
-  "split": "holdout"
+  "split": "dev",
+  "was_holdout": "holdout-1"
  },
  "holdout-site-azurestatic-404-captured": {
   "actual_status": 404,
@@ -1470,7 +1523,8 @@
   "labeler": "scenario:holdout-predeclared",
   "needs_blind_review": false,
   "retryable": false,
-  "split": "holdout"
+  "split": "dev",
+  "was_holdout": "holdout-1"
  },
  "holdout-site-bbc-404-captured": {
   "actual_status": 404,
@@ -1479,7 +1533,8 @@
   "labeler": "scenario:holdout-predeclared",
   "needs_blind_review": false,
   "retryable": false,
-  "split": "holdout"
+  "split": "dev",
+  "was_holdout": "holdout-1"
  },
  "holdout-site-blogspot-404-captured": {
   "actual_status": 404,
@@ -1488,7 +1543,8 @@
   "labeler": "scenario:holdout-predeclared",
   "needs_blind_review": false,
   "retryable": false,
-  "split": "holdout"
+  "split": "dev",
+  "was_holdout": "holdout-1"
  },
  "holdout-site-docs-python-404-captured": {
   "actual_status": 404,
@@ -1497,7 +1553,8 @@
   "labeler": "scenario:holdout-predeclared",
   "needs_blind_review": false,
   "retryable": false,
-  "split": "holdout"
+  "split": "dev",
+  "was_holdout": "holdout-1"
  },
  "holdout-site-framer-404-captured": {
   "actual_status": 404,
@@ -1506,7 +1563,8 @@
   "labeler": "scenario:holdout-predeclared",
   "needs_blind_review": false,
   "retryable": false,
-  "split": "holdout"
+  "split": "dev",
+  "was_holdout": "holdout-1"
  },
  "holdout-site-gitlab-pages-404-captured": {
   "actual_status": 403,
@@ -1516,7 +1574,8 @@
   "labeler": "blind-subagent:high",
   "needs_blind_review": true,
   "retryable": false,
-  "split": "holdout"
+  "split": "dev",
+  "was_holdout": "holdout-1"
  },
  "holdout-site-glitch-404-captured": {
   "actual_status": 410,
@@ -1526,7 +1585,8 @@
   "labeler": "blind-subagent:medium",
   "needs_blind_review": true,
   "retryable": false,
-  "split": "holdout"
+  "split": "dev",
+  "was_holdout": "holdout-1"
  },
  "holdout-site-hf-space-404-captured": {
   "actual_status": 401,
@@ -1536,7 +1596,8 @@
   "labeler": "blind-subagent:high",
   "needs_blind_review": true,
   "retryable": false,
-  "split": "holdout"
+  "split": "dev",
+  "was_holdout": "holdout-1"
  },
  "holdout-site-hn-404-captured": {
   "actual_status": 404,
@@ -1545,7 +1606,8 @@
   "labeler": "scenario:holdout-predeclared",
   "needs_blind_review": false,
   "retryable": false,
-  "split": "holdout"
+  "split": "dev",
+  "was_holdout": "holdout-1"
  },
  "holdout-site-koyeb-404-captured": {
   "actual_status": 404,
@@ -1554,7 +1616,8 @@
   "labeler": "scenario:holdout-predeclared",
   "needs_blind_review": false,
   "retryable": false,
-  "split": "holdout"
+  "split": "dev",
+  "was_holdout": "holdout-1"
  },
  "holdout-site-microsoft-404-captured": {
   "actual_status": 404,
@@ -1563,7 +1626,8 @@
   "labeler": "scenario:holdout-predeclared",
   "needs_blind_review": false,
   "retryable": false,
-  "split": "holdout"
+  "split": "dev",
+  "was_holdout": "holdout-1"
  },
  "holdout-site-mozilla-404-captured": {
   "actual_status": 404,
@@ -1572,7 +1636,8 @@
   "labeler": "scenario:holdout-predeclared",
   "needs_blind_review": false,
   "retryable": false,
-  "split": "holdout"
+  "split": "dev",
+  "was_holdout": "holdout-1"
  },
  "holdout-site-neocities-404-captured": {
   "actual_status": 404,
@@ -1581,7 +1646,8 @@
   "labeler": "scenario:holdout-predeclared",
   "needs_blind_review": false,
   "retryable": false,
-  "split": "holdout"
+  "split": "dev",
+  "was_holdout": "holdout-1"
  },
  "holdout-site-ngrok-404-captured": {
   "actual_status": 404,
@@ -1590,7 +1656,8 @@
   "labeler": "scenario:holdout-predeclared",
   "needs_blind_review": false,
   "retryable": false,
-  "split": "holdout"
+  "split": "dev",
+  "was_holdout": "holdout-1"
  },
  "holdout-site-python-404-captured": {
   "actual_status": 404,
@@ -1599,7 +1666,8 @@
   "labeler": "scenario:holdout-predeclared",
   "needs_blind_review": false,
   "retryable": false,
-  "split": "holdout"
+  "split": "dev",
+  "was_holdout": "holdout-1"
  },
  "holdout-site-readthedocs-404-captured": {
   "actual_status": 404,
@@ -1608,7 +1676,8 @@
   "labeler": "scenario:holdout-predeclared",
   "needs_blind_review": false,
   "retryable": false,
-  "split": "holdout"
+  "split": "dev",
+  "was_holdout": "holdout-1"
  },
  "holdout-site-replit-404-captured": {
   "actual_status": 404,
@@ -1617,7 +1686,8 @@
   "labeler": "scenario:holdout-predeclared",
   "needs_blind_review": false,
   "retryable": false,
-  "split": "holdout"
+  "split": "dev",
+  "was_holdout": "holdout-1"
  },
  "holdout-site-s3-website-404-captured": {
   "actual_status": 404,
@@ -1626,7 +1696,8 @@
   "labeler": "scenario:holdout-predeclared",
   "needs_blind_review": false,
   "retryable": false,
-  "split": "holdout"
+  "split": "dev",
+  "was_holdout": "holdout-1"
  },
  "holdout-site-shopify-store-404-captured": {
   "actual_status": 404,
@@ -1635,7 +1706,8 @@
   "labeler": "scenario:holdout-predeclared",
   "needs_blind_review": false,
   "retryable": false,
-  "split": "holdout"
+  "split": "dev",
+  "was_holdout": "holdout-1"
  },
  "holdout-site-squarespace-404-captured": {
   "actual_status": 404,
@@ -1644,7 +1716,8 @@
   "labeler": "scenario:holdout-predeclared",
   "needs_blind_review": false,
   "retryable": false,
-  "split": "holdout"
+  "split": "dev",
+  "was_holdout": "holdout-1"
  },
  "holdout-site-substack-404-captured": {
   "actual_status": 404,
@@ -1653,7 +1726,8 @@
   "labeler": "scenario:holdout-predeclared",
   "needs_blind_review": false,
   "retryable": false,
-  "split": "holdout"
+  "split": "dev",
+  "was_holdout": "holdout-1"
  },
  "holdout-site-surge-404-captured": {
   "actual_status": 404,
@@ -1662,7 +1736,8 @@
   "labeler": "scenario:holdout-predeclared",
   "needs_blind_review": false,
   "retryable": false,
-  "split": "holdout"
+  "split": "dev",
+  "was_holdout": "holdout-1"
  },
  "holdout-site-theguardian-404-captured": {
   "actual_status": 404,
@@ -1671,7 +1746,8 @@
   "labeler": "scenario:holdout-predeclared",
   "needs_blind_review": false,
   "retryable": false,
-  "split": "holdout"
+  "split": "dev",
+  "was_holdout": "holdout-1"
  },
  "holdout-site-webflow-404-captured": {
   "actual_status": 404,
@@ -1680,7 +1756,8 @@
   "labeler": "scenario:holdout-predeclared",
   "needs_blind_review": false,
   "retryable": false,
-  "split": "holdout"
+  "split": "dev",
+  "was_holdout": "holdout-1"
  },
  "holdout-site-wix-404-captured": {
   "actual_status": 404,
@@ -1689,7 +1766,8 @@
   "labeler": "scenario:holdout-predeclared",
   "needs_blind_review": false,
   "retryable": false,
-  "split": "holdout"
+  "split": "dev",
+  "was_holdout": "holdout-1"
  },
  "holdout-site-wordpress-404-captured": {
   "actual_status": 403,
@@ -1699,7 +1777,8 @@
   "labeler": "blind-subagent:high",
   "needs_blind_review": true,
   "retryable": false,
-  "split": "holdout"
+  "split": "dev",
+  "was_holdout": "holdout-1"
  },
  "html-generic-418": {
   "actual_status": 418,
