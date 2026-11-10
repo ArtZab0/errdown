@@ -1,12 +1,14 @@
 // Core of the errdown-mcp `fetch` tool, separated from the MCP transport so it can be tested.
 import TurndownService from "turndown";
-import { agentAcceptHeader, decide, normalize, toMarkdown, type Problem } from "errdown";
+import { agentAcceptHeader, decide, normalize, toCompact, toMarkdown, type Problem } from "errdown";
 
 export interface FetchArgs {
   url: string;
   max_length?: number;
   start_index?: number;
   raw?: boolean;
+  /** "compact" (default): one line, ~20 tokens. "full": Cloudflare-format Markdown. */
+  format?: "compact" | "full";
 }
 
 export interface FetchResult {
@@ -54,7 +56,8 @@ export function networkProblem(err: unknown, url: string, now = new Date()): Pro
   return p;
 }
 
-function problemText(p: Problem): string {
+function problemText(p: Problem, format: "compact" | "full" = "compact"): string {
+  if (format === "compact") return toCompact(p);
   const d = decide(p);
   const hint = d.action === "retry" ? `retry after ${d.after_seconds}s` : d.action === "escalate" ? `escalate (${d.reason})` : `fail (${d.reason})`;
   return `${toMarkdown(p)}\n<!-- errdown decide(): ${hint} -->\n`;
@@ -79,7 +82,7 @@ async function readCapped(res: Response): Promise<string> {
 }
 
 export async function fetchTool(args: FetchArgs, fetchImpl: typeof fetch = fetch): Promise<FetchResult> {
-  const { url, max_length = 20_000, start_index = 0, raw = false } = args;
+  const { url, max_length = 20_000, start_index = 0, raw = false, format = "compact" } = args;
   let res: Response;
   try {
     const u = new URL(url);
@@ -91,13 +94,13 @@ export async function fetchTool(args: FetchArgs, fetchImpl: typeof fetch = fetch
     });
   } catch (err) {
     const p = networkProblem(err instanceof TypeError && /Invalid URL/i.test(String(err.message)) ? { code: "ERR_INVALID_URL" } : err, url);
-    return { isError: true, text: problemText(p), problem: p };
+    return { isError: true, text: problemText(p, format), problem: p };
   }
   let body = "";
   try { body = await readCapped(res); } catch { /* treat as empty */ }
 
   const problem = normalize(res.status, res.headers, body, { url: res.url || url });
-  if (problem) return { isError: true, text: problemText(problem), problem };
+  if (problem) return { isError: true, text: problemText(problem, format), problem };
 
   const ctype = res.headers.get("content-type") ?? "";
   let content = body;

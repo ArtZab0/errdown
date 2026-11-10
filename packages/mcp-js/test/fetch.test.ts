@@ -37,8 +37,10 @@ test("nginx 502 -> structured, retryable", async () => {
   const r = await fetchTool({ url: `${base}/nginx502` });
   assert.equal(r.isError, true);
   assert.equal(r.problem?.error_name, "nginx_bad_gateway");
-  assert.match(r.text, /^---\nerror_code: 502/);
-  assert.match(r.text, /decide\(\): retry after 5s/);
+  assert.equal(r.text, "HTTP 502 upstream_unavailable (nginx). Retryable: wait 5s, then retry (max 3 tries).");
+  const full = await fetchTool({ url: `${base}/nginx502`, format: "full" });
+  assert.match(full.text, /^---\nerror_code: 502/);
+  assert.match(full.text, /decide\(\): retry after 5s/);
 });
 
 test("429 honours Retry-After", async () => {
@@ -49,7 +51,7 @@ test("429 honours Retry-After", async () => {
 test("challenge -> escalate, never retry", async () => {
   const r = await fetchTool({ url: `${base}/challenge` });
   assert.equal(r.problem?.error_category, "challenge");
-  assert.match(r.text, /escalate \(challenge\)/);
+  assert.match(r.text, /Needs a human/);
 });
 
 test("404 HTML text never reaches the agent", async () => {

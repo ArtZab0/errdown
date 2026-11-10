@@ -24,6 +24,7 @@ server.registerTool(
       max_length: z.number().int().positive().max(1_000_000).optional().describe("Max characters to return (default 20000)"),
       start_index: z.number().int().min(0).optional().describe("Start at this character, to continue truncated content"),
       raw: z.boolean().optional().describe("Return raw HTML instead of Markdown"),
+      format: z.enum(["compact", "full"]).optional().describe("Error format: compact one-liner (default) or full Cloudflare-format Markdown"),
     },
   },
   async (args) => {

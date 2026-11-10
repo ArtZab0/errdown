@@ -40,13 +40,15 @@ class Tests(unittest.TestCase):
 
     def test_nginx(self):
         r = self.run_(f"{self.base}/nginx502")
-        self.assertEqual(r["problem"]["error_name"], "nginx_bad_gateway"); self.assertIn("retry after 5s", r["text"])
+        self.assertEqual(r["problem"]["error_name"], "nginx_bad_gateway")
+        self.assertEqual(r["text"], "HTTP 502 upstream_unavailable (nginx). Retryable: wait 5s, then retry (max 3 tries).")
+        self.assertIn("retry after 5s", self.run_(f"{self.base}/nginx502", format="full")["text"])
 
     def test_retry_after(self):
         self.assertEqual(self.run_(f"{self.base}/limited")["problem"]["retry_after"], 7)
 
     def test_challenge(self):
-        self.assertIn("escalate (challenge)", self.run_(f"{self.base}/challenge")["text"])
+        self.assertIn("Needs a human", self.run_(f"{self.base}/challenge")["text"])
 
     def test_no_html_leak(self):
         r = self.run_(f"{self.base}/missing")

@@ -12,7 +12,7 @@ from markdownify import markdownify
 from mcp.server.mcpserver import MCPServer
 from mcp_types import CallToolResult, TextContent
 
-from errdown import agent_accept_header, decide, normalize, to_markdown
+from errdown import agent_accept_header, decide, normalize, to_compact, to_markdown
 
 _NOISE = re.compile(r"<(script|style|noscript|iframe|svg|template)\b[^>]*>.*?</\1\s*>", re.S | re.I)
 UA = "errdown-mcp/0.1 (+https://github.com/ArtZab0/errdown)"
@@ -58,7 +58,9 @@ def network_problem(exc: BaseException, url: str) -> Dict[str, Any]:
     return p
 
 
-def problem_text(p: Dict[str, Any]) -> str:
+def problem_text(p: Dict[str, Any], fmt: str = "compact") -> str:
+    if fmt == "compact":
+        return to_compact(p)
     d = decide(p)
     hint = (f"retry after {d['after_seconds']}s" if d["action"] == "retry"
             else f"escalate ({d['reason']})" if d["action"] == "escalate" else f"fail ({d['reason']})")
@@ -66,7 +68,7 @@ def problem_text(p: Dict[str, Any]) -> str:
 
 
 async def fetch_impl(url: str, max_length: int = 20000, start_index: int = 0, raw: bool = False,
-                     client: Optional[httpx.AsyncClient] = None) -> Dict[str, Any]:
+                     client: Optional[httpx.AsyncClient] = None, format: str = "compact") -> Dict[str, Any]:
     own = client is None
     buf = bytearray()
     try:
@@ -83,7 +85,7 @@ async def fetch_impl(url: str, max_length: int = 20000, start_index: int = 0, ra
             status, headers = res.status_code, res.headers
     except Exception as exc:  # no HTTP response
         p = network_problem(exc, url)
-        return {"isError": True, "text": problem_text(p), "problem": p}
+        return {"isError": True, "text": problem_text(p, format), "problem": p}
     finally:
         if own and client is not None:
             try:
@@ -93,7 +95,7 @@ async def fetch_impl(url: str, max_length: int = 20000, start_index: int = 0, ra
     body = bytes(buf[:MAX_BYTES])
     problem = normalize(status, headers, body, url=final_url)
     if problem:
-        return {"isError": True, "text": problem_text(problem), "problem": problem}
+        return {"isError": True, "text": problem_text(problem, format), "problem": problem}
     text = body.decode(headers.encoding or "utf-8", errors="replace") if hasattr(headers, "encoding") else body.decode("utf-8", "replace")
     if not raw and "html" in headers.get("content-type", ""):
         try:
@@ -112,12 +114,13 @@ async def fetch_impl(url: str, max_length: int = 20000, start_index: int = 0, ra
 
 @mcp.tool(name="fetch", description=(
     "Fetch a URL and return its content as Markdown. If the request fails (HTTP error, bot challenge, "
-    "DNS/TLS/connection failure), returns a structured error in Cloudflare's agent error format: "
-    "frontmatter with error_category, retryable, retry_after and owner_action_required, then "
-    "'What Happened' and 'What You Should Do'. Follow that guidance: retry only when retryable is true "
-    "(after retry_after seconds); never try to bypass a challenge."))
-async def fetch(url: str, max_length: int = 20000, start_index: int = 0, raw: bool = False) -> CallToolResult:
-    r = await fetch_impl(url, max_length, start_index, raw)
+    "DNS/TLS/connection failure), returns a one-line structured error: HTTP status, category, and whether "
+    "to retry (e.g. 'HTTP 503 upstream_unavailable (nginx). Retryable: wait 5s, then retry (max 3 tries).'). "
+    "Follow it: retry only when it says retryable; never try to bypass a challenge. "
+    "Pass format='full' for Cloudflare's full structured error format."))
+async def fetch(url: str, max_length: int = 20000, start_index: int = 0, raw: bool = False,
+                format: str = "compact") -> CallToolResult:
+    r = await fetch_impl(url, max_length, start_index, raw, format=format)
     return CallToolResult(content=[TextContent(type="text", text=r["text"])], is_error=r["isError"])
 
 

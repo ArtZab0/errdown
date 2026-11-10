@@ -6,7 +6,7 @@ import sys
 import unittest
 
 sys.path.insert(0, str(pathlib.Path(__file__).resolve().parents[1] / "src"))
-from errdown import agent_accept_header, backoff, decide, normalize, ordered, to_json, to_markdown  # noqa: E402
+from errdown import agent_accept_header, backoff, decide, normalize, ordered, to_compact, to_json, to_markdown  # noqa: E402
 
 FIX = pathlib.Path(__file__).resolve().parents[3] / "fixtures"
 NOW = "2026-11-10T00:00:00.000Z"
@@ -43,6 +43,7 @@ class Conformance(unittest.TestCase):
                     continue
                 self.assertEqual(to_markdown(p), want["md"])
                 self.assertEqual(to_json(p), want["json"])
+                self.assertEqual(to_compact(p), want["compact"])
 
     def test_cloudflare_parity(self):
         for name in NAMES:

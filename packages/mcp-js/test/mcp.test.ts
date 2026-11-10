@@ -11,6 +11,6 @@ test("MCP: lists fetch tool and returns structured error", async () => {
   assert.deepEqual(tools.tools.map((t) => t.name), ["fetch"]);
   const r: any = await client.callTool({ name: "fetch", arguments: { url: "http://127.0.0.1:1/" } });
   assert.equal(r.isError, true);
-  assert.match(r.content[0].text, /error_category: upstream_unavailable/);
+  assert.match(r.content[0].text, /upstream_unavailable/);
   await client.close();
 });

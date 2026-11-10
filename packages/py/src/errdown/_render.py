@@ -51,3 +51,37 @@ def to_markdown(p: Dict[str, Any]) -> str:
     if p.get("footer"):
         md += f"\n---\n\n{js_str(p['footer'])}\n"
     return md
+
+
+def _compact_advice(p: Dict[str, Any]) -> str:
+    cat = str(p.get("error_category"))
+    if cat == "challenge":
+        return "Needs a human (CAPTCHA/bot check); do not retry or bypass."
+    if p.get("owner_action_required"):
+        return "Site owner must fix; do not retry."
+    if p.get("retryable"):
+        ra = p.get("retry_after")
+        return f"Retryable: wait {js_str(5 if ra is None else ra)}s, then retry (max 3 tries)."
+    return {
+        "auth_required": "Not retryable: needs credentials; ask the user.",
+        "access_denied": "Not retryable: access blocked.",
+        "not_found": "Not retryable: check the URL.",
+        "rate_limit": "Rate limited; wait before retrying.",
+        "legal": "Not retryable: blocked for legal reasons.",
+    }.get(cat, "Not retryable: fix the request.")
+
+
+_SAID = re.compile(r'message \(untrusted, quoted\): "([^"]*)"')
+
+
+def to_compact(p: Dict[str, Any]) -> str:
+    """One-line form for token-constrained agents (~20-40 tokens). Byte-identical to TS toCompact()."""
+    status = f"HTTP {js_str(p['status'])}" if p.get("status") else "Network error"
+    ec = p.get("error_code")
+    code = f" {js_str(ec)}" if is_num(ec) and ec >= 1000 else ""
+    src_v = p.get("errdown_source")
+    src = f" ({src_v})" if src_v and src_v not in ("unknown", "origin", "network") else ""
+    m = _SAID.search(str(p.get("detail")))
+    said = m.group(1) if m else None
+    msg = f' Server said: "{said[:79] + chr(0x2026) if len(said) > 80 else said}".' if said else ""
+    return f"{status}{code} {p.get('error_category')}{src}.{msg} {_compact_advice(p)}"
