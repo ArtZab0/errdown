@@ -1,5 +1,5 @@
 {
-  "type": "https://errdown.com/errors/render_no_server",
+  "type": "https://artzab0.github.io/errdown/errors/render_no_server",
   "title": "No service at this address",
   "status": 404,
   "detail": "There is no Render service at this address.",

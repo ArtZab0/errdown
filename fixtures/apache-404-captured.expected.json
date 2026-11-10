@@ -1,5 +1,5 @@
 {
-  "type": "https://errdown.com/errors/apache_not_found",
+  "type": "https://artzab0.github.io/errdown/errors/apache_not_found",
   "title": "Not found",
   "status": 404,
   "detail": "The server returned HTTP 404 with an error page from apache.",

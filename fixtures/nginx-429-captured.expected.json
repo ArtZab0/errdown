@@ -1,5 +1,5 @@
 {
-  "type": "https://errdown.com/errors/nginx_rate_limited",
+  "type": "https://artzab0.github.io/errdown/errors/nginx_rate_limited",
   "title": "Rate limited",
   "status": 429,
   "detail": "The server returned HTTP 429 with an error page from nginx.",

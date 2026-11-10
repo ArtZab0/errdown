@@ -1,5 +1,5 @@
 {
-  "type": "https://errdown.com/errors/caddy_bad_gateway",
+  "type": "https://artzab0.github.io/errdown/errors/caddy_bad_gateway",
   "title": "Bad gateway",
   "status": 502,
   "detail": "The server returned HTTP 502 with an error page from caddy.",

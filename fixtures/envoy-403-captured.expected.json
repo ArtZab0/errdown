@@ -1,5 +1,5 @@
 {
-  "type": "https://errdown.com/errors/envoy_forbidden",
+  "type": "https://artzab0.github.io/errdown/errors/envoy_forbidden",
   "title": "Access denied",
   "status": 403,
   "detail": "The server returned HTTP 403 with an error page from envoy.",

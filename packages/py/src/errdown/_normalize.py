@@ -15,7 +15,7 @@ from ._util import is_num, js_parse, js_str, js_trim
 Problem = Dict[str, Any]
 
 MAX_BODY = 256 * 1024
-TYPE_BASE = "https://errdown.com/errors/"
+TYPE_BASE = "https://artzab0.github.io/errdown/errors/"
 CF_DOCS = "https://developers.cloudflare.com/support/troubleshooting/http-status-codes/cloudflare-1xxx-errors/"
 
 _BODY_PAGES = [f for f in PAGES if f["body"]]
@@ -421,6 +421,8 @@ def _run(ctx: _Ctx, full_body: str) -> Optional[Problem]:
         p = {"errdown_synthesized": False, "errdown_source": "cloudflare" if cf else "origin", "errdown_confidence": 1}
         if cf:
             p["cloudflare_error"] = True
+            if is_num(md.get("error_code")) and md["error_code"] >= 1000:
+                p["type"] = f"{CF_DOCS}error-{js_str(md['error_code'])}/"
         p.update(md)
         p["status"] = md["status"] if is_num(md.get("status")) else status
         return _finish(p, ctx)

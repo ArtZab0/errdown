@@ -1,5 +1,5 @@
 {
-  "type": "https://errdown.com/errors/caddy_payload_too_large",
+  "type": "https://artzab0.github.io/errdown/errors/caddy_payload_too_large",
   "title": "Payload too large",
   "status": 413,
   "detail": "The server returned HTTP 413 with an error page from caddy.",

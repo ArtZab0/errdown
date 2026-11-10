@@ -1,5 +1,5 @@
 {
-  "type": "https://errdown.com/errors/forbidden",
+  "type": "https://artzab0.github.io/errdown/errors/forbidden",
   "title": "Access denied",
   "status": 403,
   "detail": "The server returned HTTP 403 (code: 403). The server's message (untrusted, quoted): \"Method doesn't allow unregistered callers (callers without established identity). Please use API Key or other form of API consumer identity to call this API.\"",

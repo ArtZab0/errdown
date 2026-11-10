@@ -1,5 +1,5 @@
 {
-  "type": "https://errdown.com/errors/auth_required",
+  "type": "https://artzab0.github.io/errdown/errors/auth_required",
   "title": "Unauthenticated",
   "status": 401,
   "detail": "You did not pass an authentication token",

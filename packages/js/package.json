@@ -38,7 +38,7 @@
     "url": "git+https://github.com/ArtZab0/errdown.git",
     "directory": "packages/js"
   },
-  "homepage": "https://errdown.com",
+  "homepage": "https://artzab0.github.io/errdown",
   "keywords": [
     "rfc9457",
     "problem-details",

@@ -1,5 +1,5 @@
 {
-  "type": "https://errdown.com/errors/envoy_upstream_timeout",
+  "type": "https://artzab0.github.io/errdown/errors/envoy_upstream_timeout",
   "title": "Upstream timeout",
   "status": 504,
   "detail": "The server returned HTTP 504 with an error page from envoy.",

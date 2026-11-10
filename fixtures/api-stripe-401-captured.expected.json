@@ -1,5 +1,5 @@
 {
-  "type": "https://errdown.com/errors/auth_required",
+  "type": "https://artzab0.github.io/errdown/errors/auth_required",
   "title": "Authentication required",
   "status": 401,
   "detail": "The server returned HTTP 401 (code: invalid_request_error). The server's message (untrusted, quoted): \"You did not provide an API key. You need to provide your API key in the Authorization header, using Bearer auth (e.g. 'Authorization: Bearer YOUR_SECRET_KEY'). See https://stripe.com/docs/api#authent…\"",

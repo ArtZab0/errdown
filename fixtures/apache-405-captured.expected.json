@@ -1,5 +1,5 @@
 {
-  "type": "https://errdown.com/errors/apache_method_not_allowed",
+  "type": "https://artzab0.github.io/errdown/errors/apache_method_not_allowed",
   "title": "Method not allowed",
   "status": 405,
   "detail": "The server returned HTTP 405 with an error page from apache.",

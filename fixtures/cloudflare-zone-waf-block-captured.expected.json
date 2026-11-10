@@ -1,5 +1,5 @@
 {
-  "type": "https://errdown.com/errors/cloudflare_blocked",
+  "type": "https://artzab0.github.io/errdown/errors/cloudflare_blocked",
   "title": "Blocked by the site's firewall",
   "status": 403,
   "detail": "The site's Cloudflare firewall blocked this request.",

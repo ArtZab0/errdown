@@ -1,0 +1,14 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>request_timeout · errdown</title><link rel="stylesheet" href="../style.css"></head><body><main>
+<div class="crumb"><a href="./">errdown errors</a> / <code>request_timeout</code></div>
+<h1>Request timeout</h1>
+<p>An HTTP error that errdown classifies as <code>request_timeout</code>.</p>
+<dl><dt>error_name</dt><dd><code>request_timeout</code></dd>
+<dt>error_category</dt><dd><code>upstream_unavailable</code></dd>
+<dt>retryable</dt><dd><code>true</code></dd>
+<dt>owner_action_required</dt><dd><code>false</code></dd>
+<dt>HTTP status</dt><dd>408</dd>
+</dl>
+<h2>What you should do</h2><p>Wait 5 seconds, then retry with exponential backoff. Stop after a few attempts and report the error if it persists.</p>
+<p class="crumb">Names may carry a source prefix (for example <code>nginx_request_timeout</code>); they mean the same thing, produced by that server.</p>
+<footer>errdown is independent and not affiliated with Cloudflare. <a href="https://github.com/ArtZab0/errdown">Source</a> · <a href="../errors/">All errors</a></footer></main></body></html>

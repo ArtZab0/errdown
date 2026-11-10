@@ -1,5 +1,5 @@
 {
-  "type": "https://errdown.com/errors/bot_detection_redirect",
+  "type": "https://artzab0.github.io/errdown/errors/bot_detection_redirect",
   "title": "Bot verification required",
   "status": 401,
   "detail": "The server returned HTTP 401 with a bot-verification challenge page.",

@@ -1,5 +1,5 @@
 {
-  "type": "https://errdown.com/errors/jetty_uri_too_long",
+  "type": "https://artzab0.github.io/errdown/errors/jetty_uri_too_long",
   "title": "URI too long",
   "status": 414,
   "detail": "The server returned HTTP 414 with an error page from jetty.",

@@ -1,5 +1,5 @@
 {
-  "type": "https://errdown.com/errors/aws_alb_gateway_timeout",
+  "type": "https://artzab0.github.io/errdown/errors/aws_alb_gateway_timeout",
   "title": "Gateway timeout",
   "status": 504,
   "detail": "The server returned HTTP 504 with an error page from aws-alb.",

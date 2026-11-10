@@ -1,5 +1,5 @@
 {
-  "type": "https://errdown.com/errors/apache_uri_too_long",
+  "type": "https://artzab0.github.io/errdown/errors/apache_uri_too_long",
   "title": "URI too long",
   "status": 414,
   "detail": "The server returned HTTP 414 with an error page from apache.",

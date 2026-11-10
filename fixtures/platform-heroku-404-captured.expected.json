@@ -1,5 +1,5 @@
 {
-  "type": "https://errdown.com/errors/heroku_no_such_app",
+  "type": "https://artzab0.github.io/errdown/errors/heroku_no_such_app",
   "title": "No such app",
   "status": 404,
   "detail": "There is no Heroku app at this address.",

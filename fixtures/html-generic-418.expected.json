@@ -1,5 +1,5 @@
 {
-  "type": "https://errdown.com/errors/client_error",
+  "type": "https://artzab0.github.io/errdown/errors/client_error",
   "title": "Client error",
   "status": 418,
   "detail": "The server returned HTTP 418.",

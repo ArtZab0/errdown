@@ -1,5 +1,5 @@
 {
-  "type": "https://errdown.com/errors/apache_service_unavailable",
+  "type": "https://artzab0.github.io/errdown/errors/apache_service_unavailable",
   "title": "Service unavailable",
   "status": 503,
   "detail": "The server returned HTTP 503 with an error page from apache.",

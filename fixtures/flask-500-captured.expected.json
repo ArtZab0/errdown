@@ -1,5 +1,5 @@
 {
-  "type": "https://errdown.com/errors/werkzeug_internal_server_error",
+  "type": "https://artzab0.github.io/errdown/errors/werkzeug_internal_server_error",
   "title": "Internal server error",
   "status": 500,
   "detail": "The server returned HTTP 500 with an error page from werkzeug.",

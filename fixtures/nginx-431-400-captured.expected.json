@@ -1,5 +1,5 @@
 {
-  "type": "https://errdown.com/errors/nginx_bad_request",
+  "type": "https://artzab0.github.io/errdown/errors/nginx_bad_request",
   "title": "Bad request",
   "status": 400,
   "detail": "The server returned HTTP 400 with an error page from nginx.",

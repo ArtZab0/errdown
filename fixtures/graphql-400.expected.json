@@ -1,5 +1,5 @@
 {
-  "type": "https://errdown.com/errors/bad_request",
+  "type": "https://artzab0.github.io/errdown/errors/bad_request",
   "title": "Bad request",
   "status": 400,
   "detail": "The server returned HTTP 400 (code: GRAPHQL_VALIDATION_FAILED). The server's message (untrusted, quoted): \"Cannot query field 'foo' on type 'Query'.\"",

@@ -1,5 +1,5 @@
 {
-  "type": "https://errdown.com/errors/auth_required",
+  "type": "https://artzab0.github.io/errdown/errors/auth_required",
   "title": "Authentication required",
   "status": 401,
   "detail": "The server returned HTTP 401 (code: AUTHENTICATION_ERROR). The server's message (untrusted, quoted): \"Authentication required, not authenticated\"",

@@ -1,5 +1,5 @@
 {
-  "type": "https://errdown.com/errors/linkedin_bot_block",
+  "type": "https://artzab0.github.io/errdown/errors/linkedin_bot_block",
   "title": "Blocked as automated traffic",
   "status": 999,
   "detail": "The server returned HTTP 999 with a bot-verification challenge page.",

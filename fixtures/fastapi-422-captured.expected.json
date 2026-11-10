@@ -1,5 +1,5 @@
 {
-  "type": "https://errdown.com/errors/unprocessable_content",
+  "type": "https://artzab0.github.io/errdown/errors/unprocessable_content",
   "title": "Unprocessable content",
   "status": 422,
   "detail": "The server returned HTTP 422 (code: int_parsing). The server's message (untrusted, quoted): \"Input should be a valid integer, unable to parse string as an integer\"",

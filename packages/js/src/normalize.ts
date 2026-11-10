@@ -4,7 +4,7 @@ import { classifyStatus, defaultRetryAfter, guidance } from "./status.ts";
 import type { HeadersInput, NormalizeOptions, Problem } from "./types.ts";
 
 const MAX_BODY = 256 * 1024;
-const TYPE_BASE = "https://errdown.com/errors/";
+const TYPE_BASE = "https://artzab0.github.io/errdown/errors/";
 const CF_DOCS = "https://developers.cloudflare.com/support/troubleshooting/http-status-codes/cloudflare-1xxx-errors/";
 
 export type BodyInput = string | Uint8Array | ArrayBuffer | null | undefined;
@@ -320,6 +320,8 @@ function run(ctx: Ctx, fullBody: string): Problem | null {
       errdown_source: cf ? "cloudflare" : "origin",
       errdown_confidence: 1,
       ...(cf ? { cloudflare_error: true } : {}),
+      // Cloudflare's Markdown omits `type`; its JSON uses the per-code docs page.
+      ...(cf && typeof md.error_code === "number" && md.error_code >= 1000 ? { type: `${CF_DOCS}error-${md.error_code}/` } : {}),
       ...md,
       status: typeof md.status === "number" ? md.status : status,
     } as Partial<Problem> & { status: number }, ctx);

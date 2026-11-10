@@ -1,5 +1,5 @@
 {
-  "type": "https://errdown.com/errors/cloudflare_challenge",
+  "type": "https://artzab0.github.io/errdown/errors/cloudflare_challenge",
   "title": "Bot verification required",
   "status": 403,
   "detail": "The server returned HTTP 403 with a bot-verification challenge page.",

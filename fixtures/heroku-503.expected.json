@@ -1,5 +1,5 @@
 {
-  "type": "https://errdown.com/errors/heroku_application_error",
+  "type": "https://artzab0.github.io/errdown/errors/heroku_application_error",
   "title": "Application error",
   "status": 503,
   "detail": "The server returned HTTP 503 with an error page from heroku.",

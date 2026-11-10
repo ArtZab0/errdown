@@ -1,5 +1,5 @@
 {
-  "type": "https://errdown.com/errors/network_security_block",
+  "type": "https://artzab0.github.io/errdown/errors/network_security_block",
   "title": "Blocked by network security",
   "status": 403,
   "detail": "The server returned HTTP 403 with a block page.",

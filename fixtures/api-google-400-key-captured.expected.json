@@ -1,5 +1,5 @@
 {
-  "type": "https://errdown.com/errors/bad_request",
+  "type": "https://artzab0.github.io/errdown/errors/bad_request",
   "title": "Bad request",
   "status": 400,
   "detail": "The server returned HTTP 400 (code: 400). The server's message (untrusted, quoted): \"API key not valid. Please pass a valid API key.\"",

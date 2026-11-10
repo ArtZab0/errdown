@@ -1,5 +1,5 @@
 {
-  "type": "https://errdown.com/errors/envoy_upstream_unavailable",
+  "type": "https://artzab0.github.io/errdown/errors/envoy_upstream_unavailable",
   "title": "Upstream unavailable",
   "status": 503,
   "detail": "The server returned HTTP 503 with an error page from envoy.",
