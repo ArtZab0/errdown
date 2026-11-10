@@ -4,7 +4,7 @@ build-backend = "hatchling.build"
 
 [project]
 name = "errdown"
-version = "0.1.0a1"
+version = "0.1.0a2"
 description = "Cloudflare-compatible structured errors (RFC 9457) for every HTTP error your agent hits."
 readme = "README.md"
 requires-python = ">=3.10"

@@ -7,4 +7,4 @@ from ._normalize import normalize, sanitize
 from ._render import ordered, to_json, to_markdown
 
 __all__ = ["normalize", "to_markdown", "to_json", "ordered", "decide", "backoff", "agent_accept_header", "sanitize"]
-__version__ = "0.1.0a1"
+__version__ = "0.1.0a2"

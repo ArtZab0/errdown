@@ -1,6 +1,6 @@
 {
   "name": "errdown",
-  "version": "0.1.0-alpha.1",
+  "version": "0.1.0-alpha.2",
   "description": "Cloudflare-compatible structured errors (RFC 9457) for every HTTP error your agent hits.",
   "type": "module",
   "exports": {
@@ -20,10 +20,11 @@
     "node": ">=18"
   },
   "scripts": {
-    "build": "tsc -p tsconfig.json",
+    "build": "node -e \"require('fs').rmSync('dist',{recursive:true,force:true})\" && tsc -p tsconfig.json",
     "test": "node --test 'test/**/*.test.ts'",
     "typecheck": "tsc -p tsconfig.json --noEmit",
-    "prepublishOnly": "npm run typecheck && npm test && npm run build"
+    "prepublishOnly": "npm run typecheck && npm test && npm run build && npm run check-pack",
+    "check-pack": "node -e \"const o=require('child_process').execSync('npm pack --dry-run --json',{stdio:['ignore','pipe','ignore']});const f=JSON.parse(o)[0].files.map(x=>x.path);if(!f.includes('dist/index.js')){console.error('refusing to publish: dist/index.js missing from package');process.exit(1)}console.log('package contents ok: '+f.length+' files')\""
   },
   "devDependencies": {
     "@types/node": "^24.0.0",

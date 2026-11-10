@@ -1,6 +1,6 @@
 {
   "name": "errdown-mcp",
-  "version": "0.1.0-alpha.1",
+  "version": "0.1.0-alpha.2",
   "description": "MCP server with a fetch tool that returns page content on success and a Cloudflare-compatible structured error (errdown) on failure.",
   "type": "module",
   "bin": {
@@ -31,10 +31,11 @@
     "node": ">=18"
   },
   "scripts": {
-    "build": "tsc -p tsconfig.json && chmod +x dist/index.js",
+    "build": "node -e \"require('fs').rmSync('dist',{recursive:true,force:true})\" && tsc -p tsconfig.json && chmod +x dist/index.js",
     "test": "node --test 'test/**/*.test.ts'",
     "typecheck": "tsc -p tsconfig.json --noEmit",
-    "prepublishOnly": "npm run typecheck && npm test && npm run build"
+    "prepublishOnly": "npm run typecheck && npm test && npm run build && npm run check-pack",
+    "check-pack": "node -e \"const o=require('child_process').execSync('npm pack --dry-run --json',{stdio:['ignore','pipe','ignore']});const f=JSON.parse(o)[0].files.map(x=>x.path);if(!f.includes('dist/index.js')){console.error('refusing to publish: dist/index.js missing from package');process.exit(1)}console.log('package contents ok: '+f.length+' files')\""
   },
   "publishConfig": {
     "tag": "alpha",
@@ -42,7 +43,7 @@
   },
   "dependencies": {
     "@modelcontextprotocol/sdk": "^1.32.2",
-    "errdown": "^0.1.0-alpha.1",
+    "errdown": "^0.1.0-alpha.2",
     "turndown": "^7.2.5",
     "zod": "^3.25.76"
   },

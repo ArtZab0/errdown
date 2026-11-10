@@ -1,0 +1,2 @@
+# npm uses this instead of .gitignore; the "files" field in package.json decides what ships.
+node_modules/

@@ -10,6 +10,7 @@ jobs:
       - run: npm ci
       - run: npm run typecheck -w errdown && npm test -w errdown && npm run build -w errdown
       - run: npm run typecheck -w errdown-mcp && npm run build -w errdown-mcp && npm test -w errdown-mcp
+      - run: npm run check-pack -w errdown && npm run check-pack -w errdown-mcp
   py:
     runs-on: ubuntu-latest
     strategy:

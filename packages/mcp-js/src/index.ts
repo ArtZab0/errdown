@@ -7,7 +7,7 @@ import { StdioServerTransport } from "@modelcontextprotocol/sdk/server/stdio.js"
 import { z } from "zod";
 import { fetchTool } from "./fetchTool.ts";
 
-const server = new McpServer({ name: "errdown-mcp", version: "0.1.0-alpha.1" });
+const server = new McpServer({ name: "errdown-mcp", version: "0.1.0-alpha.2" });
 
 server.registerTool(
   "fetch",
