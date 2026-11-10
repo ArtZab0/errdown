@@ -1,0 +1,15 @@
+{
+  "status": 500,
+  "headers": {
+    "content-type": "text/plain; charset=UTF-8",
+    "cache-control": "private, max-age=0, no-store, no-cache, must-revalidate, post-check=0, pre-check=0",
+    "expires": "Thu, 01 Jan 1970 00:00:01 GMT",
+    "referrer-policy": "same-origin",
+    "x-frame-options": "SAMEORIGIN",
+    "server": "cloudflare",
+    "cf-ray": "a580c9b2ece9df63-CMH"
+  },
+  "body": "error code: 1101\n",
+  "url": "https://errdown-lab.errdown.workers.dev/throw",
+  "_provenance": "captured 2026-11-10 from a Worker on workers.dev; identical body for Accept markdown/json/html"
+}
