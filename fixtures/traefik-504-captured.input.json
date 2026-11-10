@@ -1,0 +1,7 @@
+{
+  "status": 504,
+  "headers": {},
+  "body": "Gateway Timeout",
+  "url": "https://lab.example/slow",
+  "_provenance": "captured 2026-11-09 from the errdown Docker lab (traefik), Accept: text/markdown, */*"
+}

@@ -1,0 +1,10 @@
+{
+  "status": 500,
+  "headers": {
+    "content-type": "text/plain",
+    "server": "BaseHTTP/0.6 Python/3.13.18"
+  },
+  "body": "backend error\n",
+  "url": "https://lab.example/upstream500",
+  "_provenance": "captured 2026-11-09 from the errdown Docker lab (traefik), Accept: text/markdown, */*"
+}

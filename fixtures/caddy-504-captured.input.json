@@ -1,0 +1,9 @@
+{
+  "status": 504,
+  "headers": {
+    "server": "Caddy"
+  },
+  "body": "",
+  "url": "https://lab.example/slow",
+  "_provenance": "captured 2026-11-09 from the errdown Docker lab (caddy), Accept: text/markdown, */*"
+}

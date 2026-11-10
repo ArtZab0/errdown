@@ -1,0 +1,36 @@
+:80 {
+	handle /ok {
+		reverse_proxy backend:9000
+	}
+	handle /upstream500 {
+		rewrite * /500
+		reverse_proxy backend:9000
+	}
+	handle /dead {
+		reverse_proxy backend:9999
+	}
+	handle /slow {
+		reverse_proxy backend:9000 {
+			transport http {
+				response_header_timeout 2s
+			}
+		}
+	}
+	handle /forbidden {
+		error 403
+	}
+	handle /maint {
+		error 503
+	}
+	handle /big {
+		request_body {
+			max_size 1KB
+		}
+		reverse_proxy backend:9000
+	}
+	handle {
+		file_server {
+			root /srv
+		}
+	}
+}

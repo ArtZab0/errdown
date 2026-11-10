@@ -1,0 +1,9 @@
+{
+  "status": 403,
+  "headers": {
+    "server": "Caddy"
+  },
+  "body": "",
+  "url": "https://lab.example/forbidden",
+  "_provenance": "captured 2026-11-09 from the errdown Docker lab (caddy), Accept: text/markdown, */*"
+}

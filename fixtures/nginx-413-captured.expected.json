@@ -1,0 +1,17 @@
+{
+  "type": "https://errdown.com/errors/nginx_payload_too_large",
+  "title": "Payload too large",
+  "status": 413,
+  "detail": "The server returned HTTP 413 with an error page from nginx.",
+  "instance": "https://lab.example/big",
+  "error_code": 413,
+  "error_name": "nginx_payload_too_large",
+  "error_category": "bad_request",
+  "retryable": false,
+  "owner_action_required": false,
+  "what_you_should_do": "Do not retry the same request. Check the URL, method, headers and body, then fix the request.",
+  "zone": "lab.example",
+  "errdown_synthesized": true,
+  "errdown_source": "nginx",
+  "errdown_confidence": 0.9
+}

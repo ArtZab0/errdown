@@ -1,0 +1,18 @@
+{
+  "type": "https://errdown.com/errors/nginx_bad_gateway",
+  "title": "Bad gateway",
+  "status": 502,
+  "detail": "The server returned HTTP 502 with an error page from nginx.",
+  "instance": "https://lab.example/dead",
+  "error_code": 502,
+  "error_name": "nginx_bad_gateway",
+  "error_category": "upstream_unavailable",
+  "retryable": true,
+  "retry_after": 5,
+  "owner_action_required": false,
+  "what_you_should_do": "Wait 5 seconds, then retry with exponential backoff. Stop after a few attempts and report the error if it persists.",
+  "zone": "lab.example",
+  "errdown_synthesized": true,
+  "errdown_source": "nginx",
+  "errdown_confidence": 0.9
+}

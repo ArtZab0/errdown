@@ -1,0 +1,17 @@
+{
+  "type": "https://errdown.com/errors/envoy_forbidden",
+  "title": "Access denied",
+  "status": 403,
+  "detail": "The server returned HTTP 403 with an error page from envoy.",
+  "instance": "https://lab.example/forbidden",
+  "error_code": 403,
+  "error_name": "envoy_forbidden",
+  "error_category": "access_denied",
+  "retryable": false,
+  "owner_action_required": false,
+  "what_you_should_do": "Do not retry. Access was intentionally blocked. Tell the user; they may need to request access from the site owner.",
+  "zone": "lab.example",
+  "errdown_synthesized": true,
+  "errdown_source": "envoy",
+  "errdown_confidence": 0.75
+}

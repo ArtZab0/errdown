@@ -98,10 +98,26 @@ export const PAGES: Fingerprint[] = [
     category: "upstream_unavailable", error_name: "envoy_upstream_unavailable",
     title: "Upstream unavailable", retryable: true,
   },
-  // Traefik
   {
-    id: "traefik", source: "traefik", confidence: 0.8,
-    body: [/^(404 page not found|Bad Gateway|Gateway Timeout|Service Unavailable)\s*$/],
+    id: "envoy_timeout", source: "envoy", confidence: 0.9,
+    body: [/^upstream request timeout\s*$/],
+    category: "upstream_unavailable", error_name: "envoy_upstream_timeout",
+    title: "Upstream timeout", retryable: true,
+  },
+  {
+    // Envoy rewrites Server on proxied responses too, so only trust it with an empty body.
+    id: "envoy_empty", source: "envoy", confidence: 0.75,
+    header: { name: "server", pattern: /^envoy$/i },
+    body: [/^\s*$/],
+  },
+  // Traefik (no Server header; fixed plain-text bodies)
+  {
+    id: "traefik_404", source: "traefik", confidence: 0.8,
+    body: [/^404 page not found\s*$/],
+  },
+  {
+    id: "traefik", source: "traefik", confidence: 0.65,
+    body: [/^(Bad Gateway|Gateway Timeout|Service Unavailable|Too Many Requests|Request Entity Too Large)\s*$/],
   },
   // AWS
   {

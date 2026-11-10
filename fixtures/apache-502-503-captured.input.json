@@ -1,0 +1,10 @@
+{
+  "status": 503,
+  "headers": {
+    "server": "Apache/2.4.69 (Unix)",
+    "content-type": "text/html; charset=iso-8859-1"
+  },
+  "body": "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.01//EN\" \"http://www.w3.org/TR/html4/strict.dtd\">\n<html><head>\n<title>503 Service Unavailable</title>\n</head><body>\n<h1>Service Unavailable</h1>\n<p>The server is temporarily unable to service your\nrequest due to maintenance downtime or capacity\nproblems. Please try again later.</p>\n</body></html>\n",
+  "url": "https://lab.example/dead",
+  "_provenance": "captured 2026-11-09 from the errdown Docker lab (apache), Accept: text/markdown, */*"
+}

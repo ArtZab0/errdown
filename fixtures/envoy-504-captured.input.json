@@ -1,0 +1,10 @@
+{
+  "status": 504,
+  "headers": {
+    "content-type": "text/plain",
+    "server": "envoy"
+  },
+  "body": "upstream request timeout",
+  "url": "https://lab.example/slow",
+  "_provenance": "captured 2026-11-09 from the errdown Docker lab (envoy), Accept: text/markdown, */*"
+}

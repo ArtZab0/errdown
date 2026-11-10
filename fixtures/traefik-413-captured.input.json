@@ -1,0 +1,7 @@
+{
+  "status": 413,
+  "headers": {},
+  "body": "Request Entity Too Large",
+  "url": "https://lab.example/big",
+  "_provenance": "captured 2026-11-09 from the errdown Docker lab (traefik), Accept: text/markdown, */*"
+}

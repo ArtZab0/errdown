@@ -1,0 +1,11 @@
+{
+  "status": 500,
+  "headers": {
+    "server": "envoy",
+    "content-type": "text/plain",
+    "x-envoy-upstream-service-time": "1"
+  },
+  "body": "backend error\n",
+  "url": "https://lab.example/upstream500",
+  "_provenance": "captured 2026-11-09 from the errdown Docker lab (envoy), Accept: text/markdown, */*"
+}

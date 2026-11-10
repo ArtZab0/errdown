@@ -1,0 +1,18 @@
+http:
+  routers:
+    ok:   { rule: "Path(`/ok`)",   service: backend, entryPoints: [web] }
+    u500: { rule: "Path(`/upstream500`)", service: backend, middlewares: [to500], entryPoints: [web] }
+    dead: { rule: "Path(`/dead`)", service: dead,    entryPoints: [web] }
+    slow: { rule: "Path(`/slow`)", service: slow,    entryPoints: [web] }
+    limit: { rule: "Path(`/limit`)", service: backend, middlewares: [rl], entryPoints: [web] }
+    big:  { rule: "Path(`/big`)",  service: backend, middlewares: [buf], entryPoints: [web] }
+  middlewares:
+    to500: { replacePath: { path: /500 } }
+    rl:    { rateLimit: { average: 1, period: 1m, burst: 1 } }
+    buf:   { buffering: { maxRequestBodyBytes: 1024 } }
+  serversTransports:
+    short: { forwardingTimeouts: { responseHeaderTimeout: 2s } }
+  services:
+    backend: { loadBalancer: { servers: [{ url: "http://backend:9000" }] } }
+    dead:    { loadBalancer: { servers: [{ url: "http://backend:9999" }] } }
+    slow:    { loadBalancer: { serversTransport: short, servers: [{ url: "http://backend:9000" }] } }
