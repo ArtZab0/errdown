@@ -1,0 +1,17 @@
+{
+  "type": "https://errdown.com/errors/apache_not_implemented",
+  "title": "Not implemented",
+  "status": 501,
+  "detail": "The server returned HTTP 501 with an error page from apache.",
+  "instance": "https://lab.example/",
+  "error_code": 501,
+  "error_name": "apache_not_implemented",
+  "error_category": "unsupported",
+  "zone": "lab.example",
+  "retryable": false,
+  "owner_action_required": false,
+  "what_you_should_do": "Do not retry. The server does not support this request.",
+  "errdown_synthesized": true,
+  "errdown_source": "apache",
+  "errdown_confidence": 0.7
+}

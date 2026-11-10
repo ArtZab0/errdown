@@ -212,6 +212,42 @@ export const PAGES: Fingerprint[] = [
     id: "gfe", source: "google-frontend", confidence: 0.8,
     header: { name: "server", pattern: /^(Google Frontend|GFE|gws)/i },
   },
+  // App frameworks' default error pages
+  {
+    id: "express_default", source: "express", confidence: 0.85,
+    header: { name: "x-powered-by", pattern: /^Express$/i },
+    body: [/<title>Error<\/title>/i, /<pre>/i],
+  },
+  {
+    id: "werkzeug_default", source: "werkzeug", confidence: 0.85,
+    body: [/<title>\d{3} [^<]+<\/title>\s*<h1>[^<]+<\/h1>\s*<p>/i, /(If you entered the URL manually please check your spelling|The server encountered an internal error and was unable to complete your request|You don't have the permission to access the requested resource)/i],
+  },
+  {
+    id: "django_default", source: "django", confidence: 0.85,
+    body: [/(<title>Server Error \(500\)<\/title>|The requested resource was not found on this server\.|<title>403 Forbidden<\/title>[\s\S]{0,200}<h1>403 Forbidden<\/h1>)/i],
+  },
+  {
+    id: "tomcat_default", source: "tomcat", confidence: 0.9,
+    body: [/<title>HTTP Status \d{3} \u2013 [^<]+<\/title>/],
+  },
+  {
+    id: "jetty_default", source: "jetty", confidence: 0.9,
+    body: [/<h2>HTTP ERROR \d{3}/],
+  },
+  {
+    id: "python_http_server", source: "python-http-server", confidence: 0.8,
+    body: [/<title>Error response<\/title>/, /Error code explanation:/],
+  },
+  {
+    id: "uvicorn_plain", source: "uvicorn", confidence: 0.7,
+    header: { name: "server", pattern: /^uvicorn$/i },
+    body: [/^(Internal Server Error|Not Found|Method Not Allowed)\s*$/],
+  },
+  {
+    id: "envoy_plain", source: "envoy", confidence: 0.75,
+    header: { name: "server", pattern: /^envoy$/i },
+    body: [/^[A-Z][A-Za-z -]{2,40}$/],
+  },
   // Fastly / Varnish
   {
     id: "fastly", source: "fastly", confidence: 0.8,

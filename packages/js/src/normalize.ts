@@ -219,6 +219,10 @@ function messageFromJSON(j: unknown): { message?: string; code?: string } | unde
     if (typeof e === "string") return { message: e };
   }
   if (typeof j.errors === "string") return { message: j.errors };
+  // FastAPI / Pydantic validation: {"detail": [{"msg": ..., "type": ...}]}
+  if (Array.isArray(j.detail) && isObj(j.detail[0])) {
+    return { message: str(j.detail[0].msg) ?? str(j.detail[0].message), code: str(j.detail[0].type) };
+  }
   // OAuth
   if (typeof j.error === "string" && typeof j.error_description === "string") {
     return { message: j.error_description, code: j.error };

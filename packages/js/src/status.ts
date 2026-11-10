@@ -31,6 +31,7 @@ const TABLE: Record<number, Classification> = {
   415: c("bad_request", "unsupported_media_type", "Unsupported media type"),
   422: c("bad_request", "unprocessable_content", "Unprocessable content"),
   429: c("rate_limit", "rate_limited", "Rate limited", true),
+  431: c("bad_request", "request_header_fields_too_large", "Request header fields too large"),
   451: c("legal", "unavailable_for_legal_reasons", "Unavailable for legal reasons"),
   500: c("server_error", "internal_server_error", "Internal server error", true),
   501: c("unsupported", "not_implemented", "Not implemented"),

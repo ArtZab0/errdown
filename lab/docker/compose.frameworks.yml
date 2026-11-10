@@ -1,0 +1,29 @@
+# Framework default error pages. Ports 127.0.0.1:8090-8095.
+services:
+  express:
+    image: node:22-alpine
+    working_dir: /app
+    command: sh -c "npm i --silent express@4 >/dev/null 2>&1 && NODE_PATH=/app/node_modules node /src/express.js"
+    volumes: ["./frameworks:/src:ro"]
+    ports: ["127.0.0.1:8090:80"]
+  flask:
+    image: python:3.13-alpine
+    command: sh -c "pip install -q flask==3.* && cd /src && flask --app flask_app run -h 0.0.0.0 -p 80"
+    volumes: ["./frameworks:/src:ro"]
+    ports: ["127.0.0.1:8091:80"]
+  fastapi:
+    image: python:3.13-alpine
+    command: sh -c "pip install -q fastapi==0.115.* uvicorn==0.32.* && cd /src && uvicorn fastapi_app:app --host 0.0.0.0 --port 80"
+    volumes: ["./frameworks:/src:ro"]
+    ports: ["127.0.0.1:8092:80"]
+  django:
+    image: python:3.13-alpine
+    command: sh -c "pip install -q django==5.1.* && python /src/django_app.py"
+    volumes: ["./frameworks:/src:ro"]
+    ports: ["127.0.0.1:8093:80"]
+  tomcat:
+    image: tomcat:10.1-jre21
+    ports: ["127.0.0.1:8094:8080"]
+  jetty:
+    image: jetty:12-jre21
+    ports: ["127.0.0.1:8095:8080"]

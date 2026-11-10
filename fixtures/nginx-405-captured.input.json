@@ -1,0 +1,10 @@
+{
+  "status": 405,
+  "headers": {
+    "server": "nginx/1.27.5",
+    "content-type": "text/html"
+  },
+  "body": "<html>\r\n<head><title>405 Not Allowed</title></head>\r\n<body>\r\n<center><h1>405 Not Allowed</h1></center>\r\n<hr><center>nginx/1.27.5</center>\r\n</body>\r\n</html>\r\n",
+  "url": "https://lab.example/missing",
+  "_provenance": "captured 2026-11-09 from the errdown Docker lab (nginx), Accept: text/markdown, */*"
+}

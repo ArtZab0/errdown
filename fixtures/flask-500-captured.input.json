@@ -1,0 +1,10 @@
+{
+  "status": 500,
+  "headers": {
+    "server": "Werkzeug/3.1.9 Python/3.13.18",
+    "content-type": "text/html; charset=utf-8"
+  },
+  "body": "<!doctype html>\n<html lang=en>\n<title>500 Internal Server Error</title>\n<h1>Internal Server Error</h1>\n<p>The server encountered an internal error and was unable to complete your request. Either the server is overloaded or there is an error in the application.</p>\n",
+  "url": "https://lab.example/boom",
+  "_provenance": "captured 2026-11-09 from the errdown Docker lab (flask), Accept: text/markdown, */*"
+}

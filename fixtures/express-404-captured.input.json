@@ -1,0 +1,12 @@
+{
+  "status": 404,
+  "headers": {
+    "x-powered-by": "Express",
+    "content-security-policy": "default-src 'none'",
+    "x-content-type-options": "nosniff",
+    "content-type": "text/html; charset=utf-8"
+  },
+  "body": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n<meta charset=\"utf-8\">\n<title>Error</title>\n</head>\n<body>\n<pre>Cannot GET /missing</pre>\n</body>\n</html>\n",
+  "url": "https://lab.example/missing",
+  "_provenance": "captured 2026-11-09 from the errdown Docker lab (express), Accept: text/markdown, */*"
+}

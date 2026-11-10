@@ -1,0 +1,10 @@
+{
+  "status": 500,
+  "headers": {
+    "server": "uvicorn",
+    "content-type": "text/plain; charset=utf-8"
+  },
+  "body": "Internal Server Error",
+  "url": "https://lab.example/boom",
+  "_provenance": "captured 2026-11-09 from the errdown Docker lab (fastapi), Accept: text/markdown, */*"
+}

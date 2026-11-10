@@ -1,0 +1,10 @@
+{
+  "status": 403,
+  "headers": {
+    "server": "WSGIServer/0.2 CPython/3.13.18",
+    "content-type": "text/html; charset=utf-8"
+  },
+  "body": "\n<!doctype html>\n<html lang=\"en\">\n<head>\n  <title>403 Forbidden</title>\n</head>\n<body>\n  <h1>403 Forbidden</h1><p></p>\n</body>\n</html>\n",
+  "url": "https://lab.example/forbidden",
+  "_provenance": "captured 2026-11-09 from the errdown Docker lab (django), Accept: text/markdown, */*"
+}

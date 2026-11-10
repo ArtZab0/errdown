@@ -1,0 +1,11 @@
+{
+  "status": 431,
+  "headers": {
+    "server": "Jetty(12.0.25)",
+    "cache-control": "must-revalidate,no-cache,no-store",
+    "content-type": "text/html;charset=iso-8859-1"
+  },
+  "body": "<html>\n<head>\n<meta http-equiv=\"Content-Type\" content=\"text/html;charset=ISO-8859-1\"/>\n<title>Error 431 Request Header Fields Too Large</title>\n</head>\n<body>\n<h2>HTTP ERROR 431 Request Header Fields Too Large</h2>\n<table>\n<tr><th>URI:</th><td>/missing</td></tr>\n<tr><th>STATUS:</th><td>431</td></tr>\n<tr><th>MESSAGE:</th><td>Request Header Fields Too Large</td></tr>\n</table>\n<hr/><a href=\"https://jetty.org/\">Powered by Jetty:// 12.0.25</a><hr/>\n\n</body>\n</html>\n",
+  "url": "https://lab.example/missing",
+  "_provenance": "captured 2026-11-09 from the errdown Docker lab (jetty), Accept: text/markdown, */*"
+}

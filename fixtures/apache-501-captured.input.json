@@ -1,0 +1,11 @@
+{
+  "status": 501,
+  "headers": {
+    "server": "Apache/2.4.69 (Unix)",
+    "allow": "OPTIONS,HEAD,GET,POST,TRACE",
+    "content-type": "text/html; charset=iso-8859-1"
+  },
+  "body": "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.01//EN\" \"http://www.w3.org/TR/html4/strict.dtd\">\n<html><head>\n<title>501 Not Implemented</title>\n</head><body>\n<h1>Not Implemented</h1>\n<p>FOO not supported for current URL.<br />\n</p>\n</body></html>\n",
+  "url": "https://lab.example/",
+  "_provenance": "captured 2026-11-09 from the errdown Docker lab (apache), Accept: text/markdown, */*"
+}

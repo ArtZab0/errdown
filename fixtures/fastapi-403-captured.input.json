@@ -1,0 +1,10 @@
+{
+  "status": 403,
+  "headers": {
+    "server": "uvicorn",
+    "content-type": "application/json"
+  },
+  "body": "{\"detail\":\"Not allowed\"}",
+  "url": "https://lab.example/forbidden",
+  "_provenance": "captured 2026-11-09 from the errdown Docker lab (fastapi), Accept: text/markdown, */*"
+}

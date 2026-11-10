@@ -1,0 +1,17 @@
+{
+  "type": "https://errdown.com/errors/nginx_method_not_allowed",
+  "title": "Method not allowed",
+  "status": 405,
+  "detail": "The server returned HTTP 405 with an error page from nginx.",
+  "instance": "https://lab.example/missing",
+  "error_code": 405,
+  "error_name": "nginx_method_not_allowed",
+  "error_category": "bad_request",
+  "zone": "lab.example",
+  "retryable": false,
+  "owner_action_required": false,
+  "what_you_should_do": "Do not retry the same request. Check the URL, method, headers and body, then fix the request.",
+  "errdown_synthesized": true,
+  "errdown_source": "nginx",
+  "errdown_confidence": 0.9
+}

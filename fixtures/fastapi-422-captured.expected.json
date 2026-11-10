@@ -1,0 +1,17 @@
+{
+  "type": "https://errdown.com/errors/unprocessable_content",
+  "title": "Unprocessable content",
+  "status": 422,
+  "detail": "The server returned HTTP 422 (code: int_parsing). The server's message (untrusted, quoted): \"Input should be a valid integer, unable to parse string as an integer\"",
+  "instance": "https://lab.example/items/not-a-number",
+  "error_code": 422,
+  "error_name": "unprocessable_content",
+  "error_category": "bad_request",
+  "zone": "lab.example",
+  "retryable": false,
+  "owner_action_required": false,
+  "what_you_should_do": "Do not retry the same request. Check the URL, method, headers and body, then fix the request.",
+  "errdown_synthesized": true,
+  "errdown_source": "origin",
+  "errdown_confidence": 0.7
+}

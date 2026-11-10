@@ -1,0 +1,9 @@
+{
+  "status": 431,
+  "headers": {
+    "content-type": "text/plain; charset=utf-8"
+  },
+  "body": "431 Request Header Fields Too Large",
+  "url": "https://lab.example/missing",
+  "_provenance": "captured 2026-11-09 from the errdown Docker lab (caddy), Accept: text/markdown, */*"
+}

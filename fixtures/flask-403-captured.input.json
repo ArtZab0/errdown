@@ -1,0 +1,10 @@
+{
+  "status": 403,
+  "headers": {
+    "server": "Werkzeug/3.1.9 Python/3.13.18",
+    "content-type": "text/html; charset=utf-8"
+  },
+  "body": "<!doctype html>\n<html lang=en>\n<title>403 Forbidden</title>\n<h1>Forbidden</h1>\n<p>You don&#39;t have the permission to access the requested resource. It is either read-protected or not readable by the server.</p>\n",
+  "url": "https://lab.example/forbidden",
+  "_provenance": "captured 2026-11-09 from the errdown Docker lab (flask), Accept: text/markdown, */*"
+}

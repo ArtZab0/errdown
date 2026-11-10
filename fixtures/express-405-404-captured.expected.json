@@ -1,0 +1,17 @@
+{
+  "type": "https://errdown.com/errors/express_not_found",
+  "title": "Not found",
+  "status": 404,
+  "detail": "The server returned HTTP 404 with an error page from express.",
+  "instance": "https://lab.example/missing",
+  "error_code": 404,
+  "error_name": "express_not_found",
+  "error_category": "not_found",
+  "zone": "lab.example",
+  "retryable": false,
+  "owner_action_required": false,
+  "what_you_should_do": "Do not retry. Check the URL for mistakes, or search for the resource elsewhere.",
+  "errdown_synthesized": true,
+  "errdown_source": "express",
+  "errdown_confidence": 0.85
+}

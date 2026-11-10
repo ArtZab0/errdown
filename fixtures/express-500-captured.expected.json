@@ -1,0 +1,18 @@
+{
+  "type": "https://errdown.com/errors/express_internal_server_error",
+  "title": "Internal server error",
+  "status": 500,
+  "detail": "The server returned HTTP 500 with an error page from express.",
+  "instance": "https://lab.example/boom",
+  "error_code": 500,
+  "error_name": "express_internal_server_error",
+  "error_category": "server_error",
+  "zone": "lab.example",
+  "retryable": true,
+  "retry_after": 5,
+  "owner_action_required": false,
+  "what_you_should_do": "Wait 5 seconds, then retry with exponential backoff. Stop after a few attempts and report the error if it persists.",
+  "errdown_synthesized": true,
+  "errdown_source": "express",
+  "errdown_confidence": 0.85
+}

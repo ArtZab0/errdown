@@ -1,0 +1,17 @@
+{
+  "type": "https://errdown.com/errors/nginx_uri_too_long",
+  "title": "URI too long",
+  "status": 414,
+  "detail": "The server returned HTTP 414 with an error page from nginx.",
+  "instance": "https://lab.example/aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa...",
+  "error_code": 414,
+  "error_name": "nginx_uri_too_long",
+  "error_category": "bad_request",
+  "zone": "lab.example",
+  "retryable": false,
+  "owner_action_required": false,
+  "what_you_should_do": "Do not retry the same request. Check the URL, method, headers and body, then fix the request.",
+  "errdown_synthesized": true,
+  "errdown_source": "nginx",
+  "errdown_confidence": 0.9
+}

@@ -1,0 +1,17 @@
+{
+  "type": "https://errdown.com/errors/request_header_fields_too_large",
+  "title": "Request header fields too large",
+  "status": 431,
+  "detail": "The server returned HTTP 431.",
+  "instance": "https://lab.example/aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa...",
+  "error_code": 431,
+  "error_name": "request_header_fields_too_large",
+  "error_category": "bad_request",
+  "zone": "lab.example",
+  "retryable": false,
+  "owner_action_required": false,
+  "what_you_should_do": "Do not retry the same request. Check the URL, method, headers and body, then fix the request.",
+  "errdown_synthesized": true,
+  "errdown_source": "unknown",
+  "errdown_confidence": 0.5
+}

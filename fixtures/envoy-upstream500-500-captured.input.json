@@ -3,7 +3,7 @@
   "headers": {
     "server": "envoy",
     "content-type": "text/plain",
-    "x-envoy-upstream-service-time": "1"
+    "x-envoy-upstream-service-time": "0"
   },
   "body": "backend error\n",
   "url": "https://lab.example/upstream500",

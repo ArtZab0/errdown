@@ -1,0 +1,11 @@
+{
+  "status": 405,
+  "headers": {
+    "server": "Apache/2.4.69 (Unix)",
+    "allow": "OPTIONS,HEAD,GET,POST,TRACE",
+    "content-type": "text/html; charset=iso-8859-1"
+  },
+  "body": "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.01//EN\" \"http://www.w3.org/TR/html4/strict.dtd\">\n<html><head>\n<title>405 Method Not Allowed</title>\n</head><body>\n<h1>Method Not Allowed</h1>\n<p>The requested method DELETE is not allowed for this URL.</p>\n</body></html>\n",
+  "url": "https://lab.example/missing",
+  "_provenance": "captured 2026-11-09 from the errdown Docker lab (apache), Accept: text/markdown, */*"
+}

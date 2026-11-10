@@ -1,0 +1,10 @@
+{
+  "status": 414,
+  "headers": {
+    "server": "Apache/2.4.69 (Unix)",
+    "content-type": "text/html; charset=iso-8859-1"
+  },
+  "body": "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.01//EN\" \"http://www.w3.org/TR/html4/strict.dtd\">\n<html><head>\n<title>414 Request-URI Too Long</title>\n</head><body>\n<h1>Request-URI Too Long</h1>\n<p>The requested URL's length exceeds the capacity\nlimit for this server.<br />\n</p>\n</body></html>\n",
+  "url": "https://lab.example/aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa...",
+  "_provenance": "captured 2026-11-09 from the errdown Docker lab (apache), Accept: text/markdown, */*"
+}

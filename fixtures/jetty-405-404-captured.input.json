@@ -1,0 +1,10 @@
+{
+  "status": 404,
+  "headers": {
+    "server": "Jetty(12.0.25)",
+    "cache-control": "must-revalidate,no-cache,no-store"
+  },
+  "body": "",
+  "url": "https://lab.example/missing",
+  "_provenance": "captured 2026-11-09 from the errdown Docker lab (jetty), Accept: text/markdown, */*"
+}

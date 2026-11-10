@@ -1,0 +1,12 @@
+{
+  "status": 500,
+  "headers": {
+    "x-powered-by": "Express",
+    "content-security-policy": "default-src 'none'",
+    "x-content-type-options": "nosniff",
+    "content-type": "text/html; charset=utf-8"
+  },
+  "body": "<!DOCTYPE html>\n<html lang=\"en\">\n<head>\n<meta charset=\"utf-8\">\n<title>Error</title>\n</head>\n<body>\n<pre>Error: boom<br> &nbsp; &nbsp;at /src/express.js:3:32<br> &nbsp; &nbsp;at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)<br> &nbsp; &nbsp;at next (/app/node_modules/express/lib/router/route.js:149:13)<br> &nbsp; &nbsp;at Route.dispatch (/app/node_modules/express/lib/router/route.js:119:3)<br> &nbsp; &nbsp;at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)<br> &nbsp; &nbsp;at /app/node_modules/express/lib/router/index.js:284:15<br> &nbsp; &nbsp;at Function.process_params (/app/node_modules/express/lib/router/index.js:346:12)<br> &nbsp; &nbsp;at next (/app/node_modules/express/lib/router/index.js:280:10)<br> &nbsp; &nbsp;at expressInit (/app/node_modules/express/lib/middleware/init.js:40:5)<br> &nbsp; &nbsp;at Layer.handle [as handle_request] (/app/node_modules/express/lib/router/layer.js:95:5)</pre>\n</body>\n</html>\n",
+  "url": "https://lab.example/boom",
+  "_provenance": "captured 2026-11-09 from the errdown Docker lab (express), Accept: text/markdown, */*"
+}

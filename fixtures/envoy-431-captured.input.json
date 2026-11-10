@@ -1,0 +1,10 @@
+{
+  "status": 431,
+  "headers": {
+    "content-type": "text/plain",
+    "server": "envoy"
+  },
+  "body": "Request Header Fields Too Large",
+  "url": "https://lab.example/missing",
+  "_provenance": "captured 2026-11-09 from the errdown Docker lab (envoy), Accept: text/markdown, */*"
+}

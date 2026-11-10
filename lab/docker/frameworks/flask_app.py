@@ -1,0 +1,10 @@
+from flask import Flask, abort
+app = Flask(__name__)
+@app.get("/boom")
+def boom(): raise RuntimeError("boom")
+@app.get("/forbidden")
+def forbidden(): abort(403)
+@app.get("/limited")
+def limited(): abort(429)
+@app.get("/down")
+def down(): abort(503)

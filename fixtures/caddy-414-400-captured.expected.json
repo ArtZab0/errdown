@@ -1,0 +1,17 @@
+{
+  "type": "https://errdown.com/errors/caddy_bad_request",
+  "title": "Bad request",
+  "status": 400,
+  "detail": "The server returned HTTP 400 with an error page from caddy.",
+  "instance": "https://lab.example/aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa...",
+  "error_code": 400,
+  "error_name": "caddy_bad_request",
+  "error_category": "bad_request",
+  "zone": "lab.example",
+  "retryable": false,
+  "owner_action_required": false,
+  "what_you_should_do": "Do not retry the same request. Check the URL, method, headers and body, then fix the request.",
+  "errdown_synthesized": true,
+  "errdown_source": "caddy",
+  "errdown_confidence": 0.75
+}

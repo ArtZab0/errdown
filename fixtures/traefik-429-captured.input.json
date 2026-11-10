@@ -2,7 +2,7 @@
   "status": 429,
   "headers": {
     "retry-after": "60",
-    "x-retry-in": "59.991834011s"
+    "x-retry-in": "59.996224074s"
   },
   "body": "Too Many Requests",
   "url": "https://lab.example/limit",
