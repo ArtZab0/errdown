@@ -1,0 +1,1022 @@
+{
+ "apache-403": {
+  "category": "access_denied",
+  "labeler": "claude-reviewed",
+  "retryable": false,
+  "split": "dev"
+ },
+ "apache-403-captured": {
+  "category": "access_denied",
+  "labeler": "claude-reviewed",
+  "retryable": false,
+  "split": "dev"
+ },
+ "apache-404-captured": {
+  "category": "not_found",
+  "labeler": "claude-reviewed",
+  "retryable": false,
+  "split": "dev"
+ },
+ "apache-405-captured": {
+  "category": "bad_request",
+  "labeler": "claude-reviewed",
+  "retryable": false,
+  "split": "dev"
+ },
+ "apache-414-captured": {
+  "category": "bad_request",
+  "labeler": "claude-reviewed",
+  "retryable": false,
+  "split": "dev"
+ },
+ "apache-431-400-captured": {
+  "category": "bad_request",
+  "labeler": "claude-reviewed",
+  "retryable": false,
+  "split": "dev"
+ },
+ "apache-501-captured": {
+  "category": "unsupported",
+  "labeler": "claude-reviewed",
+  "retryable": false,
+  "split": "dev"
+ },
+ "apache-502-503-captured": {
+  "category": "upstream_unavailable",
+  "labeler": "claude-reviewed",
+  "retryable": true,
+  "split": "dev"
+ },
+ "apache-504-502-captured": {
+  "category": "upstream_unavailable",
+  "labeler": "claude-reviewed",
+  "retryable": true,
+  "split": "dev"
+ },
+ "apache-upstream500-500-captured": {
+  "category": "server_error",
+  "labeler": "claude-reviewed",
+  "retryable": true,
+  "split": "dev"
+ },
+ "api-anthropic-401-captured": {
+  "category": "auth_required",
+  "labeler": "claude-reviewed",
+  "retryable": false,
+  "split": "dev"
+ },
+ "api-aws-sts-403-captured": {
+  "category": "access_denied",
+  "labeler": "claude-reviewed",
+  "retryable": false,
+  "split": "dev"
+ },
+ "api-azure-401-captured": {
+  "category": "auth_required",
+  "labeler": "claude-reviewed",
+  "retryable": false,
+  "split": "dev"
+ },
+ "api-cloudflare-400-captured": {
+  "category": "access_denied",
+  "labeler": "claude-reviewed",
+  "retryable": false,
+  "split": "dev"
+ },
+ "api-digitalocean-401-captured": {
+  "category": "auth_required",
+  "labeler": "claude-reviewed",
+  "retryable": false,
+  "split": "dev"
+ },
+ "api-discord-401-captured": {
+  "category": "auth_required",
+  "labeler": "claude-reviewed",
+  "retryable": false,
+  "split": "dev"
+ },
+ "api-dockerhub-404-captured": {
+  "category": "not_found",
+  "labeler": "claude-reviewed",
+  "retryable": false,
+  "split": "dev"
+ },
+ "api-gemini-403-captured": {
+  "category": "access_denied",
+  "labeler": "claude-reviewed",
+  "retryable": false,
+  "split": "dev"
+ },
+ "api-github-401-captured": {
+  "category": "auth_required",
+  "labeler": "claude-reviewed",
+  "retryable": false,
+  "split": "dev"
+ },
+ "api-github-404-captured": {
+  "category": "not_found",
+  "labeler": "claude-reviewed",
+  "retryable": false,
+  "split": "dev"
+ },
+ "api-github-graphql-401-captured": {
+  "category": "access_denied",
+  "labeler": "claude-reviewed",
+  "retryable": false,
+  "split": "dev"
+ },
+ "api-gitlab-401-captured": {
+  "category": "auth_required",
+  "labeler": "claude-reviewed",
+  "retryable": false,
+  "split": "dev"
+ },
+ "api-gitlab-404-captured": {
+  "category": "not_found",
+  "labeler": "claude-reviewed",
+  "retryable": false,
+  "split": "dev"
+ },
+ "api-google-400-key-captured": {
+  "category": "bad_request",
+  "labeler": "claude-reviewed",
+  "retryable": false,
+  "split": "dev"
+ },
+ "api-google-401-captured": {
+  "category": "access_denied",
+  "labeler": "claude-reviewed",
+  "retryable": false,
+  "split": "dev"
+ },
+ "api-groq-401-captured": {
+  "category": "auth_required",
+  "labeler": "claude-reviewed",
+  "retryable": false,
+  "split": "dev"
+ },
+ "api-heroku-401-captured": {
+  "category": "auth_required",
+  "labeler": "claude-reviewed",
+  "retryable": false,
+  "split": "dev"
+ },
+ "api-huggingface-401-captured": {
+  "category": "auth_required",
+  "labeler": "claude-reviewed",
+  "retryable": false,
+  "split": "dev"
+ },
+ "api-linear-400-captured": {
+  "category": "auth_required",
+  "labeler": "claude-reviewed",
+  "retryable": false,
+  "split": "dev"
+ },
+ "api-mailgun-401-captured": {
+  "category": "auth_required",
+  "labeler": "claude-reviewed",
+  "retryable": false,
+  "split": "dev"
+ },
+ "api-mastodon-404-captured": {
+  "category": "not_found",
+  "labeler": "claude-reviewed",
+  "retryable": false,
+  "split": "dev"
+ },
+ "api-mistral-401-captured": {
+  "category": "auth_required",
+  "labeler": "claude-reviewed",
+  "retryable": false,
+  "split": "dev"
+ },
+ "api-netlify-401-captured": {
+  "category": "auth_required",
+  "labeler": "claude-reviewed",
+  "retryable": false,
+  "split": "dev"
+ },
+ "api-notion-401-captured": {
+  "category": "auth_required",
+  "labeler": "claude-reviewed",
+  "retryable": false,
+  "split": "dev"
+ },
+ "api-npm-404-captured": {
+  "category": "not_found",
+  "labeler": "claude-reviewed",
+  "retryable": false,
+  "split": "dev"
+ },
+ "api-openai-401-captured": {
+  "category": "auth_required",
+  "labeler": "claude-reviewed",
+  "retryable": false,
+  "split": "dev"
+ },
+ "api-pypi-404-captured": {
+  "category": "not_found",
+  "labeler": "claude-reviewed",
+  "retryable": false,
+  "split": "dev"
+ },
+ "api-reddit-404-captured": {
+  "category": "access_denied",
+  "labeler": "claude-reviewed",
+  "retryable": false,
+  "split": "dev"
+ },
+ "api-replicate-401-captured": {
+  "category": "auth_required",
+  "labeler": "claude-reviewed",
+  "retryable": false,
+  "split": "dev"
+ },
+ "api-sendgrid-401-captured": {
+  "category": "auth_required",
+  "labeler": "claude-reviewed",
+  "retryable": false,
+  "split": "dev"
+ },
+ "api-sentry-401-captured": {
+  "category": "auth_required",
+  "labeler": "claude-reviewed",
+  "retryable": false,
+  "split": "dev"
+ },
+ "api-shopify-404-captured": {
+  "category": "not_found",
+  "labeler": "claude-reviewed",
+  "retryable": false,
+  "split": "dev"
+ },
+ "api-slack-200-error-captured": {
+  "category": null,
+  "labeler": "claude-reviewed",
+  "retryable": null,
+  "split": "dev"
+ },
+ "api-spotify-401-captured": {
+  "category": "auth_required",
+  "labeler": "claude-reviewed",
+  "retryable": false,
+  "split": "dev"
+ },
+ "api-stripe-401-captured": {
+  "category": "auth_required",
+  "labeler": "claude-reviewed",
+  "retryable": false,
+  "split": "dev"
+ },
+ "api-supabase-404-captured": {
+  "category": "auth_required",
+  "labeler": "claude-reviewed",
+  "retryable": false,
+  "split": "dev"
+ },
+ "api-twilio-401-captured": {
+  "category": "auth_required",
+  "labeler": "claude-reviewed",
+  "retryable": false,
+  "split": "dev"
+ },
+ "api-vercel-403-captured": {
+  "category": "access_denied",
+  "labeler": "claude-reviewed",
+  "retryable": false,
+  "split": "dev"
+ },
+ "api-wikipedia-404-captured": {
+  "category": "not_found",
+  "labeler": "claude-reviewed",
+  "retryable": false,
+  "split": "dev"
+ },
+ "aws-alb-504": {
+  "category": "upstream_unavailable",
+  "labeler": "claude-reviewed",
+  "retryable": true,
+  "split": "dev"
+ },
+ "caddy-403-captured": {
+  "category": "access_denied",
+  "labeler": "claude-reviewed",
+  "retryable": false,
+  "split": "dev"
+ },
+ "caddy-404-captured": {
+  "category": "not_found",
+  "labeler": "claude-reviewed",
+  "retryable": false,
+  "split": "dev"
+ },
+ "caddy-413-captured": {
+  "category": "bad_request",
+  "labeler": "claude-reviewed",
+  "retryable": false,
+  "split": "dev"
+ },
+ "caddy-414-400-captured": {
+  "category": "bad_request",
+  "labeler": "claude-reviewed",
+  "retryable": false,
+  "split": "dev"
+ },
+ "caddy-431-captured": {
+  "category": "bad_request",
+  "labeler": "claude-reviewed",
+  "retryable": false,
+  "split": "dev"
+ },
+ "caddy-502-captured": {
+  "category": "upstream_unavailable",
+  "labeler": "claude-reviewed",
+  "retryable": true,
+  "split": "dev"
+ },
+ "caddy-503-captured": {
+  "category": "upstream_unavailable",
+  "labeler": "claude-reviewed",
+  "retryable": true,
+  "split": "dev"
+ },
+ "caddy-504-captured": {
+  "category": "upstream_unavailable",
+  "labeler": "claude-reviewed",
+  "retryable": true,
+  "split": "dev"
+ },
+ "caddy-upstream500-500-captured": {
+  "category": "server_error",
+  "labeler": "claude-reviewed",
+  "retryable": true,
+  "split": "dev"
+ },
+ "cloudflare-1001-plain-captured": {
+  "category": "dns",
+  "labeler": "claude-reviewed",
+  "retryable": false,
+  "split": "dev"
+ },
+ "cloudflare-1003-plain-captured": {
+  "category": "config",
+  "labeler": "claude-reviewed",
+  "retryable": false,
+  "split": "dev"
+ },
+ "cloudflare-1015-json": {
+  "category": "rate_limit",
+  "labeler": "claude-reviewed",
+  "retryable": true,
+  "split": "dev"
+ },
+ "cloudflare-1020-markdown": {
+  "category": "access_denied",
+  "labeler": "claude-reviewed",
+  "retryable": false,
+  "split": "dev"
+ },
+ "cloudflare-1034-plain-captured": {
+  "category": "config",
+  "labeler": "claude-reviewed",
+  "retryable": false,
+  "split": "dev"
+ },
+ "cloudflare-1101-plain-captured": {
+  "category": "worker",
+  "labeler": "claude-reviewed",
+  "retryable": false,
+  "split": "dev"
+ },
+ "cloudflare-1102-plain-captured": {
+  "category": "worker",
+  "labeler": "claude-reviewed",
+  "retryable": true,
+  "split": "dev"
+ },
+ "cloudflare-challenge-403": {
+  "category": "challenge",
+  "labeler": "claude-reviewed",
+  "retryable": false,
+  "split": "dev"
+ },
+ "cloudflare-zone-bad-origin-cert-captured": {
+  "category": "upstream_unavailable",
+  "labeler": "claude-reviewed",
+  "retryable": true,
+  "split": "dev"
+ },
+ "cloudflare-zone-challenge-captured": {
+  "category": "challenge",
+  "labeler": "claude-reviewed",
+  "retryable": false,
+  "split": "dev"
+ },
+ "cloudflare-zone-origin-dns-captured": {
+  "category": "dns",
+  "labeler": "claude-reviewed",
+  "retryable": false,
+  "split": "dev"
+ },
+ "cloudflare-zone-origin-down-captured": {
+  "category": "upstream_unavailable",
+  "labeler": "claude-reviewed",
+  "retryable": true,
+  "split": "dev"
+ },
+ "cloudflare-zone-prohibited-ip-json-captured": {
+  "category": "dns",
+  "labeler": "claude-reviewed",
+  "retryable": false,
+  "split": "dev"
+ },
+ "cloudflare-zone-prohibited-ip-markdown-captured": {
+  "category": "dns",
+  "labeler": "claude-reviewed",
+  "retryable": false,
+  "split": "dev"
+ },
+ "cloudflare-zone-ratelimit-captured": {
+  "category": "rate_limit",
+  "labeler": "claude-reviewed",
+  "retryable": true,
+  "split": "dev"
+ },
+ "cloudflare-zone-waf-block-captured": {
+  "category": "access_denied",
+  "labeler": "claude-reviewed",
+  "retryable": false,
+  "split": "dev"
+ },
+ "cloudflare-zone-worker-cpu-captured": {
+  "category": "worker",
+  "labeler": "claude-reviewed",
+  "retryable": true,
+  "split": "dev"
+ },
+ "cloudflare-zone-worker-throw-captured": {
+  "category": "worker",
+  "labeler": "claude-reviewed",
+  "retryable": false,
+  "split": "dev"
+ },
+ "cloudfront-403": {
+  "category": "access_denied",
+  "labeler": "claude-reviewed",
+  "retryable": false,
+  "split": "dev"
+ },
+ "django-403-captured": {
+  "category": "access_denied",
+  "labeler": "claude-reviewed",
+  "retryable": false,
+  "split": "dev"
+ },
+ "django-404-captured": {
+  "category": "not_found",
+  "labeler": "claude-reviewed",
+  "retryable": false,
+  "split": "dev"
+ },
+ "django-431-captured": {
+  "category": "bad_request",
+  "labeler": "claude-reviewed",
+  "retryable": false,
+  "split": "dev"
+ },
+ "django-500-captured": {
+  "category": "server_error",
+  "labeler": "claude-reviewed",
+  "retryable": true,
+  "split": "dev"
+ },
+ "envoy-403-captured": {
+  "category": "access_denied",
+  "labeler": "claude-reviewed",
+  "retryable": false,
+  "split": "dev"
+ },
+ "envoy-404-captured": {
+  "category": "not_found",
+  "labeler": "claude-reviewed",
+  "retryable": false,
+  "split": "dev"
+ },
+ "envoy-431-captured": {
+  "category": "bad_request",
+  "labeler": "claude-reviewed",
+  "retryable": false,
+  "split": "dev"
+ },
+ "envoy-501-400-captured": {
+  "category": "bad_request",
+  "labeler": "claude-reviewed",
+  "retryable": false,
+  "split": "dev"
+ },
+ "envoy-502-503-captured": {
+  "category": "upstream_unavailable",
+  "labeler": "claude-reviewed",
+  "retryable": true,
+  "split": "dev"
+ },
+ "envoy-503": {
+  "category": "upstream_unavailable",
+  "labeler": "claude-reviewed",
+  "retryable": true,
+  "split": "dev"
+ },
+ "envoy-503-captured": {
+  "category": "upstream_unavailable",
+  "labeler": "claude-reviewed",
+  "retryable": true,
+  "split": "dev"
+ },
+ "envoy-504-captured": {
+  "category": "upstream_unavailable",
+  "labeler": "claude-reviewed",
+  "retryable": true,
+  "split": "dev"
+ },
+ "envoy-upstream500-500-captured": {
+  "category": "server_error",
+  "labeler": "claude-reviewed",
+  "retryable": true,
+  "split": "dev"
+ },
+ "express-400-captured": {
+  "category": "bad_request",
+  "labeler": "claude-reviewed",
+  "retryable": false,
+  "split": "dev"
+ },
+ "express-404-captured": {
+  "category": "not_found",
+  "labeler": "claude-reviewed",
+  "retryable": false,
+  "split": "dev"
+ },
+ "express-405-404-captured": {
+  "category": "not_found",
+  "labeler": "claude-reviewed",
+  "retryable": false,
+  "split": "dev"
+ },
+ "express-414-431-captured": {
+  "category": "bad_request",
+  "labeler": "claude-reviewed",
+  "retryable": false,
+  "split": "dev"
+ },
+ "express-500-captured": {
+  "category": "server_error",
+  "labeler": "claude-reviewed",
+  "retryable": true,
+  "split": "dev"
+ },
+ "express-501-400-captured": {
+  "category": "bad_request",
+  "labeler": "claude-reviewed",
+  "retryable": false,
+  "split": "dev"
+ },
+ "fastapi-403-captured": {
+  "category": "access_denied",
+  "labeler": "claude-reviewed",
+  "retryable": false,
+  "split": "dev"
+ },
+ "fastapi-404-captured": {
+  "category": "not_found",
+  "labeler": "claude-reviewed",
+  "retryable": false,
+  "split": "dev"
+ },
+ "fastapi-422-captured": {
+  "category": "bad_request",
+  "labeler": "claude-reviewed",
+  "retryable": false,
+  "split": "dev"
+ },
+ "fastapi-500-captured": {
+  "category": "server_error",
+  "labeler": "claude-reviewed",
+  "retryable": true,
+  "split": "dev"
+ },
+ "flask-403-captured": {
+  "category": "access_denied",
+  "labeler": "claude-reviewed",
+  "retryable": false,
+  "split": "dev"
+ },
+ "flask-404-captured": {
+  "category": "not_found",
+  "labeler": "claude-reviewed",
+  "retryable": false,
+  "split": "dev"
+ },
+ "flask-431-captured": {
+  "category": "bad_request",
+  "labeler": "claude-reviewed",
+  "retryable": false,
+  "split": "dev"
+ },
+ "flask-500-captured": {
+  "category": "server_error",
+  "labeler": "claude-reviewed",
+  "retryable": true,
+  "split": "dev"
+ },
+ "graphql-400": {
+  "category": "bad_request",
+  "labeler": "claude-reviewed",
+  "retryable": false,
+  "split": "dev"
+ },
+ "heroku-503": {
+  "category": "server_error",
+  "labeler": "claude-reviewed",
+  "retryable": true,
+  "split": "dev"
+ },
+ "html-generic-418": {
+  "category": "bad_request",
+  "labeler": "claude-reviewed",
+  "retryable": false,
+  "split": "dev"
+ },
+ "jetty-404-captured": {
+  "category": "not_found",
+  "labeler": "claude-reviewed",
+  "retryable": false,
+  "split": "dev"
+ },
+ "jetty-405-404-captured": {
+  "category": "not_found",
+  "labeler": "claude-reviewed",
+  "retryable": false,
+  "split": "dev"
+ },
+ "jetty-414-captured": {
+  "category": "bad_request",
+  "labeler": "claude-reviewed",
+  "retryable": false,
+  "split": "dev"
+ },
+ "jetty-431-captured": {
+  "category": "bad_request",
+  "labeler": "claude-reviewed",
+  "retryable": false,
+  "split": "dev"
+ },
+ "json-error-object-429": {
+  "category": "rate_limit",
+  "labeler": "claude-reviewed",
+  "retryable": true,
+  "split": "dev"
+ },
+ "json-injection-500": {
+  "category": "server_error",
+  "labeler": "claude-reviewed",
+  "retryable": true,
+  "split": "dev"
+ },
+ "json-oauth-401": {
+  "category": "auth_required",
+  "labeler": "claude-reviewed",
+  "retryable": false,
+  "split": "dev"
+ },
+ "nginx-403-captured": {
+  "category": "access_denied",
+  "labeler": "claude-reviewed",
+  "retryable": false,
+  "split": "dev"
+ },
+ "nginx-404": {
+  "category": "not_found",
+  "labeler": "claude-reviewed",
+  "retryable": false,
+  "split": "dev"
+ },
+ "nginx-404-captured": {
+  "category": "not_found",
+  "labeler": "claude-reviewed",
+  "retryable": false,
+  "split": "dev"
+ },
+ "nginx-405-captured": {
+  "category": "bad_request",
+  "labeler": "claude-reviewed",
+  "retryable": false,
+  "split": "dev"
+ },
+ "nginx-413-captured": {
+  "category": "bad_request",
+  "labeler": "claude-reviewed",
+  "retryable": false,
+  "split": "dev"
+ },
+ "nginx-414-captured": {
+  "category": "bad_request",
+  "labeler": "claude-reviewed",
+  "retryable": false,
+  "split": "dev"
+ },
+ "nginx-429-captured": {
+  "category": "rate_limit",
+  "labeler": "claude-reviewed",
+  "retryable": true,
+  "split": "dev"
+ },
+ "nginx-431-400-captured": {
+  "category": "bad_request",
+  "labeler": "claude-reviewed",
+  "retryable": false,
+  "split": "dev"
+ },
+ "nginx-502": {
+  "category": "upstream_unavailable",
+  "labeler": "claude-reviewed",
+  "retryable": true,
+  "split": "dev"
+ },
+ "nginx-502-captured": {
+  "category": "upstream_unavailable",
+  "labeler": "claude-reviewed",
+  "retryable": true,
+  "split": "dev"
+ },
+ "nginx-503-captured": {
+  "category": "upstream_unavailable",
+  "labeler": "claude-reviewed",
+  "retryable": true,
+  "split": "dev"
+ },
+ "nginx-504-captured": {
+  "category": "upstream_unavailable",
+  "labeler": "claude-reviewed",
+  "retryable": true,
+  "split": "dev"
+ },
+ "nginx-upstream500-500-captured": {
+  "category": "server_error",
+  "labeler": "claude-reviewed",
+  "retryable": true,
+  "split": "dev"
+ },
+ "ok-200": {
+  "category": null,
+  "labeler": "claude-reviewed",
+  "retryable": null,
+  "split": "dev"
+ },
+ "plain-500-empty": {
+  "category": "server_error",
+  "labeler": "claude-reviewed",
+  "retryable": true,
+  "split": "dev"
+ },
+ "platform-appengine-404-captured": {
+  "category": "not_found",
+  "labeler": "claude-reviewed",
+  "retryable": false,
+  "split": "dev"
+ },
+ "platform-firebase-404-captured": {
+  "category": "not_found",
+  "labeler": "claude-reviewed",
+  "retryable": false,
+  "split": "dev"
+ },
+ "platform-gfe-cloudrun-404-captured": {
+  "category": "not_found",
+  "labeler": "claude-reviewed",
+  "retryable": false,
+  "split": "dev"
+ },
+ "platform-ghpages-404-captured": {
+  "category": "not_found",
+  "labeler": "claude-reviewed",
+  "retryable": false,
+  "split": "dev"
+ },
+ "platform-ghpages-path-404-captured": {
+  "category": "not_found",
+  "labeler": "claude-reviewed",
+  "retryable": false,
+  "split": "dev"
+ },
+ "platform-google-404-captured": {
+  "category": "not_found",
+  "labeler": "claude-reviewed",
+  "retryable": false,
+  "split": "dev"
+ },
+ "platform-heroku-404-captured": {
+  "category": "not_found",
+  "labeler": "claude-reviewed",
+  "retryable": false,
+  "split": "dev"
+ },
+ "platform-lambda-url-403-captured": {
+  "category": "access_denied",
+  "labeler": "claude-reviewed",
+  "retryable": false,
+  "split": "dev"
+ },
+ "platform-netlify-404-captured": {
+  "category": "not_found",
+  "labeler": "claude-reviewed",
+  "retryable": false,
+  "split": "dev"
+ },
+ "platform-railway-404-captured": {
+  "category": "not_found",
+  "labeler": "claude-reviewed",
+  "retryable": false,
+  "split": "dev"
+ },
+ "platform-render-404-captured": {
+  "category": "not_found",
+  "labeler": "claude-reviewed",
+  "retryable": false,
+  "split": "dev"
+ },
+ "platform-vercel-404-captured": {
+  "category": "not_found",
+  "labeler": "claude-reviewed",
+  "retryable": false,
+  "split": "dev"
+ },
+ "platform-vercel-page-404-captured": {
+  "category": "not_found",
+  "labeler": "claude-reviewed",
+  "retryable": false,
+  "split": "dev"
+ },
+ "problem-json-passthrough": {
+  "category": "access_denied",
+  "labeler": "claude-reviewed",
+  "retryable": false,
+  "split": "dev"
+ },
+ "site-amazon-404-captured": {
+  "category": "not_found",
+  "labeler": "claude-reviewed",
+  "retryable": false,
+  "split": "dev"
+ },
+ "site-craigslist-captured": {
+  "category": "not_found",
+  "labeler": "claude-reviewed",
+  "retryable": false,
+  "split": "dev"
+ },
+ "site-g2-captured": {
+  "category": "challenge",
+  "labeler": "claude-reviewed",
+  "retryable": false,
+  "split": "dev"
+ },
+ "site-github-404-captured": {
+  "category": "not_found",
+  "labeler": "claude-reviewed",
+  "retryable": false,
+  "split": "dev"
+ },
+ "site-glassdoor-captured": {
+  "category": "challenge",
+  "labeler": "claude-reviewed",
+  "retryable": false,
+  "split": "dev"
+ },
+ "site-indeed-captured": {
+  "category": "challenge",
+  "labeler": "claude-reviewed",
+  "retryable": false,
+  "split": "dev"
+ },
+ "site-linkedin-captured": {
+  "category": "challenge",
+  "labeler": "claude-reviewed",
+  "retryable": false,
+  "split": "dev"
+ },
+ "site-medium-404-captured": {
+  "category": "challenge",
+  "labeler": "claude-reviewed",
+  "retryable": false,
+  "split": "dev"
+ },
+ "site-npmjs-404-captured": {
+  "category": "challenge",
+  "labeler": "claude-reviewed",
+  "retryable": false,
+  "split": "dev"
+ },
+ "site-nytimes-404-captured": {
+  "category": "not_found",
+  "labeler": "claude-reviewed",
+  "retryable": false,
+  "split": "dev"
+ },
+ "site-stackoverflow-404-captured": {
+  "category": "challenge",
+  "labeler": "claude-reviewed",
+  "retryable": false,
+  "split": "dev"
+ },
+ "site-wikipedia-404-captured": {
+  "category": "not_found",
+  "labeler": "claude-reviewed",
+  "retryable": false,
+  "split": "dev"
+ },
+ "site-x-captured": {
+  "category": "not_found",
+  "labeler": "claude-reviewed",
+  "retryable": false,
+  "split": "dev"
+ },
+ "storage-gcs-404-captured": {
+  "category": "not_found",
+  "labeler": "claude-reviewed",
+  "retryable": false,
+  "split": "dev"
+ },
+ "storage-s3-nosuchbucket-captured": {
+  "category": "not_found",
+  "labeler": "claude-reviewed",
+  "retryable": false,
+  "split": "dev"
+ },
+ "tomcat-404-captured": {
+  "category": "not_found",
+  "labeler": "claude-reviewed",
+  "retryable": false,
+  "split": "dev"
+ },
+ "tomcat-414-400-captured": {
+  "category": "bad_request",
+  "labeler": "claude-reviewed",
+  "retryable": false,
+  "split": "dev"
+ },
+ "tomcat-431-400-captured": {
+  "category": "bad_request",
+  "labeler": "claude-reviewed",
+  "retryable": false,
+  "split": "dev"
+ },
+ "traefik-404": {
+  "category": "not_found",
+  "labeler": "claude-reviewed",
+  "retryable": false,
+  "split": "dev"
+ },
+ "traefik-404-captured": {
+  "category": "not_found",
+  "labeler": "claude-reviewed",
+  "retryable": false,
+  "split": "dev"
+ },
+ "traefik-413-captured": {
+  "category": "bad_request",
+  "labeler": "claude-reviewed",
+  "retryable": false,
+  "split": "dev"
+ },
+ "traefik-429-captured": {
+  "category": "rate_limit",
+  "labeler": "claude-reviewed",
+  "retryable": true,
+  "split": "dev"
+ },
+ "traefik-502-captured": {
+  "category": "upstream_unavailable",
+  "labeler": "claude-reviewed",
+  "retryable": true,
+  "split": "dev"
+ },
+ "traefik-504-captured": {
+  "category": "upstream_unavailable",
+  "labeler": "claude-reviewed",
+  "retryable": true,
+  "split": "dev"
+ },
+ "traefik-upstream500-500-captured": {
+  "category": "server_error",
+  "labeler": "claude-reviewed",
+  "retryable": true,
+  "split": "dev"
+ },
+ "vercel-404": {
+  "category": "not_found",
+  "labeler": "claude-reviewed",
+  "retryable": false,
+  "split": "dev"
+ }
+}
