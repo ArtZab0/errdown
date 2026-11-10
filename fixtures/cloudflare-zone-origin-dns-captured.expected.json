@@ -1,0 +1,19 @@
+{
+  "type": "https://developers.cloudflare.com/support/troubleshooting/http-status-codes/cloudflare-1xxx-errors/",
+  "title": "Error 1016: Origin DNS error",
+  "status": 530,
+  "detail": "Cloudflare returned error 1016 (Origin DNS error) with HTTP 530.",
+  "instance": "https://nxorigin.errdown.dpdns.org/",
+  "error_code": 1016,
+  "error_name": "origin_dns_error",
+  "error_category": "dns",
+  "ray_id": "a580f443b8e94bc2",
+  "zone": "nxorigin.errdown.dpdns.org",
+  "cloudflare_error": true,
+  "retryable": false,
+  "owner_action_required": true,
+  "what_you_should_do": "This needs the site owner to fix. Do not retry. Report the error to the user or the site operator.",
+  "errdown_synthesized": true,
+  "errdown_source": "cloudflare",
+  "errdown_confidence": 0.9
+}

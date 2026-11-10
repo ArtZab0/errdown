@@ -16,3 +16,11 @@ and review the diff.
 Deployed at https://errdown-lab.errdown.workers.dev. `npx wrangler@4 deploy`, then `./capture.sh <url>`.
 Finding (2026-11-10): workers.dev and edge errors (1001/1003/1034/1101/1102) return plain
 `error code: NNNN` regardless of Accept header; structured output needs a full Cloudflare zone.
+
+## cf-zone/ — full Cloudflare zone (errdown.dpdns.org, Free plan)
+`setup.sh` configures DNS, a Worker route, WAF block/challenge rules, a rate limit and a strict-SSL
+config rule (token in `~/.config/errdown-cf-token`). `capture.sh` records each case with markdown,
+json and html Accept headers; `to-fixtures.py` turns them into `fixtures/cloudflare-zone-*`.
+`packages/js/test/parity.test.ts` checks errdown reproduces Cloudflare's structured bytes exactly.
+Hosts: `w.` (worker: /throw /cpu /blocked /challenge /limited), `down.` (522), `banned.` (1000),
+`nxorigin.` (530/1016), `badcert.` (meant for 526; currently 522 — needs an origin answering on 443).

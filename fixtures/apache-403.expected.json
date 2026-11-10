@@ -7,10 +7,10 @@
   "error_code": 403,
   "error_name": "apache_forbidden",
   "error_category": "access_denied",
+  "zone": "example.com",
   "retryable": false,
   "owner_action_required": false,
   "what_you_should_do": "Do not retry. Access was intentionally blocked. Tell the user; they may need to request access from the site owner.",
-  "zone": "example.com",
   "errdown_synthesized": true,
   "errdown_source": "apache",
   "errdown_confidence": 0.9

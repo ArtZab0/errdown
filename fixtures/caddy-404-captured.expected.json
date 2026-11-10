@@ -7,10 +7,10 @@
   "error_code": 404,
   "error_name": "caddy_not_found",
   "error_category": "not_found",
+  "zone": "lab.example",
   "retryable": false,
   "owner_action_required": false,
   "what_you_should_do": "Do not retry. Check the URL for mistakes, or search for the resource elsewhere.",
-  "zone": "lab.example",
   "errdown_synthesized": true,
   "errdown_source": "caddy",
   "errdown_confidence": 0.75

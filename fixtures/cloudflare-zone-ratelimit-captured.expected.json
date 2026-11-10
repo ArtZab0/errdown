@@ -1,0 +1,20 @@
+{
+  "type": "https://developers.cloudflare.com/support/troubleshooting/http-status-codes/cloudflare-1xxx-errors/",
+  "title": "Error 1015: You are being rate limited",
+  "status": 429,
+  "detail": "Cloudflare returned error 1015 (You are being rate limited) with HTTP 429.",
+  "instance": "https://w.errdown.dpdns.org/limited",
+  "error_code": 1015,
+  "error_name": "rate_limited",
+  "error_category": "rate_limit",
+  "ray_id": "a580f45458ef6069",
+  "zone": "w.errdown.dpdns.org",
+  "cloudflare_error": true,
+  "retryable": true,
+  "retry_after": 10,
+  "owner_action_required": false,
+  "what_you_should_do": "Wait 10 seconds, then retry with exponential backoff. Stop after a few attempts and report the error if it persists.",
+  "errdown_synthesized": true,
+  "errdown_source": "cloudflare",
+  "errdown_confidence": 0.9
+}

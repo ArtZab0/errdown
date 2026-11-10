@@ -1,0 +1,20 @@
+{
+  "type": "https://developers.cloudflare.com/support/troubleshooting/http-status-codes/cloudflare-1xxx-errors/",
+  "title": "Error 522: Connection timed out",
+  "status": 522,
+  "detail": "Cloudflare returned error 522 (Connection timed out) with HTTP 522.",
+  "instance": "https://down.errdown.dpdns.org/",
+  "error_code": 522,
+  "error_name": "origin_connection_timed_out",
+  "error_category": "upstream_unavailable",
+  "ray_id": "a580f161ab1d6bf7",
+  "zone": "down.errdown.dpdns.org",
+  "cloudflare_error": true,
+  "retryable": true,
+  "retry_after": 5,
+  "owner_action_required": false,
+  "what_you_should_do": "Wait 5 seconds, then retry with exponential backoff. Stop after a few attempts and report the error if it persists.",
+  "errdown_synthesized": true,
+  "errdown_source": "cloudflare",
+  "errdown_confidence": 0.9
+}

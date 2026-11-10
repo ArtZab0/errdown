@@ -22,9 +22,9 @@ test("cf-ray alone does not make an error Cloudflare-originated", () => {
 });
 
 test("cf-error-type marks Cloudflare origin", () => {
-  const p = normalize(502, { "cf-error-type": "origin", "cf-ray": "abc-SJC" }, "")!;
+  const p = normalize(502, { "cf-error-type": "origin", "cf-ray": "a580f448a999610f-SJC" }, "")!;
   assert.equal(p.errdown_source, "cloudflare");
-  assert.equal(p.ray_id, "abc-SJC");
+  assert.equal(p.ray_id, "a580f448a999610f"); // colo suffix stripped, as Cloudflare does
 });
 
 test("Retry-After: seconds, HTTP-date, rate-limit reset", () => {

@@ -1,0 +1,20 @@
+{
+  "type": "https://developers.cloudflare.com/support/troubleshooting/http-status-codes/cloudflare-1xxx-errors/",
+  "title": "Error 1102: Worker exceeded resource limits",
+  "status": 503,
+  "detail": "Cloudflare returned error 1102 (Worker exceeded resource limits) with HTTP 503.",
+  "instance": "https://w.errdown.dpdns.org/cpu",
+  "error_code": 1102,
+  "error_name": "worker_exceeded_resource_limits",
+  "error_category": "worker",
+  "ray_id": "a580f53d39264603",
+  "zone": "w.errdown.dpdns.org",
+  "cloudflare_error": true,
+  "retryable": true,
+  "retry_after": 5,
+  "owner_action_required": true,
+  "what_you_should_do": "This needs the site owner to fix. Do not retry. Report the error to the user or the site operator.",
+  "errdown_synthesized": true,
+  "errdown_source": "cloudflare",
+  "errdown_confidence": 0.9
+}

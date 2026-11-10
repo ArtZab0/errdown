@@ -1,9 +1,10 @@
 import type { Problem } from "./types.ts";
 
 const ORDER = [
+  // Matches Cloudflare's observed JSON member order (captured 2026-11-10).
   "type", "title", "status", "detail", "instance", "error_code", "error_name", "error_category",
-  "retryable", "retry_after", "owner_action_required", "what_you_should_do", "timestamp", "zone",
-  "footer", "ray_id", "cloudflare_error", "errdown_synthesized", "errdown_source", "errdown_confidence",
+  "ray_id", "timestamp", "zone", "cloudflare_error", "retryable", "retry_after", "owner_action_required",
+  "what_you_should_do", "footer", "errdown_synthesized", "errdown_source", "errdown_confidence",
 ];
 
 /** Ordered copy of a Problem with null/undefined members removed. */

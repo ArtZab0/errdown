@@ -7,10 +7,10 @@
   "error_code": 404,
   "error_name": "traefik_not_found",
   "error_category": "not_found",
+  "zone": "example.com",
   "retryable": false,
   "owner_action_required": false,
   "what_you_should_do": "Do not retry. Check the URL for mistakes, or search for the resource elsewhere.",
-  "zone": "example.com",
   "errdown_synthesized": true,
   "errdown_source": "traefik",
   "errdown_confidence": 0.8

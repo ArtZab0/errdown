@@ -1,0 +1,16 @@
+{
+  "status": 429,
+  "headers": {
+    "content-type": "text/plain; charset=UTF-8",
+    "retry-after": "10",
+    "cache-control": "private, max-age=0, no-store, no-cache, must-revalidate, post-check=0, pre-check=0",
+    "expires": "Thu, 01 Jan 1970 00:00:01 GMT",
+    "referrer-policy": "same-origin",
+    "x-frame-options": "SAMEORIGIN",
+    "server": "cloudflare",
+    "cf-ray": "a580f45458ef6069-CMH"
+  },
+  "body": "error code: 1015\n",
+  "url": "https://w.errdown.dpdns.org/limited",
+  "_provenance": "captured 2026-11-10 from Cloudflare zone errdown.dpdns.org, Accept: markdown"
+}

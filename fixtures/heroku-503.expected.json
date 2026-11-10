@@ -7,11 +7,11 @@
   "error_code": 503,
   "error_name": "heroku_application_error",
   "error_category": "server_error",
+  "zone": "example.com",
   "retryable": true,
   "retry_after": 5,
   "owner_action_required": false,
   "what_you_should_do": "Wait 5 seconds, then retry with exponential backoff. Stop after a few attempts and report the error if it persists.",
-  "zone": "example.com",
   "errdown_synthesized": true,
   "errdown_source": "heroku",
   "errdown_confidence": 0.9

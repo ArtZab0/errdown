@@ -7,3 +7,4 @@ __pycache__/
 .DS_Store
 coverage/
 lab/cf-worker/captures/
+lab/cf-zone/captures/

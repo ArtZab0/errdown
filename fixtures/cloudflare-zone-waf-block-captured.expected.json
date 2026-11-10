@@ -1,0 +1,19 @@
+{
+  "type": "https://errdown.com/errors/cloudflare_blocked",
+  "title": "Blocked by the site's firewall",
+  "status": 403,
+  "detail": "The site's Cloudflare firewall blocked this request.",
+  "instance": "https://w.errdown.dpdns.org/blocked",
+  "error_code": 403,
+  "error_name": "cloudflare_blocked",
+  "error_category": "access_denied",
+  "ray_id": "a580f450bde68821",
+  "zone": "w.errdown.dpdns.org",
+  "cloudflare_error": true,
+  "retryable": false,
+  "owner_action_required": false,
+  "what_you_should_do": "Do not retry. Access was intentionally blocked. Tell the user; they may need to request access from the site owner.",
+  "errdown_synthesized": true,
+  "errdown_source": "cloudflare",
+  "errdown_confidence": 0.9
+}

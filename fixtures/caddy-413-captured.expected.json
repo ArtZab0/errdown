@@ -7,10 +7,10 @@
   "error_code": 413,
   "error_name": "caddy_payload_too_large",
   "error_category": "bad_request",
+  "zone": "lab.example",
   "retryable": false,
   "owner_action_required": false,
   "what_you_should_do": "Do not retry the same request. Check the URL, method, headers and body, then fix the request.",
-  "zone": "lab.example",
   "errdown_synthesized": true,
   "errdown_source": "caddy",
   "errdown_confidence": 0.75

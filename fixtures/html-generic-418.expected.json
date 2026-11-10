@@ -7,10 +7,10 @@
   "error_code": 418,
   "error_name": "client_error",
   "error_category": "bad_request",
+  "zone": "example.com",
   "retryable": false,
   "owner_action_required": false,
   "what_you_should_do": "Do not retry the same request. Check the URL, method, headers and body, then fix the request.",
-  "zone": "example.com",
   "errdown_synthesized": true,
   "errdown_source": "unknown",
   "errdown_confidence": 0.5

@@ -35,7 +35,7 @@ normalize(status: int, headers: map<string,string>, body: string|bytes) -> Probl
 | `title` | string | RFC 9457 | Short, human-readable |
 | `status` | int | RFC 9457 | HTTP status of the original response |
 | `detail` | string | RFC 9457 | What happened. See section 7 for safety rules |
-| `instance` | string? | RFC 9457 | Request URL, if the caller provides it |
+| `instance` | string? | RFC 9457 | Cloudflare uses the ray ID; synthesized Problems use the request URL, if provided |
 | `error_code` | int | Cloudflare | Cloudflare's 1xxx code, or the HTTP status for synthesized errors |
 | `error_name` | string | Cloudflare | Stable snake_case identifier |
 | `error_category` | string | Cloudflare | Section 3 |
@@ -46,7 +46,7 @@ normalize(status: int, headers: map<string,string>, body: string|bytes) -> Probl
 | `timestamp` | string | Cloudflare | ISO 8601 UTC |
 | `zone` | string? | Cloudflare | Host, if known |
 | `footer` | string? | Cloudflare | Passed through for Cloudflare errors; omitted otherwise |
-| `ray_id` | string? | Cloudflare | Only when `source` is `cloudflare` |
+| `ray_id` | string? | Cloudflare | Only when `source` is `cloudflare`. Hex ID without the `-COLO` suffix that the `cf-ray` header carries |
 | `cloudflare_error` | bool? | Cloudflare | Only when `source` is `cloudflare` |
 | `errdown_synthesized` | bool | errdown | `true` when derived from a non-structured response |
 | `errdown_source` | string | errdown | Section 4 |
@@ -55,14 +55,25 @@ normalize(status: int, headers: map<string,string>, body: string|bytes) -> Probl
 errdown's additions use the `errdown_` prefix so they can never collide with members
 Cloudflare adds later. Consumers that do not know them ignore them, per RFC 9457.
 
+JSON member order follows Cloudflare's observed output: `type, title, status, detail,
+instance, error_code, error_name, error_category, ray_id, timestamp, zone, cloudflare_error,
+retryable, retry_after, owner_action_required, what_you_should_do, footer`, then the
+`errdown_*` members. (Position of `retry_after` not yet observed in a real capture.)
+
 ### 2.2 Cloudflare-originated errors
 
-A response counts as Cloudflare-originated only if it carries a `cf-error-type` header,
-or is already a Cloudflare structured body (has `error_code` and `ray_id`), or matches a
+A response counts as Cloudflare-originated only if it is already a Cloudflare structured
+body (has `error_code` and `ray_id`), or carries a `cf-error-type` header (documented by
+Cloudflare but not observed in captures as of 2026-11-10), or matches a
 legacy Cloudflare HTML error page fingerprint, or is Cloudflare's plain-text form
-(`Server: cloudflare` and a body of exactly `error code: 1NNN`). The plain-text form is
+(`Server: cloudflare` and a body of exactly `error code: 1NNN` or `error code: 5NN`). The plain-text form is
 what Cloudflare still serves for some edge errors (e.g. 1001, 1003, 1034) even to clients
-sending an agent Accept header (observed 2026-11-09). `cf-ray` alone is NOT sufficient: Cloudflare
+sending an agent Accept header (observed 2026-11-09).
+
+Observed coverage on a Free-plan zone, 2026-11-10, with `Accept: text/markdown` or
+`application/json`: only error 1000 was served structured. 1015 (rate limit), 1016,
+1101, 1102, 522 were plain text; WAF custom-rule blocks and managed challenges were HTML.
+errdown therefore treats plain-text and HTML Cloudflare errors as first-class inputs. `cf-ray` alone is NOT sufficient: Cloudflare
 also passes origin errors through with that header.
 
 ### 2.3 Timestamp

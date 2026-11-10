@@ -50,6 +50,7 @@ const isObj = (v: unknown): v is Record<string, unknown> =>
 
 // Cloudflare 1xxx codes seen in plain-text responses: [category, error_name, title, owner_action_required?, retryable?]
 const CF_CODES: Record<number, [string, string, string, boolean?, boolean?]> = {
+  1000: ["dns", "dns_loop", "DNS points to prohibited IP", true, false],
   1001: ["dns", "dns_resolution_error", "DNS resolution error", true],
   1003: ["config", "direct_ip_access_not_allowed", "Direct IP access not allowed"],
   1006: ["access_denied", "access_denied_ip_banned", "Access denied"],
@@ -60,9 +61,17 @@ const CF_CODES: Record<number, [string, string, string, boolean?, boolean?]> = {
   1012: ["access_denied", "access_denied", "Access denied"],
   1014: ["config", "cname_cross_user_banned", "CNAME cross-user banned", true],
   1015: ["rate_limit", "rate_limited", "You are being rate limited"],
-  1016: ["dns", "origin_dns_error", "Origin DNS error", true],
+  1016: ["dns", "origin_dns_error", "Origin DNS error", true, false],
   1020: ["access_denied", "access_denied", "Access denied (firewall rule)"],
   1034: ["config", "edge_ip_restricted", "Edge IP restricted"],
+  // Cloudflare 5xx, categorized per Cloudflare's 2026-04-27 changelog.
+  520: ["upstream_unavailable", "origin_unknown_error", "Web server returned an unknown error", false, true],
+  521: ["upstream_unavailable", "origin_down", "Web server is down", false, true],
+  522: ["upstream_unavailable", "origin_connection_timed_out", "Connection timed out", false, true],
+  523: ["upstream_unavailable", "origin_unreachable", "Origin is unreachable", false, true],
+  524: ["upstream_unavailable", "origin_timeout", "A timeout occurred", false, true],
+  525: ["tls", "ssl_handshake_failed", "SSL handshake failed", true, false],
+  526: ["tls", "invalid_ssl_certificate", "Invalid SSL certificate", true, false],
   1101: ["worker", "worker_threw_exception", "Worker threw exception", true, false],
   1102: ["worker", "worker_exceeded_resource_limits", "Worker exceeded resource limits", true],
 };
@@ -102,6 +111,8 @@ function parseCloudflareMarkdown(body: string): Record<string, unknown> | undefi
   if (detail) fm.detail = detail;
   const todo = section("What You Should Do");
   if (todo) fm.what_you_should_do = todo;
+  const footer = /\n---[ \t]*\r?\n([\s\S]*?)\s*$/.exec(rest)?.[1]?.trim();
+  if (footer) fm.footer = footer;
   return fm;
 }
 
@@ -153,12 +164,19 @@ function finish(p: Partial<Problem> & { status: number }, ctx: Ctx): Problem {
   return out;
 }
 
-function cloudflareMeta(ctx: Ctx): Partial<Problem> {
-  const ray = ctx.h.get("cf-ray");
+/** Cloudflare's ray_id omits the "-COLO" suffix that the cf-ray header carries. */
+function rayId(ctx: Ctx, body = ""): string | undefined {
+  const fromHeader = ctx.h.get("cf-ray")?.trim().split("-")[0];
+  if (fromHeader && /^[0-9a-f]{8,32}$/i.test(fromHeader)) return fromHeader.toLowerCase();
+  return /Ray ID:?\s*(?:<[^>]{0,80}>\s*)?([0-9a-f]{16})/i.exec(body)?.[1];
+}
+
+function cloudflareMeta(ctx: Ctx, body = ""): Partial<Problem> {
+  const ray = rayId(ctx, body);
   return { errdown_source: "cloudflare", cloudflare_error: true, ...(ray ? { ray_id: ray } : {}) };
 }
 
-function fromFingerprint(fp: Fingerprint, ctx: Ctx, challenge: boolean): Problem {
+function fromFingerprint(fp: Fingerprint, ctx: Ctx, challenge: boolean, body = ""): Problem {
   const base = classifyStatus(ctx.status);
   const category = challenge ? "challenge" : (fp.category ?? base.category);
   const sourceLabel = fp.source === "unknown" ? "" : fp.source.replace(/-/g, "_") + "_";
@@ -175,7 +193,7 @@ function fromFingerprint(fp: Fingerprint, ctx: Ctx, challenge: boolean): Problem
     owner_action_required: fp.owner_action_required ?? base.owner_action_required,
     errdown_source: fp.source,
     errdown_confidence: fp.confidence,
-    ...(isCf ? cloudflareMeta(ctx) : {}),
+    ...(isCf ? cloudflareMeta(ctx, body) : {}),
   }, ctx);
 }
 
@@ -240,7 +258,7 @@ function run(ctx: Ctx, body: string): Problem | null {
   // 2. Challenges apply at any status (a 200 challenge page is still a block).
   const challenge = findFingerprint(CHALLENGES, status, h, body);
   if (challenge && (isError || challenge.category !== "access_denied")) {
-    return fromFingerprint(challenge, ctx, challenge.category !== "access_denied");
+    return fromFingerprint(challenge, ctx, challenge.category !== "access_denied", body);
   }
   if (!isError) return null;
 
@@ -279,7 +297,7 @@ function run(ctx: Ctx, body: string): Problem | null {
   }
 
   // Cloudflare's plain-text form: "error code: 1003" with Server: cloudflare.
-  const plain = /^\s*error code: (1\d{3})\s*$/.exec(body);
+  const plain = /^\s*error code: (1\d{3}|5\d{2})\s*$/.exec(body);
   if (plain && /cloudflare/i.test(h.get("server") ?? "")) {
     const code = Number(plain[1]);
     const known = CF_CODES[code];
@@ -292,6 +310,7 @@ function run(ctx: Ctx, body: string): Problem | null {
       ...(known ? { error_category: known[0], title: `Error ${code}: ${known[2]}` } : { title: `Cloudflare error ${code}` }),
       ...(known?.[3] !== undefined ? { owner_action_required: known[3] } : {}),
       ...(known?.[4] !== undefined ? { retryable: known[4] } : {}),
+      ...(code < 1000 && !known ? { error_category: classifyStatus(code).category } : {}),
       detail: `Cloudflare returned error ${code}${known ? ` (${known[2]})` : ""} with HTTP ${status}.`,
       errdown_confidence: known ? 0.9 : 0.75,
     }, ctx);
@@ -299,7 +318,7 @@ function run(ctx: Ctx, body: string): Problem | null {
 
   // 3. Known error pages.
   const fp = findFingerprint(PAGES, status, h, body);
-  if (fp) return fromFingerprint(fp, ctx, false);
+  if (fp) return fromFingerprint(fp, ctx, false, body);
 
   // 4. JSON error shapes.
   if (json !== undefined) {

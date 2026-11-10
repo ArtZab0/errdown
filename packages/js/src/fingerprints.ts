@@ -66,6 +66,14 @@ export const CHALLENGES: Fingerprint[] = [
 ];
 
 export const PAGES: Fingerprint[] = [
+  // Cloudflare WAF block page (observed for custom-rule blocks; no 1xxx code in the page)
+  {
+    id: "cloudflare_blocked", source: "cloudflare", confidence: 0.9,
+    body: [/cf-error-details/i, /Sorry, you have been blocked/i],
+    category: "access_denied", error_name: "cloudflare_blocked", title: "Blocked by the site's firewall",
+    retryable: false, owner_action_required: false,
+    detail: "The site's Cloudflare firewall blocked this request.",
+  },
   // Legacy Cloudflare HTML error pages
   {
     id: "cloudflare_legacy", source: "cloudflare", confidence: 0.9,

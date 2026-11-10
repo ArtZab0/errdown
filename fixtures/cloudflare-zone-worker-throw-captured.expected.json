@@ -1,0 +1,19 @@
+{
+  "type": "https://developers.cloudflare.com/support/troubleshooting/http-status-codes/cloudflare-1xxx-errors/",
+  "title": "Error 1101: Worker threw exception",
+  "status": 500,
+  "detail": "Cloudflare returned error 1101 (Worker threw exception) with HTTP 500.",
+  "instance": "https://w.errdown.dpdns.org/throw",
+  "error_code": 1101,
+  "error_name": "worker_threw_exception",
+  "error_category": "worker",
+  "ray_id": "a580f44d8d19cf80",
+  "zone": "w.errdown.dpdns.org",
+  "cloudflare_error": true,
+  "retryable": false,
+  "owner_action_required": true,
+  "what_you_should_do": "This needs the site owner to fix. Do not retry. Report the error to the user or the site operator.",
+  "errdown_synthesized": true,
+  "errdown_source": "cloudflare",
+  "errdown_confidence": 0.9
+}
