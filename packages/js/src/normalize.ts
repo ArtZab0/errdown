@@ -48,8 +48,8 @@ function tryJSON(body: string): unknown {
 const isObj = (v: unknown): v is Record<string, unknown> =>
   typeof v === "object" && v !== null && !Array.isArray(v);
 
-// Cloudflare 1xxx codes seen in plain-text responses: [category, error_name, title, owner_action_required?]
-const CF_CODES: Record<number, [string, string, string, boolean?]> = {
+// Cloudflare 1xxx codes seen in plain-text responses: [category, error_name, title, owner_action_required?, retryable?]
+const CF_CODES: Record<number, [string, string, string, boolean?, boolean?]> = {
   1001: ["dns", "dns_resolution_error", "DNS resolution error", true],
   1003: ["config", "direct_ip_access_not_allowed", "Direct IP access not allowed"],
   1006: ["access_denied", "access_denied_ip_banned", "Access denied"],
@@ -63,7 +63,7 @@ const CF_CODES: Record<number, [string, string, string, boolean?]> = {
   1016: ["dns", "origin_dns_error", "Origin DNS error", true],
   1020: ["access_denied", "access_denied", "Access denied (firewall rule)"],
   1034: ["config", "edge_ip_restricted", "Edge IP restricted"],
-  1101: ["worker", "worker_threw_exception", "Worker threw exception", true],
+  1101: ["worker", "worker_threw_exception", "Worker threw exception", true, false],
   1102: ["worker", "worker_exceeded_resource_limits", "Worker exceeded resource limits", true],
 };
 
@@ -291,6 +291,7 @@ function run(ctx: Ctx, body: string): Problem | null {
       error_name: known?.[1] ?? `cloudflare_${code}`,
       ...(known ? { error_category: known[0], title: `Error ${code}: ${known[2]}` } : { title: `Cloudflare error ${code}` }),
       ...(known?.[3] !== undefined ? { owner_action_required: known[3] } : {}),
+      ...(known?.[4] !== undefined ? { retryable: known[4] } : {}),
       detail: `Cloudflare returned error ${code}${known ? ` (${known[2]})` : ""} with HTTP ${status}.`,
       errdown_confidence: known ? 0.9 : 0.75,
     }, ctx);
