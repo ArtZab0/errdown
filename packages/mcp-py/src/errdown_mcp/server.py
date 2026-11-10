@@ -68,13 +68,13 @@ def problem_text(p: Dict[str, Any]) -> str:
 async def fetch_impl(url: str, max_length: int = 20000, start_index: int = 0, raw: bool = False,
                      client: Optional[httpx.AsyncClient] = None) -> Dict[str, Any]:
     own = client is None
-    client = client or httpx.AsyncClient(follow_redirects=True, timeout=30)
+    buf = bytearray()
     try:
+        client = client or httpx.AsyncClient(follow_redirects=True, timeout=30)
         scheme = urlsplit(url).scheme
         if scheme not in ("http", "https"):
             raise httpx.UnsupportedProtocol(f"unsupported scheme {scheme!r}")
         async with client.stream("GET", url, headers={"accept": agent_accept_header(), "user-agent": UA}) as res:
-            buf = bytearray()
             async for chunk in res.aiter_bytes():
                 buf += chunk
                 if len(buf) >= MAX_BYTES:
@@ -85,8 +85,11 @@ async def fetch_impl(url: str, max_length: int = 20000, start_index: int = 0, ra
         p = network_problem(exc, url)
         return {"isError": True, "text": problem_text(p), "problem": p}
     finally:
-        if own:
-            await client.aclose()
+        if own and client is not None:
+            try:
+                await client.aclose()
+            except Exception:
+                pass
     body = bytes(buf[:MAX_BYTES])
     problem = normalize(status, headers, body, url=final_url)
     if problem:

@@ -35,11 +35,11 @@ So the agent knows whether to retry, ask the user for credentials, or stop at a 
 
 Claude Code:
 ```
-claude mcp add errdown -- uvx --prerelease allow errdown-mcp
+claude mcp add errdown -- uvx errdown-mcp@0.1.0a3
 ```
 Claude Desktop / Cursor / any MCP client (`mcpServers` config):
 ```json
-{ "errdown": { "command": "uvx", "args": ["--prerelease", "allow", "errdown-mcp"] } }
+{ "errdown": { "command": "uvx", "args": ["errdown-mcp@0.1.0a3"] } }
 ```
 Node alternative: `npx -y errdown-mcp@alpha`.
 

@@ -41,7 +41,7 @@ Claude Desktop / Cursor / any MCP client (`mcpServers` config):
 ```json
 { "errdown": { "command": "npx", "args": ["-y", "errdown-mcp@alpha"] } }
 ```
-Python alternative: `uvx --prerelease allow errdown-mcp`.
+Python alternative: `uvx errdown-mcp@0.1.0a3`.
 
 Tool arguments: `url`, `max_length` (default 20000), `start_index` (continue truncated
 content), `raw` (HTML instead of Markdown). The server sends `Accept: text/markdown, */*`, so

@@ -21,6 +21,15 @@ jobs:
         with: { python-version: "${{ matrix.python }}" }
       - run: python packages/py/tests/test_conformance.py
       - run: pip install -e packages/py -e packages/mcp-py && python packages/mcp-py/tests/test_server.py
+      # Install the built wheel in a clean env the way users do (catches dependency resolution issues).
+      - run: |
+          pip install uv build
+          python -m build packages/py -o /tmp/wheels && python -m build packages/mcp-py -o /tmp/wheels
+          uv run --no-project --find-links /tmp/wheels --with errdown-mcp python -c "
+          import asyncio; from errdown_mcp.server import fetch_impl
+          r = asyncio.run(fetch_impl('http://127.0.0.1:1/'))
+          assert r['isError'] and r['problem']['error_category'] == 'upstream_unavailable', r
+          print('wheel install ok')"
   fixtures-in-sync:
     # expected/rendered fixtures and the error reference must be regenerated when the TS reference changes
     runs-on: ubuntu-latest
