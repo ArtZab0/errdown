@@ -8,3 +8,4 @@ __pycache__/
 coverage/
 lab/cf-worker/captures/
 lab/cf-zone/captures/
+packages/py/dist/

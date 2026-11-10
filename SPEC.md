@@ -25,6 +25,9 @@ normalize(status: int, headers: map<string,string>, body: string|bytes) -> Probl
   (section 2.3), which implementations MUST allow the caller to inject.
 - Header names are matched case-insensitively.
 - Bodies larger than 256 KiB are only inspected in their first 256 KiB.
+- Fingerprints (stages 2, 3, 5) match against a scan window: the whole body if it is at most
+  40 KiB, otherwise the first 32 KiB + `\n` + the last 8 KiB. JSON, XML and Markdown parsing
+  use the full (256 KiB-capped) body.
 
 ## 2. The Problem object
 

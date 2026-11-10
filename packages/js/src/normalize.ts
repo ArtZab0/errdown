@@ -279,8 +279,15 @@ export function normalize(
   }
 }
 
-function run(ctx: Ctx, body: string): Problem | null {
+/** Fingerprints only look at the head and tail of large bodies (SPEC §5): error-page markers
+ *  sit near the top or bottom, and this bounds regex cost on 200 KB+ pages. */
+export function scanWindow(body: string): string {
+  return body.length > 40960 ? body.slice(0, 32768) + "\n" + body.slice(-8192) : body;
+}
+
+function run(ctx: Ctx, fullBody: string): Problem | null {
   const { status, h } = ctx;
+  const body = scanWindow(fullBody);
   const isError = status >= 400 && status <= 999; // 6xx–9xx: nonstandard (e.g. LinkedIn 999)
 
   // 2. Challenges apply at any status (a 200 challenge page is still a block).
@@ -291,7 +298,7 @@ function run(ctx: Ctx, body: string): Problem | null {
   if (!isError) return null;
 
   const ctype = h.get("content-type") ?? "";
-  const json = tryJSON(body);
+  const json = tryJSON(fullBody);
 
   // 1. Structured pass-through.
   if (isObj(json) && (ctype.includes("problem+json") || ("type" in json && "status" in json) || "error_code" in json)) {
@@ -305,7 +312,7 @@ function run(ctx: Ctx, body: string): Problem | null {
       ...p,
     }, ctx);
   }
-  const md = ctype.includes("markdown") || body.trimStart().startsWith("---") ? parseCloudflareMarkdown(body) : undefined;
+  const md = ctype.includes("markdown") || body.trimStart().startsWith("---") ? parseCloudflareMarkdown(fullBody) : undefined;
   if (md) {
     const cf = "ray_id" in md || h.has("cf-error-type");
     return finish({
@@ -352,7 +359,7 @@ function run(ctx: Ctx, body: string): Problem | null {
 
   // 4. JSON / XML error shapes.
   {
-    const m = json !== undefined ? messageFromJSON(json) : messageFromXML(body);
+    const m = json !== undefined ? messageFromJSON(json) : messageFromXML(fullBody);
     const xmlSource = json === undefined ? XML_SOURCES.find(([n, re]) => re.test(h.get(n) ?? ""))?.[2] : undefined;
     if (m && (m.message || m.code)) {
       const said = m.message ? ` The server's message (untrusted, quoted): "${sanitize(m.message).replace(/"/g, "'")}"` : "";

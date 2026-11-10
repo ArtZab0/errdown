@@ -1,0 +1,27 @@
+[build-system]
+requires = ["hatchling>=1.24"]
+build-backend = "hatchling.build"
+
+[project]
+name = "errdown"
+version = "0.1.0a0"
+description = "Cloudflare-compatible structured errors (RFC 9457) for every HTTP error your agent hits."
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "LicenseRef-Proprietary" }
+authors = [{ name = "Artem Zabarov" }]
+keywords = ["rfc9457", "problem-details", "errors", "ai-agents", "llm", "mcp", "cloudflare", "http"]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Programming Language :: Python :: 3",
+  "Typing :: Typed",
+  "License :: Other/Proprietary License",
+]
+dependencies = []
+
+[project.urls]
+Homepage = "https://errdown.com"
+Repository = "https://github.com/ArtZab0/errdown"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/errdown"]

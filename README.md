@@ -9,6 +9,9 @@ Status: pre-alpha, private.
 - `SPEC.md` — the contract (draft 0.1)
 - `fixtures/` — language-neutral conformance cases
 - `packages/js` — TypeScript reference implementation (`npm test`, `npm run build`)
+- `packages/py` — Python implementation, byte-identical output (`python tests/test_conformance.py`)
+- `lab/` — capture labs (Docker servers, Cloudflare zone, public endpoints)
+- `docs/` — benchmarks
 
 ## Quick look
 
